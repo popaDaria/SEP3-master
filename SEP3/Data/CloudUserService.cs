@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Formatters;
@@ -26,6 +28,25 @@ namespace SEP3.Data
             loggedUser.password = Password;
             loggedUser.username = idNr;
             return loggedUser;
+        }
+
+        public async Task AddUser(User user)
+        {
+            if (user.userType.Equals("patient"))
+                user.validated = true;
+            HttpClient client = new HttpClient();
+            string usersSerialized = JsonSerializer.Serialize(user);
+            StringContent content = new StringContent(
+                usersSerialized,
+                Encoding.UTF8,
+                "application/json"
+            );
+            
+            //Console.WriteLine(usersSerialized);
+            
+            HttpResponseMessage responseMessage =
+                await client.PutAsync("http://localhost:8085/users", content);
+            Console.WriteLine(responseMessage.StatusCode); 
         }
     }
 }

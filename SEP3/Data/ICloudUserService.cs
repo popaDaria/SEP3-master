@@ -5,6 +5,7 @@ namespace SEP3.Data
 {
     public interface ICloudUserService
     {
-        public Task<LoggedUser> ValidateUser(string idNr, string Password);
+        public Task<LoggedUser> ValidateUser(string idNr, string password);
+        public Task AddUser(User user);
     }
 }

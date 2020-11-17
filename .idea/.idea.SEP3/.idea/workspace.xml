@@ -13,65 +13,28 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39da3d61-0d00-475a-bb14-31b09aaef81b" name="Default Changelist" comment="make logout work">
-      <change afterPath="$PROJECT_DIR$/SEP3/Pages/Profile.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SEP3/Pages/ProfileMedical.razor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SEP3/wwwroot/css/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/contentModel.xml" afterDir="false" />
+    <list default="true" id="39da3d61-0d00-475a-bb14-31b09aaef81b" name="Default Changelist" comment="profile">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Pages/Index.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Shared/NavMenu.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.StaticWebAssets.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.StaticWebAssets.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/Pages/Profile.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Pages/Profile.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.runtimeconfig.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.runtimeconfig.dev.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/App.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/App.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/HomeHospitalComponent.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/HomeHospitalComponent.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/Index.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/Index.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/LogIn.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/LogIn.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/Register.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/Register.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/_Host.cshtml.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/_Host.cshtml.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Shared/MainLayout.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Shared/MainLayout.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Shared/NavMenu.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Shared/NavMenu.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Shared/SurveyPrompt.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Shared/SurveyPrompt.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/_Imports.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/_Imports.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/App.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/App.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/HomeHospitalComponent.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/HomeHospitalComponent.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Index.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Index.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/LogIn.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/LogIn.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Register.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Register.razor.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/MainLayout.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/MainLayout.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/NavMenu.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/NavMenu.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/_Imports.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/_Imports.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorComponent.input.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorComponent.input.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorCoreGenerate.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorCoreGenerate.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.TagHelpers.output.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.TagHelpers.output.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/staticwebassets/SEP3.StaticWebAssets.Manifest.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/staticwebassets/SEP3.StaticWebAssets.Manifest.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/staticwebassets/SEP3.StaticWebAssets.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/staticwebassets/SEP3.StaticWebAssets.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/SEP3.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/SEP3.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/SEP3.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/SEP3.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/wwwroot/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/wwwroot/css/profile.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../SEP3-master\exportToHTML" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -107,12 +70,12 @@
         <option value="$PROJECT_DIR$/SEP3/Startup.cs" />
         <option value="$PROJECT_DIR$/SEP3/Pages/Register.razor" />
         <option value="$PROJECT_DIR$/SEP3/Pages/LogIn.razor" />
-        <option value="$PROJECT_DIR$/SEP3/wwwroot/css/profile.css" />
         <option value="$PROJECT_DIR$/SEP3/Pages/Index.razor" />
         <option value="$PROJECT_DIR$/SEP3/Shared/MainLayout.razor" />
         <option value="$PROJECT_DIR$/SEP3/Shared/NavMenu.razor" />
-        <option value="$PROJECT_DIR$/SEP3/Pages/Profile.razor" />
         <option value="$PROJECT_DIR$/SEP3/Pages/ProfileMedical.razor" />
+        <option value="$PROJECT_DIR$/SEP3/Pages/Profile.razor" />
+        <option value="$PROJECT_DIR$/SEP3/wwwroot/css/profile.css" />
       </list>
     </option>
   </component>
@@ -125,6 +88,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34995976" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30008045" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -177,7 +142,10 @@
       <workItem from="1604841977887" duration="3299000" />
       <workItem from="1604848897475" duration="1789000" />
       <workItem from="1604994769270" duration="5539000" />
-      <workItem from="1605278187270" duration="2272000" />
+      <workItem from="1605278187270" duration="2997000" />
+      <workItem from="1605281509136" duration="24000" />
+      <workItem from="1605539084766" duration="124000" />
+      <workItem from="1605650133060" duration="3270000" />
     </task>
     <task id="LOCAL-00001" summary="First Version, Green Navbar">
       <created>1601938783775</created>
@@ -228,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604850582429</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="profile">
+      <created>1605280994850</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1605280994850</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +229,8 @@
     <MESSAGE value="Basic Scrollable Layout for Home" />
     <MESSAGE value="Added Syncfusion" />
     <MESSAGE value="make logout work" />
-    <option name="LAST_COMMIT_MESSAGE" value="make logout work" />
+    <MESSAGE value="profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="profile" />
   </component>
   <component name="WindowStateProjectService">
     <state x="108" y="147" width="2360" height="880" key="DiffContextDialog" timestamp="1604498577187">
@@ -269,102 +245,118 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="838" y="418" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604842882883" />
-    <state width="2517" height="169" key="GridCell.Tab.0.bottom" timestamp="1605280617881">
+    <state width="2517" height="169" key="GridCell.Tab.0.bottom" timestamp="1605653777740">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="169" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605280617881" />
+    <state width="2517" height="169" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653777740" />
     <state width="931" height="168" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604836238912" />
     <state width="1037" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605000038364" />
-    <state width="2517" height="169" key="GridCell.Tab.0.center" timestamp="1605280617881">
+    <state width="2517" height="169" key="GridCell.Tab.0.center" timestamp="1605653777740">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="169" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605280617881" />
+    <state width="2517" height="169" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653777740" />
     <state width="931" height="168" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1604836238912" />
     <state width="1037" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605000038364" />
-    <state width="2517" height="169" key="GridCell.Tab.0.left" timestamp="1605280617880">
+    <state width="2517" height="169" key="GridCell.Tab.0.left" timestamp="1605653777740">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="169" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605280617880" />
+    <state width="2517" height="169" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653777740" />
     <state width="931" height="168" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1604836238912" />
     <state width="1037" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605000038364" />
-    <state width="2517" height="169" key="GridCell.Tab.0.right" timestamp="1605280617881">
+    <state width="2517" height="169" key="GridCell.Tab.0.right" timestamp="1605653777740">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="169" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605280617881" />
+    <state width="2517" height="169" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653777740" />
     <state width="931" height="168" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1604836238912" />
     <state width="1037" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605000038364" />
-    <state width="931" height="303" key="GridCell.Tab.1.bottom" timestamp="1604836237705">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.1.bottom" timestamp="1605653408647">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.1.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408647" />
     <state width="931" height="303" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604836237705" />
-    <state width="931" height="303" key="GridCell.Tab.1.center" timestamp="1604836237705">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.1.center" timestamp="1605653408646">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.1.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408646" />
     <state width="931" height="303" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1604836237705" />
-    <state width="931" height="303" key="GridCell.Tab.1.left" timestamp="1604836237705">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.1.left" timestamp="1605653408646">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.1.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408646" />
     <state width="931" height="303" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1604836237705" />
-    <state width="931" height="303" key="GridCell.Tab.1.right" timestamp="1604836237705">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.1.right" timestamp="1605653408647">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.1.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408647" />
     <state width="931" height="303" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1604836237705" />
-    <state width="931" height="303" key="GridCell.Tab.2.bottom" timestamp="1604836237706">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.2.bottom" timestamp="1605653408647">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.2.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408647" />
     <state width="931" height="303" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604836237706" />
-    <state width="931" height="303" key="GridCell.Tab.2.center" timestamp="1604836237705">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.2.center" timestamp="1605653408647">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.2.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408647" />
     <state width="931" height="303" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1604836237705" />
-    <state width="931" height="303" key="GridCell.Tab.2.left" timestamp="1604836237705">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.2.left" timestamp="1605653408647">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.2.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408647" />
     <state width="931" height="303" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1604836237705" />
-    <state width="931" height="303" key="GridCell.Tab.2.right" timestamp="1604836237705">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.2.right" timestamp="1605653408647">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.2.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408647" />
     <state width="931" height="303" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1604836237705" />
-    <state width="931" height="303" key="GridCell.Tab.3.bottom" timestamp="1604836237708">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.3.bottom" timestamp="1605653408648">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.3.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408648" />
     <state width="931" height="303" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604836237708" />
-    <state width="931" height="303" key="GridCell.Tab.3.center" timestamp="1604836237707">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.3.center" timestamp="1605653408648">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.3.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408648" />
     <state width="931" height="303" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1604836237707" />
-    <state width="931" height="303" key="GridCell.Tab.3.left" timestamp="1604836237707">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.3.left" timestamp="1605653408647">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.3.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408647" />
     <state width="931" height="303" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1604836237707" />
-    <state width="931" height="303" key="GridCell.Tab.3.right" timestamp="1604836237707">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.3.right" timestamp="1605653408648">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.3.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408648" />
     <state width="931" height="303" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1604836237707" />
-    <state width="931" height="303" key="GridCell.Tab.4.bottom" timestamp="1604836237709">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.4.bottom" timestamp="1605653408648">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.4.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408648" />
     <state width="931" height="303" key="GridCell.Tab.4.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604836237709" />
-    <state width="931" height="303" key="GridCell.Tab.4.center" timestamp="1604836237708">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.4.center" timestamp="1605653408648">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.4.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408648" />
     <state width="931" height="303" key="GridCell.Tab.4.center/0.0.1536.864@0.0.1536.864" timestamp="1604836237708" />
-    <state width="931" height="303" key="GridCell.Tab.4.left" timestamp="1604836237708">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.4.left" timestamp="1605653408648">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.4.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408648" />
     <state width="931" height="303" key="GridCell.Tab.4.left/0.0.1536.864@0.0.1536.864" timestamp="1604836237708" />
-    <state width="931" height="303" key="GridCell.Tab.4.right" timestamp="1604836237709">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="2517" height="389" key="GridCell.Tab.4.right" timestamp="1605653408648">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
+    <state width="2517" height="389" key="GridCell.Tab.4.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605653408648" />
     <state width="931" height="303" key="GridCell.Tab.4.right/0.0.1536.864@0.0.1536.864" timestamp="1604836237709" />
     <state x="361" y="164" key="Rider.ProjectTemplateDialog.Size" timestamp="1604565978106">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="164" key="Rider.ProjectTemplateDialog.Size/0.0.1536.864@0.0.1536.864" timestamp="1604565978106" />
-    <state x="654" y="262" key="Vcs.Push.Dialog.v2" timestamp="1604850590213">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="872" y="272" key="Vcs.Push.Dialog.v2" timestamp="1605539092707">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state x="872" y="272" key="Vcs.Push.Dialog.v2/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1604505935452" />
+    <state x="872" y="272" key="Vcs.Push.Dialog.v2/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605539092707" />
     <state x="523" y="218" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1604833968073" />
     <state x="654" y="262" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604850590213" />
     <state x="540" y="167" key="VcsDiffUtil.ChangesDialog" timestamp="1604561554438">

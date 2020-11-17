@@ -12,8 +12,9 @@
     text-align: center;
 }
 .profile-img img{
-    width: 70%;
-    height: 100%;
+    width: 300px;
+    height: 300px;
+    padding: 5px;
 }
 .profile-img .file {
     position: relative;
@@ -31,10 +32,10 @@
     right: 0;
     top: 0;
 }
-.profile-head h5{
+.profile-head h3{
     color: #333;
 }
-.profile-head h6{
+.profile-head h4{
     color: #0062cc;
 }
 .profile-edit-btn{
@@ -88,8 +89,10 @@
 }
 .profile-tab label{
     font-weight: 600;
+    font-size: 20px;
 }
 .profile-tab p{
     font-weight: 600;
     color: #0062cc;
+    font-size: 20px;
 }

@@ -1,5 +1,5 @@
 ﻿@page "/profile"
-@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Navigations
 @using Syncfusion.Blazor.InPlaceEditor
 @using SEP3.Model
 @using SEP3.Data
@@ -9,6 +9,7 @@
 
 @inject ICloudUserService CloudUserService;
 @inject AuthenticationStateProvider AuthenticationStateProvider;
+
 
 <link href="css/profile.css" type="text/css" rel="stylesheet"/>
 @if (user == null)
@@ -40,7 +41,11 @@ else
                     </div>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" @onclick="@EnableEdit"/>
+                    <input type="button" class="btn btn-info" name="btnAddMore" value="Edit Profile" @onclick="@EnableEdit"/>
+                    <br />
+                    <br />
+                    <input type="button" class="btn btn-success" name="save" value="Save Changes" @onclick="@SendToServer" style="@display"/>
+                    <input type="button" class="btn btn-danger" name="cancel" value="Discard Changes" @onclick="@Cancel" style="@display" />
                 </div>
             </div>
             <br/>
@@ -68,8 +73,7 @@ else
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" Value="@user.email" SubmitOnEnter="true" Model="@TextModel">
-                                                    <InPlaceEditorEvents OnActionSuccess="@SendToServer" TValue="string"></InPlaceEditorEvents>
+                                                <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.email" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
                                                 </SfInPlaceEditor>
                                             </div>
                                         </div>
@@ -78,7 +82,8 @@ else
                                                 <label>Phone</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>@user.telNo</p>
+                                                <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.telNo" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                                                                                </SfInPlaceEditor>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -86,7 +91,8 @@ else
                                                 <label>Gender</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>@user.gender</p>
+                                                <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.gender" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                                                                                </SfInPlaceEditor>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -94,7 +100,8 @@ else
                                                 <label>Birthday</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>@user.birthday</p>
+                                                <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Date" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.birthday" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                                                                                </SfInPlaceEditor>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -102,7 +109,8 @@ else
                                                 <label>Address</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>@user.address</p>
+                                                <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.address" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                                                                                </SfInPlaceEditor>
                                             </div>
                                         </div>
                                     </div>
@@ -137,31 +145,40 @@ else
 @code {
     private RenderMode Mode = RenderMode.Inline;
     private EditableType EditableOn = EditableType.Click;
-    private bool ShowButtons { get; set; } = true;
+    private bool ShowButtons { get; set; } = false;
     private bool Disabled { get; set; } = true;
+    private string display = "display: none";
     User user;
+    User editedUser = new User();
     string idNr = "";
 
     protected override async Task OnInitializedAsync()
     {
         idNr = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value;
         user = await CloudUserService.GetUser(idNr);
+        editedUser.Update(user);
     }
-    
-    private object TextModel = new
-    {
-        placeholder = "Enter email"
-    };
 
     public void EnableEdit()
     {
         Disabled = false;
+        display = "display: inline";
     }
-    
-    public void SendToServer(ActionEventArgs args)
+
+    public void SendToServer()
     {
-        Console.WriteLine(args.Value);
-        //CloudUserService.EditUser(user);
+        CloudUserService.EditUser(editedUser);
+        user.Update(editedUser);
+        Disabled = true;
+        display = "display: none";
+    }
+
+    public void Cancel()
+    {
+        Disabled = true;
+        display = "display: none";
+        editedUser.Update(user);
+        StateHasChanged();
     }
 
 }

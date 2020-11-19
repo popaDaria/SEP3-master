@@ -13,32 +13,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39da3d61-0d00-475a-bb14-31b09aaef81b" name="Default Changelist" comment="Tabs fully working">
-      <change afterPath="$PROJECT_DIR$/SEP3/Pages/AddHospital.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/contentModel.xml" afterDir="false" />
+    <list default="true" id="39da3d61-0d00-475a-bb14-31b09aaef81b" name="Default Changelist" comment="Working profile view">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Data/CloudUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Data/CloudUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Data/ICloudUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Data/ICloudUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/Model/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Model/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/Pages/Profile.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Pages/Profile.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Shared/NavMenu.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Startup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Shared/NavMenu.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Shared/NavMenu.razor.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/NavMenu.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/NavMenu.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorComponent.input.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorComponent.input.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorCoreGenerate.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorCoreGenerate.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.TagHelpers.output.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.TagHelpers.output.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/wwwroot/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/wwwroot/css/profile.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +64,6 @@
         <option value="$PROJECT_DIR$/SEP3/Data/UserService.cs" />
         <option value="$PROJECT_DIR$/SEP3/Auth/CustomAuthenticationStateProvider.cs" />
         <option value="$PROJECT_DIR$/SEP3/Model/LoggedUser.cs" />
-        <option value="$PROJECT_DIR$/SEP3/Model/User.cs" />
         <option value="$PROJECT_DIR$/SEP3/Pages/Register.razor" />
         <option value="$PROJECT_DIR$/SEP3/Pages/LogIn.razor" />
         <option value="$PROJECT_DIR$/SEP3/Pages/Index.razor" />
@@ -88,6 +75,7 @@
         <option value="$PROJECT_DIR$/SEP3/Pages/AddHospital.razor" />
         <option value="$PROJECT_DIR$/SEP3/Data/CloudUserService.cs" />
         <option value="$PROJECT_DIR$/SEP3/Data/ICloudUserService.cs" />
+        <option value="$PROJECT_DIR$/SEP3/Model/User.cs" />
         <option value="$PROJECT_DIR$/SEP3/Pages/Profile.razor" />
       </list>
     </option>
@@ -159,7 +147,7 @@
       <workItem from="1605281509136" duration="24000" />
       <workItem from="1605539084766" duration="124000" />
       <workItem from="1605650133060" duration="5529000" />
-      <workItem from="1605726433123" duration="7225000" />
+      <workItem from="1605726433123" duration="12262000" />
     </task>
     <task id="LOCAL-00001" summary="First Version, Green Navbar">
       <created>1601938783775</created>
@@ -224,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605654076381</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Working profile view">
+      <created>1605759762904</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605759762904</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,7 +247,8 @@
     <MESSAGE value="make logout work" />
     <MESSAGE value="profile" />
     <MESSAGE value="Tabs fully working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tabs fully working" />
+    <MESSAGE value="Working profile view" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working profile view" />
   </component>
   <component name="WindowStateProjectService">
     <state x="108" y="147" width="2360" height="880" key="DiffContextDialog" timestamp="1604498577187">
@@ -267,28 +263,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="838" y="418" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604842882883" />
-    <state width="2517" height="232" key="GridCell.Tab.0.bottom" timestamp="1605759571774">
+    <state width="2517" height="232" key="GridCell.Tab.0.bottom" timestamp="1605764698821">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="232" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605759571774" />
+    <state width="2517" height="232" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605764698821" />
     <state width="931" height="168" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604836238912" />
     <state width="1037" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605000038364" />
-    <state width="2517" height="232" key="GridCell.Tab.0.center" timestamp="1605759571774">
+    <state width="2517" height="232" key="GridCell.Tab.0.center" timestamp="1605764698821">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="232" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605759571774" />
+    <state width="2517" height="232" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605764698821" />
     <state width="931" height="168" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1604836238912" />
     <state width="1037" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605000038364" />
-    <state width="2517" height="232" key="GridCell.Tab.0.left" timestamp="1605759571774">
+    <state width="2517" height="232" key="GridCell.Tab.0.left" timestamp="1605764698821">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="232" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605759571774" />
+    <state width="2517" height="232" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605764698821" />
     <state width="931" height="168" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1604836238912" />
     <state width="1037" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605000038364" />
-    <state width="2517" height="232" key="GridCell.Tab.0.right" timestamp="1605759571774">
+    <state width="2517" height="232" key="GridCell.Tab.0.right" timestamp="1605764698821">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="232" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605759571774" />
+    <state width="2517" height="232" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605764698821" />
     <state width="931" height="168" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1604836238912" />
     <state width="1037" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605000038364" />
     <state width="2517" height="389" key="GridCell.Tab.1.bottom" timestamp="1605653408647">
@@ -375,10 +371,14 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="361" y="164" key="Rider.ProjectTemplateDialog.Size/0.0.1536.864@0.0.1536.864" timestamp="1604565978106" />
-    <state x="872" y="272" key="Vcs.Push.Dialog.v2" timestamp="1605654092214">
+    <state x="990" y="218" key="RiderGenerateDialog" timestamp="1605762740044">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state x="872" y="272" key="Vcs.Push.Dialog.v2/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605654092214" />
+    <state x="990" y="218" key="RiderGenerateDialog/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605762740044" />
+    <state x="872" y="272" key="Vcs.Push.Dialog.v2" timestamp="1605759772626">
+      <screen x="0" y="0" width="2560" height="1080" />
+    </state>
+    <state x="872" y="272" key="Vcs.Push.Dialog.v2/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605759772626" />
     <state x="523" y="218" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1604833968073" />
     <state x="654" y="262" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604850590213" />
     <state x="540" y="167" key="VcsDiffUtil.ChangesDialog" timestamp="1604561554438">

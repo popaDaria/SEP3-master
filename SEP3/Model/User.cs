@@ -18,5 +18,20 @@ namespace SEP3.Model
         public string telNo { get; set; }
         public string address { get; set; }
         public bool validated { get; set; }
+
+        public void Update(User user)
+        {
+            this.idNr = user.idNr;
+            this.password = user.password;
+            this.firstname = user.firstname;
+            this.lastname = user.lastname;
+            this.userType = user.userType;
+            this.email = user.email;
+            this.gender = user.gender;
+            this.birthday = user.birthday;
+            this.telNo = user.telNo;
+            this.address = user.address;
+            this.validated = user.validated;
+        }
     }
 }

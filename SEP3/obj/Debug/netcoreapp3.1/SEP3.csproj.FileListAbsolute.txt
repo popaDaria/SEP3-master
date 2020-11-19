@@ -206,3 +206,5 @@ C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.pdb
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.genruntimeconfig.cache
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ProfileMedical.razor.g.cs
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ProfileMedical.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\AddHospital.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\AddHospital.razor.g.cs

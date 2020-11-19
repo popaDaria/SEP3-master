@@ -7,5 +7,7 @@ namespace SEP3.Data
     {
         public Task<LoggedUser> ValidateUser(string idNr, string password);
         public Task AddUser(User user);
+        public Task<User> GetUser(string idNr);
+        public Task EditUser(User user);
     }
 }

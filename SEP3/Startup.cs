@@ -34,6 +34,11 @@ namespace SEP3
             services.AddScoped<ICloudUserService, CloudUserService>();
             services.AddScoped<AuthenticationStateProvider,CustomAuthenticationStateProvider>();
             services.AddSyncfusionBlazor();
+            
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("MustBeLoggedIn", a => a.RequireAuthenticatedUser());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

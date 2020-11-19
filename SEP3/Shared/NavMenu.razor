@@ -16,9 +16,12 @@
                 <li class="nav-item">
                     <a class="nav-link pl-4 pr-4" href="register">Register</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link pl-4 pr-4" href="profile">Profile</a>
-                </li>
+                <AuthorizeView Policy="MustBeLoggedIn">
+                    <li class="nav-item">
+                        <a class="nav-link pl-4 pr-4" href="profile">Profile</a>
+                    </li>
+                </AuthorizeView>
+
             </ul>
         </div>
     </div>

@@ -34,6 +34,7 @@
         </e>
         <e p="Pages" t="Include">
           <e p="_Host.cshtml" t="Include" />
+          <e p="AddHospital.razor" t="Include" />
           <e p="HomeHospitalComponent.razor" t="Include" />
           <e p="Index.razor" t="Include" />
           <e p="LogIn.razor" t="Include" />

@@ -1,108 +1,167 @@
 ﻿@page "/profile"
-@using Syncfusion.Blazor.Navigations
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.InPlaceEditor
+@using SEP3.Model
+@using SEP3.Data
+@using SEP3.Auth
+@using RenderMode = Syncfusion.Blazor.InPlaceEditor.RenderMode
+@using InputType = Syncfusion.Blazor.InPlaceEditor.InputType
+
+@inject ICloudUserService CloudUserService;
+@inject AuthenticationStateProvider AuthenticationStateProvider;
 
 <link href="css/profile.css" type="text/css" rel="stylesheet"/>
-<div class="container emp-profile">
-    <form method="post">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="profile-img">
-                    <img src="images/weed.jpg" alt=""/>
+@if (user == null)
+{
+    <div class="d-flex">
+        <div class="spinner-grow text-light align-middle spinner" role="status">
+            <span class="sr-only">Loading...</span>
+        </div></div>
+}
+else
+{
+    <div class="container emp-profile">
+        <form method="post">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="profile-img">
+                        <img src="images/weed.jpg" alt=""/>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-3">
+                    <div class="profile-head">
+                        <h3 align="center">
+                            @user.firstname @user.lastname
+                        </h3>
+                        <h4 align="center">
+                            @user.userType.ToUpper()
+                        </h4>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" @onclick="@EnableEdit"/>
                 </div>
             </div>
-            <div class="col-lg-1"></div>
-            <div class="col-lg-3">
-                <div class="profile-head">
-                    <h3 align="center">
-                        Lorena Ciocotoiu
-                    </h3>
-                    <h4 align="center">
-                        Patient
-                    </h4>
+            <br/>
+            <div class="row">
+                <div class="col-md-12 profile-tab">
+                    <SfTab>
+                        <TabItems>
+                            <TabItem>
+                                <ChildContent>
+                                    <TabHeader Text="About"/>
+                                </ChildContent>
+                                <ContentTemplate>
+                                    <div class="container">
+                                        <br/>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>User Id</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>@user.idNr</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Email</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" Value="@user.email" SubmitOnEnter="true" Model="@TextModel">
+                                                    <InPlaceEditorEvents OnActionSuccess="@SendToServer" TValue="string"></InPlaceEditorEvents>
+                                                </SfInPlaceEditor>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Phone</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>@user.telNo</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Gender</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>@user.gender</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Birthday</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>@user.birthday</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Address</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>@user.address</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ContentTemplate>
+                            </TabItem>
+                            <TabItem>
+                                <ChildContent>
+                                    <TabHeader Text="Medical History"/>
+                                </ChildContent>
+                                <ContentTemplate>
+                                    <div class="container">
+                                        <br/>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Treatment</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>COVID-19 - Bleach</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ContentTemplate>
+                            </TabItem>
+                        </TabItems>
+                    </SfTab>
                 </div>
             </div>
-            <div class="col-lg-4 text-center">
-                <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
-            </div>
-        </div>
-        <br/>
-        <div class="row">
-            <div class="col-md-12 profile-tab">
-                <SfTab>
-                    <TabItems>
-                        <TabItem>
-                            <ChildContent>
-                                <TabHeader Text="About"/>
-                            </ChildContent>
-                            <ContentTemplate>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>User Id</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>caca123</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Name</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Micutza Printzesa :*******</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Email</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>caca69@gmail.com</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Phone</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>123 456 7890</p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Profession</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>Spart borcane</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </ContentTemplate>
-                        </TabItem>
-                        <TabItem>
-                            <ChildContent>
-                                <TabHeader Text="Medical History"/>
-                            </ChildContent>
-                            <ContentTemplate>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <label>Treatment</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p>COVID-19 - Bleach</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </ContentTemplate>
-                        </TabItem>
-                    </TabItems>
-                </SfTab>
-            </div>
-        </div>
-    </form>
-</div>
+        </form>
+    </div>
+}
 
 @code {
+    private RenderMode Mode = RenderMode.Inline;
+    private EditableType EditableOn = EditableType.Click;
+    private bool ShowButtons { get; set; } = true;
+    private bool Disabled { get; set; } = true;
+    User user;
+    string idNr = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        idNr = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value;
+        user = await CloudUserService.GetUser(idNr);
+    }
+    
+    private object TextModel = new
+    {
+        placeholder = "Enter email"
+    };
+
+    public void EnableEdit()
+    {
+        Disabled = false;
+    }
+    
+    public void SendToServer(ActionEventArgs args)
+    {
+        Console.WriteLine(args.Value);
+        //CloudUserService.EditUser(user);
+    }
 
 }

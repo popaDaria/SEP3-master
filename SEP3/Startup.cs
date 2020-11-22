@@ -39,6 +39,11 @@ namespace SEP3
             {
                 options.AddPolicy("MustBeLoggedIn", a => a.RequireAuthenticatedUser());
             });
+            
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("MustBeLoggedInAsManager", a => a.RequireAuthenticatedUser().RequireRole("manager"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

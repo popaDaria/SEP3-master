@@ -21,6 +21,11 @@
                         <a class="nav-link pl-4 pr-4" href="profile">Profile</a>
                     </li>
                 </AuthorizeView>
+                <AuthorizeView Policy="MustBeLoggedInAsManager">
+                    <li class="nav-item">
+                        <a class="nav-link pl-4 pr-4" href="addHospital">Add Hospital</a>
+                    </li>
+                </AuthorizeView>
 
             </ul>
         </div>

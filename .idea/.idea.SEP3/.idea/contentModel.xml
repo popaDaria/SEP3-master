@@ -17,8 +17,6 @@
         <e p="Data" t="Include">
           <e p="CloudUserService.cs" t="Include" />
           <e p="ICloudUserService.cs" t="Include" />
-          <e p="WeatherForecast.cs" t="Include" />
-          <e p="WeatherForecastService.cs" t="Include" />
         </e>
         <e p="Model" t="Include">
           <e p="LoggedUser.cs" t="Include" />

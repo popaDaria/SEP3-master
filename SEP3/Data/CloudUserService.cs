@@ -27,6 +27,7 @@ namespace SEP3.Data
             LoggedUser loggedUser = new LoggedUser();
             loggedUser.password = Password;
             loggedUser.username = idNr;
+            loggedUser.userType = result.userType;
             return loggedUser;
         }
 

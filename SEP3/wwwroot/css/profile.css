@@ -93,9 +93,10 @@
     font-size: 20px;
 }
 .profile-tab p{
-    font-weight: 600;
-    color: #0062cc;
-    font-size: 20px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: black;
+    font-size: 15px;
+    padding: 10px 10px 0 10px;
 }
 .spinner {
     display: block;

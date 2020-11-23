@@ -49,6 +49,7 @@
     position: absolute;
     z-index: 1000;
     padding: 9px 15px 0;
+    margin-top: 0;
 }
 #hamburger.menu:before {
     content: '\e10d';

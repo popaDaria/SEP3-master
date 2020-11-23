@@ -22,125 +22,126 @@
 }
 else
 {
-    <div class="container emp-profile">
-        <form method="post">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="profile-img">
-                        <img src="images/weed.jpg" alt=""/>
+    <br >
+        <div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="profile-img">
+                            <img src="images/weed.jpg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-3">
+                        <div class="profile-head">
+                            <h3 align="center">
+                                @user.firstname @user.lastname
+                            </h3>
+                            <h4 align="center">
+                                @user.userType.ToUpper()
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <input type="button" class="btn btn-info" name="btnAddMore" value="Edit Profile" @onclick="@EnableEdit"/>
+                        <br/>
+                        <br/>
+                        <input type="button" class="btn btn-success" name="save" value="Save Changes" @onclick="@SendToServer" style="@display"/>
+                        <input type="button" class="btn btn-danger" name="cancel" value="Discard Changes" @onclick="@Cancel" style="@display"/>
                     </div>
                 </div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-3">
-                    <div class="profile-head">
-                        <h3 align="center">
-                            @user.firstname @user.lastname
-                        </h3>
-                        <h4 align="center">
-                            @user.userType.ToUpper()
-                        </h4>
+                <br/>
+                <div class="row">
+                    <div class="col-md-12 profile-tab">
+                        <SfTab>
+                            <TabItems>
+                                <TabItem>
+                                    <ChildContent>
+                                        <TabHeader Text="About"/>
+                                    </ChildContent>
+                                    <ContentTemplate>
+                                        <div class="container">
+                                            <br/>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>User ID</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>@user.idNr</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Email</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.email" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                                    </SfInPlaceEditor>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Phone</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.telNo" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                                    </SfInPlaceEditor>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Gender</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.gender" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                                    </SfInPlaceEditor>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Birthday</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Date" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.birthday" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                                    </SfInPlaceEditor>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Address</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.address" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                                    </SfInPlaceEditor>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ContentTemplate>
+                                </TabItem>
+                                <TabItem>
+                                    <ChildContent>
+                                        <TabHeader Text="Medical History"/>
+                                    </ChildContent>
+                                    <ContentTemplate>
+                                        <div class="container">
+                                            <br/>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>Treatment</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>COVID-19 - Bleach</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ContentTemplate>
+                                </TabItem>
+                            </TabItems>
+                        </SfTab>
                     </div>
                 </div>
-                <div class="col-lg-4 text-center">
-                    <input type="button" class="btn btn-info" name="btnAddMore" value="Edit Profile" @onclick="@EnableEdit"/>
-                    <br />
-                    <br />
-                    <input type="button" class="btn btn-success" name="save" value="Save Changes" @onclick="@SendToServer" style="@display"/>
-                    <input type="button" class="btn btn-danger" name="cancel" value="Discard Changes" @onclick="@Cancel" style="@display" />
-                </div>
-            </div>
-            <br/>
-            <div class="row">
-                <div class="col-md-12 profile-tab">
-                    <SfTab>
-                        <TabItems>
-                            <TabItem>
-                                <ChildContent>
-                                    <TabHeader Text="About"/>
-                                </ChildContent>
-                                <ContentTemplate>
-                                    <div class="container">
-                                        <br/>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>User ID</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>@user.idNr</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Email</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.email" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
-                                                </SfInPlaceEditor>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Phone</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.telNo" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
-                                                                                                </SfInPlaceEditor>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Gender</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.gender" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
-                                                                                                </SfInPlaceEditor>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Birthday</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Date" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.birthday" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
-                                                                                                </SfInPlaceEditor>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Address</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.address" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
-                                                                                                </SfInPlaceEditor>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </ContentTemplate>
-                            </TabItem>
-                            <TabItem>
-                                <ChildContent>
-                                    <TabHeader Text="Medical History"/>
-                                </ChildContent>
-                                <ContentTemplate>
-                                    <div class="container">
-                                        <br/>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Treatment</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>COVID-19 - Bleach</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </ContentTemplate>
-                            </TabItem>
-                        </TabItems>
-                    </SfTab>
-                </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div></br>
 }
 
 @code {

@@ -75,6 +75,7 @@
               <e p="README.md" t="Include" />
             </e>
             <e p="profile.css" t="Include" />
+            <e p="sidebar.css" t="Include" />
             <e p="site.css" t="Include" />
           </e>
           <e p="favicon.ico" t="Include" />

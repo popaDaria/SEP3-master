@@ -18,6 +18,7 @@ namespace SEP3.Model
         public string telNo { get; set; }
         public string address { get; set; }
         public bool validated { get; set; }
+        public byte[] image { get; set; }
 
         public void Update(User user)
         {
@@ -32,6 +33,7 @@ namespace SEP3.Model
             this.telNo = user.telNo;
             this.address = user.address;
             this.validated = user.validated;
+            this.image = user.image;
         }
     }
 }

@@ -1,0 +1,82 @@
+﻿@page "/addHospital"
+@attribute [Authorize(Roles = "manager")]
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Buttons
+@using InputType = Syncfusion.Blazor.Inputs.InputType
+
+<div class="col-lg-12 control-section">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <b>Send a new hospital to be reviewed and added to the platform</b>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <SfTextBox Placeholder="Name" FloatLabelType="@FloatLabelType.Auto"></SfTextBox>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <div class="radio-control">
+                    <h4 class="row">Type</h4>
+                    <div class="row">
+                        <SfRadioButton Label="Hospital" Name="type" Value="false" Checked="true"></SfRadioButton>
+                    </div>
+                    <div class="row">
+                        <SfRadioButton Label="Clinic" Name="type" Value="false" Checked="false"></SfRadioButton>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <SfTextBox CssClass="e-rtl" Placeholder="Postal Code" FloatLabelType="@FloatLabelType.Auto"></SfTextBox>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <SfTextBox CssClass="e-rtl" Placeholder="Whole Address" FloatLabelType="@FloatLabelType.Auto" Multiline="true"></SfTextBox>
+            </div>
+        </div>
+        <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                        <SfTextBox CssClass="e-rtl" Placeholder="Description" FloatLabelType="@FloatLabelType.Auto" Multiline="true"></SfTextBox>
+                    </div>
+                </div>
+        <SfButton IsPrimary="true">Primary</SfButton>
+    </div>
+</div>
+<style>
+   
+    .content-wrapper {
+        width: 90%;
+        margin: 0 auto;
+        min-width: 85px;
+    }
+        .content-wrapper div.row {
+            padding: 15px 0px;
+        }
+    
+    @@media only screen and (max-width: 480px) {
+        .content-wrapper {
+            width: 92%;
+        }
+        .col-xs-6,
+        .col-xs-4,
+        .col-xs-12 {
+            padding: 10px 5px;
+            width: 100%;
+        }
+        .content-wrapper div.row {
+            padding: 0px;
+        }
+    }
+    #description td {
+        vertical-align: top;
+    }
+   
+</style>
+@code  {
+   
+}

@@ -27,6 +27,7 @@ namespace SEP3.Data
             LoggedUser loggedUser = new LoggedUser();
             loggedUser.password = Password;
             loggedUser.username = idNr;
+            loggedUser.userType = result.userType;
             return loggedUser;
         }
 
@@ -47,6 +48,28 @@ namespace SEP3.Data
             HttpResponseMessage responseMessage =
                 await client.PutAsync("http://localhost:8085/users", content);
             Console.WriteLine(responseMessage.StatusCode); 
+        }
+
+        public async Task<User> GetUser(string idNr)
+        {
+            HttpClient client = new HttpClient();
+            string message = await client.GetStringAsync("http://localhost:8085/users?idNr="+idNr);
+            Console.WriteLine(message);
+            User result = JsonSerializer.Deserialize<User>(message);
+            return result;
+        }
+
+        public async Task EditUser(User user)
+        {
+            HttpClient client = new HttpClient();
+            string usersSerialized = JsonSerializer.Serialize(user);
+            StringContent content = new StringContent(
+                usersSerialized,
+                Encoding.UTF8,
+                "application/json"
+            );
+            HttpResponseMessage message = await client.PatchAsync("http://localhost:8085/users", content);
+            Console.WriteLine(message.StatusCode);
         }
     }
 }

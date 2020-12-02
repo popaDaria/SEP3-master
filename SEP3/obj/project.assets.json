@@ -1108,19 +1108,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Tania Maria\\.nuget\\packages\\": {}
+    "C:\\Users\\mainh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master\\SEP3\\SEP3.csproj",
+      "projectUniqueName": "D:\\SEP3-master\\SEP3\\SEP3.csproj",
       "projectName": "SEP3",
-      "projectPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master\\SEP3\\SEP3.csproj",
-      "packagesPath": "C:\\Users\\Tania Maria\\.nuget\\packages\\",
-      "outputPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master\\SEP3\\obj\\",
+      "projectPath": "D:\\SEP3-master\\SEP3\\SEP3.csproj",
+      "packagesPath": "C:\\Users\\mainh\\.nuget\\packages\\",
+      "outputPath": "D:\\SEP3-master\\SEP3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Tania Maria\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\mainh\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -1130,6 +1130,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -1141,6 +1142,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Syncfusion.Blazor": {
             "target": "Package",
@@ -1157,6 +1159,16 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.8, 3.1.8]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.9, 3.1.9]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1165,7 +1177,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

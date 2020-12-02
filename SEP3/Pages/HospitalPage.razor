@@ -63,15 +63,18 @@ else
                         <br/>
                         <br/>
                     </div>
-                    <p>
-                        @hospital.info
-                    </p>
+
+                    <div class="container pl-4 ml-4">
+                        <p>
+                            @hospital.info
+                        </p>
+                    </div>
                     <div class="container">
                         <SfMaps ModelType="@typeof(IDataTemplate)">
                             <MapsTitleSettings Text="@addressHeader"/>
                             <MapsCenterPosition Latitude="@lat" Longitude="@lon"/>
                             <MapsZoomSettings Enable="true"
-                                              Toolbars='new string[] {"Zoom", "ZoomIn", "ZoomOut", "Pan", "Reset"}' ShouldZoomInitially="true" MaxZoom="20" MinZoom="10">
+                                              Toolbars='new string[] {"Zoom", "ZoomIn", "ZoomOut", "Pan", "Reset"}' ShouldZoomInitially="false" MaxZoom="20" MinZoom="15" ZoomFactor="15">
 
                             </MapsZoomSettings>
 
@@ -117,7 +120,7 @@ else
     }
 
     public List<MarkerData> MarkerDatas = new List<MarkerData>();
-    
+
 
     [Parameter]
     public string id { get; set; }
@@ -126,7 +129,7 @@ else
     protected override async Task OnInitializedAsync()
     {
         hospital = await CloudHospitalService.GetHospital(Int32.Parse(id));
-        addressHeader = "The address of " + hospital.name + ':' + hospital.address;
+        addressHeader = "The address of " + hospital.name + ": " + hospital.address;
         await GetCoordinates();
         MarkerDatas.Add(new MarkerData {Name = "Map", Latitude = lat, Longitude = lon});
     }
@@ -134,18 +137,16 @@ else
     public async Task GetCoordinates()
     {
         HttpClient client = new HttpClient();
-        HttpResponseMessage message = await client.GetAsync("https://us1.locationiq.com/v1/search.php?key=pk.c4b221acbc78318a8f75e22369de4311&format=json&q="+HttpUtility.UrlEncode(hospital.address));
+        HttpResponseMessage message = await client.GetAsync("https://us1.locationiq.com/v1/search.php?key=pk.c4b221acbc78318a8f75e22369de4311&format=json&q=" + HttpUtility.UrlEncode(hospital.address));
         string content = await message.Content.ReadAsStringAsync();
         Console.WriteLine(message.Content.ReadAsStringAsync().Result);
-        // string result = JsonConvert.DeserializeObject<string>(content);
+    // string result = JsonConvert.DeserializeObject<string>(content);
         string result = content;
         if (result.Length > 40)
         {
             lat = Double.Parse(result.Split("\"")[29]);
             lon = Double.Parse(result.Split("\"")[33]);
         }
-        
-        
     }
 
     // editedUser.Update(user);

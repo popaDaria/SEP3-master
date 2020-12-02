@@ -1,0 +1,94 @@
+﻿@page "/login"
+@namespace LoginComponent
+
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.Buttons
+@using SEP3.Auth
+@using Microsoft.AspNetCore.Mvc.Formatters
+@using InputType = Syncfusion.Blazor.Inputs.InputType
+@inject AuthenticationStateProvider AuthenticationStateProvider;
+@inject NavigationManager NavigationManager;
+
+<link href="css/style.css" type="text/css" rel="stylesheet"/>
+
+
+<AuthorizeView>
+    <NotAuthorized>
+        <div class="surround">
+            <div class="WelcomeText">Welcome</div>
+            <div class="formBlock">
+                <form @onsubmit="@PerformLogIn">
+                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                        <SfTextBox CssClass="e-outline" Placeholder="ID" FloatLabelType="@FloatLabelType.Auto" @bind-value="idNr"></SfTextBox>
+                    </div>
+                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                        <SfTextBox CssClass="e-filled" Placeholder="Password" FloatLabelType="@FloatLabelType.Auto" Type="InputType.Password" @bind-value="Password"></SfTextBox>
+                    </div>
+                    <button type="submit" class="btn btn-primary, col-xs-4 col-sm-4 col-lg-4 col-md-4, button">Log in</button>
+                    <div class="alert alert-danger mt-2" style="@display">@ErrorMessage</div>
+                </form>
+            </div>
+            <div class="mt-5 mb-3">
+                <a href="">
+                    <button @onclick="@signUp" class="btn btn-primary, col-xs-4 col-sm-4 col-lg-4 col-md-4, button">
+                        Sign up
+                    </button>
+                </a>
+            </div>
+        </div>
+    </NotAuthorized>
+    @* Moved to NavMenu *@
+    @* <Authorized> *@
+    @*     <h1>Log out of your account</h1> *@
+    @*     <button @onclick="PerformLogOut" class="btn btn-primary">Log out</button> *@
+    @* </Authorized> *@
+</AuthorizeView>
+
+@code {
+    
+    private string idNr;
+    private string Password;
+    private string ErrorMessage;
+    private string display = "display: none";
+
+    public async Task PerformLogIn()
+    {
+        ErrorMessage = "";
+        try
+        {
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(idNr, Password).Wait(100);
+            // NavigationManager.NavigateTo("/");
+            idNr = "";
+            Password = "";
+            display = "display: none";
+        }
+        catch (Exception e)
+        {
+            display = "display: block";
+            ErrorMessage = e.Message;
+        }
+    }
+
+    // Log out function moved to NavMenu
+    
+    // public async Task PerformLogOut()
+    // {
+    //     ErrorMessage = "";
+    //     idNr = "";
+    //     Password = "";
+    //     try
+    //     {
+    //         ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+    //         NavigationManager.NavigateTo("/");
+    //     }
+    //     catch (Exception e)
+    //     {
+    //     }
+    // }
+
+    private void signUp(MouseEventArgs e)
+    {
+        NavigationManager.NavigateTo("/register");
+    }
+
+}

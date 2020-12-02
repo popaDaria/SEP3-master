@@ -1,0 +1,30 @@
+﻿<div class="component">
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="@imgSource" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">Mary Jane Hospital</h5>
+        <p class="card-text">
+            <span class="oi oi-location">Christiania, Copenhagen</span>
+            <br />
+            <span class="oi oi-star">5</span>
+            <br />
+            Mary Jane Hospital provides state-of-the-art medical care to ensure our patients are cared for medically and cared about personally and to ensure a medically ready force, prepared to accomplish their mission. We're committed to operational readiness, outstanding customer service, and world-class health care delivery for our beneficiaries.
+        </p>
+        <a href="#" class="btn btn-primary">View hospital page</a>
+    </div>
+</div>
+</div>
+@code {
+
+    [Parameter]
+    public string imgSource { get; set; }
+
+}
+
+<style>
+    .component {
+    display: inline-block;
+    padding: 10px;
+    flex: 0 0 auto;
+    }
+</style>

@@ -1,0 +1,44 @@
+body{
+    background: -webkit-linear-gradient(left, #29a05e, #4bdd98);
+}
+
+/* Rectangle 1 */
+
+.surround{
+position: relative;
+width: 450px;
+height: 650px;
+left: 735px;
+top: 195px;
+
+background: #EFEFEF;
+box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -10px -10px 50px rgba(255, 255, 255, 0.35);
+border-radius: 20px;
+}
+
+/* Welcome ! */
+
+.WelcomeText {
+    
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 72px;
+line-height: 84px;
+
+color: rgba(0, 0, 0, 0.5);
+
+}
+
+/* Button*/
+
+.button{
+
+background: #9EDC94;
+margin: 2px;
+border: 2px solid #EFEFEF;
+box-sizing: border-box;
+box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -15px -10px 60px 20px rgba(255, 255, 255, 0.2);
+border-radius: 50px;
+}
+

@@ -25,6 +25,7 @@
       "SEP3/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.1",
+          "Spk.LocationIq.Wrapper": "1.0.0",
           "Syncfusion.Blazor": "18.3.0.47",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -305,6 +306,21 @@
           "SEP3.dll": {}
         }
       },
+      "JsonSubTypes/1.2.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.6/JsonSubTypes.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.6/JsonSubTypes.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/3.1.8": {
         "dependencies": {
           "Microsoft.AspNetCore.Metadata": "3.1.8",
@@ -502,6 +518,33 @@
         },
         "compile": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "RestSharp/105.1.0": {
+        "runtime": {
+          "lib/net452/RestSharp.dll": {
+            "assemblyVersion": "105.1.0.0",
+            "fileVersion": "105.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/net452/RestSharp.dll": {}
+        }
+      },
+      "Spk.LocationIq.Wrapper/1.0.0": {
+        "dependencies": {
+          "JsonSubTypes": "1.2.0",
+          "Newtonsoft.Json": "12.0.1",
+          "RestSharp": "105.1.0"
+        },
+        "runtime": {
+          "lib/net45/locationiq.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/net45/locationiq.dll": {}
         }
       },
       "Syncfusion.Blazor/18.3.0.47": {
@@ -2199,6 +2242,13 @@
       "serviceable": false,
       "sha512": ""
     },
+    "JsonSubTypes/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XY9yuNIl9LmHhC/Vz+u35lB7Dyj/H/biKsNybJI9XLUyabBIHPF1PQ3PY/ffADn/LdjiQOhx/ry+ZsuEO4mBnw==",
+      "path": "jsonsubtypes/1.2.0",
+      "hashPath": "jsonsubtypes.1.2.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Authorization/3.1.8": {
       "type": "package",
       "serviceable": true,
@@ -2352,6 +2402,20 @@
       "sha512": "sha512-pBR3wCgYWZGiaZDYP+HHYnalVnPJlpP1q55qvVb+adrDHmFMDc1NAKio61xTwftK3Pw5h7TZJPJEEVMd6ty8rg==",
       "path": "newtonsoft.json/12.0.1",
       "hashPath": "newtonsoft.json.12.0.1.nupkg.sha512"
+    },
+    "RestSharp/105.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2DRH1cpTOJwesBOwQ0cIhVHUmupbRKt+tdSatfdvndvsawsGMIEgrbq8yv6g3GM1MRVcb37bT8LACVFsqITDmg==",
+      "path": "restsharp/105.1.0",
+      "hashPath": "restsharp.105.1.0.nupkg.sha512"
+    },
+    "Spk.LocationIq.Wrapper/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TciNzH8gnZgQjTO31nHhJB/ASqGrU0F4IKHtXRoho1Yxm44fM/k8zK9EmGTQICfURJ6HjkuuyT4c6Hd4pTRnVw==",
+      "path": "spk.locationiq.wrapper/1.0.0",
+      "hashPath": "spk.locationiq.wrapper.1.0.0.nupkg.sha512"
     },
     "Syncfusion.Blazor/18.3.0.47": {
       "type": "package",

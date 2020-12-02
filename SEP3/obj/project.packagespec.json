@@ -30,6 +30,10 @@
           "target": "Package",
           "version": "[12.0.1, )"
         },
+        "Spk.LocationIq.Wrapper": {
+          "target": "Package",
+          "version": "[1.0.0, )"
+        },
         "Syncfusion.Blazor": {
           "target": "Package",
           "version": "[18.3.0.47, )"

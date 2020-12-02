@@ -1,0 +1,187 @@
+﻿@page "/hospital/{id}"
+@using Syncfusion.Blazor.Navigations
+@using Syncfusion.Blazor.InPlaceEditor
+@using SEP3.Model
+@using SEP3.Data
+@using SEP3.Auth
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Maps
+@using RenderMode = Syncfusion.Blazor.InPlaceEditor.RenderMode
+@using InputType = Syncfusion.Blazor.InPlaceEditor.InputType
+
+@using locationiq.Api
+@using locationiq.Client
+@using Newtonsoft.Json
+@using System.Web
+
+
+
+@inject ICloudHospitalService CloudHospitalService;
+@inject AuthenticationStateProvider AuthenticationStateProvider;
+
+
+<link href="css/profile.css" type="text/css" rel="stylesheet"/>
+@if (hospital == null)
+{
+    <div class="d-flex">
+        <div class="spinner-grow text-light align-middle spinner" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+}
+else
+{
+    <div class="container" style="box-sizing: border-box; padding-top: 5%; padding-bottom: 5%;">
+        <div class="emp-profile container p-3">
+            <form method="post">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="profile-img">
+                            <img src="images/weed.jpg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-3">
+                        <div class="profile-head">
+                            <h3 align="center">
+                                @hospital.name
+                            </h3>
+                            <h4 align="center">
+                                @hospital.type.ToUpper()
+                            </h4>
+                            <h6 align="center">
+                                @hospital.postalCode
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <input type="button" class="btn btn-info" name="btnAddMore" value="Edit Profile"/>
+                        <br/>
+                        <br/>
+                        <input type="button" class="btn btn-success" name="save" value="Save Changes"/>
+                        <input type="button" class="btn btn-danger" name="cancel" value="Discard Changes"/>
+                        <br/>
+                        <br/>
+                    </div>
+                    <p>
+                        @hospital.info
+                    </p>
+                    <div class="container">
+                        <SfMaps ModelType="@typeof(IDataTemplate)">
+                            <MapsTitleSettings Text="@addressHeader"/>
+                            <MapsCenterPosition Latitude="@lat" Longitude="@lon"/>
+                            <MapsZoomSettings Enable="true"
+                                              Toolbars='new string[] {"Zoom", "ZoomIn", "ZoomOut", "Pan", "Reset"}' ShouldZoomInitially="true" MaxZoom="20" MinZoom="10">
+
+                            </MapsZoomSettings>
+
+                            <MapsLayers>
+                                <MapsLayer LayerType="ShapeLayerType.OSM" UrlTemplate="http://mt1.google.com/vt/lyrs=m@129&hl=en&x=tileX&y=tileY&z=level">
+                                    <MapsMarkerSettings>
+                                        <MapsMarker Visible="true" DataSource="@MarkerDatas">
+                                            <ChildContent>
+                                                <MapsMarkerTooltipSettings Visible="true" ValuePath="Name"/>
+                                            </ChildContent>
+                                            <MarkerTemplate>
+                                                @{
+                                                    <div>
+                                                        <img class="markerTemplate" style="margin-top:-10px;margin-left:-10px;" src="images/balloon.png"/>
+                                                    </div>
+                                                }
+                                            </MarkerTemplate>
+                                        </MapsMarker>
+                                    </MapsMarkerSettings>
+                                </MapsLayer>
+                            </MapsLayers>
+                        </SfMaps>
+                    </div>
+                </div>
+                <br/>
+            </form>
+        </div>
+    </div>
+}
+
+@code {
+    Hospital hospital;
+    public string addressHeader;
+    double lon = 10;
+    double lat = 10;
+
+
+    public class MarkerData
+    {
+        public string Name;
+        public double Latitude;
+        public double Longitude;
+    }
+
+    public List<MarkerData> MarkerDatas = new List<MarkerData>();
+    
+
+    [Parameter]
+    public string id { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        hospital = await CloudHospitalService.GetHospital(Int32.Parse(id));
+        addressHeader = "The address of " + hospital.name + ':' + hospital.address;
+        await GetCoordinates();
+        MarkerDatas.Add(new MarkerData {Name = "Map", Latitude = lat, Longitude = lon});
+    }
+
+    public async Task GetCoordinates()
+    {
+        HttpClient client = new HttpClient();
+        HttpResponseMessage message = await client.GetAsync("https://us1.locationiq.com/v1/search.php?key=pk.c4b221acbc78318a8f75e22369de4311&format=json&q="+HttpUtility.UrlEncode(hospital.address));
+        string content = await message.Content.ReadAsStringAsync();
+        Console.WriteLine(message.Content.ReadAsStringAsync().Result);
+        // string result = JsonConvert.DeserializeObject<string>(content);
+        string result = content;
+        if (result.Length > 40)
+        {
+            lat = Double.Parse(result.Split("\"")[29]);
+            lon = Double.Parse(result.Split("\"")[33]);
+        }
+        
+        
+    }
+
+    // editedUser.Update(user);
+
+
+    // public void SendToServer()
+    // {
+    //     CloudUserService.EditUser(editedUser);
+    //     user.Update(editedUser);
+    //     Disabled = true;
+    //     display = "display: none";
+    // }
+    //
+    // public void Cancel()
+    // {
+    //     Disabled = true;
+    //     display = "display: none";
+    //     editedUser.Update(user);
+    //     StateHasChanged();
+    // }
+
+
+}
+
+<style>
+    .markerTemplate {
+        height: 30px;
+        width: 20px;
+        display: block;
+        margin: auto;
+        font-size: 14px;
+        object-fit: cover;
+    }
+    
+    .SfMaps {
+    border-radius: 20px;
+    }
+    
+</style>

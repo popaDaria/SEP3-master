@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "JsonSubTypes/1.2.0": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "10.0.3"
+        },
+        "compile": {
+          "lib/netstandard1.6/JsonSubTypes.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/JsonSubTypes.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/3.1.8": {
         "type": "package",
         "dependencies": {
@@ -251,6 +264,29 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "RestSharp/105.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net452/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net452/RestSharp.dll": {}
+        }
+      },
+      "Spk.LocationIq.Wrapper/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "JsonSubTypes": "1.2.0",
+          "NewtonSoft.Json": "10.0.3",
+          "RestSharp": "105.1.0"
+        },
+        "compile": {
+          "lib/net45/locationiq.dll": {}
+        },
+        "runtime": {
+          "lib/net45/locationiq.dll": {}
+        }
+      },
       "Syncfusion.Blazor/18.3.0.47": {
         "type": "package",
         "dependencies": {
@@ -329,6 +365,26 @@
     }
   },
   "libraries": {
+    "JsonSubTypes/1.2.0": {
+      "sha512": "XY9yuNIl9LmHhC/Vz+u35lB7Dyj/H/biKsNybJI9XLUyabBIHPF1PQ3PY/ffADn/LdjiQOhx/ry+ZsuEO4mBnw==",
+      "type": "package",
+      "path": "jsonsubtypes/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "jsonsubtypes.1.2.0.nupkg.sha512",
+        "jsonsubtypes.nuspec",
+        "lib/net35/JsonSubTypes.dll",
+        "lib/net40/JsonSubTypes.dll",
+        "lib/net45/JsonSubTypes.dll",
+        "lib/net46/JsonSubTypes.dll",
+        "lib/net47/JsonSubTypes.dll",
+        "lib/netstandard1.3/JsonSubTypes.dll",
+        "lib/netstandard1.4/JsonSubTypes.dll",
+        "lib/netstandard1.5/JsonSubTypes.dll",
+        "lib/netstandard1.6/JsonSubTypes.dll"
+      ]
+    },
     "Microsoft.AspNetCore.Authorization/3.1.8": {
       "sha512": "vBVCalVaxmv8MqFH1/Qe/fMjwmFWZhGJISiNEa6Is0ZNNFAHHdbvBmreL7qmGaIHt4krnDiV8i3GZa/zi21FBA==",
       "type": "package",
@@ -856,6 +912,64 @@
         "newtonsoft.json.nuspec"
       ]
     },
+    "RestSharp/105.1.0": {
+      "sha512": "2DRH1cpTOJwesBOwQ0cIhVHUmupbRKt+tdSatfdvndvsawsGMIEgrbq8yv6g3GM1MRVcb37bT8LACVFsqITDmg==",
+      "type": "package",
+      "path": "restsharp/105.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35-client/RestSharp.dll",
+        "lib/net35-client/RestSharp.xml",
+        "lib/net35/RestSharp.dll",
+        "lib/net35/RestSharp.xml",
+        "lib/net4-client/RestSharp.dll",
+        "lib/net4-client/RestSharp.xml",
+        "lib/net4/RestSharp.dll",
+        "lib/net4/RestSharp.xml",
+        "lib/net45-client/RestSharp.dll",
+        "lib/net45-client/RestSharp.xml",
+        "lib/net45/RestSharp.dll",
+        "lib/net45/RestSharp.xml",
+        "lib/net451-client/RestSharp.dll",
+        "lib/net451-client/RestSharp.xml",
+        "lib/net451/RestSharp.dll",
+        "lib/net451/RestSharp.xml",
+        "lib/net452-client/RestSharp.dll",
+        "lib/net452-client/RestSharp.xml",
+        "lib/net452/RestSharp.dll",
+        "lib/net452/RestSharp.xml",
+        "lib/sl4/RestSharp.Silverlight.dll",
+        "lib/sl4/RestSharp.Silverlight.xml",
+        "lib/windowsphone8/RestSharp.WindowsPhone.dll",
+        "lib/windowsphone8/RestSharp.WindowsPhone.xml",
+        "readme.txt",
+        "restsharp.105.1.0.nupkg.sha512",
+        "restsharp.nuspec"
+      ]
+    },
+    "Spk.LocationIq.Wrapper/1.0.0": {
+      "sha512": "TciNzH8gnZgQjTO31nHhJB/ASqGrU0F4IKHtXRoho1Yxm44fM/k8zK9EmGTQICfURJ6HjkuuyT4c6Hd4pTRnVw==",
+      "type": "package",
+      "path": "spk.locationiq.wrapper/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "docs/Address.md",
+        "docs/Balance.md",
+        "docs/BalanceApi.md",
+        "docs/Daybalance.md",
+        "docs/Error.md",
+        "docs/Location.md",
+        "docs/Namedetails.md",
+        "docs/ReverseApi.md",
+        "docs/SearchApi.md",
+        "lib/net45/locationiq.dll",
+        "spk.locationiq.wrapper.1.0.0.nupkg.sha512",
+        "spk.locationiq.wrapper.nuspec"
+      ]
+    },
     "Syncfusion.Blazor/18.3.0.47": {
       "sha512": "4RW+rzqG8/qsBNayHa+xBbCuqFpeHnX7rwcXw0wUiVyrKAVsVV0Z0UQ77+A33FH13hlSfLTsGkVQlsDgR21SnA==",
       "type": "package",
@@ -1105,6 +1219,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Newtonsoft.Json >= 12.0.1",
+      "Spk.LocationIq.Wrapper >= 1.0.0",
       "Syncfusion.Blazor >= 18.3.0.47"
     ]
   },
@@ -1147,6 +1262,10 @@
             "target": "Package",
             "version": "[12.0.1, )"
           },
+          "Spk.LocationIq.Wrapper": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "Syncfusion.Blazor": {
             "target": "Package",
             "version": "[18.3.0.47, )"
@@ -1173,5 +1292,27 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'RestSharp 105.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "RestSharp",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Spk.LocationIq.Wrapper 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Spk.LocationIq.Wrapper",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

@@ -22,7 +22,7 @@ else
                 {
                     
                     <div class="col-xs-4">
-                        <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode"></HomeHospitalComponent>
+                        <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="#"></HomeHospitalComponent>
                     </div>
                 }
             }
@@ -37,7 +37,7 @@ else
                 if (hospital.type == "clinic")
                 {
                     <div class="col-xs-4">
-                        <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode"></HomeHospitalComponent>
+                        <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="#"></HomeHospitalComponent>
                     </div>
                 }
             }
@@ -52,7 +52,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        hospitals = await CloudHospitalService.GetAllHospitals();
+        hospitals = await CloudHospitalService.GetAllHospitalsValidated();
     }
 
 

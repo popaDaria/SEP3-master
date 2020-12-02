@@ -33,17 +33,24 @@ namespace SEP3
             services.AddServerSideBlazor();
             services.AddScoped<ICloudUserService, CloudUserService>();
             services.AddScoped<ICloudHospitalService, CloudHospitalService>();
-            services.AddScoped<AuthenticationStateProvider,CustomAuthenticationStateProvider>();
+            services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
             services.AddSyncfusionBlazor();
-            
+
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("MustBeLoggedIn", a => a.RequireAuthenticatedUser());
             });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("MustBeLoggedInAsManager",
+                    a => a.RequireAuthenticatedUser().RequireRole("manager", "admin"));
+            });
             
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("MustBeLoggedInAsManager", a => a.RequireAuthenticatedUser().RequireRole("manager"));
+                options.AddPolicy("MustBeLoggedInAsAdmin",
+                    a => a.RequireAuthenticatedUser().RequireRole("admin"));
             });
         }
 

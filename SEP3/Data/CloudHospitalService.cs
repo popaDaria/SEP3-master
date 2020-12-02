@@ -62,5 +62,39 @@ namespace SEP3.Data
             HttpResponseMessage message = await client.PatchAsync("https://localhost:8085/hospitals", content);
             Console.WriteLine(message.StatusCode);
         }
+        
+        public async Task<List<Hospital>> GetAllHospitalsValidated()
+        {
+            HttpClient client = new HttpClient();
+            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/hospitals/validated");
+            string content = await message.Content.ReadAsStringAsync();
+            Console.WriteLine(content);
+            List<Hospital> result = JsonConvert.DeserializeObject<List<Hospital>>(content);
+            return result;
+        }
+        
+        public async Task<List<Hospital>> GetAllHospitalsInvalid()
+        {
+            HttpClient client = new HttpClient();
+            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/hospitals/invalid");
+            string content = await message.Content.ReadAsStringAsync();
+            Console.WriteLine(content);
+            List<Hospital> result = JsonConvert.DeserializeObject<List<Hospital>>(content);
+            return result;
+        }
+
+        public async Task ValidateHospital(int id)
+        {
+            HttpClient client = new HttpClient();
+            HttpResponseMessage message = await client.PatchAsync("https://localhost:8085/hospitals/validate?id="+id, new StringContent("don't mind me"));
+            Console.WriteLine(message);
+        }
+        
+        public async Task RemoveHospital(int id)
+        {
+            HttpClient client = new HttpClient();
+            HttpResponseMessage message = await client.DeleteAsync("https://localhost:8085/hospitals/"+id);
+            Console.WriteLine(message);
+        }
     }
 }

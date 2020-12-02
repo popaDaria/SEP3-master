@@ -29,6 +29,11 @@
                         <a class="pl-4 pr-4 p-4" href="addHospital">Add Hospital</a>
                     </li>
                 </AuthorizeView>
+                <AuthorizeView Policy="MustBeLoggedInAsAdmin">
+                                    <li>
+                                        <a class="pl-4 pr-4 p-4" href="validate">Validate</a>
+                                    </li>
+                                </AuthorizeView>
                 </ul>
         </div>
     </ChildContent>

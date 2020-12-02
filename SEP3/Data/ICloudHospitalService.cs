@@ -10,5 +10,11 @@ namespace SEP3.Data
         public Task<Hospital> GetHospital(int idNr);
         public Task<List<Hospital>> GetAllHospitals();
         public Task EditHospital(Hospital Hospital);
+
+        public Task<List<Hospital>> GetAllHospitalsValidated();
+        public Task<List<Hospital>> GetAllHospitalsInvalid();
+        public Task ValidateHospital(int id);
+        public Task RemoveHospital(int id);
+
     }
 }

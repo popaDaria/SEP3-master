@@ -39,11 +39,12 @@
           <e p="_Host.cshtml" t="Include" />
           <e p="AddHospital.razor" t="Include" />
           <e p="HomeHospitalComponent.razor" t="Include" />
+          <e p="HospitalPage.razor" t="Include" />
           <e p="Index.razor" t="Include" />
           <e p="LogIn.razor" t="Include" />
           <e p="Profile.razor" t="Include" />
-          <e p="ProfileMedical.razor" t="Include" />
           <e p="Register.razor" t="Include" />
+          <e p="Validate.razor" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
@@ -85,6 +86,7 @@
           </e>
           <e p="favicon.ico" t="Include" />
           <e p="images" t="Include">
+            <e p="balloon.png" t="Include" />
             <e p="weed.jpg" t="Include" />
           </e>
         </e>

@@ -10,6 +10,7 @@
 
     <ItemGroup>
       <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+      <PackageReference Include="Spk.LocationIq.Wrapper" Version="1.0.0" />
       <PackageReference Include="Syncfusion.Blazor" Version="18.3.0.47" />
     </ItemGroup>
 

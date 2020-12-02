@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FeNkW/5tpVI2eTJ2V4KYujrood73NEJMAdbQmbg4NMlQ1zRJUSVDgCOQKnYm5+iK1me2MS9ssfdSoi5f/6/lMw==",
+  "dgSpecHash": "3wC+vsiwh7bG+VpGVM40m+f+YEHyLP0zJ/lco13hqbQVjuTYWSiGTnYcByQYeW/EOE8ezh6j5bXWEzf/H6mLkw==",
   "success": true,
   "projectFilePath": "C:\\Users\\bogda\\RiderProjects\\SEP3-master\\SEP3\\SEP3.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\bogda\\.nuget\\packages\\jsonsubtypes\\1.2.0\\jsonsubtypes.1.2.0.nupkg.sha512",
     "C:\\Users\\bogda\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.8\\microsoft.aspnetcore.authorization.3.1.8.nupkg.sha512",
     "C:\\Users\\bogda\\.nuget\\packages\\microsoft.aspnetcore.components\\3.1.8\\microsoft.aspnetcore.components.3.1.8.nupkg.sha512",
     "C:\\Users\\bogda\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\3.1.8\\microsoft.aspnetcore.components.analyzers.3.1.8.nupkg.sha512",
@@ -26,6 +27,8 @@
     "C:\\Users\\bogda\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\bogda\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Users\\bogda\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
+    "C:\\Users\\bogda\\.nuget\\packages\\restsharp\\105.1.0\\restsharp.105.1.0.nupkg.sha512",
+    "C:\\Users\\bogda\\.nuget\\packages\\spk.locationiq.wrapper\\1.0.0\\spk.locationiq.wrapper.1.0.0.nupkg.sha512",
     "C:\\Users\\bogda\\.nuget\\packages\\syncfusion.blazor\\18.3.0.47\\syncfusion.blazor.18.3.0.47.nupkg.sha512",
     "C:\\Users\\bogda\\.nuget\\packages\\syncfusion.excelexport.net.core\\18.3.0.47\\syncfusion.excelexport.net.core.18.3.0.47.nupkg.sha512",
     "C:\\Users\\bogda\\.nuget\\packages\\syncfusion.licensing\\18.3.0.47\\syncfusion.licensing.18.3.0.47.nupkg.sha512",
@@ -33,5 +36,26 @@
     "C:\\Users\\bogda\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\bogda\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'RestSharp 105.1.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "RestSharp",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Spk.LocationIq.Wrapper 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Spk.LocationIq.Wrapper",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

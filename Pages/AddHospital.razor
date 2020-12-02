@@ -3,6 +3,15 @@
 @using Syncfusion.Blazor.Inputs
 @using Syncfusion.Blazor.Buttons
 @using InputType = Syncfusion.Blazor.Inputs.InputType
+@using SEP3.Data
+@using SEP3.Model
+@using Syncfusion.Blazor.PdfViewer
+@using SEP3.Auth
+@using Microsoft.VisualBasic.CompilerServices
+
+@inject ICloudHospitalService CloudHospitalService;
+@inject AuthenticationStateProvider AuthenticationStateProvider;
+@inject NavigationManager NavigationManager
 
 <div class="col-lg-12 control-section">
     <div class="content-wrapper">
@@ -13,38 +22,37 @@
         </div>
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
-                <SfTextBox Placeholder="Name" FloatLabelType="@FloatLabelType.Auto"></SfTextBox>
+                <SfTextBox Placeholder="Name" FloatLabelType="@FloatLabelType.Auto" @bind-value="@toAdd.name"></SfTextBox>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
                 <div class="radio-control">
                     <h4 class="row">Type</h4>
-                    <div class="row">
-                        <SfRadioButton Label="Hospital" Name="type" Value="false" Checked="true"></SfRadioButton>
-                    </div>
-                    <div class="row">
-                        <SfRadioButton Label="Clinic" Name="type" Value="false" Checked="false"></SfRadioButton>
-                    </div>
+                    <label>Type:<select @bind="toAdd.type">
+                        <option value="">--Select an option--</option>
+                        <option value="hospital">Hospital</option>
+                        <option value="clinic">Clinic</option>
+                    </select></label>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
-                <SfTextBox CssClass="e-rtl" Placeholder="Postal Code" FloatLabelType="@FloatLabelType.Auto"></SfTextBox>
+                <SfTextBox CssClass="e-rtl" Placeholder="Postal Code" Type="Syncfusion.Blazor.Inputs.InputType.Number" FloatLabelType="@FloatLabelType.Auto" @bind-value="@postalCode"></SfTextBox>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
-                <SfTextBox CssClass="e-rtl" Placeholder="Whole Address" FloatLabelType="@FloatLabelType.Auto" Multiline="true"></SfTextBox>
+                <SfTextBox CssClass="e-rtl" Placeholder="Whole Address" FloatLabelType="@FloatLabelType.Auto" Multiline="true" @bind-value="@toAdd.address"></SfTextBox>
             </div>
         </div>
         <div class="row">
-                    <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
-                        <SfTextBox CssClass="e-rtl" Placeholder="Description" FloatLabelType="@FloatLabelType.Auto" Multiline="true"></SfTextBox>
-                    </div>
-                </div>
-        <SfButton IsPrimary="true">Primary</SfButton>
+            <div class="col-xs-6 col-sm-6 col-lg-6 col-md-6">
+                <SfTextBox CssClass="e-rtl" Placeholder="Description" FloatLabelType="@FloatLabelType.Auto" Multiline="true" @bind-value="@toAdd.info"></SfTextBox>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" @onclick="@Submit">Submit</button>
     </div>
 </div>
 <style>
@@ -78,5 +86,34 @@
    
 </style>
 @code  {
-   
+
+    Hospital toAdd { get; set; } = new Hospital();
+    string selection {get;set;}
+    string postalCode { get; set; }
+
+    public async Task Submit()
+    {
+        toAdd.managerId = Int32.Parse(AuthenticationStateProvider.GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value);
+        if (selection != null)
+        {
+            if (!selection.Equals(""))
+            {
+                toAdd.type = selection;
+            }
+        }
+        else
+        {
+            selection = "hospital";
+        }
+        toAdd.postalCode = Int32.Parse(postalCode);
+        Console.WriteLine(toAdd.managerId);
+        await CloudHospitalService.AddHospital(toAdd);
+        NavigationManager.NavigateTo("/");
+    }
+
+    public void SelectionChanged(ChangedEventArgs args)
+    {
+        selection = args.Value.ToString();
+        Console.WriteLine(selection);
+    }
 }

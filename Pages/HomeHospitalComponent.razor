@@ -1,23 +1,115 @@
-﻿<div class="component">
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="@imgSource" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">Mary Jane Hospital</h5>
-        <p class="card-text">
-            <span class="oi oi-location">Christiania, Copenhagen</span>
-            <br />
-            <span class="oi oi-star">5</span>
-            <br />
-            Mary Jane Hospital provides state-of-the-art medical care to ensure our patients are cared for medically and cared about personally and to ensure a medically ready force, prepared to accomplish their mission. We're committed to operational readiness, outstanding customer service, and world-class health care delivery for our beneficiaries.
-        </p>
-        <a href="#" class="btn btn-primary">View hospital page</a>
+﻿@using Syncfusion.Blazor.Popups
+@using Syncfusion.Blazor.Buttons
+@using SEP3.Data
+
+@inject AuthenticationStateProvider AuthenticationStateProvider;
+@inject ICloudHospitalService CloudHospitalService;
+@inject NavigationManager NavigationManager;
+
+<div class="component">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="@imgSource" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@name</h5>
+            <p class="card-text">
+                <span class="oi oi-location">@address</span>
+                <br/>
+                <span class="oi oi-star">@postalCode</span>
+                <br/>
+                @name
+            </p>
+            <a href="/hospital/@id" class="btn btn-primary">View hospital page</a>
+            @if (page.Equals("validate"))
+            {
+                <AuthorizeView Roles="admin">
+                    <a class="btn btn-success" @onclick="@Validate" style="color:white">Validate</a>
+                    <br/>
+                    <br/>
+                    <a class="btn btn-danger" @onclick="@Show" style="color:white">Remove</a>
+                </AuthorizeView>
+            }
+            @*@if (managerId == @mngID)
+            {
+                <AuthorizeView Roles="manager">
+                    <a class="btn btn-success" @onclick="@Manage" style="color:white">Manage Information</a>
+                    <br/>
+                    <br/>
+                </AuthorizeView>
+            }*@
+        </div>
     </div>
 </div>
-</div>
+<SfDialog Width="335px" Target="#target" IsModal="true" @bind-Visible="@Visibility">
+    <DialogTemplates>
+        <Header> Confirmation </Header>
+        <Content>
+            <p>Are you sure you want to remove this hospital?</p>
+        </Content>
+    </DialogTemplates>
+    <DialogButtons>
+        <DialogButton Content="Yes" IsPrimary="false" OnClick="@Remove"/>
+        <DialogButton Content="Cancel" IsPrimary="true" OnClick="@Hide"/>
+    </DialogButtons>
+    <DialogEvents></DialogEvents>
+    <DialogAnimationSettings Effect="@DialogEffect.None"></DialogAnimationSettings>
+</SfDialog>
+
 @code {
 
     [Parameter]
     public string imgSource { get; set; }
+
+    [Parameter]
+    public string name { get; set; }
+
+    [Parameter]
+    public string address { get; set; }
+
+    [Parameter]
+    public string info { get; set; }
+
+    [Parameter]
+    public int postalCode { get; set; }
+
+    [Parameter]
+    public string id { get; set; }
+
+    [Parameter]
+    public string page { get; set; }
+    
+    /*[Parameter]
+    public int managerId { get; set; }
+    */
+
+    public async void Validate()
+    {
+        await CloudHospitalService.ValidateHospital(Int32.Parse(id));
+        NavigationManager.NavigateTo(page);
+    }
+
+    public async void Remove()
+    {
+        await CloudHospitalService.RemoveHospital(Int32.Parse(id));
+        NavigationManager.NavigateTo(page);
+        Hide();
+    }
+
+    private bool Visibility { get; set; } = false;
+
+    private void Show()
+    {
+        this.Visibility = true;
+    }
+
+    private void Hide()
+    {
+        this.Visibility = false;
+    }
+
+    /*private void Manage()
+    {
+        NavigationManager.NavigateTo("/hospital/"+id);
+    }*/
 
 }
 

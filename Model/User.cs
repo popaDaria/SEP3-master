@@ -11,14 +11,13 @@ namespace SEP3.Model
         [Required] [NotNull] public string password { get; set; }
         [Required] [NotNull] public string firstname { get; set; }
         [Required] [NotNull] public string lastname { get; set; }
-        [Required] [NotNull] public string userType { get; set; }
+        public string userType { get; set; }
         public string email { get; set; }
         public string gender { get; set; }
         public DateTime birthday { get; set; }
         public string telNo { get; set; }
         public string address { get; set; }
         public bool validated { get; set; }
-
         public byte[] image { get; set; }
 
         public void Update(User user)

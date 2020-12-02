@@ -1,7 +1,7 @@
-﻿@page "/"
-@using Syncfusion.Blazor.Calendars
+﻿@page "/validate"
 @using SEP3.Data
 @using SEP3.Model
+@attribute [Authorize(Roles = "admin")]
 
 @inject ICloudHospitalService CloudHospitalService;
 
@@ -18,10 +18,11 @@ else
         <div class="d-flex flex-row flex-nowrap overflow-auto">
             @foreach (var hospital in hospitals)
             {
-                if (hospital.type.Equals("hospital"))
+                if (hospital.type == "hospital")
                 {
+                    
                     <div class="col-xs-4">
-                        <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="#"></HomeHospitalComponent>
+                        <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="validate"></HomeHospitalComponent>
                     </div>
                 }
             }
@@ -33,10 +34,10 @@ else
         <div class="d-flex flex-row flex-nowrap overflow-auto">
             @foreach (var hospital in hospitals)
             {
-                if (hospital.type.Equals("clinic"))
+                if (hospital.type == "clinic")
                 {
                     <div class="col-xs-4">
-                        <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="#"></HomeHospitalComponent>
+                        <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="validate"></HomeHospitalComponent>
                     </div>
                 }
             }
@@ -51,7 +52,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        hospitals = await CloudHospitalService.GetAllHospitalsValidated();
+        hospitals = await CloudHospitalService.GetAllHospitalsInvalid();
     }
 
 

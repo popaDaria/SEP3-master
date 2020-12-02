@@ -1,14 +1,17 @@
 ﻿@page "/profile"
+@attribute [Authorize(Policy = "MustBeLoggedIn")]
 @using Syncfusion.Blazor.Navigations
 @using Syncfusion.Blazor.InPlaceEditor
 @using SEP3.Model
 @using SEP3.Data
 @using SEP3.Auth
+@using Syncfusion.Blazor.Buttons
 @using RenderMode = Syncfusion.Blazor.InPlaceEditor.RenderMode
 @using InputType = Syncfusion.Blazor.InPlaceEditor.InputType
 
 @inject ICloudUserService CloudUserService;
 @inject AuthenticationStateProvider AuthenticationStateProvider;
+@inject NavigationManager NavigationManager
 
 
 <link href="css/profile.css" type="text/css" rel="stylesheet"/>
@@ -17,11 +20,12 @@
     <div class="d-flex">
         <div class="spinner-grow text-light align-middle spinner" role="status">
             <span class="sr-only">Loading...</span>
-        </div></div>
+        </div>
+    </div>
 }
 else
 {
-    <div class="container" style="box-sizing: border-box; padding-top: 5%; padding-bottom: 5%;" >
+    <div class="container" style="box-sizing: border-box; padding-top: 5%; padding-bottom: 5%;">
         <div class="emp-profile container p-3">
             <form method="post">
                 <div class="row">
@@ -47,6 +51,15 @@ else
                         <br/>
                         <input type="button" class="btn btn-success" name="save" value="Save Changes" @onclick="@SendToServer" style="@display"/>
                         <input type="button" class="btn btn-danger" name="cancel" value="Discard Changes" @onclick="@Cancel" style="@display"/>
+                        <br/>
+                        <br/>
+                        <AuthorizeView Roles="manager">
+                            <input type="button" class="btn btn-info" name="manageHospitals" value="Manage Hospitals" @onclick="@ManageHospitals"/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <input type="button" class="btn btn-info" name="addDoctors" value="Add Doctors" @onclick="@AddNewDoctor"/>
+                        </AuthorizeView>
                     </div>
                 </div>
                 <br/>
@@ -140,7 +153,8 @@ else
                     </div>
                 </div>
             </form>
-        </div></div>
+        </div>
+    </div>
 }
 
 @code {
@@ -149,7 +163,7 @@ else
     private bool ShowButtons { get; set; } = false;
     private bool Disabled { get; set; } = true;
     private string display = "display: none";
-    User user;
+    User user { get; set; }
     User editedUser = new User();
     string idNr = "";
 
@@ -181,5 +195,17 @@ else
         editedUser.Update(user);
         StateHasChanged();
     }
+
+
+    private void ManageHospitals()
+    {
+        NavigationManager.NavigateTo("/manage/"+user.idNr);
+    }
+
+    private void AddNewDoctor()
+    {
+        NavigationManager.NavigateTo("/addDoctor/"+user.idNr);
+    }
+
 
 }

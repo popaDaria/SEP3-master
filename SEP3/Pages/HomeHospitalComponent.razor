@@ -6,7 +6,7 @@
 @inject ICloudHospitalService CloudHospitalService;
 @inject NavigationManager NavigationManager;
 
-<div class="component">
+<div class="component" style="@display">
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="@imgSource" alt="Card image cap">
         <div class="card-body">
@@ -81,16 +81,18 @@
     public int managerId { get; set; }
     */
 
+    string display = "display: inline;";
+
     public async void Validate()
     {
         await CloudHospitalService.ValidateHospital(Int32.Parse(id));
-        NavigationManager.NavigateTo(page);
+        display = "display: none;";
     }
 
     public async void Remove()
     {
         await CloudHospitalService.RemoveHospital(Int32.Parse(id));
-        NavigationManager.NavigateTo(page);
+        display = "display: none;";
         Hide();
     }
 

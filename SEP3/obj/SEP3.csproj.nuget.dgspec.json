@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\SEP3.csproj": {}
+    "C:\\Users\\bogda\\RiderProjects\\SEP3-master\\SEP3\\SEP3.csproj": {}
   },
   "projects": {
-    "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\SEP3.csproj": {
+    "C:\\Users\\bogda\\RiderProjects\\SEP3-master\\SEP3\\SEP3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\SEP3.csproj",
+        "projectUniqueName": "C:\\Users\\bogda\\RiderProjects\\SEP3-master\\SEP3\\SEP3.csproj",
         "projectName": "SEP3",
-        "projectPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\SEP3.csproj",
-        "packagesPath": "C:\\Users\\Tania Maria\\.nuget\\packages\\",
-        "outputPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\obj\\",
+        "projectPath": "C:\\Users\\bogda\\RiderProjects\\SEP3-master\\SEP3\\SEP3.csproj",
+        "packagesPath": "C:\\Users\\bogda\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bogda\\RiderProjects\\SEP3-master\\SEP3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tania Maria\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\bogda\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

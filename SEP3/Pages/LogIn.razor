@@ -43,8 +43,8 @@
         ErrorMessage = "";
         try
         {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(idNr, Password).Wait(100);
-    //NavigationManager.NavigateTo("/");
+            await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(idNr, Password);
+            NavigationManager.NavigateTo("/");
             idNr = "";
             Password = "";
             display = "display: none";
@@ -64,7 +64,7 @@
         try
         {
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
-            NavigationManager.NavigateTo("/");
+            //NavigationManager.NavigateTo("/");
         }
         catch (Exception e)
         {

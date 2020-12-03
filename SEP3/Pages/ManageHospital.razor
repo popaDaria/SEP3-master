@@ -19,8 +19,9 @@ else
         <div class="d-flex flex-row flex-nowrap overflow-auto">
             @foreach (var hospital in hospitals)
             {
+                string pageCont = "/manage/" + id;
                 <div class="col-xs-4">
-                    <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="#"></HomeHospitalComponent>
+                    <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="@pageCont"></HomeHospitalComponent>
                 </div>
             }
         </div>

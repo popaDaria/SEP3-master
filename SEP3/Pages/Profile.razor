@@ -57,7 +57,6 @@ else
                             <input type="button" class="btn btn-info" name="manageHospitals" value="Manage Hospitals" @onclick="@ManageHospitals"/>
                             <br/>
                             <br/>
-                            <br/>
                             <input type="button" class="btn btn-info" name="addDoctors" value="Add Doctors" @onclick="@AddNewDoctor"/>
                         </AuthorizeView>
                     </div>
@@ -170,6 +169,7 @@ else
     protected override async Task OnInitializedAsync()
     {
         idNr = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value;
+        Console.WriteLine("Logged in as: "+idNr);
         user = await CloudUserService.GetUser(idNr);
         editedUser.Update(user);
     }
@@ -180,9 +180,9 @@ else
         display = "display: inline";
     }
 
-    public void SendToServer()
+    public async Task SendToServer()
     {
-        CloudUserService.EditUser(editedUser);
+        await CloudUserService.EditUser(editedUser);
         user.Update(editedUser);
         Disabled = true;
         display = "display: none";

@@ -16,6 +16,20 @@ namespace SEP3.Model
         public int managerId { get; set; }
         [Required] [NotNull] public bool validated { get; set; }
         public byte[] image;
+        
+        public void Update(Hospital hospital)
+        {
+            this.id = hospital.id;
+            this.name = hospital.name;
+            this.postalCode = hospital.postalCode;
+            this.info = hospital.info;
+            this.avgRating = hospital.avgRating;
+            this.type = hospital.type;
+            this.managerId = hospital.managerId;
+            this.address = hospital.address;
+            this.validated = hospital.validated;
+            this.image = hospital.image;
+        }
 
     }
 }

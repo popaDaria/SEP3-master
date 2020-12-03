@@ -1,0 +1,78 @@
+﻿@using Syncfusion.Blazor.Popups
+@using SEP3.Data
+@using SEP3.Model
+@inject ICloudUserService CloudUserService
+@inject NavigationManager NavigationManager
+
+<div class="component">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="@imageSrc" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@firstName @lastName</h5>
+            <p class="card-text">
+                <span class="oi oi-star">@id</span>
+            </p>
+            @if (page.Equals("validate"))
+            {
+                <AuthorizeView Roles="admin">
+                    <a class="btn btn-success" @onclick="@Validate" style="color:white">Validate</a>
+                </AuthorizeView>
+            }
+        </div>
+    </div>
+</div>
+<SfDialog Width="335px" Target="#target" IsModal="true" @bind-Visible="@Visibility">
+    <DialogTemplates>
+        <Header> Confirmation </Header>
+        <Content>
+            <p>Are you sure you want to remove this hospital?</p>
+        </Content>
+    </DialogTemplates>
+    <DialogButtons>
+        <DialogButton Content="Cancel" IsPrimary="true" OnClick="@Hide"/>
+    </DialogButtons>
+    <DialogEvents></DialogEvents>
+    <DialogAnimationSettings Effect="@DialogEffect.None"></DialogAnimationSettings>
+</SfDialog>
+
+
+@code {
+    
+    [Parameter]
+    public int id { get; set; }
+    [Parameter]
+    public string firstName { get; set; }
+    [Parameter]
+    public string lastName { get; set; }
+    [Parameter]
+    public string imageSrc { get; set; }
+    [Parameter]
+    public string page { get; set; }
+
+
+    public async void Validate()
+    {
+        await CloudUserService.ValidateManager(id);
+        NavigationManager.NavigateTo("/");
+    }
+
+    private bool Visibility { get; set; } = false;
+
+    private void Show()
+    {
+        this.Visibility = true;
+    }
+
+    private void Hide()
+    {
+        this.Visibility = false;
+    }
+}
+
+<style>
+    .component {
+    display: inline-block;
+    padding: 10px;
+    flex: 0 0 auto;
+    }
+</style>

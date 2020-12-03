@@ -4,6 +4,7 @@
 @attribute [Authorize(Roles = "admin")]
 
 @inject ICloudHospitalService CloudHospitalService;
+@inject ICloudUserService CloudUserService
 
 @if (hospitals == null)
 {
@@ -43,16 +44,29 @@ else
             }
         </div>
     </div>
+    <div class="container-fluid horizontal-scrollable py-2">
+        <br/>
+        <h2>Managers</h2>
+        <div class="d-flex flex-row flex-nowrap overflow-auto">
+            @foreach (var user in users)
+            {
+                <div class="col-xs-4">
+                    <ProfileComponent imageSrc="/images/weed.jpg" id="@user.idNr" firstName="@user.firstname" lastName="@user.lastname" page="validate"></ProfileComponent>
+                </div>
+            }
+        </div>
+    </div>
 }
 
 @code {
 
-    public List<Hospital> hospitals = new List<Hospital>();
-
+    public List<Hospital> hospitals = new List<Hospital>();    
+    public List<User> users = new List<User>();
 
     protected override async Task OnInitializedAsync()
     {
         hospitals = await CloudHospitalService.GetAllHospitalsInvalid();
+        users = await CloudUserService.GetUnvalidatedUsers();
     }
 
 

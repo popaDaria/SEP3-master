@@ -298,3 +298,5 @@ D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDecl
 D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ManageHospital.razor.g.cs
 D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\AddDoctor.razor.g.cs
 D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\AddDoctor.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ProfileComponent.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ProfileComponent.razor.g.cs

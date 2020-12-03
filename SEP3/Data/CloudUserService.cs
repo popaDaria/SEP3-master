@@ -31,6 +31,14 @@ namespace SEP3.Data
             return loggedUser;
         }
 
+        
+        public async Task ValidateManager(int id)
+        {
+            HttpClient client = new HttpClient();
+            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/users/manager?id="+id);
+            Console.WriteLine(message);
+        }
+        
         public async Task AddUser(User user)
         {
             if (user.userType.Equals("patient"))
@@ -73,6 +81,15 @@ namespace SEP3.Data
             Console.WriteLine(message);
             User result = JsonSerializer.Deserialize<User>(message);
             return result;
+        }
+
+        public async Task<List<User>> GetUnvalidatedUsers()
+        {
+            HttpClient client = new HttpClient();
+            string message = await client.GetStringAsync("https://localhost:8085/users/unvalidated");
+            Console.WriteLine(message);
+            List<User> result = JsonSerializer.Deserialize<List<User>>(message);
+            return result;        
         }
 
         public async Task EditUser(User user)

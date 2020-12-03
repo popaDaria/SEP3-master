@@ -53,10 +53,10 @@ else
                         </div>
                     </div>
                     <div class="col-lg-4 text-center">
-                        <AuthorizeView Roles="manager">
+                        <AuthorizeView Roles="manager" Policy="MustBeLoggedInAsValidated">
                             @if (@hospital.managerId == Int32.Parse(((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value))
                             {
-                                <input type="button" class="btn btn-info" name="btnAddMore" value="Edit Profile" @onclick="@EnableEdit"/>
+                                <input type="button" class="btn btn-info" name="btnAddMore" value="Edit Hospital Information" @onclick="@EnableEdit"/>
                                 <br/>
                                 <br/>
                                 <input type="button" class="btn btn-success" name="save" value="Save Changes" @onclick="@SendToServer" style="@display"/>

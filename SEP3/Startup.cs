@@ -51,6 +51,18 @@ namespace SEP3
             
             services.AddAuthorization(options =>
             {
+                options.AddPolicy("MustBeLoggedInAsValidated",
+                    a => a.RequireClaim("Validated","true"));
+            });
+            
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("MustBeLoggedInAsValidatedManager",
+                    a => a.RequireClaim("Validated","true").RequireAuthenticatedUser().RequireRole("manager"));
+            });
+            
+            services.AddAuthorization(options =>
+            {
                 options.AddPolicy("MustBeLoggedInAsAdmin",
                     a => a.RequireAuthenticatedUser().RequireRole("admin"));
             });

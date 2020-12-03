@@ -7,6 +7,7 @@
 @inject ICloudHospitalService CloudHospitalService
 @inject ICloudDoctorHospitalService CloudDoctorHospitalService
 @inject AuthenticationStateProvider AuthenticationStateProvider
+@attribute [Authorize(Roles = "manager", Policy = "MustBeLoggedInAsValidated")]
 
 <h1 style="font-size: 56px; font-weight: bold; color: #0B4E58">Add New Doctor</h1>
 <EditForm Model="@userToAdd" OnValidSubmit="Add">
@@ -93,6 +94,7 @@
             userToAdd.userType = "doctor";
             if (userToAdd.gender == null)
                 userToAdd.gender = "Male";
+            userToAdd.validated = true;
             await CloudUserService.AddDoctor(userToAdd);
             await CloudDoctorHospitalService.AddDoctorHospital(doctorHospital);
             

@@ -1,0 +1,79 @@
+﻿@page "/login"
+@namespace LoginComponent
+
+@using Syncfusion.Blazor.Buttons
+@using SEP3.Auth
+@using Microsoft.AspNetCore.Mvc.Formatters
+@inject AuthenticationStateProvider AuthenticationStateProvider;
+@inject NavigationManager NavigationManager;
+
+<AuthorizeView>
+    <NotAuthorized>
+        <h1 style="font-size: 56px; font-weight: bold; color: #0B4E58">Log in to your account</h1>
+        <div class="formBlock">
+            <form @onsubmit="@PerformLogIn">
+                <label>ID:<input type="text" @bind-value="idNr"/></label>
+                <br/>
+                <label>Password:<input type="password" @bind-value="Password"/></label>
+                <br/>
+                <button type="submit" class="btn btn-primary">Log in</button>
+                <div class="alert alert-danger mt-2" style="@display">@ErrorMessage</div>
+            </form>
+        </div>
+        <div class="mt-5 mb-3">
+        <button @onclick="@signUp" class="btn btn-primary">Sign up</button>
+        </div>
+    </NotAuthorized>
+    <Authorized>
+        <h1>Log out of your account</h1>
+        <button @onclick="PerformLogOut" class="btn btn-primary">Log out</button>
+    </Authorized>
+</AuthorizeView>
+
+
+@code {
+    
+    private string idNr;
+    private string Password;
+    private string ErrorMessage;
+    private string display = "display: none";
+
+    public async Task PerformLogIn()
+    {
+        ErrorMessage = "";
+        try
+        {
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(idNr, Password).Wait(100);
+    //NavigationManager.NavigateTo("/");
+            idNr = "";
+            Password = "";
+            display = "display: none";
+        }
+        catch (Exception e)
+        {
+            display = "display: block";
+            ErrorMessage = e.Message;
+        }
+    }
+
+    public async Task PerformLogOut()
+    {
+        ErrorMessage = "";
+        idNr = "";
+        Password = "";
+        try
+        {
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+            NavigationManager.NavigateTo("/");
+        }
+        catch (Exception e)
+        {
+        }
+    }
+    
+    private void signUp(MouseEventArgs e)
+    {
+        NavigationManager.NavigateTo("/register");
+    }
+
+}

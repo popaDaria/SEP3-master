@@ -1,0 +1,112 @@
+﻿@page "/addDoctor/{id}"
+@using SEP3.Model
+@using SEP3.Data
+@using SEP3.Auth
+@inject NavigationManager NavigationManager
+@inject ICloudUserService CloudUserService
+@inject ICloudHospitalService CloudHospitalService
+@inject ICloudDoctorHospitalService CloudDoctorHospitalService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<h1 style="font-size: 56px; font-weight: bold; color: #0B4E58">Add New Doctor</h1>
+<EditForm Model="@userToAdd" OnValidSubmit="Add">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    <div class="formBlock">
+        <label>First Name:<input type="text" @bind-value="userToAdd.firstname" disabled="@isDisabled"/></label>
+        <br/>
+        <label>Last Name:<input type="text" @bind-value="userToAdd.lastname" disabled="@isDisabled"/></label>
+        <br/>
+        <label>ID Number:<input type="number" @bind-value="userToAdd.idNr" disabled="@isDisabled"/></label>
+        <br/>
+        <label>Password:<input type="password" @bind-value="userToAdd.password" disabled="@isDisabled"/></label>
+        <br/>
+        <label>Gender:
+            <InputSelect @bind-Value="userToAdd.gender">
+                <option></option>
+                <option>Male</option>
+                <option>Female</option>
+            </InputSelect>
+        </label>
+        <br/>
+        <label>Email:<input type="text" @bind-value="userToAdd.email"></label>
+        <br/>
+        <label>Phone Number:<input type="text" @bind-value="userToAdd.telNo"></label>
+        <br/>
+        <label>Address:<input type="text" @bind-value="userToAdd.address"></label>
+        <br/>
+        <label>Birthday:<input type="date" @bind-value="userToAdd.birthday"></label>
+        <br/>
+        <label> Hospital/Clinic:
+            <InputSelect @bind-Value="@hospital">
+                <option></option>
+                @foreach(var hos in @hospitals)
+                {
+                    <option>@hos.id : @hos.name</option>
+                }
+            </InputSelect>
+        </label>
+        <br>
+        <label>Department:<input type="text" @bind-value="@department"/></label>
+        <br>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Submit"/>
+    <div class="alert alert-success mt-2" style="@display">Registration was successful!</div>
+    <div class="alert alert-danger mt-2" style="@displayError">@ErrorMessage</div>
+</EditForm>
+
+
+@code {
+    User userToAdd { get; set; } = new User();
+    string display = "display: none";
+    string displayError = "display: none";
+    bool isDisabled = false;
+    string ErrorMessage;
+    
+    string department { get; set; }
+    string hospital { get; set; }
+    
+    DoctorHospital doctorHospital { get; set; } = new DoctorHospital();
+    
+    [Parameter]
+    public string id { get; set; }
+    
+    public List<Hospital> hospitals = new List<Hospital>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        int i = Int32.Parse(id);
+        hospitals = await CloudHospitalService.GetAllHospitalsForManager(i);
+    }
+    
+    private async Task Add()
+    {
+        try
+        {
+            string[] contents = hospital.Split(" ");
+            int hosID = Int32.Parse(contents[0]);
+            
+            doctorHospital.deptName = department;
+            doctorHospital.doctorId = userToAdd.idNr;
+            doctorHospital.hospitalId = hosID;
+
+            userToAdd.userType = "doctor";
+            if (userToAdd.gender == null)
+                userToAdd.gender = "Male";
+            await CloudUserService.AddDoctor(userToAdd);
+            await CloudDoctorHospitalService.AddDoctorHospital(doctorHospital);
+            
+            displayError = "display: none";
+            display = "display: block";
+            isDisabled = true;
+            NavigationManager.NavigateTo("/manage/"+id);
+        }
+        catch (Exception e)
+        {
+            ErrorMessage = e.Message;
+            Console.WriteLine(e.InnerException + e.StackTrace + e.Message);
+            displayError = "display: block";
+        }
+    }
+
+}

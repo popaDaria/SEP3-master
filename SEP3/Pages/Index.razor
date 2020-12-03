@@ -1,0 +1,66 @@
+﻿@page "/"
+@using Syncfusion.Blazor.Calendars
+@using SEP3.Data
+@using SEP3.Model
+
+@inject ICloudHospitalService CloudHospitalService;
+
+@if (hospitals == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <div class="container-fluid horizontal-scrollable py-2 pt-4">
+        <h2>Hospitals</h2>
+        <div class="d-flex flex-row flex-nowrap overflow-auto">
+            @foreach (var hospital in hospitals)
+            {
+                if (hospital.type.Equals("hospital"))
+                {
+                    <div class="col-xs-4">
+                        <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="#"></HomeHospitalComponent>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+    <div class="container-fluid horizontal-scrollable py-2">
+        <br/>
+        <h2>Clinics</h2>
+        <div class="d-flex flex-row flex-nowrap overflow-auto">
+            @foreach (var hospital in hospitals)
+            {
+                if (hospital.type.Equals("clinic"))
+                {
+                    <div class="col-xs-4">
+                        <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="#"></HomeHospitalComponent>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+}
+
+@code {
+
+    public List<Hospital> hospitals = new List<Hospital>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        hospitals = await CloudHospitalService.GetAllHospitalsValidated();
+    }
+
+
+}
+
+<style>
+    row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    }
+</style>

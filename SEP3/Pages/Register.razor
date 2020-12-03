@@ -1,0 +1,80 @@
+﻿@page "/register"
+@using Data
+@using SEP3.Model
+@using SEP3.Auth
+@inject ICloudUserService CloudUserService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+
+<h1 style="font-size: 56px; font-weight: bold; color: #0B4E58">Register a new account</h1>
+<EditForm Model="@userToAdd" OnValidSubmit="Add">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    <div class="formBlock">
+        <label>Register as:
+            <InputSelect @bind-Value="userToAdd.userType">
+                <option></option>
+                <option>patient</option>
+                <option>manager</option>
+            </InputSelect>
+        </label>
+        <br/>
+        <label>First Name:<input type="text" @bind-value="userToAdd.firstname" disabled="@isDisabled"/></label>
+        <br/>
+        <label>Last Name:<input type="text" @bind-value="userToAdd.lastname" disabled="@isDisabled"/></label>
+        <br/>
+        <label>ID Number:<input type="number" @bind-value="userToAdd.idNr" disabled="@isDisabled"/></label>
+        <br/>
+        <label>Password:<input type="password" @bind-value="userToAdd.password" disabled="@isDisabled"/></label>
+        <br/>
+        <label>Gender:
+            <InputSelect @bind-Value="userToAdd.gender">
+                <option></option>
+                <option>Male</option>
+                <option>Female</option>
+            </InputSelect>
+        </label>
+        <br/>
+        <label>Email:<input type="text" @bind-value="userToAdd.email"></label>
+        <br/>
+        <label>Phone Number:<input type="text" @bind-value="userToAdd.telNo"></label>
+        <br/>
+        <label>Address:<input type="text" @bind-value="userToAdd.address"></label>
+        <br/>
+        <label>Birthday:<input type="date" @bind-value="userToAdd.birthday"></label>
+        <br/>
+
+    </div>
+    <input type="submit" class="btn btn-primary" value="Submit"/>
+    <div class="alert alert-success mt-2" style="@display">Registration was successful!</div>
+    <div class="alert alert-danger mt-2" style="@displayError">@ErrorMessage</div>
+</EditForm>
+
+@code {
+    User userToAdd { get; set; } = new User();
+    string display = "display: none";
+    string displayError = "display: none";
+    bool isDisabled = false;
+    string ErrorMessage;
+
+    private async Task Add()
+    {
+        try
+        {
+            //Console.WriteLine(userToAdd.firstName+" "+userToAdd.lastName+" "+userToAdd.userType);
+            await CloudUserService.AddUser(userToAdd);
+            displayError = "display: none";
+            display = "display: block";
+            isDisabled = true;
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(userToAdd.idNr+"", userToAdd.password).Wait(100);
+            NavigationManager.NavigateTo("/");
+        }
+        catch (Exception e)
+        {
+            ErrorMessage = e.Message;
+            Console.WriteLine(e.InnerException + e.StackTrace + e.Message);
+            displayError = "display: block";
+        }
+    }
+
+}

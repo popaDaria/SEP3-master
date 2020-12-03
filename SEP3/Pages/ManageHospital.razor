@@ -1,6 +1,7 @@
 ﻿@page "/manage/{id}"
 @using SEP3.Data
 @using SEP3.Model
+@attribute [Authorize(Roles = "manager", Policy = "MustBeLoggedInAsValidated")]
 
 @inject ICloudHospitalService CloudHospitalService
 @inject NavigationManager NavigationManager

@@ -53,7 +53,7 @@ else
                         <input type="button" class="btn btn-danger" name="cancel" value="Discard Changes" @onclick="@Cancel" style="@display"/>
                         <br/>
                         <br/>
-                        <AuthorizeView Roles="manager">
+                        <AuthorizeView Roles="manager" Policy="MustBeLoggedInAsValidated">
                             <input type="button" class="btn btn-info" name="manageHospitals" value="Manage Hospitals" @onclick="@ManageHospitals"/>
                             <br/>
                             <br/>

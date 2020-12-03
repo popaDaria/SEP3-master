@@ -53,6 +53,8 @@
     public async void Validate()
     {
         await CloudUserService.ValidateManager(id);
+        //StateHasChanged();
+        NavigationManager.NavigateTo("/");
     }
 
     private bool Visibility { get; set; } = false;

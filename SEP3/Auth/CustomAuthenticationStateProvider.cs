@@ -68,6 +68,7 @@ public class CustomAuthenticationStateProvider : AuthenticationStateProvider {
         List<Claim> claims = new List<Claim>();
         claims.Add(new Claim(ClaimTypes.Name, user.username));
         claims.Add(new Claim(ClaimTypes.Role, user.userType));
+        claims.Add(new Claim("Validated", user.validated));
 
         ClaimsIdentity identity = new ClaimsIdentity(claims, "apiauth_type");
         return identity;

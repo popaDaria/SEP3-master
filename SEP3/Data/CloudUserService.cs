@@ -28,6 +28,14 @@ namespace SEP3.Data
             loggedUser.password = Password;
             loggedUser.username = idNr;
             loggedUser.userType = result.userType;
+            if (result.validated)
+            {
+                loggedUser.validated = "true";
+            }
+            else
+            {
+                loggedUser.validated = "false";
+            }
             return loggedUser;
         }
 
@@ -60,7 +68,6 @@ namespace SEP3.Data
 
         public async Task AddDoctor(User user)
         {
-            user.validated = true;
             HttpClient client = new HttpClient();
             string usersSerialized = JsonSerializer.Serialize(user);
             StringContent content = new StringContent(

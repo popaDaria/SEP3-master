@@ -13,12 +13,25 @@
                 <li class="pl-4 pr-4">
                     <a class="pl-4 pr-4 p-4" href="">Home</a>
                 </li>
-                <li>
-                    <a class="pl-4 pr-4 p-4" href="login">Log In</a>
-                </li>
-                <li>
-                    <a class="pl-4 pr-4 p-4" href="register">Register</a>
-                </li>
+                <AuthorizeView>
+                    <NotAuthorized>
+                        <li>
+                            <a class="pl-4 pr-4 p-4" href="login">Log In</a>
+                        </li>
+                    </NotAuthorized>
+                    <Authorized>
+                        <li>
+                            <a class="pl-4 pr-4 p-4" href="login">Log Out</a>
+                        </li>
+                    </Authorized>
+                </AuthorizeView>
+                <AuthorizeView>
+                    <NotAuthorized>
+                    <li>
+                        <a class="pl-4 pr-4 p-4" href="register">Register</a>
+                    </li>
+                    </NotAuthorized>
+                </AuthorizeView>
                 <AuthorizeView Policy="MustBeLoggedIn">
                     <li>
                         <a class="pl-4 pr-4 p-4" href="profile">Profile</a>

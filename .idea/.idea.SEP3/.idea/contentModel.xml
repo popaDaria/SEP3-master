@@ -29,17 +29,16 @@
           <e p="WeatherForecastService.cs" t="Include" />
         </e>
         <e p="Model" t="Include">
+          <e p="Appointment.cs" t="Include" />
           <e p="DoctorHospital.cs" t="Include" />
           <e p="Hospital.cs" t="Include" />
           <e p="LoggedUser.cs" t="Include" />
-          <e p="ScheduleData.cs" t="Include" />
           <e p="User.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="SEP3.AssemblyInfo.cs" t="Include" />
-              <e p="SEP3.RazorAssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>

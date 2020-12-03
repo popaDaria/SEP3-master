@@ -13,19 +13,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39da3d61-0d00-475a-bb14-31b09aaef81b" name="Default Changelist" comment="made map work">
+    <list default="true" id="39da3d61-0d00-475a-bb14-31b09aaef81b" name="Default Changelist" comment="merged">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Auth/CustomAuthenticationStateProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Auth/CustomAuthenticationStateProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Data/CloudUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Data/CloudUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Model/LoggedUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Model/LoggedUser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Pages/AddDoctor.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Pages/AddDoctor.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Pages/AddHospital.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Pages/AddHospital.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Pages/HospitalPage.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Pages/HospitalPage.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Pages/ManageHospital.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Pages/ManageHospital.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Pages/Profile.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Pages/Profile.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Pages/ProfileComponent.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Pages/ProfileComponent.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Shared/NavMenu.razor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/Data/ICloudAppointmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Data/ICloudAppointmentService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/Model/ScheduleData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Model/Appointment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/Pages/scheduler.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Pages/Scheduler.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" afterDir="false" />
@@ -46,10 +39,17 @@
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/NavMenu.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/NavMenu.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorComponent.input.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorComponent.input.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorCoreGenerate.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorCoreGenerate.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.TagHelpers.output.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.TagHelpers.output.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,14 +72,16 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/HomeHospitalComponent.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Pages/AddDoctor.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Pages/HomeHospitalComponent.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Startup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -122,6 +124,13 @@
         <option value="$PROJECT_DIR$/SEP3/Data/CloudUserService.cs" />
         <option value="$PROJECT_DIR$/SEP3/Startup.cs" />
         <option value="$PROJECT_DIR$/SEP3/Shared/NavMenu.razor" />
+        <option value="$PROJECT_DIR$/SEP3/Model/Appointment.razor" />
+        <option value="$PROJECT_DIR$/SEP3/Model/ScheduleData.cs" />
+        <option value="$PROJECT_DIR$/SEP3/Data/CloudAppointmentService.cs" />
+        <option value="$PROJECT_DIR$/SEP3/Model/Appointment.cs" />
+        <option value="$PROJECT_DIR$/SEP3/Data/ICloudAppointmentService.cs" />
+        <option value="$PROJECT_DIR$/SEP3/Pages/scheduler.razor" />
+        <option value="$PROJECT_DIR$/SEP3/Pages/Scheduler.razor" />
       </list>
     </option>
   </component>
@@ -363,7 +372,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606995906157</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024">
+      <created>1607001439887</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1607001439887</updated>
+    </task>
+    <task id="LOCAL-00025" summary="merged">
+      <created>1607001483043</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1607001483043</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,9 +426,14 @@
     <MESSAGE value="more debugging" />
     <MESSAGE value="login page visibility" />
     <MESSAGE value="made map work" />
-    <option name="LAST_COMMIT_MESSAGE" value="made map work" />
+    <MESSAGE value="merged" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="393" y="27" key="CommitChangelistDialog2" timestamp="1607001439900">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="393" y="27" key="CommitChangelistDialog2/0.0.1536.864@0.0.1536.864" timestamp="1607001439900" />
     <state x="65" y="118" width="1416" height="704" key="DiffContextDialog" timestamp="1607001137817">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -419,29 +447,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="838" y="418" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606941580601" />
-    <state width="1493" height="189" key="GridCell.Tab.0.bottom" timestamp="1607001305394">
+    <state width="1493" height="241" key="GridCell.Tab.0.bottom" timestamp="1607006611439">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="2517" height="251" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606920272812" />
-    <state width="1493" height="189" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607001305394" />
+    <state width="1493" height="241" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607006611439" />
     <state width="1877" height="286" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606999396537" />
-    <state width="1493" height="189" key="GridCell.Tab.0.center" timestamp="1607001305393">
+    <state width="1493" height="241" key="GridCell.Tab.0.center" timestamp="1607006611439">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="2517" height="251" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606920272812" />
-    <state width="1493" height="189" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607001305393" />
+    <state width="1493" height="241" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607006611439" />
     <state width="1877" height="286" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606999396537" />
-    <state width="1493" height="189" key="GridCell.Tab.0.left" timestamp="1607001305393">
+    <state width="1493" height="241" key="GridCell.Tab.0.left" timestamp="1607006611439">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="2517" height="251" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606920272812" />
-    <state width="1493" height="189" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607001305393" />
+    <state width="1493" height="241" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607006611439" />
     <state width="1877" height="286" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606999396537" />
-    <state width="1493" height="189" key="GridCell.Tab.0.right" timestamp="1607001305393">
+    <state width="1493" height="241" key="GridCell.Tab.0.right" timestamp="1607006611439">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="2517" height="251" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606920272812" />
-    <state width="1493" height="189" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607001305393" />
+    <state width="1493" height="241" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607006611439" />
     <state width="1877" height="286" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606999396537" />
     <state width="2517" height="389" key="GridCell.Tab.1.bottom" timestamp="1606092094290">
       <screen x="0" y="0" width="2560" height="1080" />
@@ -527,10 +555,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="147" y="68" key="MergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1607001264259" />
-    <state x="407" y="193" key="MultipleFileMergeDialog" timestamp="1607001270771">
+    <state x="407" y="193" key="MultipleFileMergeDialog" timestamp="1607001414920">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="407" y="193" key="MultipleFileMergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1607001270771" />
+    <state x="407" y="193" key="MultipleFileMergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1607001414920" />
     <state x="361" y="164" key="Rider.ProjectTemplateDialog.Size" timestamp="1604565978106">
       <screen x="0" y="0" width="1536" height="864" />
     </state>

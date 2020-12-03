@@ -1,0 +1,174 @@
+﻿@page "/schedule"
+@using Syncfusion.Blazor.Schedule
+@using Syncfusion.Blazor.Calendars
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Inputs
+@using SEP3.Model
+@using SEP3.Data
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Data
+@using Syncfusion.Blazor
+
+@inject ICloudAppointmentService CloudAppointmentService;
+
+@* @if (EventData == null) *@
+@* { *@
+@*     <p>LOADING...</p> *@
+@* } *@
+@* else *@
+@* { *@
+    <div class="control-section">
+        <div class="content-wrapper">
+            <SfSchedule TValue="Appointment" Width="100%" Height="650px" @bind-SelectedDate="@CurrentDate">
+                <ScheduleTemplates >
+                    <EditorTemplate>
+                        <table class="custom-event-editor" width="100%" cellpadding="5">
+                            <tbody>
+                            <tr>
+                                <td class="e-textlabel">Summary</td>
+                                <td colspan="4">
+                                    <SfTextBox @bind-Value="@((context as Appointment).Subject)"></SfTextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="e-textlabel">Doctor</td>
+                                <td colspan="4" class="e-textlabel">
+                                    @((context as Appointment).doctorID)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="e-textlabel">Patient</td>
+                                <td colspan="4" class="e-textlabel">
+                                    @((context as Appointment).patientID)
+                                </td>
+                            </tr>
+                            @* <tr> *@
+                            @*     <td class="e-textlabel">Status</td> *@
+                            @*     <td class="dropdown" colspan="4"> *@
+                            @*         <SfDropDownList TValue="string" TItem="EventFields" ID="EventType" DataSource="@StatusData" Placeholder="Choose status" @bind-Value="@((context as Appointment).EventType)"> *@
+                            @*             <DropDownListFieldSettings Value="Id"></DropDownListFieldSettings> *@
+                            @*         </SfDropDownList> *@
+                            @*     </td> *@
+                            @* </tr> *@
+                            <tr>
+                                <td class="e-textlabel">From</td>
+                                <td colspan="4">
+                                    <SfDateTimePicker @bind-Value="@((context as Appointment).StartTime)"></SfDateTimePicker>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="e-textlabel">To</td>
+                                <td colspan="4">
+                                    <SfDateTimePicker @bind-Value="@((context as Appointment).EndTime)"></SfDateTimePicker>
+                                </td>
+                            </tr>
+                            @* <tr> *@
+                            @*     <td class="e-textlabel">Reason</td> *@
+                            @*     <td colspan="4"> *@
+                            @*         <SfTextBox Multiline="true" @bind-Value="@((context as Appointment).Description)"></SfTextBox> *@
+                            @*     </td> *@
+                            @* </tr> *@
+                            </tbody>
+                        </table>
+                    </EditorTemplate>
+                </ScheduleTemplates>
+                <ScheduleEventSettings TValue="Appointment">
+                    <SfDataManager AdaptorInstance="@typeof(CustomAdaptor)" Adaptor="Adaptors.CustomAdaptor"></SfDataManager>
+                </ScheduleEventSettings>
+            </SfSchedule>
+        </div>
+    </div>
+
+
+@code{
+    private DateTime CurrentDate = DateTime.Now;
+    public static int doctorID;
+    
+    public class CustomAdaptor : DataAdaptor
+    {
+        static ICloudAppointmentService CloudAppointmentService;
+    
+        List<Appointment> EventData = new List<Appointment>();
+        public async override Task<object> ReadAsync(DataManagerRequest dataManagerRequest, string key = null)
+        {
+            await Task.Delay(100); //To mimic asynchronous operation, we delayed this operation using Task.Delay
+            return dataManagerRequest.RequiresCounts ? new DataResult() { Result = EventData, Count = EventData.Count() } : (object)EventData;
+        }
+        public async override Task<object> InsertAsync(DataManager dataManager, object data, string key)
+        {
+            await Task.Delay(100); //To mimic asynchronous operation, we delayed this operation using Task.Delay
+            EventData.Insert(0, data as Appointment);
+            return data;
+        }
+        public async override Task<object> UpdateAsync(DataManager dataManager, object data, string keyField, string key)
+        {
+            await Task.Delay(100); //To mimic asynchronous operation, we delayed this operation using Task.Delay
+            var val = (data as Appointment);
+            var appointment = EventData.Where((Appointment) => Appointment.doctorID == val.doctorID && Appointment.patientID == val.patientID && Appointment.StartTime == val.StartTime).FirstOrDefault();
+            if (appointment != null)
+            {
+                appointment.patientID = val.patientID;
+                appointment.Subject = val.Subject;
+                appointment.StartTime = val.StartTime;
+                appointment.EndTime = val.EndTime;
+                appointment.doctorID = val.doctorID;
+            }
+            return data;
+        }
+        // public async override Task<object> RemoveAsync(DataManager dataManager, object data, string keyField, string key) //triggers on appointment deletion through public method DeleteEvent
+        // {
+        //     await Task.Delay(100); //To mimic asynchronous operation, we delayed this operation using Task.Delay
+        //     int value = (int)data;
+        //     EventData.Remove(EventData.Where((Appointment) => Appointment.Id == value).FirstOrDefault());
+        //     return data;
+        // }
+        public async override Task<object> BatchUpdateAsync(DataManager dataManager, object changedRecords, object addedRecords, object deletedRecords, string keyField, string key, int? dropIndex)
+        {
+            await Task.Delay(100); //To mimic asynchronous operation, we delayed this operation using Task.Delay
+            object records = deletedRecords;
+            List<Appointment> deleteData = deletedRecords as List<Appointment>;
+            foreach (var data in deleteData)
+            {
+                var appointment = EventData.Where((Appointment) => Appointment.doctorID == data.doctorID && Appointment.patientID == data.patientID && Appointment.StartTime == data.StartTime).FirstOrDefault();
+
+            }
+            List<Appointment> addData = addedRecords as List<Appointment>;
+            foreach (var data in addData)
+            {
+                EventData.Insert(0, data as Appointment);
+                records = addedRecords;
+            }
+            List<Appointment> updateData = changedRecords as List<Appointment>;
+            foreach (var data in updateData)
+            {
+                var val = (data as Appointment);
+                var appointment = EventData.Where((Appointment) => Appointment.doctorID == val.doctorID && Appointment.patientID == val.patientID && Appointment.StartTime == val.StartTime).FirstOrDefault();
+                if (appointment != null)
+                {
+                    appointment.patientID = val.patientID;
+                    appointment.Subject = val.Subject;
+                    appointment.StartTime = val.StartTime;
+                    appointment.EndTime = val.EndTime;
+                    appointment.doctorID = val.doctorID;
+                }
+                records = changedRecords;
+            }
+            return records;
+        }
+        private async Task<List<Appointment>> DataList()
+        {
+            List<Appointment> eventDatas = new List<Appointment>();
+            eventDatas = await CloudAppointmentService.GetAllForDoctor(doctorID);
+            Console.WriteLine("I HAVE INITIALIZED");
+            return eventDatas;
+        }
+    }
+
+}
+
+<style>
+    .custom-event-editor td {
+        padding: 7px;
+        padding-right: 16px;
+    }
+</style>

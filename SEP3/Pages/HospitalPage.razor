@@ -73,80 +73,82 @@ else
                         </p>
                     </div>*@
                 <div class="d-flex flex-column">
-                <div class="col-md-12 profile-tab mb-2">
-                    <div>
-                        <SfTab>
-                            <TabItems>
-                                <TabItem>
-                                    <ChildContent>
-                                        <TabHeader Text="About"/>
-                                    </ChildContent>
-                                    <ContentTemplate>
-                                        <div class="container">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label>Useful Information</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@EditableHospital.info" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
-                                                    </SfInPlaceEditor>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label>Address</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@EditableHospital.address" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
-                                                    </SfInPlaceEditor>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label>Postal Code</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@EditableHospital.postalCode" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
-                                                    </SfInPlaceEditor>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </ContentTemplate>
-                                </TabItem>
-                            </TabItems>
-                        </SfTab>
-                    </div>
-                </div>             
-            
-                <div class="container mt-3 mb-3">
-                    <SfMaps ModelType="@typeof(IDataTemplate)">
-                        <MapsTitleSettings Text="@addressHeader"/>
-                        <MapsCenterPosition Latitude="@lat" Longitude="@lon"/>
-                        <MapsZoomSettings Enable="true"
-                                          Toolbars='new string[] {"Zoom", "ZoomIn", "ZoomOut", "Pan", "Reset"}' ShouldZoomInitially="false" MaxZoom="20" MinZoom="15" ZoomFactor="15">
-
-                        </MapsZoomSettings>
-
-                        <MapsLayers>
-                            <MapsLayer LayerType="ShapeLayerType.OSM" UrlTemplate="http://mt1.google.com/vt/lyrs=m@129&hl=en&x=tileX&y=tileY&z=level">
-                                <MapsMarkerSettings>
-                                    <MapsMarker Visible="true" DataSource="@MarkerDatas">
+                    <div class="col-md-12 profile-tab mb-2">
+                        <div>
+                            <SfTab>
+                                <TabItems>
+                                    <TabItem>
                                         <ChildContent>
-                                            <MapsMarkerTooltipSettings Visible="true" ValuePath="Name"/>
+                                            <TabHeader Text="About"/>
                                         </ChildContent>
-                                        <MarkerTemplate>
-                                            @{
-                                                <div>
-                                                    <img class="markerTemplate" style="margin-top:-10px;margin-left:-10px;" src="images/balloon.png"/>
+                                        <ContentTemplate>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Useful Information</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@EditableHospital.info" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                                        </SfInPlaceEditor>
+                                                    </div>
                                                 </div>
-                                            }
-                                        </MarkerTemplate>
-                                    </MapsMarker>
-                                </MapsMarkerSettings>
-                            </MapsLayer>
-                        </MapsLayers>
-                    </SfMaps>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Address</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@EditableHospital.address" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                                        </SfInPlaceEditor>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Postal Code</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@EditableHospital.postalCode" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                                        </SfInPlaceEditor>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </ContentTemplate>
+                                    </TabItem>
+                                </TabItems>
+                            </SfTab>
+                        </div>
+                    </div>
                 </div>
+                <br>
+                <div class="d-flex flex-column">
+                    <div class="container mt-3 mb-3">
+                        <SfMaps ModelType="@typeof(IDataTemplate)">
+                            <MapsTitleSettings Text="@addressHeader"/>
+                            <MapsCenterPosition Latitude="@lat" Longitude="@lon"/>
+                            <MapsZoomSettings Enable="true"
+                                              Toolbars='new string[] {"Zoom", "ZoomIn", "ZoomOut", "Pan", "Reset"}' ShouldZoomInitially="false" MaxZoom="20" MinZoom="15" ZoomFactor="15">
+
+                            </MapsZoomSettings>
+
+                            <MapsLayers>
+                                <MapsLayer LayerType="ShapeLayerType.OSM" UrlTemplate="http://mt1.google.com/vt/lyrs=m@129&hl=en&x=tileX&y=tileY&z=level">
+                                    <MapsMarkerSettings>
+                                        <MapsMarker Visible="true" DataSource="@MarkerDatas">
+                                            <ChildContent>
+                                                <MapsMarkerTooltipSettings Visible="true" ValuePath="Name"/>
+                                            </ChildContent>
+                                            <MarkerTemplate>
+                                                @{
+                                                    <div>
+                                                        <img class="markerTemplate" style="margin-top:-10px;margin-left:-10px;" src="images/balloon.png"/>
+                                                    </div>
+                                                }
+                                            </MarkerTemplate>
+                                        </MapsMarker>
+                                    </MapsMarkerSettings>
+                                </MapsLayer>
+                            </MapsLayers>
+                        </SfMaps>
+                    </div>
                 </div>
                 <br/>
             </form>

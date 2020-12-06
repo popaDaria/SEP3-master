@@ -1,0 +1,147 @@
+﻿@page "/MakeAppointment"
+@attribute [Authorize(Roles = "patient")]
+@using SEP3.Model
+@using SEP3.Data
+@inject ICloudHospitalService CloudHospitalService
+@inject ICloudDoctorHospitalService CloudDoctorHospitalService
+@inject ICloudAppointmentService CloudAppointmentService
+@inject ICloudUserService CloudUserService
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+
+<h1 style="font-size: 56px; font-weight: bold; color: #0B4E58">Schedule a new Appointment</h1>
+<EditForm Model="@appointmentToAdd" OnValidSubmit="Add">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    <div class="formBlock">
+        <label>Hospital:
+            <InputSelect @bind-Value="@hospitalString">
+                <option></option>
+                @foreach (var hos in @allHospitals)
+                {
+                    <option>@hos.id : @hos.name</option>
+                }
+            </InputSelect>
+        </label>
+        <br/>
+        <input type="button" class="btn btn-info" name="selectHospital" value="Confirm Hospital" @onclick="@SelectHospital"/>
+        
+        <div style="@display1">
+            <label>Department:
+                <InputSelect @bind-Value="@deptString">
+                    <option></option>
+                    @foreach (var hos in @allDepartments)
+                    {
+                        <option>@hos</option>
+                    }
+                </InputSelect>
+            </label>
+            
+            <input type="button" class="btn btn-info" name="selectDepartment" value="Confirm Department" @onclick="@SelectDepartment"/>
+        </div>
+        
+        <div style="@display2">
+            <label>Doctor:
+                <InputSelect @bind-Value="@docString">
+                    <option></option>
+                    @foreach (var hos in @allDoctors)
+                    {
+                        <option>@hos.idNr : @hos.firstname @hos.lastname</option>
+                    }
+                </InputSelect>
+            </label>
+                        
+            <input type="button" class="btn btn-info" name="selectDoctor" value="Confirm Doctor" @onclick="@SelectDoctor"/>
+        </div>
+        
+        <div style="@display3">
+            @* <label style="color: red">*Please select an available date for the doctor</label> *@
+            <label>Date:<input type="date" @bind-value="@appointmentToAdd.appointmentDate"></label>
+            <br/>
+            <label>Time:<input type="time" @bind-value="@appointmentToAdd.appointmentTime"></label>
+            <br/>
+            <label>Summary:<input type="text" @bind-value="@appointmentToAdd.summary"></label>
+            <br/>
+        </div>
+        
+    </div>
+    <input type="submit" class="btn btn-primary" value="Submit"/>
+    <div class="alert alert-success mt-2" style="@display">Registration was successful!</div>
+    <div class="alert alert-danger mt-2" style="@displayError">@ErrorMessage</div>
+</EditForm>
+
+
+
+@code {
+    
+    Appointment appointmentToAdd { get; set; }
+    
+    string hospitalString { get; set; }
+    int hosId { get; set; }
+    List<Hospital> allHospitals { get; set; } = new List<Hospital>();
+    List<string> allDepartments { get; set; } = new List<string>();
+    string deptString { get; set; } 
+    
+    string display1 { get; set; }
+    string display2 { get; set; }
+    string display3 { get; set; }
+    string display = "display: none";
+    string displayError = "display: none";
+    public string ErrorMessage { get; set; }
+    
+    IList<User> allDoctors { get; set; } = new List<User>();
+    string docString { get; set; }
+    int docId { get; set; }
+    int patId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        appointmentToAdd = new Appointment();
+        allHospitals = await CloudHospitalService.GetAllHospitals();
+        display1 = "display: none";
+        display2 = "display: none";
+        display3 = "display: none";
+        patId = Int32.Parse(AuthenticationStateProvider.GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value);
+    }
+
+    private async Task SelectHospital()
+    {
+        hosId = Int32.Parse(hospitalString.Split(" ")[0]);
+        allDepartments = await CloudHospitalService.GetAllDepartments(hosId);
+        display1 = "display: block";
+    }
+
+    private async Task SelectDepartment()
+    {
+        allDoctors = await CloudDoctorHospitalService.GetAllDoctorsForDepartment(hosId, deptString);
+        display2 = "display: block";
+    }
+
+    private void SelectDoctor()
+    {
+        docId = Int32.Parse(docString.Split(" ")[0]);
+        display3 = "display: block";
+    }
+
+    private async Task Add()
+    {
+        try
+        {
+            appointmentToAdd.doctorId = docId;
+            appointmentToAdd.patientId = patId;
+            displayError = "display: none";
+            display = "display: block";
+            Console.WriteLine(appointmentToAdd.appointmentTime.ToString());
+            await CloudAppointmentService.MakeAppointment(appointmentToAdd);
+            NavigationManager.NavigateTo("/");
+        }
+        catch (Exception e)
+        {
+            ErrorMessage = e.Message;
+            Console.WriteLine(e.InnerException + e.StackTrace + e.Message);
+            displayError = "display: block";
+        }
+    }
+
+}

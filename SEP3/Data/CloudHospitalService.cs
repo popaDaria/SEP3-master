@@ -62,7 +62,17 @@ namespace SEP3.Data
             HttpResponseMessage message = await client.PatchAsync("https://localhost:8085/hospitals", content);
             Console.WriteLine(message.StatusCode);
         }
-        
+
+        public async Task<List<string>> GetAllDepartments(int hosId)
+        {
+            HttpClient client = new HttpClient();
+            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/hospitals/departments?id="+hosId);
+            string content = await message.Content.ReadAsStringAsync();
+            //Console.WriteLine(content);
+            List<string> result = JsonConvert.DeserializeObject<List<string>>(content);
+            return result;
+        }
+
         public async Task<List<Hospital>> GetAllHospitalsValidated()
         {
             HttpClient client = new HttpClient();

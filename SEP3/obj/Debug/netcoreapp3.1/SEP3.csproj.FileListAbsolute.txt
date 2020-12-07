@@ -310,5 +310,9 @@ C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Page
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ProfileMedical.razor.g.cs
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Schedule.razor.g.cs
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Schedule.razor.g.cs
-C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Scheduler.razor.g.cs
-C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Scheduler.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Schedule.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Scheduler.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Schedule.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Scheduler.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\MakeAppointment.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\MakeAppointment.razor.g.cs

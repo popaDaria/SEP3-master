@@ -1,0 +1,271 @@
+﻿@page "/MakeAppointment"
+@attribute [Authorize(Roles = "patient")]
+@using SEP3.Model
+@using SEP3.Data
+@inject ICloudHospitalService CloudHospitalService
+@inject ICloudDoctorHospitalService CloudDoctorHospitalService
+@inject ICloudAppointmentService CloudAppointmentService
+@inject ICloudUserService CloudUserService
+@inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject ICloudAvailableDayService CloudAvailableDayService
+
+
+<h1 style="font-size: 56px; font-weight: bold; color: #0B4E58">Schedule a new Appointment</h1>
+<EditForm Model="@appointmentToAdd" OnValidSubmit="Add">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    <div class="formBlock">
+        <label>Hospital:
+            <InputSelect @bind-Value="@hospitalString">
+                <option></option>
+                @foreach (var hos in @allHospitals)
+                {
+                    <option>@hos.id : @hos.name</option>
+                }
+            </InputSelect>
+        </label>
+        <br/>
+        <input type="button" class="btn btn-info" name="selectHospital" value="Confirm Hospital" @onclick="@SelectHospital"/>
+        
+        <div style="@display1">
+            <label>Department:
+                <InputSelect @bind-Value="@deptString">
+                    <option></option>
+                    @foreach (var hos in @allDepartments)
+                    {
+                        <option>@hos</option>
+                    }
+                </InputSelect>
+            </label>
+            
+            <input type="button" class="btn btn-info" name="selectDepartment" value="Confirm Department" @onclick="@SelectDepartment"/>
+        </div>
+        
+        <div style="@display2">
+            <label>Doctor:
+                <InputSelect @bind-Value="@docString">
+                    <option></option>
+                    @foreach (var hos in @allDoctors)
+                    {
+                        <option>@hos.idNr : @hos.firstname @hos.lastname</option>
+                    }
+                </InputSelect>
+            </label>
+                        
+            <input type="button" class="btn btn-info" name="selectDoctor" value="Confirm Doctor" @onclick="@SelectDoctor"/>
+        </div>
+        
+        <div style="@display3">
+            @* <label style="color: red">*Please select an available date for the doctor</label> *@
+            <label>Date:<input type="date" @bind-value="@appointmentToAdd.appointmentDate" ></label>
+            <br/>
+            @*<label>
+                @labelContent
+            </label>*@
+            <br/>
+            <label>Time:<input type="time" @bind-value="@appointmentToAdd.appointmentTime"></label>
+            <br/>
+            <label>Summary:<input type="text" @bind-value="@appointmentToAdd.summary"></label>
+            <br/>
+        </div>
+        
+    </div>
+    <input type="submit" class="btn btn-primary" value="Submit"/>
+    <div class="alert alert-success mt-2" style="@display">Registration was successful!</div>
+    <div class="alert alert-danger mt-2" style="@displayError">@ErrorMessage</div>
+</EditForm>
+
+
+
+@code {
+    
+    Appointment appointmentToAdd { get; set; }
+    
+    string hospitalString { get; set; }
+    int hosId { get; set; }
+    List<Hospital> allHospitals { get; set; } = new List<Hospital>();
+    List<string> allDepartments { get; set; } = new List<string>();
+    string deptString { get; set; } 
+    
+    string display1 { get; set; }
+    string display2 { get; set; }
+    string display3 { get; set; }
+    string display = "display: none";
+    string displayError = "display: none";
+    public string ErrorMessage { get; set; }
+    string labelContent { get; set; } = "";
+    
+    IList<User> allDoctors { get; set; } = new List<User>();
+    string docString { get; set; }
+    int docId { get; set; }
+    int patId { get; set; }
+    List<AvailableDay> AvailableDays { get; set; } = new List<AvailableDay>();
+    AvailableDay DoctorDay { get; set; }
+    bool ok { get; set; } = false;
+    
+    List<Appointment> ApptForPatient { get; set; } = new List<Appointment>();
+    List<Appointment> ApptForDoctor { get; set; } = new List<Appointment>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        appointmentToAdd = new Appointment();
+        allHospitals = await CloudHospitalService.GetAllHospitals();
+        display1 = "display: none";
+        display2 = "display: none";
+        display3 = "display: none";
+        patId = Int32.Parse(AuthenticationStateProvider.GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value);
+        ApptForPatient = await CloudAppointmentService.GetAllForPatient(patId);
+    }
+
+    private async Task SelectHospital()
+    {
+        hosId = Int32.Parse(hospitalString.Split(" ")[0]);
+        allDepartments = await CloudHospitalService.GetAllDepartments(hosId);
+        display1 = "display: block";
+    }
+
+    private async Task SelectDepartment()
+    {
+        allDoctors = await CloudDoctorHospitalService.GetAllDoctorsForDepartment(hosId, deptString);
+        display2 = "display: block";
+    }
+
+    private async Task SelectDoctor()
+    {
+        docId = Int32.Parse(docString.Split(" ")[0]);
+        AvailableDays = await CloudAvailableDayService.GetAvailableDays(docId);
+        ApptForDoctor = await CloudAppointmentService.GetAllForDoctor(docId);
+        display3 = "display: block";
+        //labelContent = "Doctor's schedule:";
+        if (AvailableDays.Count == 0)
+        {
+            displayError = "display : block";
+            ErrorMessage = "Warning: The doctor you have selected has no available days registered in the system!";
+            ok = true;
+        }
+        else
+        {
+            displayError = "display : none";
+        }
+    }
+    
+    private async Task Add()
+    {
+        try
+        {
+            appointmentToAdd.doctorId = docId;
+            appointmentToAdd.patientId = patId;
+
+            foreach (var availableDay in AvailableDays)
+            {
+                if (availableDay.AvailableDate.Day == appointmentToAdd.appointmentDate.Day &&
+                    availableDay.AvailableDate.Month == appointmentToAdd.appointmentDate.Month &&
+                    availableDay.AvailableDate.Year == appointmentToAdd.appointmentDate.Year)
+                {
+                    ok = true;
+                    DoctorDay = availableDay;
+                }
+            }
+            if (ok)
+            {
+                if (AvailableDays.Count != 0)
+                {
+                    if (DoctorDay.AppointmentNr != 0)
+                    {
+                        if (appointmentToAdd.appointmentTime.Hour >= DoctorDay.StartTime.Hour && appointmentToAdd.appointmentTime.Hour < DoctorDay.EndTime.Hour)
+                        {
+                            await AddAppointment();
+                        }
+                        else
+                        {
+                            displayError = "display : block";
+                            ErrorMessage = "Selected time does not conform to doctor's schedule. Please select another time.";
+                        }
+                    }
+                    else
+                    {
+                        displayError = "display : block";
+                        ErrorMessage = "Doctor has no more available appointment slots for the selected date. Please select another date.";
+                    }
+                }
+                else
+                {
+                   await AddAppointment();
+                }
+            }
+            else
+            {
+                displayError = "display : block";
+                ErrorMessage = "Selected date is not an available date for the doctor. Please select another date.";
+            }
+        }
+        catch (Exception e)
+        {
+            ErrorMessage = e.Message;
+            Console.WriteLine(e.InnerException + e.StackTrace + e.Message);
+            displayError = "display: block";
+        }
+    }
+
+    private async Task AddAppointment()
+    {
+        List<Appointment> SameDateAppts = new List<Appointment>();
+        foreach (var ad in ApptForDoctor)
+        {
+            if (appointmentToAdd.appointmentDate.Day == ad.appointmentDate.Day || appointmentToAdd.appointmentDate.Month == ad.appointmentDate.Month ||
+                appointmentToAdd.appointmentDate.Year == ad.appointmentDate.Year)
+            {
+                SameDateAppts.Add(ad);
+            }
+        }
+        
+        bool validTime = true;
+        foreach (var sameDateAppt in SameDateAppts)
+        {
+            if (sameDateAppt.appointmentTime.Hour == appointmentToAdd.appointmentTime.Hour &&
+                sameDateAppt.appointmentTime.Minute == appointmentToAdd.appointmentTime.Minute)
+            {
+                validTime = false;
+            }
+        }
+        
+        bool found = false;
+        foreach (var ap in ApptForPatient)
+        {
+            if (ap.doctorId == appointmentToAdd.doctorId && ap.appointmentTime.Hour == appointmentToAdd.appointmentTime.Hour &&
+                ap.appointmentTime.Minute == appointmentToAdd.appointmentTime.Minute &&
+                ap.appointmentDate.Day == appointmentToAdd.appointmentDate.Day &&
+                ap.appointmentDate.Month == appointmentToAdd.appointmentDate.Month &&
+                ap.appointmentDate.Year == appointmentToAdd.appointmentDate.Year)
+            {
+                found = true;
+            }
+        }
+
+        if (!found)
+        {
+            if (validTime)
+            {
+                displayError = "display: none";
+                display = "display: block";
+                await CloudAppointmentService.MakeAppointment(appointmentToAdd);
+                --DoctorDay.AppointmentNr;
+                await CloudAvailableDayService.UpdateAvailableDay(DoctorDay);
+                NavigationManager.NavigateTo("/");
+            }
+            else
+            {
+                displayError = "display : block";
+                ErrorMessage = "Appointment time reserved! Pick another time!";
+            }
+        }
+        else
+        {
+            displayError = "display : block";
+            ErrorMessage = "Appointment already added!";
+            //NavigationManager.NavigateTo("/");
+        }
+    }
+
+}

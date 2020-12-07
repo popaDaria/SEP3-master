@@ -36,7 +36,7 @@
         <br/>
         <label>Address:<input type="text" @bind-value="userToAdd.address"></label>
         <br/>
-        <label>Birthday:<input type="date" @bind-value="userToAdd.birthday"></label>
+        <label>Birthday:<input type="date" min="1900-01-01" @bind-value="userToAdd.birthday"></label>
         <br/>
         <label> Hospital/Clinic:
             <InputSelect @bind-Value="@hospital">

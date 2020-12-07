@@ -6,7 +6,10 @@ namespace SEP3.Data
 {
     public interface ICloudAppointmentService
     {
-        public Task<List<Appointment>> GetAllForPatient(int id);
-        public Task<List<Appointment>> GetAllForDoctor(int id);
+        List<ScheduleData.DoctorsEventData> GetAppointmentData();
+        Task<List<Appointment>> GetAllForDoctor(int id);
+        Task<List<Appointment>> GetAllForPatient(int id);
+        Task MakeAppointment(Appointment appointment);
+        Task UpdateAppointment(Appointment appointment);
     }
 }

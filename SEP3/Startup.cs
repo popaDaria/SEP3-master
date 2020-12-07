@@ -35,7 +35,8 @@ namespace SEP3
             services.AddScoped<ICloudHospitalService, CloudHospitalService>();
             services.AddScoped<ICloudDoctorHospitalService, CloudDoctorHospitalService>();
             services.AddScoped<ICloudAppointmentService, CloudAppointmentService>();
-
+            services.AddScoped<ICloudAvailableDayService, CloudAvailableDayService>();
+            
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
             services.AddSyncfusionBlazor();
 

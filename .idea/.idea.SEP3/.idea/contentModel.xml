@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\bogda\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\bogda\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_SEP3.-1366440079.00" t="ExcludeRecursive" />
-    <e p="C:\Users\bogda\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\bogda\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\bogda\RiderProjects\SEP3-master" t="IncludeFlat">
+    <e p="C:\Users\Tania Maria\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Tania Maria\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_SEP3.588175999.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Tania Maria\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\Tania Maria\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
+    <e p="D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="SEP3" t="IncludeRecursive">
         <e p="_Imports.razor" t="Include" />
@@ -18,19 +18,23 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Data" t="Include">
           <e p="CloudAppointmentService.cs" t="Include" />
+          <e p="CloudAvailableDayService.cs" t="Include" />
           <e p="CloudDoctorHospitalService.cs" t="Include" />
           <e p="CloudHospitalService.cs" t="Include" />
           <e p="CloudUserService.cs" t="Include" />
           <e p="ICloudAppointmentService.cs" t="Include" />
+          <e p="ICloudAvailableDayService.cs" t="Include" />
           <e p="ICloudDoctorHospitalService.cs" t="Include" />
           <e p="ICloudHospitalService.cs" t="Include" />
           <e p="ICloudUserService.cs" t="Include" />
         </e>
         <e p="Model" t="Include">
           <e p="Appointment.cs" t="Include" />
+          <e p="AvailableDay.cs" t="Include" />
           <e p="DoctorHospital.cs" t="Include" />
           <e p="Hospital.cs" t="Include" />
           <e p="LoggedUser.cs" t="Include" />
+          <e p="ScheduleData.cs" t="Include" />
           <e p="User.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -45,15 +49,17 @@
           <e p="_Host.cshtml" t="Include" />
           <e p="AddDoctor.razor" t="Include" />
           <e p="AddHospital.razor" t="Include" />
-          <e p="Calendar.razor" t="Include" />
           <e p="HomeHospitalComponent.razor" t="Include" />
           <e p="HospitalPage.razor" t="Include" />
           <e p="Index.razor" t="Include" />
           <e p="LogIn.razor" t="Include" />
+          <e p="MakeAppointment.razor" t="Include" />
           <e p="ManageHospital.razor" t="Include" />
           <e p="Profile.razor" t="Include" />
           <e p="ProfileComponent.razor" t="Include" />
+          <e p="ProfileMedical.razor" t="Include" />
           <e p="Register.razor" t="Include" />
+          <e p="Schedule.razor" t="Include" />
           <e p="scheduler.razor" t="Include" />
           <e p="Validate.razor" t="Include" />
         </e>

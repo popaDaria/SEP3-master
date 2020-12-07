@@ -60,7 +60,7 @@
           <e p="ProfileMedical.razor" t="Include" />
           <e p="Register.razor" t="Include" />
           <e p="Schedule.razor" t="Include" />
-          <e p="scheduler.razor" t="Include" />
+          <e p="Scheduler.razor" t="Include" />
           <e p="Validate.razor" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />

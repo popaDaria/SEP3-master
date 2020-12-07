@@ -14,9 +14,7 @@
 <div class="col-lg-12 control-section">
     <div class="schedule-wrapper">
         <SfSchedule TValue="Appointment" Width="100%" Height="650px" @bind-SelectedDate="@CurrentDate" Readonly="true">
-            <ScheduleEventSettings TValue="Appointment">
-                <SfDataManager Url="@url" Adaptor="@Syncfusion.Blazor.Adaptors.WebApiAdaptor"></SfDataManager>
-            </ScheduleEventSettings>
+           <ScheduleEventSettings DataSource="@DataSource"></ScheduleEventSettings>
         </SfSchedule>
     </div>
 </div>
@@ -27,12 +25,15 @@
     [Parameter]
     public int doctorID { get; set; }
 
-    string url = "https://localhost:8085/appointments/doctor/";
+    public List<Appointment> DataSource = new List<Appointment>();
+    
+    
 
-    protected async  override Task OnInitializedAsync()
+    protected async override Task OnInitializedAsync()
     {
-        url = url + doctorID;
+        DataSource = await CloudAppointmentService.GetAllForDoctor(22222);
     }
+    
 
 }
 

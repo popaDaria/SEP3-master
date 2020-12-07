@@ -13,77 +13,77 @@ namespace SEP3.Shared
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "D:\SEP3\SEP3-master-Bogdan\SEP3\_Imports.razor"
+#line 1 "D:\SEP3-master\SEP3\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\SEP3\SEP3-master-Bogdan\SEP3\_Imports.razor"
+#line 2 "D:\SEP3-master\SEP3\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\SEP3\SEP3-master-Bogdan\SEP3\_Imports.razor"
+#line 3 "D:\SEP3-master\SEP3\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\SEP3\SEP3-master-Bogdan\SEP3\_Imports.razor"
+#line 4 "D:\SEP3-master\SEP3\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\SEP3\SEP3-master-Bogdan\SEP3\_Imports.razor"
+#line 5 "D:\SEP3-master\SEP3\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "D:\SEP3\SEP3-master-Bogdan\SEP3\_Imports.razor"
+#line 6 "D:\SEP3-master\SEP3\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "D:\SEP3\SEP3-master-Bogdan\SEP3\_Imports.razor"
+#line 7 "D:\SEP3-master\SEP3\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\SEP3\SEP3-master-Bogdan\SEP3\_Imports.razor"
+#line 8 "D:\SEP3-master\SEP3\_Imports.razor"
 using SEP3;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\SEP3\SEP3-master-Bogdan\SEP3\_Imports.razor"
+#line 9 "D:\SEP3-master\SEP3\_Imports.razor"
 using SEP3.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 1 "D:\SEP3\SEP3-master-Bogdan\SEP3\Shared\NavMenu.razor"
+#line 1 "D:\SEP3-master\SEP3\Shared\NavMenu.razor"
 using Syncfusion.Blazor.Navigations;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\SEP3\SEP3-master-Bogdan\SEP3\Shared\NavMenu.razor"
+#line 2 "D:\SEP3-master\SEP3\Shared\NavMenu.razor"
 using SEP3.Auth;
 
 #line default
@@ -97,7 +97,7 @@ using SEP3.Auth;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 56 "D:\SEP3\SEP3-master-Bogdan\SEP3\Shared\NavMenu.razor"
+#line 56 "D:\SEP3-master\SEP3\Shared\NavMenu.razor"
        
     SfSidebar SidebarObj;
     public string Leftbtn = "Left";

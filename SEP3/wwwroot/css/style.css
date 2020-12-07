@@ -16,6 +16,15 @@ box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -10px -10px 50px rgba(255, 255, 
 border-radius: 20px;
 }
 
+.surroundBody {
+    text-align: center;
+    margin: 0px 15px 0px 100px;
+
+    background: #EFEFEF;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -10px -10px 50px rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+}
+
 /* Welcome ! */
 
 .WelcomeText {
@@ -40,5 +49,27 @@ border: 2px solid #EFEFEF;
 box-sizing: border-box;
 box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -15px -10px 60px 20px rgba(255, 255, 255, 0.2);
 border-radius: 50px;
+}
+
+/* empty block */
+
+.empty {
+    background-color: #ffffff;
+    height: 200px;
+    width: 800px;
+}
+
+/* Menu buttons */
+
+.menu_button {
+    width: 250px;
+    height: 35px;
+    /* background-color: aqua; */
+    text-align: center;
+    color: #878889;
+    border-radius: 26px;
+    font-family: Arial sans-serif;
+    font-style: normal;
+    font-size: 25px;
 }
 

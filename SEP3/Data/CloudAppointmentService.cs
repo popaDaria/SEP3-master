@@ -51,9 +51,9 @@ namespace SEP3.Data
             return result;
         }
 
-        public List<ScheduleData.DoctorsEventData> GetAppointmentData()
+        /*public List<ScheduleData.DoctorsEventData> GetAppointmentData()
         {
             throw new NotImplementedException();
-        }
+        }*/
     }
 }

@@ -13,9 +13,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39da3d61-0d00-475a-bb14-31b09aaef81b" name="Default Changelist" comment="bs">
+    <list default="true" id="39da3d61-0d00-475a-bb14-31b09aaef81b" name="Default Changelist" comment="schedule component">
+      <change afterPath="$PROJECT_DIR$/SEP3/Pages/Calendar.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorComponent.input.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorComponent.input.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/Pages/ProfileMedical.razor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/Pages/Scheduler.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Pages/Scheduler.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/SEP3.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/SEP3.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +94,7 @@
         <option value="$PROJECT_DIR$/SEP3/Data/ICloudAppointmentService.cs" />
         <option value="$PROJECT_DIR$/SEP3/Pages/scheduler.razor" />
         <option value="$PROJECT_DIR$/SEP3/Pages/Scheduler.razor" />
+        <option value="$PROJECT_DIR$/SEP3/Pages/Calendar.razor" />
       </list>
     </option>
   </component>
@@ -169,7 +174,7 @@
       <workItem from="1606663865842" duration="25347000" />
       <workItem from="1606902313770" duration="17109000" />
       <workItem from="1606982159973" duration="14517000" />
-      <workItem from="1607352837486" duration="359000" />
+      <workItem from="1607352837486" duration="1143000" />
     </task>
     <task id="LOCAL-00001" summary="First Version, Green Navbar">
       <created>1601938783775</created>
@@ -353,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607350774581</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="schedule component">
+      <created>1607353334407</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1607353334407</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -395,7 +407,8 @@
     <MESSAGE value="made map work" />
     <MESSAGE value="merged" />
     <MESSAGE value="bs" />
-    <option name="LAST_COMMIT_MESSAGE" value="bs" />
+    <MESSAGE value="schedule component" />
+    <option name="LAST_COMMIT_MESSAGE" value="schedule component" />
   </component>
   <component name="WindowStateProjectService">
     <state x="393" y="27" key="CommitChangelistDialog2" timestamp="1607001439900">
@@ -540,11 +553,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606940516891" />
-    <state x="523" y="218" key="Vcs.Push.Dialog.v2" timestamp="1607350945531">
+    <state x="523" y="218" key="Vcs.Push.Dialog.v2" timestamp="1607353345226">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="872" y="272" key="Vcs.Push.Dialog.v2/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606919600412" />
-    <state x="523" y="218" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1607350945531" />
+    <state x="523" y="218" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1607353345226" />
     <state x="654" y="262" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606995909696" />
     <state x="540" y="167" key="VcsDiffUtil.ChangesDialog" timestamp="1604561554438">
       <screen x="0" y="0" width="1536" height="864" />
@@ -564,10 +577,10 @@
     </state>
     <state x="977" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605815298837" />
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1604566760582" />
-    <state x="537" y="146" key="git4idea.branch.GitSmartOperationDialog" timestamp="1607351419755">
+    <state x="537" y="146" key="git4idea.branch.GitSmartOperationDialog" timestamp="1607353943015">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="537" y="146" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.864@0.0.1536.864" timestamp="1607351419755" />
+    <state x="537" y="146" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.864@0.0.1536.864" timestamp="1607353943015" />
     <state x="1081" y="446" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1606907728143">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>

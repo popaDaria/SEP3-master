@@ -1,0 +1,8 @@
+﻿@page "/schedule/{id}"
+
+<Scheduler doctorID="@id"></Scheduler>
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+}

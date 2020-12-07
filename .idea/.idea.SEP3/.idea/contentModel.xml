@@ -45,6 +45,7 @@
           <e p="_Host.cshtml" t="Include" />
           <e p="AddDoctor.razor" t="Include" />
           <e p="AddHospital.razor" t="Include" />
+          <e p="Calendar.razor" t="Include" />
           <e p="HomeHospitalComponent.razor" t="Include" />
           <e p="HospitalPage.razor" t="Include" />
           <e p="Index.razor" t="Include" />
@@ -52,7 +53,6 @@
           <e p="ManageHospital.razor" t="Include" />
           <e p="Profile.razor" t="Include" />
           <e p="ProfileComponent.razor" t="Include" />
-          <e p="ProfileMedical.razor" t="Include" />
           <e p="Register.razor" t="Include" />
           <e p="scheduler.razor" t="Include" />
           <e p="Validate.razor" t="Include" />

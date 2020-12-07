@@ -58,13 +58,13 @@
         
         <div style="@display3">
             @* <label style="color: red">*Please select an available date for the doctor</label> *@
-            <label>Date:<input type="date" @onchange="@AddLabel"></label>
+            <label>Date:<input type="datetime-local" @onchange="@AddLabel"></label>
             <br/>
             <label style="color: #0f6674" class="oi oi-bell">
                 @labelContent
             </label>
             <br/>
-            <label>Time:<input type="time" @bind-value="@appointmentToAdd.appointmentTime"></label>
+            <label>Time:<input type="datetime-local" @onchange="@SelectEndTime"></label>
             <br/>
             <label>Summary:<input type="text" @bind-value="@appointmentToAdd.summary"></label>
             <br/>
@@ -158,14 +158,17 @@
         if (e.Value != null)
         {
             string result = (string) e.Value;
-            string[] contents = result.Split("-");
-            appointmentToAdd.appointmentDate = new DateTime(Int32.Parse(contents[0]),Int32.Parse(contents[1]),Int32.Parse(contents[2]));
+            string[] contents = result.Split("T");
+            string[] dateContents = contents[0].Split("-");
+            string[] timeContents = contents[1].Split(":");
+            appointmentToAdd.startTime = new DateTime(Int32.Parse(dateContents[0]),Int32.Parse(dateContents[1]),Int32.Parse(dateContents[2]), 
+                Int32.Parse(timeContents[0]),Int32.Parse(timeContents[1]),0 );
         }
         foreach (var availableDay in AvailableDays)
         {
-            if (availableDay.AvailableDate.Day == appointmentToAdd.appointmentDate.Day &&
-                availableDay.AvailableDate.Month == appointmentToAdd.appointmentDate.Month &&
-                availableDay.AvailableDate.Year == appointmentToAdd.appointmentDate.Year)
+            if (availableDay.AvailableDate.Day == appointmentToAdd.startTime.Day &&
+                availableDay.AvailableDate.Month == appointmentToAdd.startTime.Month &&
+                availableDay.AvailableDate.Year == appointmentToAdd.startTime.Year)
             {
                 labelContent = "The Working hours are: " + availableDay.StartTime.TimeOfDay.ToString() + " - " + availableDay.EndTime.TimeOfDay.ToString();
                 found = true;
@@ -177,6 +180,18 @@
         }
     }
     
+    private void SelectEndTime(ChangeEventArgs e)
+    {
+        if (e.Value != null)
+        {
+            string result = (string) e.Value;
+            string[] contents = result.Split("T");
+            string[] dateContents = contents[0].Split("-");
+            string[] timeContents = contents[1].Split(":");
+            appointmentToAdd.endTime = new DateTime(Int32.Parse(dateContents[0]),Int32.Parse(dateContents[1]),Int32.Parse(dateContents[2]), 
+                Int32.Parse(timeContents[0]),Int32.Parse(timeContents[1]),0 );
+        }    }
+    
     private async Task Add()
     {
         try
@@ -186,9 +201,9 @@
 
             foreach (var availableDay in AvailableDays)
             {
-                if (availableDay.AvailableDate.Day == appointmentToAdd.appointmentDate.Day &&
-                    availableDay.AvailableDate.Month == appointmentToAdd.appointmentDate.Month &&
-                    availableDay.AvailableDate.Year == appointmentToAdd.appointmentDate.Year)
+                if (availableDay.AvailableDate.Day == appointmentToAdd.startTime.Day &&
+                    availableDay.AvailableDate.Month == appointmentToAdd.startTime.Month &&
+                    availableDay.AvailableDate.Year == appointmentToAdd.startTime.Year)
                 {
                     ok = true;
                     DoctorDay = availableDay;
@@ -200,7 +215,7 @@
                 {
                     if (DoctorDay.AppointmentNr != 0)
                     {
-                        if (appointmentToAdd.appointmentTime.Hour >= DoctorDay.StartTime.Hour && appointmentToAdd.appointmentTime.Hour < DoctorDay.EndTime.Hour)
+                        if (appointmentToAdd.startTime.Hour >= DoctorDay.StartTime.Hour && appointmentToAdd.endTime.Hour < DoctorDay.EndTime.Hour)
                         {
                             await AddAppointment();
                         }
@@ -240,8 +255,8 @@
         List<Appointment> SameDateAppts = new List<Appointment>();
         foreach (var ad in ApptForDoctor)
         {
-            if (appointmentToAdd.appointmentDate.Day == ad.appointmentDate.Day || appointmentToAdd.appointmentDate.Month == ad.appointmentDate.Month ||
-                appointmentToAdd.appointmentDate.Year == ad.appointmentDate.Year)
+            if (appointmentToAdd.startTime.Day == ad.startTime.Day || appointmentToAdd.startTime.Month == ad.startTime.Month ||
+                appointmentToAdd.startTime.Year == ad.startTime.Year)
             {
                 SameDateAppts.Add(ad);
             }
@@ -250,8 +265,8 @@
         bool validTime = true;
         foreach (var sameDateAppt in SameDateAppts)
         {
-            if (sameDateAppt.appointmentTime.Hour == appointmentToAdd.appointmentTime.Hour &&
-                sameDateAppt.appointmentTime.Minute == appointmentToAdd.appointmentTime.Minute)
+            if (sameDateAppt.startTime.Hour == appointmentToAdd.startTime.Hour &&
+                sameDateAppt.startTime.Minute == appointmentToAdd.startTime.Minute)
             {
                 validTime = false;
             }
@@ -260,11 +275,9 @@
         bool found = false;
         foreach (var ap in ApptForPatient)
         {
-            if (ap.doctorId == appointmentToAdd.doctorId && ap.appointmentTime.Hour == appointmentToAdd.appointmentTime.Hour &&
-                ap.appointmentTime.Minute == appointmentToAdd.appointmentTime.Minute &&
-                ap.appointmentDate.Day == appointmentToAdd.appointmentDate.Day &&
-                ap.appointmentDate.Month == appointmentToAdd.appointmentDate.Month &&
-                ap.appointmentDate.Year == appointmentToAdd.appointmentDate.Year)
+            //todo:look over the logic of this
+            if (ap.doctorId == appointmentToAdd.doctorId && ap.startTime.Equals(appointmentToAdd.startTime) &&
+                ap.endTime.Equals(appointmentToAdd.endTime))
             {
                 found = true;
             }
@@ -295,5 +308,7 @@
             //NavigationManager.NavigateTo("/");
         }
     }
+
+    
 
 }

@@ -59,7 +59,6 @@
           <e p="ProfileComponent.razor" t="Include" />
           <e p="ProfileMedical.razor" t="Include" />
           <e p="Register.razor" t="Include" />
-          <e p="Schedule.razor" t="Include" />
           <e p="Scheduler.razor" t="Include" />
           <e p="Validate.razor" t="Include" />
         </e>

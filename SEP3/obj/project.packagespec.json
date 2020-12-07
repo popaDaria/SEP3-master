@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\SEP3.csproj",
+    "projectUniqueName": "C:\\Users\\bogda\\RiderProjects\\SEP3-master\\SEP3\\SEP3.csproj",
     "projectName": "SEP3",
-    "projectPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\SEP3.csproj",
-    "outputPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\obj\\",
+    "projectPath": "C:\\Users\\bogda\\RiderProjects\\SEP3-master\\SEP3\\SEP3.csproj",
+    "outputPath": "C:\\Users\\bogda\\RiderProjects\\SEP3-master\\SEP3\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.1"
@@ -26,6 +26,10 @@
   "frameworks": {
     "netcoreapp3.1": {
       "dependencies": {
+        "Microsoft.AspNetCore.Components.Analyzers": {
+          "target": "Package",
+          "version": "[5.0.0, )"
+        },
         "Newtonsoft.Json": {
           "target": "Package",
           "version": "[12.0.1, )"

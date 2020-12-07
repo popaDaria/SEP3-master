@@ -303,16 +303,16 @@ D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pag
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\AddDoctor.razor.g.cs
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ManageHospital.razor.g.cs
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ProfileComponent.razor.g.cs
-C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ProfileMedical.razor.g.cs
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\AddDoctor.razor.g.cs
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ManageHospital.razor.g.cs
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ProfileComponent.razor.g.cs
-C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ProfileMedical.razor.g.cs
-C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Schedule.razor.g.cs
-C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Schedule.razor.g.cs
 D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Schedule.razor.g.cs
 D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Scheduler.razor.g.cs
 D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Schedule.razor.g.cs
 D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Scheduler.razor.g.cs
 D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\MakeAppointment.razor.g.cs
 D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\MakeAppointment.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\MakeAppointment.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Scheduler.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\MakeAppointment.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Scheduler.razor.g.cs

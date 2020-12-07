@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "SEP3/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Components.Analyzers": "5.0.0",
           "Newtonsoft.Json": "12.0.1",
           "Spk.LocationIq.Wrapper": "1.0.0",
           "Syncfusion.Blazor": "18.3.0.47",
@@ -340,7 +341,7 @@
       "Microsoft.AspNetCore.Components/3.1.8": {
         "dependencies": {
           "Microsoft.AspNetCore.Authorization": "3.1.8",
-          "Microsoft.AspNetCore.Components.Analyzers": "3.1.8",
+          "Microsoft.AspNetCore.Components.Analyzers": "5.0.0",
           "Microsoft.JSInterop": "3.1.8"
         },
         "runtime": {
@@ -353,7 +354,7 @@
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Components.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Components.Analyzers/3.1.8": {},
+      "Microsoft.AspNetCore.Components.Analyzers/5.0.0": {},
       "Microsoft.AspNetCore.Components.Forms/3.1.8": {
         "dependencies": {
           "Microsoft.AspNetCore.Components": "3.1.8"
@@ -2263,12 +2264,12 @@
       "path": "microsoft.aspnetcore.components/3.1.8",
       "hashPath": "microsoft.aspnetcore.components.3.1.8.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Components.Analyzers/3.1.8": {
+    "Microsoft.AspNetCore.Components.Analyzers/5.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ODBBAHa7Kxk85HHf/En3ZYw+oGPb+oosb30PZrrB1gGqDo/qtleHLfdR2XsjOdRyZujesOMX0c/FU0t3hyXRpA==",
-      "path": "microsoft.aspnetcore.components.analyzers/3.1.8",
-      "hashPath": "microsoft.aspnetcore.components.analyzers.3.1.8.nupkg.sha512"
+      "sha512": "sha512-G5SP+2FO90d84XB90A1NBKJaDjhkhcv3kDumd7zughGt1tNQn92sCpBoRs51LT1M1Cp4w4cD/WHS8WB8t5ol9A==",
+      "path": "microsoft.aspnetcore.components.analyzers/5.0.0",
+      "hashPath": "microsoft.aspnetcore.components.analyzers.5.0.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Components.Forms/3.1.8": {
       "type": "package",

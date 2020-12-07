@@ -50,10 +50,6 @@ namespace SEP3.Data
             List<Appointment> result = JsonConvert.DeserializeObject<List<Appointment>>(content);
             return result;
         }
-
-        public List<ScheduleData.DoctorsEventData> GetAppointmentData()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

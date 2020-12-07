@@ -43,7 +43,7 @@
           "lib/netcoreapp3.1/Microsoft.AspNetCore.Components.dll": {}
         }
       },
-      "Microsoft.AspNetCore.Components.Analyzers/3.1.8": {
+      "Microsoft.AspNetCore.Components.Analyzers/5.0.0": {
         "type": "package",
         "build": {
           "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets": {}
@@ -419,10 +419,10 @@
         "microsoft.aspnetcore.components.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Components.Analyzers/3.1.8": {
-      "sha512": "ODBBAHa7Kxk85HHf/En3ZYw+oGPb+oosb30PZrrB1gGqDo/qtleHLfdR2XsjOdRyZujesOMX0c/FU0t3hyXRpA==",
+    "Microsoft.AspNetCore.Components.Analyzers/5.0.0": {
+      "sha512": "G5SP+2FO90d84XB90A1NBKJaDjhkhcv3kDumd7zughGt1tNQn92sCpBoRs51LT1M1Cp4w4cD/WHS8WB8t5ol9A==",
       "type": "package",
-      "path": "microsoft.aspnetcore.components.analyzers/3.1.8",
+      "path": "microsoft.aspnetcore.components.analyzers/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -431,7 +431,7 @@
         "analyzers/dotnet/cs/Microsoft.AspNetCore.Components.Analyzers.dll",
         "build/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets",
         "buildTransitive/netstandard2.0/Microsoft.AspNetCore.Components.Analyzers.targets",
-        "microsoft.aspnetcore.components.analyzers.3.1.8.nupkg.sha512",
+        "microsoft.aspnetcore.components.analyzers.5.0.0.nupkg.sha512",
         "microsoft.aspnetcore.components.analyzers.nuspec"
       ]
     },
@@ -1218,25 +1218,26 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Microsoft.AspNetCore.Components.Analyzers >= 5.0.0",
       "Newtonsoft.Json >= 12.0.1",
       "Spk.LocationIq.Wrapper >= 1.0.0",
       "Syncfusion.Blazor >= 18.3.0.47"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Tania Maria\\.nuget\\packages\\": {}
+    "C:\\Users\\bogda\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\SEP3.csproj",
+      "projectUniqueName": "C:\\Users\\bogda\\RiderProjects\\SEP3-master\\SEP3\\SEP3.csproj",
       "projectName": "SEP3",
-      "projectPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\SEP3.csproj",
-      "packagesPath": "C:\\Users\\Tania Maria\\.nuget\\packages\\",
-      "outputPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\obj\\",
+      "projectPath": "C:\\Users\\bogda\\RiderProjects\\SEP3-master\\SEP3\\SEP3.csproj",
+      "packagesPath": "C:\\Users\\bogda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bogda\\RiderProjects\\SEP3-master\\SEP3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Tania Maria\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\bogda\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -1258,6 +1259,10 @@
     "frameworks": {
       "netcoreapp3.1": {
         "dependencies": {
+          "Microsoft.AspNetCore.Components.Analyzers": {
+            "target": "Package",
+            "version": "[5.0.0, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.1, )"

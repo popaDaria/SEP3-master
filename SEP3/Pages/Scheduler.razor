@@ -1,84 +1,44 @@
-﻿@page "/schedule"
+﻿@page "/schedule/{doctorID}"
 @using Syncfusion.Blazor.Schedule
 @using Syncfusion.Blazor.Calendars
 @using Syncfusion.Blazor.DropDowns
 @using Syncfusion.Blazor.Inputs
 @using SEP3.Model
 @using SEP3.Data
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Data
+@using Syncfusion.Blazor
 
 @inject ICloudAppointmentService CloudAppointmentService;
 
-<div class="control-section">
-    <div class="content-wrapper">
-        <SfSchedule TValue="ScheduleData.DoctorsEventData" Width="100%" Height="650px" @bind-SelectedDate="@CurrentDate">
-            <ScheduleTemplates>
-                <EditorTemplate>
-                    <input type="hidden" name="Id" class="e-field" value="@((context as ScheduleData.DoctorsEventData).Id)" />
-                    <table class="custom-event-editor" width="100%" cellpadding="5">
-                        <tbody>
-                            <tr>
-                                <td class="e-textlabel">Summary</td>
-                                <td colspan="4">
-                                    <SfTextBox @bind-Value="@((context as ScheduleData.DoctorsEventData).Subject)"></SfTextBox>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="e-textlabel">Status</td>
-                                <td class="dropdown" colspan="4">
-                                    <SfDropDownList TValue="string" TItem="EventFields" ID="EventType" DataSource="@StatusData" Placeholder="Choose status" @bind-Value="@((context as ScheduleData.DoctorsEventData).EventType)">
-                                        <DropDownListFieldSettings Value="Id"></DropDownListFieldSettings>
-                                    </SfDropDownList>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="e-textlabel">From</td>
-                                <td colspan="4">
-                                    <SfDateTimePicker @bind-Value="@((context as ScheduleData.DoctorsEventData).StartTime)"></SfDateTimePicker>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="e-textlabel">To</td>
-                                <td colspan="4">
-                                    <SfDateTimePicker @bind-Value="@((context as ScheduleData.DoctorsEventData).EndTime)"></SfDateTimePicker>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="e-textlabel">Reason</td>
-                                <td colspan="4">
-                                    <SfTextBox Multiline="true" @bind-Value="@((context as ScheduleData.DoctorsEventData).Description)"></SfTextBox>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </EditorTemplate>
-            </ScheduleTemplates>
-            <ScheduleEventSettings TValue="ScheduleData.DoctorsEventData" DataSource="@DataSource">
+<div class="col-lg-12 control-section">
+    <div class="schedule-wrapper">
+        <SfSchedule TValue="Appointment" Width="100%" Height="650px" @bind-SelectedDate="@CurrentDate" Readonly="true">
+            <ScheduleEventSettings TValue="Appointment">
+                <SfDataManager Url="@url" Adaptor="@Syncfusion.Blazor.Adaptors.WebApiAdaptor"></SfDataManager>
             </ScheduleEventSettings>
         </SfSchedule>
     </div>
 </div>
+
+
 @code{
     private DateTime CurrentDate = DateTime.Now;
-    public class EventFields
-    {
-        public string Id { get; set; }
-        public string Text { get; set; }
-    }
-    List<EventFields> StatusData = new List<EventFields>() {
-            new EventFields(){ Id= "New", Text= "New" },
-            new EventFields(){ Id= "Requested", Text= "Requested" },
-            new EventFields(){ Id= "Confirmed", Text= "Confirmed" },
-        };
+    [Parameter]
+    public int doctorID { get; set; }
 
-    List<ScheduleData.DoctorsEventData> DataSource;
-    //CloudAppointmentService.GetAppointmentData();
+    string url = "https://localhost:8085/appointments/doctor/";
+
+    protected async  override Task OnInitializedAsync()
+    {
+        url = url + doctorID;
+    }
+
 }
+
 <style>
     .custom-event-editor td {
         padding: 7px;
         padding-right: 16px;
-    }
-    .dropdown .e-dropdownlist {
-        color: inherit !important;
     }
 </style>

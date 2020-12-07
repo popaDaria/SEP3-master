@@ -18,16 +18,19 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Data" t="Include">
           <e p="CloudAppointmentService.cs" t="Include" />
+          <e p="CloudAvailableDayService.cs" t="Include" />
           <e p="CloudDoctorHospitalService.cs" t="Include" />
           <e p="CloudHospitalService.cs" t="Include" />
           <e p="CloudUserService.cs" t="Include" />
           <e p="ICloudAppointmentService.cs" t="Include" />
+          <e p="ICloudAvailableDayService.cs" t="Include" />
           <e p="ICloudDoctorHospitalService.cs" t="Include" />
           <e p="ICloudHospitalService.cs" t="Include" />
           <e p="ICloudUserService.cs" t="Include" />
         </e>
         <e p="Model" t="Include">
           <e p="Appointment.cs" t="Include" />
+          <e p="AvailableDay.cs" t="Include" />
           <e p="DoctorHospital.cs" t="Include" />
           <e p="Hospital.cs" t="Include" />
           <e p="LoggedUser.cs" t="Include" />
@@ -38,6 +41,7 @@
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="SEP3.AssemblyInfo.cs" t="Include" />
+              <e p="SEP3.RazorAssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>

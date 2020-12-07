@@ -13,14 +13,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39da3d61-0d00-475a-bb14-31b09aaef81b" name="Default Changelist" comment="merged">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/contentModel.xml" afterDir="false" />
+    <list default="true" id="39da3d61-0d00-475a-bb14-31b09aaef81b" name="Default Changelist" comment="bs">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Data/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Data/WeatherForecastService.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Pages/Schedule.razor" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorComponent.input.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorComponent.input.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,18 +37,11 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Data/ICloudAppointmentService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Data/CloudUserService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/HomeHospitalComponent.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6997C26-8D92-4990-9E71-9462BE9B6164/ec/7cb5b6ba/Adaptors.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Data/CloudUserService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Data/CloudAppointmentService.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Pages/Scheduler.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Pages/Scheduler.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Data/CloudUserService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -181,6 +169,7 @@
       <workItem from="1606663865842" duration="25347000" />
       <workItem from="1606902313770" duration="17109000" />
       <workItem from="1606982159973" duration="14517000" />
+      <workItem from="1607352837486" duration="359000" />
     </task>
     <task id="LOCAL-00001" summary="First Version, Green Navbar">
       <created>1601938783775</created>
@@ -357,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607001483043</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="bs">
+      <created>1607350774581</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1607350774581</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +394,8 @@
     <MESSAGE value="login page visibility" />
     <MESSAGE value="made map work" />
     <MESSAGE value="merged" />
-    <option name="LAST_COMMIT_MESSAGE" value="merged" />
+    <MESSAGE value="bs" />
+    <option name="LAST_COMMIT_MESSAGE" value="bs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="393" y="27" key="CommitChangelistDialog2" timestamp="1607001439900">
@@ -418,29 +415,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="838" y="418" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606941580601" />
-    <state width="1493" height="241" key="GridCell.Tab.0.bottom" timestamp="1607006611439">
+    <state width="746" height="230" key="GridCell.Tab.0.bottom" timestamp="1607352673868">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="2517" height="251" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606920272812" />
-    <state width="1493" height="241" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607006611439" />
+    <state width="746" height="230" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607352673868" />
     <state width="1877" height="286" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606999396537" />
-    <state width="1493" height="241" key="GridCell.Tab.0.center" timestamp="1607006611439">
+    <state width="746" height="230" key="GridCell.Tab.0.center" timestamp="1607352673868">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="2517" height="251" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606920272812" />
-    <state width="1493" height="241" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607006611439" />
+    <state width="746" height="230" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607352673868" />
     <state width="1877" height="286" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606999396537" />
-    <state width="1493" height="241" key="GridCell.Tab.0.left" timestamp="1607006611439">
+    <state width="746" height="230" key="GridCell.Tab.0.left" timestamp="1607352673868">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="2517" height="251" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606920272812" />
-    <state width="1493" height="241" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607006611439" />
+    <state width="746" height="230" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607352673868" />
     <state width="1877" height="286" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606999396537" />
-    <state width="1493" height="241" key="GridCell.Tab.0.right" timestamp="1607006611439">
+    <state width="746" height="230" key="GridCell.Tab.0.right" timestamp="1607352673868">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="2517" height="251" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606920272812" />
-    <state width="1493" height="241" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607006611439" />
+    <state width="746" height="230" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607352673868" />
     <state width="1877" height="286" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606999396537" />
     <state width="2517" height="389" key="GridCell.Tab.1.bottom" timestamp="1606092094290">
       <screen x="0" y="0" width="2560" height="1080" />
@@ -530,10 +527,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="407" y="193" key="MultipleFileMergeDialog/0.0.1536.864@0.0.1536.864" timestamp="1607001414920" />
-    <state x="361" y="164" key="Rider.ProjectTemplateDialog.Size" timestamp="1604565978106">
+    <state x="361" y="164" key="Rider.ProjectTemplateDialog.Size" timestamp="1607352658420">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="361" y="164" key="Rider.ProjectTemplateDialog.Size/0.0.1536.864@0.0.1536.864" timestamp="1604565978106" />
+    <state x="361" y="164" key="Rider.ProjectTemplateDialog.Size/0.0.1536.864@0.0.1536.864" timestamp="1607352658420" />
     <state x="743" y="210" key="RiderGenerateDialog" timestamp="1606937235751">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -543,11 +540,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606940516891" />
-    <state x="654" y="262" key="Vcs.Push.Dialog.v2" timestamp="1606995909696">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="523" y="218" key="Vcs.Push.Dialog.v2" timestamp="1607350945531">
+      <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="872" y="272" key="Vcs.Push.Dialog.v2/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606919600412" />
-    <state x="523" y="218" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1604833968073" />
+    <state x="523" y="218" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1607350945531" />
     <state x="654" y="262" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606995909696" />
     <state x="540" y="167" key="VcsDiffUtil.ChangesDialog" timestamp="1604561554438">
       <screen x="0" y="0" width="1536" height="864" />
@@ -567,6 +564,10 @@
     </state>
     <state x="977" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605815298837" />
     <state x="586" y="346" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.864@0.0.1536.864" timestamp="1604566760582" />
+    <state x="537" y="146" key="git4idea.branch.GitSmartOperationDialog" timestamp="1607351419755">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="537" y="146" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.864@0.0.1536.864" timestamp="1607351419755" />
     <state x="1081" y="446" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1606907728143">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>

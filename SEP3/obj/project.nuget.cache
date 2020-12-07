@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Y9H+bHhXLxXIOubzLfBKgB+dl5pA7T8xqlruNzogOpsBrjOAEzPASWxfVsO8lCl6sGQ7XIOw/J2fucP7AotVMw==",
+  "dgSpecHash": "0548qiBrM6YB+9QwAYTtu+Dlb+IaSZWLwifskBM0sjS1PzvgBZgrB6AgJkfV8efd6QTdt0eI+7gmREXS0VRD/w==",
   "success": true,
-  "projectFilePath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\SEP3.csproj",
+  "projectFilePath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan - Copy\\SEP3\\SEP3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tania Maria\\.nuget\\packages\\jsonsubtypes\\1.2.0\\jsonsubtypes.1.2.0.nupkg.sha512",
     "C:\\Users\\Tania Maria\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.1.8\\microsoft.aspnetcore.authorization.3.1.8.nupkg.sha512",

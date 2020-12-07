@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\SEP3.csproj",
+    "projectUniqueName": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan - Copy\\SEP3\\SEP3.csproj",
     "projectName": "SEP3",
-    "projectPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\SEP3.csproj",
-    "outputPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\obj\\",
+    "projectPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan - Copy\\SEP3\\SEP3.csproj",
+    "outputPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan - Copy\\SEP3\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.1"

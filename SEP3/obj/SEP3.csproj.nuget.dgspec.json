@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\SEP3.csproj": {}
+    "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan - Copy\\SEP3\\SEP3.csproj": {}
   },
   "projects": {
-    "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\SEP3.csproj": {
+    "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan - Copy\\SEP3\\SEP3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\SEP3.csproj",
+        "projectUniqueName": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan - Copy\\SEP3\\SEP3.csproj",
         "projectName": "SEP3",
-        "projectPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\SEP3.csproj",
+        "projectPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan - Copy\\SEP3\\SEP3.csproj",
         "packagesPath": "C:\\Users\\Tania Maria\\.nuget\\packages\\",
-        "outputPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan\\SEP3\\obj\\",
+        "outputPath": "D:\\THIRD SEMESTER\\SEP3\\SEP3-master-Bogdan - Copy\\SEP3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tania Maria\\AppData\\Roaming\\NuGet\\NuGet.Config"

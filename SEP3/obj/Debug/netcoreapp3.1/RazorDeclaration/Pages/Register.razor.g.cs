@@ -111,14 +111,14 @@ using InputType = Syncfusion.Blazor.Inputs.InputType;
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "D:\SEP3-master\SEP3\Pages\Register.razor"
+#line 12 "D:\SEP3-master\SEP3\Pages\Register.razor"
 using Syncfusion.Blazor.Calendars;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "D:\SEP3-master\SEP3\Pages\Register.razor"
+#line 13 "D:\SEP3-master\SEP3\Pages\Register.razor"
 using Syncfusion.Blazor.DropDowns;
 
 #line default
@@ -133,8 +133,9 @@ using Syncfusion.Blazor.DropDowns;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 122 "D:\SEP3-master\SEP3\Pages\Register.razor"
+#line 123 "D:\SEP3-master\SEP3\Pages\Register.razor"
        
+    
     SfTextBox date;
     User userToAdd { get; set; } = new User();
     string display = "display: none";
@@ -162,18 +163,6 @@ using Syncfusion.Blazor.DropDowns;
             displayError = "display: block";
         }
     }
-
-    public class Position
-    {
-        public string ID { get; set; }
-        public string name { get; set; }
-    }
-
-    public List<Position> Positions = new List<Position>()
-    {
-        new Position() {name = "patient", ID = "1"},
-        new Position() {name = "doctor", ID = "2"}
-    };
 
 
 #line default

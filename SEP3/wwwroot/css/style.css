@@ -6,8 +6,8 @@ body{
 
 .surround{
 position: relative;
-width: 450px;
-height: 650px;
+width: 400px;
+height: 550px;
 left: 735px;
 top: 195px;
 
@@ -28,7 +28,8 @@ border-radius: 20px;
 /* Welcome ! */
 
 .WelcomeText {
-    
+margin: 30px 0 0 0;
+text-align: center;    
 font-family: Roboto;
 font-style: normal;
 font-weight: normal;
@@ -39,16 +40,28 @@ color: rgba(0, 0, 0, 0.5);
 
 }
 
-/* Button*/
+/* Button for Log In*/
 
 .button{
 
 background: #9EDC94;
-margin: 2px;
+margin: 50px 0px 0px 50px;
 border: 2px solid #EFEFEF;
 box-sizing: border-box;
 box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -15px -10px 60px 20px rgba(255, 255, 255, 0.2);
 border-radius: 50px;
+}
+
+/* Button for Register*/
+
+.button2{
+
+    background: #9EDC94;
+    margin: 0px 0px 0px 50px;
+    border: 2px solid #EFEFEF;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -15px -10px 60px 20px rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
 }
 
 /* empty block */
@@ -73,3 +86,75 @@ border-radius: 50px;
     font-size: 25px;
 }
 
+.formStyle {
+    margin: 0 0 0 60px;
+}
+
+.emptyBlock {
+    height: 65px;
+    width: available;
+}
+
+.emptyBlock2 {
+    height: 30px;
+    width: available;
+}
+
+row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.control_wrapper {
+    width: 250px;
+    margin: 0 auto;
+    padding-top: 70px;
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}

@@ -1,6 +1,8 @@
 ﻿@page "/"
 @using Syncfusion.Blazor.Calendars
 
+<link href="css/style.css" type="text/css" rel="stylesheet"/>
+
 <div class="row">
     <div class="col-3"></div>
     <div class="col-6 row">
@@ -8,7 +10,7 @@
         <div class="col-2 menu_button"><b>Hospital</b></div>
         <div class="col-2 menu_button"><b>Clinic</b></div>
         <div class="col-2 menu_button"><a href="LogIn" class="button1"><b>Log in</b></a></div>
-        <div class="col-2 menu_button"><b>Register</b></div>
+        <div class="col-2 menu_button"><a href="register"><b>Register</b></a></div>
     </div>
     <div class="col-3"></div>
 </div>
@@ -41,10 +43,3 @@
     </div>
 </div>
 
-<style>
-    row {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    }
-</style>

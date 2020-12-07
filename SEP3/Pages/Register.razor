@@ -8,11 +8,14 @@
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
 
+
 @using Syncfusion.Blazor.Calendars
 @using Syncfusion.Blazor.DropDowns
 
 
+
 <link href="css/style.css" type="text/css" rel="stylesheet"/>
+<link href="css/bootstrap/bootstrap.min.css" type="text/css" rel="stylesheet"/>
 
 <EditForm Model="@userToAdd" OnValidSubmit="Add">
     <DataAnnotationsValidator/>
@@ -23,19 +26,17 @@
                 <div class="formBlock">
                     
                     @* TODO *@
-                    @* <SfDropDownList TValue="string" TItem="Position" PopupHeight="50px" Placeholder="Register as" DataSource="@Positions"> *@
-                    @*     <DropDownListFieldSettings Text="name" @bind-Value="userToAdd.userType"></DropDownListFieldSettings> *@
-                    @* </SfDropDownList> *@
                     <label>
                         Register as:
                         <InputSelect @bind-Value="userToAdd.userType">
+                            <option></option>
                             <option>patient</option>
                             <option>manager</option>
                         </InputSelect>
                     </label>
 
                     <div class="row material2">
-                        <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                        <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8 formStyle">
                             <SfTextBox Placeholder="First Name" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.firstname" disabled="@isDisabled" Type="InputType.Text"></SfTextBox>
                         </div>
                     </div>
@@ -43,7 +44,7 @@
                     @* <br/> *@
 
                     <div class="row">
-                        <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                        <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8 formStyle">
                             <SfTextBox Placeholder="Last Name" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.lastname" disabled="@isDisabled" Type="InputType.Text"></SfTextBox>
                         </div>
                     </div>
@@ -59,12 +60,12 @@
                     <label>ID Number:<input type="number" @bind-value="userToAdd.idNr" disabled="@isDisabled"/></label>
                     <br/>
 
-                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8 formStyle">
                         <SfTextBox CssClass="e-outline" Placeholder="Password" FloatLabelType="@FloatLabelType.Auto" Type="InputType.Password" @bind-value="userToAdd.password" disabled="@isDisabled"></SfTextBox>
                     </div>
                     @* <label>Password:<input type="password" @bind-value="userToAdd.password" disabled="@isDisabled"/></label> *@
                     @* <br/> *@
-                    
+
                     @* TODO *@
                     <label>
                         Gender:
@@ -76,19 +77,19 @@
                     </label>
                     <br/>
 
-                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8 formStyle">
                         <SfTextBox CssClass="e-outline" Placeholder="Email" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.email" disabled="@isDisabled"></SfTextBox>
                     </div>
                     @* <label>Email:<input type="text" @bind-value="userToAdd.email"></label> *@
                     @* <br/> *@
 
-                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8 formStyle">
                         <SfTextBox CssClass="e-outline" Placeholder="Phone number" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.telNo" disabled="@isDisabled"></SfTextBox>
                     </div>
                     @* <label>Phone Number:<input type="text" @bind-value="userToAdd.telNo"></label> *@
                     @* <br/> *@
 
-                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8">
+                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8 formStyle">
                         <SfTextBox CssClass="e-outline" Placeholder="Address" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.address" disabled="@isDisabled"></SfTextBox>
                     </div>
                     @* <label>Address:<input type="text" @bind-value="userToAdd.address"></label> *@
@@ -106,7 +107,7 @@
 
                 </div>
                 
-                <input type="submit" class="btn btn-primary button" value="Submit"/>
+                <input type="submit" class="btn btn-primary button2" value="Submit"/>
                 <div class="alert alert-success mt-2" style="@display">
                     Registration was successful!
                 </div>
@@ -120,6 +121,7 @@
 </EditForm>
 
 @code {
+    
     SfTextBox date;
     User userToAdd { get; set; } = new User();
     string display = "display: none";
@@ -147,17 +149,5 @@
             displayError = "display: block";
         }
     }
-
-    public class Position
-    {
-        public string ID { get; set; }
-        public string name { get; set; }
-    }
-
-    public List<Position> Positions = new List<Position>()
-    {
-        new Position() {name = "patient", ID = "1"},
-        new Position() {name = "doctor", ID = "2"}
-    };
 
 }

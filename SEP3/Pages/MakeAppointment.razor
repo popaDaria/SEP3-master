@@ -58,11 +58,11 @@
         
         <div style="@display3">
             @* <label style="color: red">*Please select an available date for the doctor</label> *@
-            <label>Date:<input type="date" @bind-value="@appointmentToAdd.appointmentDate" ></label>
+            <label>Date:<input type="date" @onchange="@AddLabel"></label>
             <br/>
-            @*<label>
+            <label style="color: #0f6674" class="oi oi-bell">
                 @labelContent
-            </label>*@
+            </label>
             <br/>
             <label>Time:<input type="time" @bind-value="@appointmentToAdd.appointmentTime"></label>
             <br/>
@@ -88,9 +88,9 @@
     List<string> allDepartments { get; set; } = new List<string>();
     string deptString { get; set; } 
     
-    string display1 { get; set; }
-    string display2 { get; set; }
-    string display3 { get; set; }
+    string display1 { get; set; }= "display: none";
+    string display2 { get; set; }= "display: none";
+    string display3 { get; set; }= "display: none";
     string display = "display: none";
     string displayError = "display: none";
     public string ErrorMessage { get; set; }
@@ -137,7 +137,7 @@
         AvailableDays = await CloudAvailableDayService.GetAvailableDays(docId);
         ApptForDoctor = await CloudAppointmentService.GetAllForDoctor(docId);
         display3 = "display: block";
-        //labelContent = "Doctor's schedule:";
+    //labelContent = "Doctor's schedule:";
         if (AvailableDays.Count == 0)
         {
             displayError = "display : block";
@@ -150,6 +150,33 @@
         }
     }
     
+    private void AddLabel(ChangeEventArgs e)
+    {
+        bool found = false;
+        //appointmentToAdd.appointmentDate = (DateTime)e.Value;
+        Console.WriteLine(e.Value);
+        if (e.Value != null)
+        {
+            string result = (string) e.Value;
+            string[] contents = result.Split("-");
+            appointmentToAdd.appointmentDate = new DateTime(Int32.Parse(contents[0]),Int32.Parse(contents[1]),Int32.Parse(contents[2]));
+        }
+        foreach (var availableDay in AvailableDays)
+        {
+            if (availableDay.AvailableDate.Day == appointmentToAdd.appointmentDate.Day &&
+                availableDay.AvailableDate.Month == appointmentToAdd.appointmentDate.Month &&
+                availableDay.AvailableDate.Year == appointmentToAdd.appointmentDate.Year)
+            {
+                labelContent = "The Working hours are: " + availableDay.StartTime.TimeOfDay.ToString() + " - " + availableDay.EndTime.TimeOfDay.ToString();
+                found = true;
+            }
+        }
+        if (!found)
+        {
+            labelContent = "Not an available date!";
+        }
+    }
+
     private async Task Add()
     {
         try
@@ -191,7 +218,7 @@
                 }
                 else
                 {
-                   await AddAppointment();
+                    await AddAppointment();
                 }
             }
             else
@@ -249,6 +276,7 @@
             {
                 displayError = "display: none";
                 display = "display: block";
+                labelContent = "";
                 await CloudAppointmentService.MakeAppointment(appointmentToAdd);
                 --DoctorDay.AppointmentNr;
                 await CloudAvailableDayService.UpdateAvailableDay(DoctorDay);
@@ -264,8 +292,8 @@
         {
             displayError = "display : block";
             ErrorMessage = "Appointment already added!";
-            //NavigationManager.NavigateTo("/");
+    //NavigationManager.NavigateTo("/");
         }
     }
-
+    
 }

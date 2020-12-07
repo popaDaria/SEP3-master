@@ -1,0 +1,63 @@
+﻿@page "/messege"
+@using SEP3.Model
+@using SEP3.Data
+@using SEP3.Auth
+@using Syncfusion.Blazor.Inputs
+@using System.IO
+
+@inject ICloudUserService CloudUserService;
+@inject AuthenticationStateProvider AuthenticationStateProvider;
+@if (list == null)
+{
+  <p>LOADING...</p>
+}
+else
+{
+  <div class="container">
+    <div class="col-lg-3">
+      <ul class="list-group">
+        @foreach(User user in list)
+        {
+          <li class="list-group-item">@(user.firstname + " " + user.lastname)</li>
+        }
+      </ul>
+    </div>
+    <div class="col-lg-9">
+      
+    </div>
+    <div class="col-lg-12">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">With textarea</span>
+        </div>
+        <textarea class="form-control" aria-label="Write your message:"></textarea>
+      </div>
+    </div>
+  </div>
+}
+
+@code {
+
+  IList<User> list = new List<User>();
+  User user = new User();
+  string idNr;
+  protected async override Task OnInitializedAsync()
+  {
+    idNr = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value;
+    user = await CloudUserService.GetUser(idNr);
+    if (user.userType == "patient")
+    {
+      //list = await CloudUserService.getAllUsersOfAType("doctor");
+    }
+    else if (user.userType == "doctor")
+    {
+     // list = await CloudUserService.getAllPatients("patient");
+    }
+    else if (user.userType == "admin")
+    {
+     // list = await CloudUserService.getAllUsers();
+    }
+  }
+
+}
+

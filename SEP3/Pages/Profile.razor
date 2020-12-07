@@ -8,6 +8,7 @@
 @using Syncfusion.Blazor.Buttons
 @using RenderMode = Syncfusion.Blazor.InPlaceEditor.RenderMode
 @using InputType = Syncfusion.Blazor.InPlaceEditor.InputType
+@using System.IO
 
 @inject ICloudUserService CloudUserService;
 @inject AuthenticationStateProvider AuthenticationStateProvider;
@@ -53,6 +54,7 @@ else
                         <input type="button" class="btn btn-danger" name="cancel" value="Discard Changes" @onclick="@Cancel" style="@display"/>
                         <br/>
                         <br/>
+                        <input type="file" class="btn btn-info" name="image" @ref="input" @onchange="@Upload"/>
                         <AuthorizeView Roles="manager" Policy="MustBeLoggedInAsValidated">
                             <input type="button" class="btn btn-info" name="manageHospitals" value="Manage Hospitals" @onclick="@ManageHospitals"/>
                             <br/>
@@ -159,12 +161,14 @@ else
 @code {
     private RenderMode Mode = RenderMode.Inline;
     private EditableType EditableOn = EditableType.Click;
+    public byte[] image;
     private bool ShowButtons { get; set; } = false;
     private bool Disabled { get; set; } = true;
     private string display = "display: none";
     User user { get; set; }
     User editedUser = new User();
     string idNr = "";
+    ElementReference input;
 
     protected override async Task OnInitializedAsync()
     {
@@ -178,6 +182,11 @@ else
     {
         Disabled = false;
         display = "display: inline";
+    }
+
+    public void Upload()
+    {
+        Console.WriteLine();
     }
 
     public async Task SendToServer()

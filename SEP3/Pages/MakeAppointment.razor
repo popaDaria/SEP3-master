@@ -12,7 +12,6 @@
 
 
 <h1 style="font-size: 56px; font-weight: bold; color: #0B4E58">Schedule a new Appointment</h1>
-<Scheduler doctorID="@docId"></Scheduler>
 <EditForm Model="@appointmentToAdd" OnValidSubmit="Add">
     <DataAnnotationsValidator/>
     <ValidationSummary/>
@@ -58,8 +57,9 @@
         </div>
         
         <div style="@display3">
+            <Scheduler doctorID="57"></Scheduler>
             @* <label style="color: red">*Please select an available date for the doctor</label> *@
-            <label>Date:<input type="date" @bind-value="@appointmentToAdd.appointmentDate" ></label>
+            <label>Date:<input type="date" @bind-value="@appointmentToAdd.appointmentDate"></label>
             <br/>
             @*<label>
                 @labelContent

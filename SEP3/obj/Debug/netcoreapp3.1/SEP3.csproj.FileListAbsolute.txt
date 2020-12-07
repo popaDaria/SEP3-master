@@ -316,3 +316,5 @@ C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDecla
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Scheduler.razor.g.cs
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\MakeAppointment.razor.g.cs
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Scheduler.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Messege.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Messege.razor.g.cs

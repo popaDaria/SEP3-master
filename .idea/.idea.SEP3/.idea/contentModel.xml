@@ -25,8 +25,6 @@
           <e p="ICloudDoctorHospitalService.cs" t="Include" />
           <e p="ICloudHospitalService.cs" t="Include" />
           <e p="ICloudUserService.cs" t="Include" />
-          <e p="WeatherForecast.cs" t="Include" />
-          <e p="WeatherForecastService.cs" t="Include" />
         </e>
         <e p="Model" t="Include">
           <e p="Appointment.cs" t="Include" />
@@ -39,6 +37,7 @@
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="SEP3.AssemblyInfo.cs" t="Include" />
+              <e p="SEP3.RazorAssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
@@ -55,7 +54,6 @@
           <e p="ProfileComponent.razor" t="Include" />
           <e p="ProfileMedical.razor" t="Include" />
           <e p="Register.razor" t="Include" />
-          <e p="Schedule.razor" t="Include" />
           <e p="scheduler.razor" t="Include" />
           <e p="Validate.razor" t="Include" />
         </e>

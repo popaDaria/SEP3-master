@@ -16,40 +16,11 @@
     <list default="true" id="39da3d61-0d00-475a-bb14-31b09aaef81b" name="Default Changelist" comment="merged">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Data/ICloudAppointmentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Data/ICloudAppointmentService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Model/ScheduleData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Model/Appointment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Pages/scheduler.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Pages/Scheduler.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/Data/WeatherForecast.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/Data/WeatherForecastService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/Pages/Schedule.razor" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddHospital.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddHospital.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/HospitalPage.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/HospitalPage.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/ManageHospital.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/ManageHospital.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/Profile.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/Profile.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/ProfileComponent.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/ProfileComponent.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Shared/NavMenu.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Shared/NavMenu.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddDoctor.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddDoctor.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddHospital.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddHospital.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/HospitalPage.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/HospitalPage.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/ManageHospital.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/ManageHospital.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Profile.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Profile.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/ProfileComponent.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/ProfileComponent.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/NavMenu.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/NavMenu.razor.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorComponent.input.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorComponent.input.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorCoreGenerate.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorCoreGenerate.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.TagHelpers.output.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.TagHelpers.output.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,18 +42,18 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Data/ICloudAppointmentService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Data/CloudUserService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/HomeHospitalComponent.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6997C26-8D92-4990-9E71-9462BE9B6164/ec/7cb5b6ba/Adaptors.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Pages/AddDoctor.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Pages/HomeHospitalComponent.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Startup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Data/CloudUserService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Data/CloudAppointmentService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Pages/Scheduler.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Pages/Scheduler.razor" root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/bogda/RiderProjects/SEP3-master/SEP3/Data/CloudUserService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -587,6 +558,10 @@
     </state>
     <state x="-60" y="135" width="2360" height="880" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1605815713982" />
     <state x="-134" y="120" width="1416" height="704" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1536.864@0.0.1536.864" timestamp="1604565693513" />
+    <state x="92" y="92" width="2376" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1607294225677">
+      <screen x="0" y="0" width="2560" height="1080" />
+    </state>
+    <state x="92" y="92" width="2376" height="896" key="com.intellij.history.integration.ui.views.FileHistoryDialog/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607294225677" />
     <state x="977" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605815298837">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>

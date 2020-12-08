@@ -58,13 +58,18 @@
         
         <div style="@display3">
             @* <label style="color: red">*Please select an available date for the doctor</label> *@
-            <label>Date:<input type="datetime-local" @onchange="@AddLabel"></label>
             <br/>
             <label style="color: #0f6674" class="oi oi-bell">
                 @labelContent
             </label>
             <br/>
-            <label>Time:<input type="datetime-local" @onchange="@SelectEndTime"></label>
+            <label>Start Time:<input type="datetime-local" @onchange="@AddLabel"></label>
+            <br/>
+            <label style="color: #0f6674" class="oi oi-bell">
+                @sameDateWarning
+            </label>
+            <br/>
+            <label>End Time:<input type="datetime-local" @onchange="@SelectEndTime"></label>
             <br/>
             <label>Summary:<input type="text" @bind-value="@appointmentToAdd.summary"></label>
             <br/>
@@ -94,6 +99,7 @@
     string displayError = "display: none";
     public string ErrorMessage { get; set; }
     string labelContent { get; set; } = "";
+    string sameDateWarning { get; set; } = "";
     
     IList<User> allDoctors { get; set; } = new List<User>();
     string docString { get; set; }
@@ -178,7 +184,9 @@
             labelContent = "Not an available date!";
         }
     }
-    
+
+    bool okDates { get; set; } = false;
+
     private void SelectEndTime(ChangeEventArgs e)
     {
         if (e.Value != null)
@@ -189,7 +197,26 @@
             string[] timeContents = contents[1].Split(":");
             appointmentToAdd.endTime = new DateTime(Int32.Parse(dateContents[0]),Int32.Parse(dateContents[1]),Int32.Parse(dateContents[2]), 
                 Int32.Parse(timeContents[0]),Int32.Parse(timeContents[1]),0 );
-        }    }
+            if (!appointmentToAdd.endTime.Date.Equals(appointmentToAdd.startTime.Date))
+            {
+                sameDateWarning = "End Time of appointment must have the same date as Start Time!";
+                okDates = false;
+            }
+            else
+            {
+                if (appointmentToAdd.startTime.TimeOfDay.TotalMinutes < appointmentToAdd.endTime.TimeOfDay.TotalMinutes)
+                {
+                    sameDateWarning = "";
+                    okDates = true;
+                }
+                else
+                {
+                    sameDateWarning = "End Time of appointment must be after Start Time of appointment!";
+                    okDates = false;
+                }
+            }
+        }    
+    }
     
     private async Task Add()
     {
@@ -214,7 +241,8 @@
                 {
                     if (DoctorDay.AppointmentNr != 0)
                     {
-                        if (appointmentToAdd.startTime.Hour >= DoctorDay.StartTime.Hour && appointmentToAdd.endTime.Hour < DoctorDay.EndTime.Hour)
+                        if (appointmentToAdd.startTime.TimeOfDay.TotalMilliseconds >= DoctorDay.StartTime.TimeOfDay.TotalMilliseconds && 
+                            appointmentToAdd.endTime.TimeOfDay.TotalMilliseconds < DoctorDay.EndTime.TimeOfDay.TotalMilliseconds)
                         {
                             await AddAppointment();
                         }
@@ -252,59 +280,66 @@
     private async Task AddAppointment()
     {
         List<Appointment> SameDateAppts = new List<Appointment>();
-        foreach (var ad in ApptForDoctor)
-        {
-            if (appointmentToAdd.startTime.Day == ad.startTime.Day || appointmentToAdd.startTime.Month == ad.startTime.Month ||
-                appointmentToAdd.startTime.Year == ad.startTime.Year)
-            {
-                SameDateAppts.Add(ad);
-            }
-        }
-        
-        bool validTime = true;
-        foreach (var sameDateAppt in SameDateAppts)
-        {
-            if (sameDateAppt.startTime.Hour == appointmentToAdd.startTime.Hour &&
-                sameDateAppt.startTime.Minute == appointmentToAdd.startTime.Minute)
-            {
-                validTime = false;
-            }
-        }
-        
-        bool found = false;
-        foreach (var ap in ApptForPatient)
-        {
-    //todo:look over the logic of this
-            if (ap.doctorId == appointmentToAdd.doctorId && ap.startTime.Equals(appointmentToAdd.startTime) &&
-                ap.endTime.Equals(appointmentToAdd.endTime))
-            {
-                found = true;
-            }
-        }
 
-        if (!found)
+        if (okDates)
         {
-            if (validTime)
+            foreach (var ad in ApptForDoctor)
             {
-                displayError = "display: none";
-                display = "display: block";
-                labelContent = "";
-                await CloudAppointmentService.MakeAppointment(appointmentToAdd);
-                --DoctorDay.AppointmentNr;
-                await CloudAvailableDayService.UpdateAvailableDay(DoctorDay);
-                NavigationManager.NavigateTo("/");
+                if (appointmentToAdd.startTime.Date.Equals(ad.startTime.Date))
+                {
+                    SameDateAppts.Add(ad);
+                }
+            }
+
+            bool validTime = true;
+            foreach (var sameDateAppt in SameDateAppts)
+            {
+                if ((sameDateAppt.startTime.TimeOfDay.TotalMinutes >= appointmentToAdd.startTime.TimeOfDay.TotalMinutes && appointmentToAdd.startTime.TimeOfDay.TotalMinutes < sameDateAppt.endTime.TimeOfDay.TotalMinutes)
+                    || (appointmentToAdd.endTime.TimeOfDay.TotalMinutes > sameDateAppt.startTime.TimeOfDay.TotalMinutes && appointmentToAdd.startTime.TimeOfDay.TotalMinutes <= sameDateAppt.startTime.TimeOfDay.TotalMinutes))
+                {
+                    validTime = false;
+                }
+            }
+
+            bool found = false;
+            foreach (var ap in ApptForPatient)
+            {
+                if (ap.doctorId == appointmentToAdd.doctorId && ap.startTime.Equals(appointmentToAdd.startTime) &&
+                    ap.endTime.Equals(appointmentToAdd.endTime))
+                {
+                    found = true;
+                }
+            }
+
+            if (!found)
+            {
+                if (validTime)
+                {
+                    displayError = "display: none";
+                    display = "display: block";
+                    labelContent = "";
+                    await CloudAppointmentService.MakeAppointment(appointmentToAdd);
+                    --DoctorDay.AppointmentNr;
+                    await CloudAvailableDayService.UpdateAvailableDay(DoctorDay);
+                    NavigationManager.NavigateTo("/");
+                }
+                else
+                {
+                    displayError = "display : block";
+                    ErrorMessage = "Appointment time reserved! Pick another time!";
+                }
             }
             else
             {
                 displayError = "display : block";
-                ErrorMessage = "Appointment time reserved! Pick another time!";
+                ErrorMessage = "Appointment already added!";
+    //NavigationManager.NavigateTo("/");
             }
         }
         else
         {
-            displayError = "display : block";
-            ErrorMessage = "Appointment already added!";
-    //NavigationManager.NavigateTo("/");
+            displayError = "display:block";
+            ErrorMessage = "Selected Start and End time do not have the same date or have incorrect times!";
         }
     }
 

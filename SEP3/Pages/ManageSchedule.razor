@@ -1,0 +1,179 @@
+﻿@page "/ManageSchedule"
+@attribute [Authorize(Policy = "MustBeLoggedInAsDoctor")]
+@using Syncfusion.Blazor.Navigations
+@using Syncfusion.Blazor.InPlaceEditor
+@using SEP3.Model
+@using SEP3.Data
+@using SEP3.Auth
+@using Syncfusion.Blazor.Buttons
+@using RenderMode = Syncfusion.Blazor.InPlaceEditor.RenderMode
+@using InputType = Syncfusion.Blazor.InPlaceEditor.InputType
+@using ChangeEventArgs = Syncfusion.Blazor.Navigations.ChangeEventArgs
+@using EventArgs = System.EventArgs
+@using System.Reflection.Metadata
+@using System.Text.Encodings.Web
+@inject ICloudUserService CloudUserService
+@inject ICloudAvailableDayService CloudAvailableDayService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+
+
+<div class="container mt-5 mb-5 ml-auto mr-auto">
+    <br/>
+    <input type="button" class="btn btn-info" name="btnAddMore" value="Add Available Day" @onclick="@AddDay"/>
+    <br/>
+    <br/>
+    <div style="@display">
+        <EditForm Model="@availableDayToAdd" OnValidSubmit="Add">
+            <DataAnnotationsValidator/>
+            <ValidationSummary/>
+            <label>Date:<input id="datefield" type="date" min="2020-12-01" max="2021-12-31" @bind-value="@availableDayToAdd.AvailableDate" ></label>
+            <br/>
+            <label>Start Time:<input type="time" @bind-value="@availableDayToAdd.StartTime"></label>
+            <br/>
+            <label>End Time:<input type="time" @bind-value="@availableDayToAdd.EndTime"></label>
+            <br/>
+            <label>Max Appointment nr.:<input type="number" @bind-value="@apptNrString"></label>
+            <br/>
+            <input type="submit" class="btn btn-primary" value="Submit"/>
+            <input type="button" class="btn btn-danger" value="Cancel" @onclick="@Cancel"/>
+            <div class="alert alert-success mt-2" style="@display1">Addition was successful!</div>
+            <div class="alert alert-danger mt-2" style="@displayError">@ErrorMessage</div>
+        </EditForm>
+    </div>
+</div>
+<div class="container ml-auto mr-auto">
+    <SfTab>
+        <TabItems>
+            <TabItem>
+                <ChildContent>
+                    <TabHeader Text="Manage Schedule"/>
+                </ChildContent>
+                <ContentTemplate>
+                    <div class="d-flex">
+                        <div class="d-flex flex-column">
+                            <div class="d-flex flex-row  border border-success">
+                                <div class="m-3">
+                                    <label>Available Date</label>
+                                </div>
+                                <div class="m-3 mr-5">
+                                    <label>Start Time</label>
+                                </div>
+                                <div class="m-3 mr-4">
+                                    <label>End Time</label>
+                                </div>
+                                <div class="m-3 ">
+                                    <label>Max nr. of Appointments</label>
+                                </div>
+                            </div>
+                            @foreach (var availableDay in AvailableDays)
+                            {
+                                <div class="d-flex flex-row  border border-primary">
+                                    <div class="m-3 mr-5">
+                                        <label>@availableDay.AvailableDate.Day/@availableDay.AvailableDate.Month/@availableDay.AvailableDate.Year</label>
+                                    </div>
+                                    <div class="m-3 mr-5">
+                                        <label>@availableDay.StartTime.TimeOfDay.ToString()</label>
+                                    </div>
+                                    <div class="m-3 mr-5">
+                                        <label>@availableDay.EndTime.TimeOfDay.ToString()</label>
+                                    </div>
+                                    <div class="m-3 mr-5">
+                                        <label>@availableDay.AppointmentNr</label>
+                                    </div>
+                                    <div class="m-3">
+                                        <button @onclick="@(() => RemoveDay(availableDay))">
+                                            <i class="oi oi-trash" style="color:darkred"/>
+                                        </button>                                    
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </TabItem>
+            <TabItem>
+                <ChildContent>
+                    <TabHeader Text="See Appointments"/>
+                </ChildContent>
+                <ContentTemplate>
+                    @*todo:Add scheduler component here*@
+                </ContentTemplate>
+            </TabItem>
+        </TabItems>
+    </SfTab>
+</div>
+
+
+
+
+@code {
+    
+    User user { get; set; }
+    string idNr = "";
+    IList<AvailableDay> AvailableDays { get; set; } = new List<AvailableDay>();
+    string display { get; set; } = "display:none";
+    
+    AvailableDay availableDayToAdd { get; set; } = new AvailableDay();
+    string apptNrString { get; set; }
+    string display1 = "display: none";
+    string displayError = "display: none";
+    public string ErrorMessage { get; set; }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        idNr = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value;
+    //Console.WriteLine("Logged in as: "+idNr);
+        display = "display :none";
+        display1 = "display: none";
+        displayError = "display: none";
+        user = await CloudUserService.GetUser(idNr);
+        AvailableDays = await CloudAvailableDayService.GetAvailableDays(user.idNr);
+    }
+
+
+    private void AddDay()
+    {
+        display = "display: block";
+    }
+    private void Cancel()
+    {
+        display = "display:none";
+    }
+
+    private async Task Add()
+    {
+        try
+        {
+            displayError = "display: none";
+            display1 = "display: block";
+            ErrorMessage = "";
+            int apptNr = Int32.Parse(apptNrString);
+            availableDayToAdd.AppointmentNr = apptNr;
+            availableDayToAdd.DoctorId = user.idNr;
+    //Console.WriteLine(availableDayToAdd.AvailableDate.ToString() + " " + availableDayToAdd.StartTime.TimeOfDay.ToString() + " " + availableDayToAdd.EndTime.TimeOfDay.ToString());
+            await CloudAvailableDayService.AddAvailableDay(availableDayToAdd);
+            List<AvailableDay> all =await CloudAvailableDayService.GetAvailableDays(user.idNr);
+            AvailableDays.Clear();
+            foreach (var av in all)
+            {
+                AvailableDays.Add(av);
+            }
+    // NavigationManager.NavigateTo("/ManageSchedule");
+    //display = "display:none";
+        }
+        catch (Exception e)
+        {
+            displayError = "display:block";
+            ErrorMessage = e.Message;
+        }
+    }
+    
+
+    private async Task RemoveDay(AvailableDay availableDay)
+    {
+        await CloudAvailableDayService.RemoveAvailableDay(availableDay);
+        AvailableDays.Remove(availableDay);
+    }
+    
+}

@@ -33,7 +33,8 @@ namespace SEP3.Data
 
             HttpResponseMessage responseMessage =
                 await httpClient.PostAsync("https://localhost:8085/availableDays", content);
-            Console.WriteLine(responseMessage.StatusCode);         }
+            Console.WriteLine(responseMessage.StatusCode);         
+        }
 
         public async Task UpdateAvailableDay(AvailableDay availableDay)
         {
@@ -46,6 +47,21 @@ namespace SEP3.Data
             );
             HttpResponseMessage message = await client.PatchAsync("https://localhost:8085/availableDays", content);
             Console.WriteLine(message.StatusCode);
+        }
+
+        public async Task RemoveAvailableDay(AvailableDay availableDay)
+        {
+            HttpClient httpClient = new HttpClient();
+            string appt = JsonSerializer.Serialize(availableDay);
+            StringContent content = new StringContent(
+                appt,
+                Encoding.UTF8,
+                "application/json"
+            );
+
+            HttpResponseMessage responseMessage =
+                await httpClient.PostAsync("https://localhost:8085/availableDays/delete", content);
+            Console.WriteLine(responseMessage.StatusCode);        
         }
     }
 }

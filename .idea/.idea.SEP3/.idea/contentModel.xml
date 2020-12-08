@@ -55,6 +55,7 @@
           <e p="LogIn.razor" t="Include" />
           <e p="MakeAppointment.razor" t="Include" />
           <e p="ManageHospital.razor" t="Include" />
+          <e p="ManageSchedule.razor" t="Include" />
           <e p="Profile.razor" t="Include" />
           <e p="ProfileComponent.razor" t="Include" />
           <e p="ProfileMedical.razor" t="Include" />

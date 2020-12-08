@@ -9,5 +9,6 @@ namespace SEP3.Data
         public Task<List<AvailableDay>> GetAvailableDays(int doctorId);
         public Task AddAvailableDay(AvailableDay availableDay);
         public Task UpdateAvailableDay(AvailableDay availableDay);
+        public Task RemoveAvailableDay(AvailableDay availableDay);
     }
 }

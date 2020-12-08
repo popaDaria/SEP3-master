@@ -9,5 +9,6 @@ namespace SEP3.Model
         public DateTime startTime { get; set; }
         public DateTime endTime { get; set; }
         public string summary { get; set; }
+        public int id { get; set; }
     }
 }

@@ -14,6 +14,7 @@
 @using System.Text.Encodings.Web
 @inject ICloudUserService CloudUserService
 @inject ICloudAvailableDayService CloudAvailableDayService
+@inject ICloudAppointmentService CloudAppointmentService
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
 
@@ -100,6 +101,74 @@
                     @*todo:Add scheduler component here*@
                 </ContentTemplate>
             </TabItem>
+            <TabItem>
+                <ChildContent>
+                    <TabHeader Text="Manage Appointments"/>
+                </ChildContent>
+                <ContentTemplate>
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column mr-3">
+                            <div>
+                                <br/>
+                                <br/>
+                                <input type="button" class="btn btn-info" name="btnAddMore" value="Cancel Appointment" @onclick="@CancelAppt"/>
+                            </div>
+                            <div style="@display2">
+                                <br/>
+                                <label>Appointment:
+                                    <select @bind="@apptId">
+                                        <option></option>
+                                        @foreach (var hos in @AllAppointments)
+                                        {
+                                            <option value="@hos.id">@hos.id : @hos.startTime - @hos.endTime</option>
+                                        }
+                                    </select>
+                                </label>
+                            </div>
+                            <div style="@display2">
+                                <input type="button" class="btn btn-info" name="selectDoctor" value="Cancel" @onclick="@Remove"/>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div>
+                                <input type="button" class="btn btn-info" name="btnAddMore" value="Reschedule Appointment" @onclick="@RescheduleAppt"/>
+                            </div>
+                            <div style="@display3">
+                                <br/>
+                                <br/>
+                                <label>Appointment:
+                                    <select @bind="@apptId">
+                                        <option></option>
+                                        @foreach (var hos in @AllAppointments)
+                                        {
+                                            <option value="@hos.id">@hos.id : @hos.startTime - @hos.endTime</option>
+                                        }
+                                    </select>
+                                </label>
+                                <br/>
+                                <input type="button" class="btn btn-info" name="btnAddMore" value="Select Appointment" @onclick="@SelectAppt"/>
+                                <br/>
+                                <div style="@display4">
+                                    <br/>
+                                    <br/>
+                                    <label>Start Time:<input type="datetime-local" @onchange="@AddLabel"></label>
+                                    <br/>
+                                    <label style="color: #0f6674" class="oi oi-bell">
+                                        @sameDateWarning
+                                    </label>
+                                    <br/>
+                                    <label>End Time:<input type="datetime-local" @onchange="@SelectEndTime"></label>
+                                </div>
+                            </div>
+                            <div style="@display4">
+                                <br/>
+                                <br/>
+                                <input type="button" class="btn btn-info" name="btnAddMore" value="Reschedule" @onclick="@Reschedule"/>
+                            </div>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </TabItem>
         </TabItems>
     </SfTab>
 </div>
@@ -117,8 +186,16 @@
     AvailableDay availableDayToAdd { get; set; } = new AvailableDay();
     string apptNrString { get; set; }
     string display1 = "display: none";
+    string display2 = "display:none";
+    string display3 = "display:none";
+    string display4 = "display:none";
     string displayError = "display: none";
+    int apptId { get; set; }
+    IList<Appointment> AllAppointments { get; set; } = new List<Appointment>();
     public string ErrorMessage { get; set; }
+    string sameDateWarning { get; set; } = "";
+    Appointment appointmentToModify = new Appointment();
+    bool okDates { get; set; }
     
     protected override async Task OnInitializedAsync()
     {
@@ -126,9 +203,11 @@
     //Console.WriteLine("Logged in as: "+idNr);
         display = "display :none";
         display1 = "display: none";
+        display2 = "display:none";
         displayError = "display: none";
         user = await CloudUserService.GetUser(idNr);
         AvailableDays = await CloudAvailableDayService.GetAvailableDays(user.idNr);
+        AllAppointments = await CloudAppointmentService.GetAllForDoctor(user.idNr);
     }
 
 
@@ -151,7 +230,6 @@
             int apptNr = Int32.Parse(apptNrString);
             availableDayToAdd.AppointmentNr = apptNr;
             availableDayToAdd.DoctorId = user.idNr;
-    //Console.WriteLine(availableDayToAdd.AvailableDate.ToString() + " " + availableDayToAdd.StartTime.TimeOfDay.ToString() + " " + availableDayToAdd.EndTime.TimeOfDay.ToString());
             await CloudAvailableDayService.AddAvailableDay(availableDayToAdd);
             List<AvailableDay> all =await CloudAvailableDayService.GetAvailableDays(user.idNr);
             AvailableDays.Clear();
@@ -175,5 +253,106 @@
         await CloudAvailableDayService.RemoveAvailableDay(availableDay);
         AvailableDays.Remove(availableDay);
     }
+
+    private async Task Remove()
+    {
+        try
+        {
+            Appointment appointment = new Appointment();
+            foreach (var ap in AllAppointments)
+            {
+                if (ap.id == apptId)
+                    appointment = ap;
+            }
+            await CloudAppointmentService.RemoveAppointment(appointment);
+            display2 = "display:none";
+            AllAppointments = await CloudAppointmentService.GetAllForDoctor(user.idNr);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
     
+    private async Task CancelAppt()
+    {
+        display2 = "display:block";
+        AllAppointments = await CloudAppointmentService.GetAllForDoctor(user.idNr);
+    }
+    
+    
+    private void AddLabel(Microsoft.AspNetCore.Components.ChangeEventArgs e)
+    {
+        if (e.Value != null)
+        {
+            string result = (string) e.Value;
+            string[] contents = result.Split("T");
+            string[] dateContents = contents[0].Split("-");
+            string[] timeContents = contents[1].Split(":");
+            appointmentToModify.startTime = new DateTime(Int32.Parse(dateContents[0]),Int32.Parse(dateContents[1]),Int32.Parse(dateContents[2]), 
+                Int32.Parse(timeContents[0]),Int32.Parse(timeContents[1]),0 );
+        }
+    }
+    private void SelectEndTime(Microsoft.AspNetCore.Components.ChangeEventArgs e)
+    {
+        if (e.Value != null)
+        {
+            okDates = false;
+            string result = (string) e.Value;
+            string[] contents = result.Split("T");
+            string[] dateContents = contents[0].Split("-");
+            string[] timeContents = contents[1].Split(":");
+            appointmentToModify.endTime = new DateTime(Int32.Parse(dateContents[0]),Int32.Parse(dateContents[1]),Int32.Parse(dateContents[2]), 
+                Int32.Parse(timeContents[0]),Int32.Parse(timeContents[1]),0 );
+            if (!appointmentToModify.endTime.Date.Equals(appointmentToModify.startTime.Date))
+            {
+                sameDateWarning = "End Time of appointment must have the same date as Start Time!";
+                okDates = false;
+            }
+            else
+            {
+                if (appointmentToModify.startTime.TimeOfDay.TotalMinutes < appointmentToModify.endTime.TimeOfDay.TotalMinutes)
+                {
+                    sameDateWarning = "";
+                    okDates = true;
+                }
+                else
+                {
+                    sameDateWarning = "End Time of appointment must be after Start Time of appointment!";
+                    okDates = false;
+                }
+            }
+        }    
+    }
+
+    private void RescheduleAppt()
+    {
+        display3 = "display:block";
+        appointmentToModify = new Appointment();
+    }
+
+    private void SelectAppt()
+    {
+        foreach (var ap in AllAppointments)
+        {
+            if (ap.id == apptId)
+                appointmentToModify = ap;
+        }
+        display4 = "display:block";
+    }
+
+    private async Task Reschedule()
+    {
+        if (okDates)
+        {
+            Console.WriteLine(appointmentToModify.startTime.ToString()+" "+appointmentToModify.endTime.ToString());
+            await CloudAppointmentService.UpdateAppointment(appointmentToModify);
+            display3 = "display:none";
+            display4 = "display:none";
+            appointmentToModify= new Appointment();
+            AllAppointments = await CloudAppointmentService.GetAllForDoctor(user.idNr);
+            NavigationManager.NavigateTo("ManageSchedule");
+        }
+    }
+
 }

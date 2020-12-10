@@ -36,9 +36,34 @@ namespace SEP3.Data
             Console.WriteLine(responseMessage.StatusCode); 
         }
 
-        public Task UpdateAppointment(Appointment appointment)
+        public async Task UpdateAppointment(Appointment appointment)
         {
-            throw new NotImplementedException();
+            HttpClient httpClient = new HttpClient();
+            string appt = JsonSerializer.Serialize(appointment);
+            StringContent content = new StringContent(
+                appt,
+                Encoding.UTF8,
+                "application/json"
+            );
+
+            HttpResponseMessage responseMessage =
+                await httpClient.PatchAsync("https://localhost:8085/appointments", content);
+            Console.WriteLine(responseMessage.StatusCode); 
+        }
+
+        public async Task RemoveAppointment(Appointment appointment)
+        {
+            HttpClient httpClient = new HttpClient();
+            string appt = JsonSerializer.Serialize(appointment);
+            StringContent content = new StringContent(
+                appt,
+                Encoding.UTF8,
+                "application/json"
+            );
+
+            HttpResponseMessage responseMessage =
+                await httpClient.PostAsync("https://localhost:8085/appointments/delete", content);
+            Console.WriteLine(responseMessage.StatusCode);  
         }
 
         public async Task<List<Appointment>> GetAllForDoctor(int id)
@@ -51,9 +76,6 @@ namespace SEP3.Data
             return result;
         }
 
-        public List<ScheduleData.DoctorsEventData> GetAppointmentData()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

@@ -147,6 +147,18 @@ else
                                         </div>
                                     </ContentTemplate>
                                 </TabItem>
+                                <AuthorizeView Roles="patient">
+                                <TabItem>
+                                    <ChildContent>
+                                        <TabHeader Text="Appointments"/>
+                                    </ChildContent>
+                                    <ContentTemplate>
+                                        <div class="container">
+                                            <Scheduler ID="@idNr" type="patient"></Scheduler>
+                                        </div>
+                                    </ContentTemplate>
+                                </TabItem>
+                                </AuthorizeView>
                             </TabItems>
                         </SfTab>
                     </div>
@@ -169,7 +181,7 @@ else
     protected override async Task OnInitializedAsync()
     {
         idNr = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value;
-        Console.WriteLine("Logged in as: "+idNr);
+        Console.WriteLine("Logged in as: " + idNr);
         user = await CloudUserService.GetUser(idNr);
         editedUser.Update(user);
     }
@@ -199,12 +211,12 @@ else
 
     private void ManageHospitals()
     {
-        NavigationManager.NavigateTo("/manage/"+user.idNr);
+        NavigationManager.NavigateTo("/manage/" + user.idNr);
     }
 
     private void AddNewDoctor()
     {
-        NavigationManager.NavigateTo("/addDoctor/"+user.idNr);
+        NavigationManager.NavigateTo("/addDoctor/" + user.idNr);
     }
 
 

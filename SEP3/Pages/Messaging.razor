@@ -1,0 +1,254 @@
+﻿@page "/message/{ID}"
+@using SEP3.Model
+@using SEP3.Auth
+@using SEP3.Data
+
+@inject ICloudMessageService CloudMessageService;
+@inject AuthenticationStateProvider AuthenticationStateProvider;
+
+<h3>Messaging</h3>
+
+@if (Messages.Count == 0)
+{
+    <p>LOADING...</p>
+    }
+else
+{
+    <div class="container bootstrap snippets bootdeys">
+        <div class="col-md-7 col-xs-12 col-md-offset-2">
+            <!-- Panel Chat -->
+            <div class="panel" id="chat">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <i class="icon wb-chat-text" aria-hidden="true"></i> Chat
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="chats">
+                        @foreach (Message message in Messages)
+                        {
+                            if (message.senderID == Int32.Parse(myID))
+                            {
+                                <div class="chat">
+                                    <div class="chat-avatar">
+                                        <a class="avatar avatar-online" data-toggle="tooltip" href="#" data-placement="right" title="" data-original-title="June Lane">
+                                            <img src="images/weed.jpg" alt="...">
+                                            <i></i>
+                                        </a>
+                                    </div>
+                                    <div class="chat-body">
+                                        <div class="chat-content">
+                                            <p>
+                                                @message.text
+                                            </p>
+                                            <time class="chat-time" datetime="@message.timestamp">@message.timestamp</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            else if (message.recieverID == Int32.Parse(myID))
+                            {
+                                <div class="chat chat-left">
+                                    <div class="chat-avatar">
+                                        <a class="avatar avatar-online" data-toggle="tooltip" href="#" data-placement="left" title="" data-original-title="Edward Fletcher">
+                                            <img src="images/weed.jpg" alt="...">
+                                            <i></i>
+                                        </a>
+                                    </div>
+                                    <div class="chat-body">
+                                        <div class="chat-content">
+                                            <p>@message.text</p>
+                                            <time class="chat-time" datetime="@message.timestamp">@message.timestamp</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <form>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Say something" @bind-value="@text">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" @onclick="@SendMessage">Send</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- End Panel Chat -->
+        </div>
+    </div>
+}
+@code {
+    [Parameter] public string ID { get; set; }
+    public string myID { get; set; }
+    IList<Message> Messages = new List<Message>();
+    public string text;
+
+    protected async override Task OnInitializedAsync()
+    {
+        myID = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value;
+        Messages = await CloudMessageService.GetMessagesFromToAndToFrom(Int32.Parse(ID),Int32.Parse(myID));
+        Console.WriteLine(Messages.Count);
+    }
+
+    public async Task SendMessage()
+    {
+        Message send = new Message();
+        send.text = text;
+        Console.WriteLine(text);
+        send.senderID = Int32.Parse(myID);
+        send.recieverID = Int32.Parse(ID);
+        send.type = "message";
+        Console.WriteLine(ID + "    " + myID);
+        Console.WriteLine(send.senderID + "    " + send.recieverID);
+        send.timestamp = new DateTime(DateTime.Now.Year,DateTime.Now.Month,DateTime.Now.Day,DateTime.Now.Hour,DateTime.Now.Minute,DateTime.Now.Second);
+        await CloudMessageService.SendMessage(send);
+        text = "";
+        Update();
+    }
+
+    public async Task Update()
+    {
+        Messages = await CloudMessageService.GetMessagesFromToAndToFrom(Int32.Parse(ID),Int32.Parse(myID));
+        StateHasChanged();
+    }
+
+}
+
+<style>
+    
+body {
+background:#ddd;
+margin-top:10px;
+}
+
+.chat-box {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden
+}
+
+.chats {
+    padding: 30px 15px
+}
+
+.chat-avatar {
+    float: right
+}
+
+.chat-avatar .avatar {
+    width: 30px;
+        -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2),0 6px 10px 0 rgba(0,0,0,0.3);
+}
+
+.chat-body {
+    display: block;
+    margin: 10px 30px 0 0;
+    overflow: hidden
+}
+
+.chat-body:first-child {
+    margin-top: 0
+}
+
+.chat-content {
+    position: relative;
+    display: block;
+    float: right;
+    padding: 8px 15px;
+    margin: 0 20px 10px 0;
+    clear: both;
+    color: #fff;
+    background-color: #62a8ea;
+    border-radius: 4px;
+        -webkit-box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.37);
+}
+
+.chat-content:before {
+    position: absolute;
+    top: 10px;
+    right: -10px;
+    width: 0;
+    height: 0;
+    content: '';
+    border: 5px solid transparent;
+    border-left-color: #62a8ea
+}
+
+.chat-content>p:last-child {
+    margin-bottom: 0
+}
+
+.chat-content+.chat-content:before {
+    border-color: transparent
+}
+
+.chat-time {
+    display: block;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, .6)
+}
+
+.chat-left .chat-avatar {
+    float: left
+}
+
+.chat-left .chat-body {
+    margin-right: 0;
+    margin-left: 30px
+}
+
+.chat-left .chat-content {
+    float: left;
+    margin: 0 0 10px 20px;
+    color: #76838f;
+    background-color: #dfe9ef
+}
+
+.chat-left .chat-content:before {
+    right: auto;
+    left: -10px;
+    border-right-color: #dfe9ef;
+    border-left-color: transparent
+}
+
+.chat-left .chat-content+.chat-content:before {
+    border-color: transparent
+}
+
+.chat-left .chat-time {
+    color: #a3afb7
+}
+
+.panel-footer {
+    padding: 0 30px 15px;
+    background-color: transparent;
+    border-top: 1px solid transparent;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.avatar img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 0 none;
+    border-radius: 1000px;
+}
+.chat-avatar .avatar {
+    width: 30px;
+}
+.avatar {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    white-space: nowrap;
+    border-radius: 1000px;
+    vertical-align: bottom;
+}
+</style>

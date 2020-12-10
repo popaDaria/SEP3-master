@@ -89,6 +89,14 @@ namespace SEP3.Data
             User result = JsonSerializer.Deserialize<User>(message);
             return result;
         }
+        
+        public async Task<string> GetName(string idNr)
+        {
+            HttpClient client = new HttpClient();
+            string message = await client.GetStringAsync("https://localhost:8085/users/name?idNr="+idNr);
+            Console.WriteLine(message);
+            return message;
+        }
 
         public async Task<List<User>> GetUnvalidatedUsers()
         {

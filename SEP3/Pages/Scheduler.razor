@@ -1,4 +1,4 @@
-﻿@page "/schedule/{doctorID}"
+﻿@page "/schedule/{ID}"
 @using Syncfusion.Blazor.Schedule
 @using Syncfusion.Blazor.Calendars
 @using Syncfusion.Blazor.DropDowns
@@ -8,32 +8,60 @@
 @using Syncfusion.Blazor
 @using Syncfusion.Blazor.Data
 @using Syncfusion.Blazor
+@using System.Text.Json.Serialization
 
 @inject ICloudAppointmentService CloudAppointmentService;
 
-<div class="col-lg-12 control-section">
-    <div class="schedule-wrapper">
-        <SfSchedule TValue="Appointment" Width="100%" Height="650px" @bind-SelectedDate="@CurrentDate" Readonly="true">
-           <ScheduleEventSettings DataSource="@DataSource"></ScheduleEventSettings>
-        </SfSchedule>
+@if (type.Equals("doctor"))
+{
+    <div class="col-lg-12 control-section">
+        <div class="schedule-wrapper">
+            <SfSchedule TValue="Appointment" Width="100%" Height="650px" @bind-SelectedDate="@CurrentDate" Readonly="true">
+                <ScheduleEventSettings TValue="Appointment">
+                    <SfDataManager Url="@("https://localhost:8085/appointments/doctor/" + ID)" Adaptor="@Syncfusion.Blazor.Adaptors.WebApiAdaptor"></SfDataManager>
+                </ScheduleEventSettings>
+            </SfSchedule>
+        </div>
     </div>
-</div>
-
+}
+else if(type.Equals("patient"))
+{
+    <div class="col-lg-12 control-section">
+        <div class="schedule-wrapper">
+            <SfSchedule TValue="Appointment" Width="100%" Height="650px" @bind-SelectedDate="@CurrentDate" Readonly="true">
+                <ScheduleEventSettings TValue="Appointment">
+                    <SfDataManager Url="@("https://localhost:8085/appointments/patient/" + ID)" Adaptor="@Syncfusion.Blazor.Adaptors.WebApiAdaptor"></SfDataManager>
+                </ScheduleEventSettings>
+            </SfSchedule>
+        </div>
+    </div>
+}
 
 @code{
     private DateTime CurrentDate = DateTime.Now;
+
     [Parameter]
-    public string doctorID { get; set; }
+    public string ID { get; set; }
+    [Parameter]
+    public string type { get; set; }
 
-    public List<Appointment> DataSource = new List<Appointment>();
-    
-    
 
-    protected async override Task OnInitializedAsync()
+    public class Appointment
     {
-        DataSource = await CloudAppointmentService.GetAllForDoctor(222222);
+        [JsonPropertyName("summary")]
+        public string Subject { get; set; }
+        [JsonPropertyName("startTime")]
+        public DateTime StartTime { get; set; }
+
+        [JsonPropertyName("endTime")]
+        public DateTime EndTime { get; set; }
+        
+        [JsonPropertyName("id")]
+        public int Id { get; set; }
+
+        public int patientId { get; set; }
+        public int doctorId { get; set; }
     }
-    
 
 }
 

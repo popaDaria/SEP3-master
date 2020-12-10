@@ -1,0 +1,45 @@
+﻿@page "/chat"
+@using SEP3.Model
+@using Syncfusion.Blazor.Inputs
+@using SEP3.Auth
+@using SEP3.Data
+
+<h3>Open conversations</h3>
+
+@inject ICloudMessageService CloudMessageService;
+@inject ICloudUserService CloudUserService;
+@inject AuthenticationStateProvider AuthenticationStateProvider;
+
+@if (Messages == null)
+{
+    <p>Create a conversation</p>
+    
+    }
+else
+{
+    <div class="list-group">
+        @foreach (Message message in Messages)
+        {
+            <a href="@("/message/" + message.senderID)" class="list-group-item list-group-item-action">@GetName(message)</a>
+        }
+    </div>
+}
+
+@code {
+    public string idNr;
+    public string type;
+    public IList<Message> Messages = new List<Message>();
+    
+    protected async override Task OnInitializedAsync()
+    {
+        idNr = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value;
+        type = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[1].Value;
+        Messages = await CloudMessageService.GetMessagesToMe(Int32.Parse(idNr));
+    }
+
+    public string GetName(Message message)
+    {
+        return CloudUserService.GetName(message.senderID.ToString()).Result;
+    }
+
+}

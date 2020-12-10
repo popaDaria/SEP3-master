@@ -308,8 +308,6 @@ C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Page
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ManageHospital.razor.g.cs
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ProfileComponent.razor.g.cs
 C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ProfileMedical.razor.g.cs
-C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Schedule.razor.g.cs
-C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Schedule.razor.g.cs
 D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Schedule.razor.g.cs
 D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Scheduler.razor.g.cs
 D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Schedule.razor.g.cs
@@ -409,3 +407,13 @@ D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SE
 D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.genruntimeconfig.cache
 D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ManageSchedule.razor.g.cs
 D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ManageSchedule.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\MakeAppointment.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ManageSchedule.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Scheduler.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\MakeAppointment.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ManageSchedule.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Scheduler.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Chat.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Messaging.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Chat.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Messaging.razor.g.cs

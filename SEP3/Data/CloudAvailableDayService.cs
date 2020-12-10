@@ -14,7 +14,7 @@ namespace SEP3.Data
         public async Task<List<AvailableDay>> GetAvailableDays(int doctorId)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/availableDays/"+doctorId);
+            HttpResponseMessage message = await client.GetAsync("http://localhost:8085/availableDays/"+doctorId);
             string content = await message.Content.ReadAsStringAsync();
             Console.WriteLine(content);
             List<AvailableDay> result = JsonConvert.DeserializeObject<List<AvailableDay>>(content);
@@ -32,7 +32,7 @@ namespace SEP3.Data
             );
 
             HttpResponseMessage responseMessage =
-                await httpClient.PostAsync("https://localhost:8085/availableDays", content);
+                await httpClient.PostAsync("http://localhost:8085/availableDays", content);
             Console.WriteLine(responseMessage.StatusCode);         
         }
 
@@ -45,7 +45,7 @@ namespace SEP3.Data
                 Encoding.UTF8,
                 "application/json"
             );
-            HttpResponseMessage message = await client.PatchAsync("https://localhost:8085/availableDays", content);
+            HttpResponseMessage message = await client.PatchAsync("http://localhost:8085/availableDays", content);
             Console.WriteLine(message.StatusCode);
         }
 
@@ -60,7 +60,7 @@ namespace SEP3.Data
             );
 
             HttpResponseMessage responseMessage =
-                await httpClient.PostAsync("https://localhost:8085/availableDays/delete", content);
+                await httpClient.PostAsync("http://localhost:8085/availableDays/delete", content);
             Console.WriteLine(responseMessage.StatusCode);        
         }
     }

@@ -14,7 +14,7 @@ namespace SEP3.Data
         public async Task<List<Appointment>> GetAllForPatient(int id)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/appointments/patient/"+id);
+            HttpResponseMessage message = await client.GetAsync("http://localhost:8085/appointments/patient/"+id);
             string content = await message.Content.ReadAsStringAsync();
             Console.WriteLine(content);
             List<Appointment> result = JsonConvert.DeserializeObject<List<Appointment>>(content);
@@ -32,7 +32,7 @@ namespace SEP3.Data
             );
 
             HttpResponseMessage responseMessage =
-                await httpClient.PostAsync("https://localhost:8085/appointments", content);
+                await httpClient.PostAsync("http://localhost:8085/appointments", content);
             Console.WriteLine(responseMessage.StatusCode); 
         }
 
@@ -44,7 +44,7 @@ namespace SEP3.Data
         public async Task<List<Appointment>> GetAllForDoctor(int id)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/appointments/doctor/"+id);
+            HttpResponseMessage message = await client.GetAsync("http://localhost:8085/appointments/doctor/"+id);
             string content = await message.Content.ReadAsStringAsync();
             Console.WriteLine(content);
             List<Appointment> result = JsonConvert.DeserializeObject<List<Appointment>>(content);

@@ -22,14 +22,14 @@ namespace SEP3.Data
             );
 
             HttpResponseMessage responseMessage =
-                await httpClient.PostAsync("https://localhost:8085/hospitalDoctor", content);
+                await httpClient.PostAsync("http://localhost:8085/hospitalDoctor", content);
             Console.WriteLine(responseMessage.StatusCode); 
         }
 
         public async Task<IList<User>> GetAllDoctorsForDepartment(int hosId, string deptString)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/hospitalDoctor/doctors?hosId="+hosId+"&&dept="+deptString);
+            HttpResponseMessage message = await client.GetAsync("http://localhost:8085/hospitalDoctor/doctors?hosId="+hosId+"&&dept="+deptString);
             string content = await message.Content.ReadAsStringAsync();
             //Console.WriteLine(content);
             List<User> result = JsonConvert.DeserializeObject<List<User>>(content);

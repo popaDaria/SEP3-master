@@ -14,7 +14,7 @@ namespace SEP3.Data
         public async Task<LoggedUser> ValidateUser(string idNr, string Password)
         {
             HttpClient client = new HttpClient();
-            string message = await client.GetStringAsync("https://localhost:8085/users?idNr="+idNr);
+            string message = await client.GetStringAsync("http://localhost:8085/users?idNr="+idNr);
             Console.WriteLine(message);
             User result = JsonSerializer.Deserialize<User>(message);
             
@@ -43,7 +43,7 @@ namespace SEP3.Data
         public async Task ValidateManager(int id)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/users/manager?id="+id);
+            HttpResponseMessage message = await client.GetAsync("http://localhost:8085/users/manager?id="+id);
             Console.WriteLine(message);
         }
         
@@ -62,7 +62,7 @@ namespace SEP3.Data
             //Console.WriteLine(usersSerialized);
             
             HttpResponseMessage responseMessage =
-                await client.PutAsync("https://localhost:8085/users", content);
+                await client.PutAsync("http://localhost:8085/users", content);
             Console.WriteLine(responseMessage.StatusCode); 
         }
 
@@ -77,14 +77,14 @@ namespace SEP3.Data
             );
             
             HttpResponseMessage responseMessage =
-                await client.PutAsync("https://localhost:8085/users/doctor", content);
+                await client.PutAsync("http://localhost:8085/users/doctor", content);
             Console.WriteLine(responseMessage.StatusCode); 
         }
 
         public async Task<User> GetUser(string idNr)
         {
             HttpClient client = new HttpClient();
-            string message = await client.GetStringAsync("https://localhost:8085/users?idNr="+idNr);
+            string message = await client.GetStringAsync("http://localhost:8085/users?idNr="+idNr);
             Console.WriteLine(message);
             User result = JsonSerializer.Deserialize<User>(message);
             return result;
@@ -93,7 +93,7 @@ namespace SEP3.Data
         public async Task<List<User>> GetUnvalidatedUsers()
         {
             HttpClient client = new HttpClient();
-            string message = await client.GetStringAsync("https://localhost:8085/users/unvalidated");
+            string message = await client.GetStringAsync("http://localhost:8085/users/unvalidated");
             Console.WriteLine(message);
             List<User> result = JsonSerializer.Deserialize<List<User>>(message);
             return result;        
@@ -108,7 +108,7 @@ namespace SEP3.Data
                 Encoding.UTF8,
                 "application/json"
             );
-            HttpResponseMessage message = await client.PatchAsync("https://localhost:8085/users", content);
+            HttpResponseMessage message = await client.PatchAsync("http://localhost:8085/users", content);
             Console.WriteLine(message.StatusCode);
         }
     }

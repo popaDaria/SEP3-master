@@ -24,14 +24,14 @@ namespace SEP3.Data
             
             //Console.WriteLine(usersSerialized);
             HttpResponseMessage responseMessage =
-                await client.PostAsync("https://localhost:8085/hospitals", content);
+                await client.PostAsync("http://localhost:8085/hospitals", content);
             Console.WriteLine(responseMessage.StatusCode); 
         }
 
         public async Task<Hospital> GetHospital(int idNr)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/hospitals?id="+idNr);
+            HttpResponseMessage message = await client.GetAsync("http://localhost:8085/hospitals?id="+idNr);
             string content = await message.Content.ReadAsStringAsync();
             Console.WriteLine(message.Content.ReadAsStringAsync().Result);
             Hospital result = JsonConvert.DeserializeObject<Hospital>(content);
@@ -43,7 +43,7 @@ namespace SEP3.Data
         public async Task<List<Hospital>> GetAllHospitals()
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/hospitals/all");
+            HttpResponseMessage message = await client.GetAsync("http://localhost:8085/hospitals/all");
             string content = await message.Content.ReadAsStringAsync();
             Console.WriteLine(content);
             List<Hospital> result = JsonConvert.DeserializeObject<List<Hospital>>(content);
@@ -59,14 +59,14 @@ namespace SEP3.Data
                 Encoding.UTF8,
                 "application/json"
             );
-            HttpResponseMessage message = await client.PatchAsync("https://localhost:8085/hospitals", content);
+            HttpResponseMessage message = await client.PatchAsync("http://localhost:8085/hospitals", content);
             Console.WriteLine(message.StatusCode);
         }
 
         public async Task<List<string>> GetAllDepartments(int hosId)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/hospitals/departments?id="+hosId);
+            HttpResponseMessage message = await client.GetAsync("http://localhost:8085/hospitals/departments?id="+hosId);
             string content = await message.Content.ReadAsStringAsync();
             //Console.WriteLine(content);
             List<string> result = JsonConvert.DeserializeObject<List<string>>(content);
@@ -76,7 +76,7 @@ namespace SEP3.Data
         public async Task<List<Hospital>> GetAllHospitalsValidated()
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/hospitals/validated");
+            HttpResponseMessage message = await client.GetAsync("http://localhost:8085/hospitals/validated");
             string content = await message.Content.ReadAsStringAsync();
             //Console.WriteLine(content);
             List<Hospital> result = JsonConvert.DeserializeObject<List<Hospital>>(content);
@@ -86,7 +86,7 @@ namespace SEP3.Data
         public async Task<List<Hospital>> GetAllHospitalsInvalid()
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/hospitals/invalid");
+            HttpResponseMessage message = await client.GetAsync("http://localhost:8085/hospitals/invalid");
             string content = await message.Content.ReadAsStringAsync();
             //Console.WriteLine(content);
             List<Hospital> result = JsonConvert.DeserializeObject<List<Hospital>>(content);
@@ -96,7 +96,7 @@ namespace SEP3.Data
         public async Task<List<Hospital>> GetAllHospitalsForManager(int id)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/hospitals/manager?id="+id);
+            HttpResponseMessage message = await client.GetAsync("http://localhost:8085/hospitals/manager?id="+id);
             string content = await message.Content.ReadAsStringAsync();
             //Console.WriteLine(content);
             List<Hospital> result = JsonConvert.DeserializeObject<List<Hospital>>(content);
@@ -106,14 +106,14 @@ namespace SEP3.Data
         public async Task ValidateHospital(int id)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage message = await client.GetAsync("https://localhost:8085/hospitals/validate?id="+id);
+            HttpResponseMessage message = await client.GetAsync("http://localhost:8085/hospitals/validate?id="+id);
             Console.WriteLine(message);
         }
         
         public async Task RemoveHospital(int id)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage message = await client.DeleteAsync("https://localhost:8085/hospitals/"+id);
+            HttpResponseMessage message = await client.DeleteAsync("http://localhost:8085/hospitals/"+id);
             Console.WriteLine(message);
         }
     }

@@ -1,4 +1,7 @@
 ﻿@using Syncfusion.Blazor.Navigations
+@using SEP3.Auth
+@inject NavigationManager NavigationManager;
+@inject AuthenticationStateProvider AuthenticationStateProvider;
 
 <link href="css/sidebar.css" type="text/css" rel="stylesheet" />
 <span id="hamburger" @onclick="@Show" class="@Hamburgerclass"></span>
@@ -13,20 +16,11 @@
                 <li class="pl-4 pr-4">
                     <a class="pl-4 pr-4 p-4" href="">Home</a>
                 </li>
-                <AuthorizeView>
+                <AuthorizeView Policy="MustBeLoggedIn">
                     <NotAuthorized>
                         <li>
                             <a class="pl-4 pr-4 p-4" href="login">Log In</a>
                         </li>
-                    </NotAuthorized>
-                    <Authorized>
-                        <li>
-                            <a class="pl-4 pr-4 p-4" href="login">Log Out</a>
-                        </li>
-                    </Authorized>
-                </AuthorizeView>
-                <AuthorizeView>
-                    <NotAuthorized>
                         <li>
                             <a class="pl-4 pr-4 p-4" href="register">Register</a>
                         </li>
@@ -57,6 +51,11 @@
                         <a class="pl-4 pr-4 p-4" href="ManageSchedule">Manage Schedule</a>
                     </li>
                 </AuthorizeView>
+                <AuthorizeView Policy="MustBeLoggedIn">
+                    <li>
+                        <a class="pl-4 pr-4 p-4" @onclick="PerformLogOut" href="">Log Out</a>
+                    </li>
+                </AuthorizeView>
             </ul>
         </div>
     </ChildContent>
@@ -69,6 +68,9 @@
     public string Hamburgerclass = "e-icons menu default";
     public SidebarPosition Position { get; set; } = SidebarPosition.Left;
     public bool SidebarToggle = false;
+    private string idNr;
+    private string Password;
+    private string ErrorMessage;
 
     public void Show()
     {
@@ -98,5 +100,20 @@
     {
         {"class", "default-sidebar"}
     };
+    
+    public async Task PerformLogOut()
+    {
+        ErrorMessage = "";
+        idNr = "";
+        Password = "";
+        try
+        {
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+            //NavigationManager.NavigateTo("/");
+        }
+        catch (Exception e)
+        {
+        }
+    }
 
 }

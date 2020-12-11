@@ -2,6 +2,7 @@
 @attribute [Authorize(Roles = "patient")]
 @using SEP3.Model
 @using SEP3.Data
+@using System.Text
 @inject ICloudHospitalService CloudHospitalService
 @inject ICloudDoctorHospitalService CloudDoctorHospitalService
 @inject ICloudAppointmentService CloudAppointmentService
@@ -9,6 +10,7 @@
 @inject NavigationManager NavigationManager
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject ICloudAvailableDayService CloudAvailableDayService
+@inject ICloudMedicalRecordService CloudMedicalRecordService
 
 
 <h1 style="font-size: 56px; font-weight: bold; color: #0B4E58">Schedule a new Appointment</h1>
@@ -140,13 +142,28 @@
     {
         docId = Int32.Parse(docString.Split(" ")[0]);
         AvailableDays = await CloudAvailableDayService.GetAvailableDays(docId);
+        List<AvailableDay> daysToRemove = new List<AvailableDay>();
+
+        foreach (var day in AvailableDays)
+        {
+            if (day.AvailableDate.Date.CompareTo(DateTime.Today) < 0)
+            {
+                daysToRemove.Add(day);
+            }
+        }
+        foreach (var day in daysToRemove)
+        {
+            AvailableDays.Remove(day);
+        }
+        
+        
         ApptForDoctor = await CloudAppointmentService.GetAllForDoctor(docId);
         display3 = "display: block";
     //labelContent = "Doctor's schedule:";
         if (AvailableDays.Count == 0)
         {
             displayError = "display : block";
-            ErrorMessage = "Warning: The doctor you have selected has no available days registered in the system!";
+            ErrorMessage = "Warning: The doctor you have selected has no upcoming available days registered in the system!";
             ok = true;
         }
         else
@@ -319,8 +336,17 @@
                     display = "display: block";
                     labelContent = "";
                     await CloudAppointmentService.MakeAppointment(appointmentToAdd);
-                    --DoctorDay.AppointmentNr;
-                    await CloudAvailableDayService.UpdateAvailableDay(DoctorDay);
+                    if (AvailableDays.Count != 0)
+                    {
+                        --DoctorDay.AppointmentNr;
+                        await CloudAvailableDayService.UpdateAvailableDay(DoctorDay);
+                    }
+                    MedicalRecord medicalRecord = new MedicalRecord();
+                    medicalRecord.patientId = patId;
+                    string content = "Entry - NEW APPOINTMENT: \n Appointment number" + appointmentToAdd.id + " : at " + appointmentToAdd.startTime + " until " + appointmentToAdd.endTime +
+                                     " made with the doctor with the id " + appointmentToAdd.id + ". Summary/Reason provided by patient: '" + appointmentToAdd.summary +"' \n";
+                    medicalRecord.content = Encoding.Default.GetBytes(content);
+                    await CloudMedicalRecordService.AddMedicalRecord(medicalRecord);
                     NavigationManager.NavigateTo("/");
                 }
                 else

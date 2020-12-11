@@ -8,8 +8,11 @@
 @using Syncfusion.Blazor.Buttons
 @using RenderMode = Syncfusion.Blazor.InPlaceEditor.RenderMode
 @using InputType = Syncfusion.Blazor.InPlaceEditor.InputType
+@using System.Text
 
 @inject ICloudUserService CloudUserService;
+@inject ICloudAppointmentService CloudAppointmentService
+@inject ICloudMedicalRecordService CloudMedicalRecordService
 @inject AuthenticationStateProvider AuthenticationStateProvider;
 @inject NavigationManager NavigationManager
 
@@ -129,6 +132,7 @@ else
                                         </div>
                                     </ContentTemplate>
                                 </TabItem>
+                                <AuthorizeView Roles="patient">
                                 <TabItem>
                                     <ChildContent>
                                         <TabHeader Text="Medical History"/>
@@ -138,15 +142,45 @@ else
                                             <br/>
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <label>Treatment</label>
+                                                    <label>Medical Record</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p>COVID-19 - Bleach</p>
+                                                    <p>@medicalRecord</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </ContentTemplate>
                                 </TabItem>
+                                </AuthorizeView>
+                                <AuthorizeView Roles="patient">
+                                    <TabItem>
+                                        <ChildContent>
+                                            <TabHeader Text="Cancel Appointment"/> 
+                                        </ChildContent>
+                                        <ContentTemplate>
+                                            <div class="container">
+                                                <br/>
+                                                <div>
+                                                    <br/>
+                                                    <label>Appointment:
+                                                        <br/>
+                                                        <label>@NrOfAppt</label>
+                                                        <select @bind="@apptId">
+                                                            <option></option>
+                                                            @foreach (var hos in @ValidAppt)
+                                                            {
+                                                                <option value="@hos.id">@hos.id : @hos.startTime - @hos.endTime</option>
+                                                            }
+                                                        </select>
+                                                    </label>
+                                                </div>
+                                                <div>
+                                                    <input type="button" class="btn btn-info" name="selectDoctor" value="Cancel" @onclick="@Remove"/>
+                                                </div>
+                                            </div>
+                                        </ContentTemplate>
+                                    </TabItem>
+                                </AuthorizeView>
                             </TabItems>
                         </SfTab>
                     </div>
@@ -165,6 +199,13 @@ else
     User user { get; set; }
     User editedUser = new User();
     string idNr = "";
+    
+    int apptId { get; set; }
+    IList<Appointment> AllAppointments { get; set; } = new List<Appointment>();
+    IList<Appointment> ValidAppt { get; set; } = new List<Appointment>();
+    string NrOfAppt { get; set; } = "";
+    string medicalRecord { get; set; } = "";
+    MedicalRecord MedicalRecord { get; set; }= new MedicalRecord();
 
     protected override async Task OnInitializedAsync()
     {
@@ -172,6 +213,37 @@ else
         Console.WriteLine("Logged in as: "+idNr);
         user = await CloudUserService.GetUser(idNr);
         editedUser.Update(user);
+        AllAppointments = await CloudAppointmentService.GetAllForPatient(user.idNr);
+        foreach (var appt in AllAppointments)
+        {
+            if (appt.startTime.Date.CompareTo(DateTime.Today) >= 0)
+            {
+                ValidAppt.Add(appt);
+            }
+        }
+        if (ValidAppt.Count != 0)
+        {
+            NrOfAppt = "";
+        }
+        else
+        {
+            NrOfAppt = "No Valid Appointments!";
+        }
+
+        if (user.userType.Equals("patient"))
+        {
+            MedicalRecord = null;
+            MedicalRecord = await CloudMedicalRecordService.GetMedicalRecord(user.idNr);
+            if (MedicalRecord != null)
+            {
+                if (MedicalRecord.content != null && MedicalRecord.content.Length > 0)
+                    medicalRecord = Encoding.Default.GetString(MedicalRecord.content);
+            }
+            else
+            {
+                medicalRecord = "No Medical Record yet registered on the platform!";
+            }
+        }
     }
 
     public void EnableEdit()
@@ -207,5 +279,30 @@ else
         NavigationManager.NavigateTo("/addDoctor/"+user.idNr);
     }
 
-
+    private async Task Remove()
+    {
+        try
+        {
+            Appointment appointment = new Appointment();
+            foreach (var ap in AllAppointments)
+            {
+                if (ap.id == apptId)
+                    appointment = ap;
+            }
+            await CloudAppointmentService.RemoveAppointment(appointment);
+            AllAppointments = await CloudAppointmentService.GetAllForPatient(user.idNr);
+            ValidAppt.Clear();
+            foreach (var appt in AllAppointments)
+            {
+                if (appt.startTime.Date.CompareTo(DateTime.Today) >= 0)
+                {
+                    ValidAppt.Add(appt);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
 }

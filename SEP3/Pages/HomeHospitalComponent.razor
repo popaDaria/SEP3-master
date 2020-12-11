@@ -1,8 +1,10 @@
 ﻿@using Syncfusion.Blazor.Popups
 @using Syncfusion.Blazor.Buttons
 @using SEP3.Data
+@using SEP3.Model
 
 @inject AuthenticationStateProvider AuthenticationStateProvider;
+@inject ICloudRatingService CloudRatingService
 @inject ICloudHospitalService CloudHospitalService;
 @inject NavigationManager NavigationManager;
 
@@ -28,6 +30,23 @@
                     <a class="btn btn-danger" @onclick="@Show" style="color:white">Remove</a>
                 </AuthorizeView>
             }
+            @*@if (page.Equals("#"))
+            {
+                <AuthorizeView Roles="patient">
+                    <br/>
+                    <label>Rate Hospital:</label>
+                    <select @bind="@RatingValue">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                    <br/>
+                    <br/>
+                    <a class="btn btn-success" @onclick="@Rate" style="color:white">Submit</a>
+                </AuthorizeView>
+            }*@
             @*@if (managerId == @mngID)
             {
                 <AuthorizeView Roles="manager">
@@ -83,6 +102,7 @@
 
     string display = "display: inline;";
 
+
     public async void Validate()
     {
         await CloudHospitalService.ValidateHospital(Int32.Parse(id));
@@ -112,7 +132,7 @@
     {
         NavigationManager.NavigateTo("/hospital/"+id);
     }*/
-
+    
 }
 
 <style>

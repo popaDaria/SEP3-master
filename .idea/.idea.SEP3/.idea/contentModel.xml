@@ -21,11 +21,15 @@
           <e p="CloudAvailableDayService.cs" t="Include" />
           <e p="CloudDoctorHospitalService.cs" t="Include" />
           <e p="CloudHospitalService.cs" t="Include" />
+          <e p="CloudMedicalRecordService.cs" t="Include" />
+          <e p="CloudRatingService.cs" t="Include" />
           <e p="CloudUserService.cs" t="Include" />
           <e p="ICloudAppointmentService.cs" t="Include" />
           <e p="ICloudAvailableDayService.cs" t="Include" />
           <e p="ICloudDoctorHospitalService.cs" t="Include" />
           <e p="ICloudHospitalService.cs" t="Include" />
+          <e p="ICloudMedicalRecordService.cs" t="Include" />
+          <e p="ICloudRatingService.cs" t="Include" />
           <e p="ICloudUserService.cs" t="Include" />
         </e>
         <e p="Model" t="Include">
@@ -34,6 +38,8 @@
           <e p="DoctorHospital.cs" t="Include" />
           <e p="Hospital.cs" t="Include" />
           <e p="LoggedUser.cs" t="Include" />
+          <e p="MedicalRecord.cs" t="Include" />
+          <e p="Rating.cs" t="Include" />
           <e p="ScheduleData.cs" t="Include" />
           <e p="User.cs" t="Include" />
         </e>

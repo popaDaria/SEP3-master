@@ -18,6 +18,7 @@
 
 
 @inject ICloudHospitalService CloudHospitalService;
+@inject ICloudRatingService CloudRatingService
 @inject AuthenticationStateProvider AuthenticationStateProvider;
 
 
@@ -50,6 +51,25 @@ else
                             <h4 align="center">
                                 @hospital.type.ToUpper()
                             </h4>
+                            <br/>
+                            <br/>
+                            <AuthorizeView Roles="patient">
+                                <br/>
+                                <div class="center-align m-auto">
+                                    <label>Rate Hospital:</label>
+                                    <select @bind="@RatingValue">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                    <br/>
+                                    <label style="color: #0f6674" class="@classRate">@SuccessRate</label>
+                                    <br/>
+                                    <a class="btn btn-success" @onclick="@Rate" style="color:white">Submit</a>
+                                </div>
+                            </AuthorizeView>
                         </div>
                     </div>
                     <div class="col-lg-4 text-center">
@@ -108,6 +128,16 @@ else
                                                     <div class="col-md-6">
                                                         <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@EditableHospital.postalCode" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
                                                         </SfInPlaceEditor>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Average Rating</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label id="ratingID">
+                                                            @hospital.avgRating / 5
+                                                        </label>
                                                     </div>
                                                 </div>
                                             </div>
@@ -169,6 +199,10 @@ else
     private string display = "display: none";
     
     public Hospital EditableHospital = new Hospital();
+    
+    int RatingValue { get; set; } = 0;
+    string SuccessRate { get; set; } = "";
+    string classRate { get; set; } = "";
 
     public class MarkerData
     {
@@ -247,7 +281,25 @@ else
         Disabled = false;
         display = "display: inline";
     }
-
+    
+    private async Task Rate()
+    {
+        try
+        {
+            Rating newRating = new Rating();
+            newRating.hospitalId = Int32.Parse(id);
+            newRating.idNr = Int32.Parse(AuthenticationStateProvider.GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value);
+            newRating.rating = RatingValue;
+            await CloudRatingService.AddRating(newRating);
+            classRate = "oi oi-check";
+            SuccessRate = "Rating has been submitted!";
+            hospital = await CloudHospitalService.GetHospital(hospital.id);
+        }
+        catch (Exception e)
+        {
+            SuccessRate = "";
+        }
+    }
 }
 
 <style>
@@ -262,6 +314,13 @@ else
     
     .SfMaps {
     border-radius: 20px;
+    }
+    
+    #ratingID{
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        color: black;
+        font-size: 15px;
+        padding: 10px 10px 0 10px;
     }
     
 </style>

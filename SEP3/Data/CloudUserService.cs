@@ -111,5 +111,14 @@ namespace SEP3.Data
             HttpResponseMessage message = await client.PatchAsync("https://localhost:8085/users", content);
             Console.WriteLine(message.StatusCode);
         }
+
+        public async Task<List<string>> GetAllOfAType(string type)
+        {
+            HttpClient client = new HttpClient();
+            string message = await client.GetStringAsync("https://localhost:8085/users/type?userType="+type);
+            Console.WriteLine(message);
+            List<string> result = JsonSerializer.Deserialize<List<string>>(message);
+            return result;  
+        }
     }
 }

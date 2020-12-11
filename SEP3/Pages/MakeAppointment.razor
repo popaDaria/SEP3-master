@@ -343,7 +343,7 @@
                     }
                     MedicalRecord medicalRecord = new MedicalRecord();
                     medicalRecord.patientId = patId;
-                    string content = "Entry - NEW APPOINTMENT: \n Appointment number" + appointmentToAdd.id + " : at " + appointmentToAdd.startTime + " until " + appointmentToAdd.endTime +
+                    string content = "Entry - NEW APPOINTMENT: \n Appointment number " + appointmentToAdd.id + " : at " + appointmentToAdd.startTime + " until " + appointmentToAdd.endTime +
                                      " made with the doctor with the id " + appointmentToAdd.id + ". Summary/Reason provided by patient: '" + appointmentToAdd.summary +"' \n";
                     medicalRecord.content = Encoding.Default.GetBytes(content);
                     await CloudMedicalRecordService.AddMedicalRecord(medicalRecord);

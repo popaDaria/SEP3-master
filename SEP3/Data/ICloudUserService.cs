@@ -13,5 +13,7 @@ namespace SEP3.Data
         public Task<User> GetUser(string idNr);
         public Task<List<User>> GetUnvalidatedUsers();
         public Task EditUser(User user);
+
+        public Task<List<string>> GetAllOfAType(string type);
     }
 }

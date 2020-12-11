@@ -133,24 +133,60 @@ else
                                     </ContentTemplate>
                                 </TabItem>
                                 <AuthorizeView Roles="patient">
-                                <TabItem>
-                                    <ChildContent>
-                                        <TabHeader Text="Medical History"/>
-                                    </ChildContent>
-                                    <ContentTemplate>
-                                        <div class="container">
-                                            <br/>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <label>Medical Record</label>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <p>@medicalRecord</p>
+                                    <TabItem>
+                                        <ChildContent>
+                                            <TabHeader Text="Medical History"/>
+                                        </ChildContent>
+                                        <ContentTemplate>
+                                            <div class="container">
+                                                <br/>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Medical Record</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p>@medicalRecord</p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </ContentTemplate>
-                                </TabItem>
+                                        </ContentTemplate>
+                                    </TabItem>
+                                </AuthorizeView>
+                                <AuthorizeView Roles="doctor">
+                                    <TabItem>
+                                        <ChildContent>
+                                            <TabHeader Text="Medical History"/>
+                                        </ChildContent>
+                                        <ContentTemplate>
+                                            <div class="mt-2">
+                                                Select patient:
+                                                <select @bind="@patientRecId">
+                                                    @foreach (var patient in Patients)
+                                                    {
+                                                        <option value="@patient.Split("-")[0]">@patient.Split("-")[1]</option>
+                                                    }
+                                                </select>
+                                                <input type="button" class="btn btn-info" name="selectRecord" value="Select" @onclick="@SelectRecord"/>
+                                            </div>
+                                            <div class="container" style="@display2">
+                                                <br/>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label>Medical Record</label>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p>@selectedRecordString</p>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label>Add entry:<input type="text" @bind-value="@newEntry"></label>
+                                                    <br/>
+                                                    <br/>
+                                                    <input type="button" class="btn btn-info" name="selectRecord" value="Add" @onclick="@AddChanges"/>
+                                                </div>
+                                            </div>
+                                        </ContentTemplate>
+                                    </TabItem>
                                 </AuthorizeView>
                                 <AuthorizeView Roles="patient">
                                     <TabItem>
@@ -206,6 +242,13 @@ else
     string NrOfAppt { get; set; } = "";
     string medicalRecord { get; set; } = "";
     MedicalRecord MedicalRecord { get; set; }= new MedicalRecord();
+    
+    List<string> Patients { get; set; } = new List<string>();
+    int patientRecId { get; set; }
+    string display2 { get; set; } = "display:none";
+    MedicalRecord selectedRecord { get; set; } = new MedicalRecord();
+    string selectedRecordString { get; set; } = "";
+    string newEntry { get; set; } = "";
 
     protected override async Task OnInitializedAsync()
     {
@@ -238,11 +281,19 @@ else
             {
                 if (MedicalRecord.content != null && MedicalRecord.content.Length > 0)
                     medicalRecord = Encoding.Default.GetString(MedicalRecord.content);
+                else
+                {
+                    medicalRecord = "No Medical Record yet registered on the platform!";
+                }
             }
             else
             {
                 medicalRecord = "No Medical Record yet registered on the platform!";
             }
+        }
+        if (user.userType.Equals("doctor"))
+        {
+            Patients = await CloudUserService.GetAllOfAType("patient");
         }
     }
 
@@ -305,4 +356,39 @@ else
             Console.WriteLine(e.Message);
         }
     }
+    
+    private async Task SelectRecord()
+    {
+        display2 = "display:block";
+        selectedRecord = await CloudMedicalRecordService.GetMedicalRecord(patientRecId);
+        if (selectedRecord != null)
+        {
+            if (selectedRecord.content != null && selectedRecord.content.Length > 0)
+            {
+                selectedRecordString = Encoding.Default.GetString(selectedRecord.content);
+            }
+            else
+            {
+                selectedRecordString = "No Medical Record yet registered on the platform!";
+            }
+        }
+        else
+        {
+            selectedRecordString = "No Medical Record yet registered on the platform!";
+        }
+        newEntry = "";
+    }
+
+    private async Task AddChanges()
+    {
+        if (!newEntry.Equals(""))
+        {
+            MedicalRecord record = new MedicalRecord();
+            record.patientId = patientRecId;
+            record.content = Encoding.Default.GetBytes(newEntry);
+            await CloudMedicalRecordService.AddMedicalRecord(record);
+            display2 = "display:none";
+        }
+    }
+
 }

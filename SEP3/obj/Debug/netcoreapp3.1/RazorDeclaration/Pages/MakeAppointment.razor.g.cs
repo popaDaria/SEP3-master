@@ -89,13 +89,6 @@ using SEP3.Data;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "D:\SEP3\SEP3-master\SEP3\Pages\MakeAppointment.razor"
-           [Authorize(Roles = "patient")]
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/MakeAppointment")]
     public partial class MakeAppointment : Microsoft.AspNetCore.Components.ComponentBase
     {

@@ -47,7 +47,7 @@
                     @* TODO *@
                     @* <div class="row"> *@
                     @*     <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8"> *@
-                    @*         <SfTextBox Placeholder="ID Number" Type="InputType.Number" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.idNr" disabled="@isDisabled" ></SfTextBox> *@
+                    @*         <SfTextBox Placeholder="ID Number" Type="InputType.Number" FloatLabelType="@FloatLabelType.Auto" @bind-value="@idNR" disabled="@isDisabled" ></SfTextBox> *@
                     @*     </div> *@
                     @* </div> *@
                     <label>ID Number:<input type="number" @bind-value="userToAdd.idNr" disabled="@isDisabled"/></label>
@@ -100,6 +100,8 @@
 
                 </div>
                 
+                @* <input type="button" class="btn btn-primary button2" @onclick="@Submit">Submit</input> *@
+
                 <input type="submit" class="btn btn-primary button2" value="Submit"/>
                 <div class="alert alert-success mt-2" style="@display">
                     Registration was successful!
@@ -119,6 +121,8 @@
     string displayError = "display: none";
     bool isDisabled = false;
     string ErrorMessage;
+    string idNR { get; set; }
+
 
     private async Task Add()
     {
@@ -129,6 +133,7 @@
             displayError = "display: none";
             display = "display: block";
             isDisabled = true;
+            // userToAdd.idNr = Int32.Parse(idNR);
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(userToAdd.idNr+"", userToAdd.password).Wait(100);
             NavigationManager.NavigateTo("/");
         }
@@ -139,5 +144,25 @@
             displayError = "display: block";
         }
     }
+    
+    // public async Task Submit()
+    // {
+    //     userToAdd.idNr = Int32.Parse(AuthenticationStateProvider.GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value);
+    //     if (selection != null)
+    //     {
+    //         if (!selection.Equals(""))
+    //         {
+    //             userToAdd.userType = selection;
+    //         }
+    //     }
+    //     else
+    //     {
+    //         selection = "hospital";
+    //     }
+    //     userToAdd.idNr = Int32.Parse(idNR);
+    //     // Console.WriteLine(userToAdd.managerId);
+    //     await CloudUserService.AddUser(userToAdd);
+    //     NavigationManager.NavigateTo("/");
+    // }
 
 }

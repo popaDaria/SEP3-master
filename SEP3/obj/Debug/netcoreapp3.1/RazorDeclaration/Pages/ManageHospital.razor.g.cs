@@ -89,13 +89,6 @@ using SEP3.Model;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 4 "D:\SEP3\SEP3-master\SEP3\Pages\ManageHospital.razor"
-           [Authorize(Roles = "manager", Policy = "MustBeLoggedInAsValidated")]
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/manage/{id}")]
     public partial class ManageHospital : Microsoft.AspNetCore.Components.ComponentBase
     {

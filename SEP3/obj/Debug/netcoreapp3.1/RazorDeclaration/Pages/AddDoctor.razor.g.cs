@@ -96,13 +96,6 @@ using SEP3.Auth;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 10 "D:\SEP3\SEP3-master\SEP3\Pages\AddDoctor.razor"
-           [Authorize(Roles = "manager", Policy = "MustBeLoggedInAsValidated")]
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/addDoctor/{id}")]
     public partial class AddDoctor : Microsoft.AspNetCore.Components.ComponentBase
     {

@@ -119,7 +119,7 @@ using InputType = Syncfusion.Blazor.Inputs.InputType;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 48 "D:\SEP3\SEP3-master\SEP3\Pages\LogIn.razor"
+#line 47 "D:\SEP3\SEP3-master\SEP3\Pages\LogIn.razor"
        
     
     private string idNr;

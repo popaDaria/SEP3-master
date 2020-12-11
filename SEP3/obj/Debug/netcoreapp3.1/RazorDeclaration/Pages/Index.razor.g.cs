@@ -105,7 +105,7 @@ using SEP3.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 49 "D:\SEP3\SEP3-master\SEP3\Pages\Index.razor"
+#line 53 "D:\SEP3\SEP3-master\SEP3\Pages\Index.razor"
        
 
     public List<Hospital> hospitals = new List<Hospital>();

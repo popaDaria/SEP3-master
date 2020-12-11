@@ -159,13 +159,6 @@ using System.Text.Encodings.Web;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "D:\SEP3\SEP3-master\SEP3\Pages\ManageSchedule.razor"
-           [Authorize(Policy = "MustBeLoggedInAsDoctor")]
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/ManageSchedule")]
     public partial class ManageSchedule : Microsoft.AspNetCore.Components.ComponentBase
     {

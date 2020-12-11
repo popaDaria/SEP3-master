@@ -89,6 +89,13 @@ using SEP3.Auth;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "D:\SEP3\SEP3-master\SEP3\Shared\NavMenu.razor"
+using Syncfusion.Blazor.Navigations;
+
+#line default
+#line hidden
+#nullable disable
     public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -97,16 +104,13 @@ using SEP3.Auth;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 65 "D:\SEP3\SEP3-master\SEP3\Shared\NavMenu.razor"
+#line 72 "D:\SEP3\SEP3-master\SEP3\Shared\NavMenu.razor"
        
     SfSidebar SidebarObj;
     public string Leftbtn = "Left";
     public string Hamburgerclass = "e-icons menu default";
     public SidebarPosition Position { get; set; } = SidebarPosition.Left;
     public bool SidebarToggle = false;
-    private string idNr;
-    private string Password;
-    private string ErrorMessage;
 
     public void Show()
     {
@@ -139,9 +143,6 @@ using SEP3.Auth;
     
     public async Task PerformLogOut()
     {
-        ErrorMessage = "";
-        idNr = "";
-        Password = "";
         try
         {
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();

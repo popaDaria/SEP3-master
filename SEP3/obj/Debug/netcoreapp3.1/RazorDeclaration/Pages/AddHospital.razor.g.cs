@@ -76,64 +76,57 @@ using SEP3.Shared;
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
+#line 2 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
 using Syncfusion.Blazor.Inputs;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
+#line 3 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
 using Syncfusion.Blazor.Buttons;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
+#line 4 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
 using InputType = Syncfusion.Blazor.Inputs.InputType;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
+#line 5 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
 using SEP3.Data;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
+#line 6 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
 using SEP3.Model;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
+#line 7 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
 using Syncfusion.Blazor.PdfViewer;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
+#line 8 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
 using SEP3.Auth;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
+#line 9 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
 using Microsoft.VisualBasic.CompilerServices;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 2 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
-           [Authorize(Roles = "manager", Policy = "MustBeLoggedInAsValidated")]
 
 #line default
 #line hidden
@@ -147,7 +140,7 @@ using Microsoft.VisualBasic.CompilerServices;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 88 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
+#line 68 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
         
 
     Hospital toAdd { get; set; } = new Hospital();

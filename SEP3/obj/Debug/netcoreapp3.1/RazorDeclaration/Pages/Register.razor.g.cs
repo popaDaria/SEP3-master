@@ -119,13 +119,15 @@ using InputType = Syncfusion.Blazor.Inputs.InputType;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 116 "D:\SEP3\SEP3-master\SEP3\Pages\Register.razor"
+#line 118 "D:\SEP3\SEP3-master\SEP3\Pages\Register.razor"
        
     User userToAdd { get; set; } = new User();
     string display = "display: none";
     string displayError = "display: none";
     bool isDisabled = false;
     string ErrorMessage;
+    string idNR { get; set; }
+
 
     private async Task Add()
     {
@@ -136,6 +138,7 @@ using InputType = Syncfusion.Blazor.Inputs.InputType;
             displayError = "display: none";
             display = "display: block";
             isDisabled = true;
+            // userToAdd.idNr = Int32.Parse(idNR);
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(userToAdd.idNr+"", userToAdd.password).Wait(100);
             NavigationManager.NavigateTo("/");
         }
@@ -146,6 +149,26 @@ using InputType = Syncfusion.Blazor.Inputs.InputType;
             displayError = "display: block";
         }
     }
+    
+    // public async Task Submit()
+    // {
+    //     userToAdd.idNr = Int32.Parse(AuthenticationStateProvider.GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value);
+    //     if (selection != null)
+    //     {
+    //         if (!selection.Equals(""))
+    //         {
+    //             userToAdd.userType = selection;
+    //         }
+    //     }
+    //     else
+    //     {
+    //         selection = "hospital";
+    //     }
+    //     userToAdd.idNr = Int32.Parse(idNR);
+    //     // Console.WriteLine(userToAdd.managerId);
+    //     await CloudUserService.AddUser(userToAdd);
+    //     NavigationManager.NavigateTo("/");
+    // }
 
 
 #line default

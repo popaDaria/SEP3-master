@@ -89,13 +89,6 @@ using SEP3.Model;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 4 "D:\SEP3\SEP3-master\SEP3\Pages\Validate.razor"
-           [Authorize(Roles = "admin")]
-
-#line default
-#line hidden
-#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/validate")]
     public partial class Validate : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -105,10 +98,10 @@ using SEP3.Model;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 61 "D:\SEP3\SEP3-master\SEP3\Pages\Validate.razor"
+#line 66 "D:\SEP3\SEP3-master\SEP3\Pages\Validate.razor"
        
 
-    public List<Hospital> hospitals = new List<Hospital>();    
+    public List<Hospital> hospitals = new List<Hospital>();
     public List<User> users = new List<User>();
 
     protected override async Task OnInitializedAsync()

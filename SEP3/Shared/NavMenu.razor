@@ -1,5 +1,6 @@
-﻿@using Syncfusion.Blazor.Navigations
+﻿﻿@using Syncfusion.Blazor.Navigations
 @using SEP3.Auth
+@using Syncfusion.Blazor.Navigations
 @inject NavigationManager NavigationManager;
 @inject AuthenticationStateProvider AuthenticationStateProvider;
 
@@ -31,22 +32,28 @@
                         <a class="pl-4 pr-4 p-4" href="profile">Profile</a>
                     </li>
                 </AuthorizeView>
-                <AuthorizeView Policy="MustBeLoggedInAsValidatedManager">
+                <AuthorizeView Policy="MustBeLoggedIn">
                     <li>
                         <a class="pl-4 pr-4 p-4" href="addHospital">Add Hospital</a>
                     </li>
                 </AuthorizeView>
-                <AuthorizeView Policy="MustBeLoggedInAsAdmin">
+                
+                <AuthorizeView Policy="MustBeLoggedIn">
+                    @* <AuthorizeView Policy="MustBeLoggedInAsAdmin"> *@
                     <li>
                         <a class="pl-4 pr-4 p-4" href="validate">Validate</a>
                     </li>
                 </AuthorizeView>
-                <AuthorizeView Roles="patient">
+                
+                <AuthorizeView Policy="MustBeLoggedIn">
+                    @* <AuthorizeView Roles="patient"> *@
                     <li>
                         <a class="pl-4 pr-4 p-4" href="MakeAppointment">Make Appointment</a>
                     </li>
                 </AuthorizeView>
-                <AuthorizeView Roles="doctor">
+                
+                <AuthorizeView Policy="MustBeLoggedIn">
+                @* <AuthorizeView Roles="doctor"> *@
                     <li>
                         <a class="pl-4 pr-4 p-4" href="ManageSchedule">Manage Schedule</a>
                     </li>
@@ -68,9 +75,6 @@
     public string Hamburgerclass = "e-icons menu default";
     public SidebarPosition Position { get; set; } = SidebarPosition.Left;
     public bool SidebarToggle = false;
-    private string idNr;
-    private string Password;
-    private string ErrorMessage;
 
     public void Show()
     {
@@ -103,9 +107,6 @@
     
     public async Task PerformLogOut()
     {
-        ErrorMessage = "";
-        idNr = "";
-        Password = "";
         try
         {
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();

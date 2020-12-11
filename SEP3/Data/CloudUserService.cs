@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -118,6 +119,15 @@ namespace SEP3.Data
             );
             HttpResponseMessage message = await client.PatchAsync("https://localhost:8085/users", content);
             Console.WriteLine(message.StatusCode);
+        }
+
+        public async Task<List<String>> getUsersByType(string type)
+        {
+            HttpClient client = new HttpClient();
+            string message = await client.GetStringAsync("https://localhost:8085/users/type?userType="+type);
+            Console.WriteLine(message);
+            List<String> result = JsonSerializer.Deserialize<List<String>>(message);
+            return result;
         }
     }
 }

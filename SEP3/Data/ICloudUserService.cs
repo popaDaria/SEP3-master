@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using SEP3.Model;
 
@@ -14,5 +16,6 @@ namespace SEP3.Data
         public Task<List<User>> GetUnvalidatedUsers();
         public Task EditUser(User user);
         public Task<string> GetName(string idNr);
+        public Task<List<String>> getUsersByType(string type);
     }
 }

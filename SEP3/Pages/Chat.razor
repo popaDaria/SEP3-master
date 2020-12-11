@@ -3,18 +3,65 @@
 @using Syncfusion.Blazor.Inputs
 @using SEP3.Auth
 @using SEP3.Data
-
-<h3>Open conversations</h3>
+@using System.Collections
 
 @inject ICloudMessageService CloudMessageService;
 @inject ICloudUserService CloudUserService;
 @inject AuthenticationStateProvider AuthenticationStateProvider;
+@inject NavigationManager NavigationManager;
 
+<h3>Create a conversation</h3>
+
+@if (Users == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <div>
+        <input type="text" value="@searchFilter" @oninput="@FilterChangedAsync" placeholder="Search here..."/>
+    </div>
+    <div class="mt-4">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <AuthorizeView Policy="MustBeLoggedIn">
+                    <Authorized>
+                        <th>Action</th>
+                    </Authorized>
+                </AuthorizeView>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (String pair in Users)
+            {
+                Console.WriteLine(pair.Split(" ")[0]);
+                <tr>
+                    <td>@pair.Split(" ")[0]</td>
+                    <td>@(pair.Split(" ")[1] + " " + pair.Split(" ")[2])</td>
+                    <td>
+                        <span class="btn btn-danger" @onclick="() => OpenChat(pair)">New Chat</span>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
+
+<h3>Open conversations</h3>
 @if (Messages == null)
 {
-    <p>Create a conversation</p>
-    
-    }
+    <p>LOADING...</p>
+}
 else
 {
     <div class="list-group">
@@ -28,18 +75,40 @@ else
 @code {
     public string idNr;
     public string type;
+    private string searchFilter = "";
     public IList<Message> Messages = new List<Message>();
-    
+    public List<String> Users = new List<String>();
+
     protected async override Task OnInitializedAsync()
     {
         idNr = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value;
         type = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[1].Value;
         Messages = await CloudMessageService.GetMessagesToMe(Int32.Parse(idNr));
+        Users = await CloudUserService.getUsersByType(type.Equals("patient") ? "doctor" : "patient");
+        StateHasChanged();
     }
 
-    public string GetName(Message message)
+    public async Task<String> GetName(Message message)
     {
         return CloudUserService.GetName(message.senderID.ToString()).Result;
+    }
+
+    public async Task Search(string searchTerm)
+    {
+        Users = Users.Where(a => (a.Split(" ")[1] + " " + a.Split(" ")[2]).StartsWith(searchTerm.ToLower())).ToList();
+        StateHasChanged();
+    }
+
+    private async Task FilterChangedAsync(ChangeEventArgs args)
+    {
+        searchFilter = args.Value.ToString().Trim();
+        Search(searchFilter);
+        StateHasChanged();
+    }
+
+    public void OpenChat(string pair)
+    {
+        NavigationManager.NavigateTo("/message/" + pair.Split(" ")[0]);
     }
 
 }

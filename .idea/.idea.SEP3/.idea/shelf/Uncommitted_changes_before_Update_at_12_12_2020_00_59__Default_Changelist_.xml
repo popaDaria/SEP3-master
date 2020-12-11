@@ -1,0 +1,54 @@
+﻿<changelist name="Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]" date="1607727543120" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 12/12/2020 00:59 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.dll" />
+    <option name="AFTER_PATH" value="SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]/SEP3.Views.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.dll" />
+    <option name="AFTER_PATH" value="SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]/SEP3.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" />
+    <option name="AFTER_PATH" value="SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]/SEP3.Views1.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.pdb" />
+    <option name="AFTER_PATH" value="SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.pdb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]/SEP3.Views.pdb" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="SEP3/bin/Debug/netcoreapp3.1/SEP3.pdb" />
+    <option name="AFTER_PATH" value="SEP3/bin/Debug/netcoreapp3.1/SEP3.pdb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]/SEP3.pdb" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="SEP3/obj/Debug/netcoreapp3.1/SEP3.dll" />
+    <option name="AFTER_PATH" value="SEP3/obj/Debug/netcoreapp3.1/SEP3.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]/SEP31.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="SEP3/obj/Debug/netcoreapp3.1/SEP3.pdb" />
+    <option name="AFTER_PATH" value="SEP3/obj/Debug/netcoreapp3.1/SEP3.pdb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]/SEP31.pdb" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" />
+    <option name="AFTER_PATH" value="SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]/SEP32.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.pdb" />
+    <option name="AFTER_PATH" value="SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.pdb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]/SEP32.pdb" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.pdb" />
+    <option name="AFTER_PATH" value="SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.pdb" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]/SEP3.Views1.pdb" />
+  </binary>
+</changelist>

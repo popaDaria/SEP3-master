@@ -1,0 +1,14 @@
+﻿<changelist name="Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]1" date="1607727579498" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 12/12/2020 00:59 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" />
+    <option name="AFTER_PATH" value="SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]1/SEP3.dll" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" />
+    <option name="AFTER_PATH" value="SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/shelf/Uncommitted_changes_before_Update_at_12_12_2020_00_59_[Default_Changelist]1/SEP3.Views.dll" />
+  </binary>
+</changelist>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3gpRzYb2H5wmQgHKSTLTPi6pnkvpyQ2DLGrQBwCi8bV4O5pLDKRAXRenvyoYi9efamTKg1pKfodBwJMkrac0tw==",
+  "dgSpecHash": "hbJNGFht032llhJwY8Twn8OBCWpI4ETLQjWvquvJ+p+pYK31XDhhgRH4j4iarJXC4NxaP5UN+GIy2KPncSN2hA==",
   "success": true,
   "projectFilePath": "D:\\SEP3\\SEP3-master\\SEP3\\SEP3.csproj",
   "expectedPackageFiles": [
@@ -34,9 +34,7 @@
     "C:\\Users\\mainh\\.nuget\\packages\\syncfusion.licensing\\18.3.0.47\\syncfusion.licensing.18.3.0.47.nupkg.sha512",
     "C:\\Users\\mainh\\.nuget\\packages\\syncfusion.pdfexport.net.core\\18.3.0.47\\syncfusion.pdfexport.net.core.18.3.0.47.nupkg.sha512",
     "C:\\Users\\mainh\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
-    "C:\\Users\\mainh\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512",
-    "C:\\Users\\mainh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.8\\microsoft.aspnetcore.app.ref.3.1.8.nupkg.sha512",
-    "C:\\Users\\mainh\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.9\\microsoft.netcore.app.host.win-x64.3.1.9.nupkg.sha512"
+    "C:\\Users\\mainh\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
   "logs": [
     {

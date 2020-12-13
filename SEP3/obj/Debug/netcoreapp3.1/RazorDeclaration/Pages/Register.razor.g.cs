@@ -119,7 +119,7 @@ using InputType = Syncfusion.Blazor.Inputs.InputType;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 118 "D:\SEP3\SEP3-master\SEP3\Pages\Register.razor"
+#line 102 "D:\SEP3\SEP3-master\SEP3\Pages\Register.razor"
        
     User userToAdd { get; set; } = new User();
     string display = "display: none";
@@ -134,6 +134,7 @@ using InputType = Syncfusion.Blazor.Inputs.InputType;
         try
         {
             //Console.WriteLine(userToAdd.firstName+" "+userToAdd.lastName+" "+userToAdd.userType);
+            // userToAdd.idNr = Int32.Parse(AuthenticationStateProvider.GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value);
             await CloudUserService.AddUser(userToAdd);
             displayError = "display: none";
             display = "display: block";

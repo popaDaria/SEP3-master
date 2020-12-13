@@ -19,19 +19,19 @@
             <div class="formBlock">
                 <form @onsubmit="@PerformLogIn">
                     <div class="emptyBlock2"></div>
-                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8 formStyle">
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
                         <SfTextBox CssClass="e-outline" Placeholder="ID" FloatLabelType="@FloatLabelType.Auto" @bind-value="idNr"></SfTextBox>
                     </div>
-                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8 formStyle">
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
                         <SfTextBox CssClass="e-filled" Placeholder="Password" FloatLabelType="@FloatLabelType.Auto" Type="InputType.Password" @bind-value="Password"></SfTextBox>
                     </div>
                     <button type="submit" class="btn btn-primary, col-xs-4 col-sm-4 col-lg-4 col-md-4, button">Log in</button>
-                    <div class="alert alert-danger mt-2" style="@display">@ErrorMessage</div>
                     <a href="">
                         <button @onclick="@signUp" class="btn btn-primary, col-xs-4 col-sm-4 col-lg-4 col-md-4, button">
                             Sign up
                         </button>
                     </a>
+                    <div class="alert alert-danger mt-2" style="@display">@ErrorMessage</div>
                 </form>
             </div>
         </div>

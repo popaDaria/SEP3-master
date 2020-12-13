@@ -28,21 +28,13 @@
                         </InputSelect>
                     </label>
 
-                    <div class="row material2">
-                        <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8 formStyle">
-                            <SfTextBox Placeholder="First Name" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.firstname" disabled="@isDisabled" Type="InputType.Text"></SfTextBox>
-                        </div>
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox Placeholder="First Name" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.firstname" disabled="@isDisabled" Type="InputType.Text"></SfTextBox>
                     </div>
-                    @* <label>First Name:<input type="text" @bind-value="userToAdd.firstname" disabled="@isDisabled"/></label> *@
-                    @* <br/> *@
 
-                    <div class="row">
-                        <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8 formStyle">
-                            <SfTextBox Placeholder="Last Name" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.lastname" disabled="@isDisabled" Type="InputType.Text"></SfTextBox>
-                        </div>
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox Placeholder="Last Name" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.lastname" disabled="@isDisabled" Type="InputType.Text"></SfTextBox>
                     </div>
-                    @* <label>Last Name:<input type="text" @bind-value="userToAdd.lastname" disabled="@isDisabled"/></label> *@
-                    @* <br/> *@
 
                     @* TODO *@
                     @* <div class="row"> *@
@@ -53,11 +45,9 @@
                     <label>ID Number:<input type="number" @bind-value="userToAdd.idNr" disabled="@isDisabled"/></label>
                     <br/>
 
-                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8 formStyle">
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
                         <SfTextBox CssClass="e-outline" Placeholder="Password" FloatLabelType="@FloatLabelType.Auto" Type="InputType.Password" @bind-value="userToAdd.password" disabled="@isDisabled"></SfTextBox>
                     </div>
-                    @* <label>Password:<input type="password" @bind-value="userToAdd.password" disabled="@isDisabled"/></label> *@
-                    @* <br/> *@
 
                     @* TODO *@
                     <label>
@@ -70,23 +60,17 @@
                     </label>
                     <br/>
 
-                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8 formStyle">
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
                         <SfTextBox CssClass="e-outline" Placeholder="Email" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.email" disabled="@isDisabled"></SfTextBox>
                     </div>
-                    @* <label>Email:<input type="text" @bind-value="userToAdd.email"></label> *@
-                    @* <br/> *@
 
-                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8 formStyle">
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
                         <SfTextBox CssClass="e-outline" Placeholder="Phone number" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.telNo" disabled="@isDisabled"></SfTextBox>
                     </div>
-                    @* <label>Phone Number:<input type="text" @bind-value="userToAdd.telNo"></label> *@
-                    @* <br/> *@
 
-                    <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8 formStyle">
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
                         <SfTextBox CssClass="e-outline" Placeholder="Address" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.address" disabled="@isDisabled"></SfTextBox>
                     </div>
-                    @* <label>Address:<input type="text" @bind-value="userToAdd.address"></label> *@
-                    @* <br/> *@
 
                     @* TODO *@
                     @* <div id="datepicker-control"> *@
@@ -129,6 +113,7 @@
         try
         {
             //Console.WriteLine(userToAdd.firstName+" "+userToAdd.lastName+" "+userToAdd.userType);
+            // userToAdd.idNr = Int32.Parse(AuthenticationStateProvider.GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value);
             await CloudUserService.AddUser(userToAdd);
             displayError = "display: none";
             display = "display: block";

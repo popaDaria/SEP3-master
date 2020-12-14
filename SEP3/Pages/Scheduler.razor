@@ -1,0 +1,74 @@
+﻿@page "/schedule/{ID}"
+@attribute [Authorize(Roles = "patient, doctor")]
+@using Syncfusion.Blazor.Schedule
+@using Syncfusion.Blazor.Calendars
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Inputs
+@using SEP3.Model
+@using SEP3.Data
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Data
+@using Syncfusion.Blazor
+@using System.Text.Json.Serialization
+
+@inject ICloudAppointmentService CloudAppointmentService;
+
+@if (type.Equals("doctor"))
+{
+    <div class="col-lg-12 control-section">
+        <div class="schedule-wrapper">
+            <SfSchedule TValue="Appointment" Width="100%" Height="650px" @bind-SelectedDate="@CurrentDate" Readonly="true">
+                <ScheduleEventSettings TValue="Appointment">
+                    <SfDataManager Url="@("https://localhost:8085/appointments/doctor/" + ID)" Adaptor="@Syncfusion.Blazor.Adaptors.WebApiAdaptor"></SfDataManager>
+                </ScheduleEventSettings>
+            </SfSchedule>
+        </div>
+    </div>
+}
+else if(type.Equals("patient"))
+{
+    <div class="col-lg-12 control-section">
+        <div class="schedule-wrapper">
+            <SfSchedule TValue="Appointment" Width="100%" Height="650px" @bind-SelectedDate="@CurrentDate" Readonly="true">
+                <ScheduleEventSettings TValue="Appointment">
+                    <SfDataManager Url="@("https://localhost:8085/appointments/patient/" + ID)" Adaptor="@Syncfusion.Blazor.Adaptors.WebApiAdaptor"></SfDataManager>
+                </ScheduleEventSettings>
+            </SfSchedule>
+        </div>
+    </div>
+}
+
+@code{
+    private DateTime CurrentDate = DateTime.Now;
+
+    [Parameter]
+    public string ID { get; set; }
+    [Parameter]
+    public string type { get; set; }
+
+
+    public class Appointment
+    {
+        [JsonPropertyName("summary")]
+        public string Subject { get; set; }
+        [JsonPropertyName("startTime")]
+        public DateTime StartTime { get; set; }
+
+        [JsonPropertyName("endTime")]
+        public DateTime EndTime { get; set; }
+        
+        [JsonPropertyName("id")]
+        public int Id { get; set; }
+
+        public int patientId { get; set; }
+        public int doctorId { get; set; }
+    }
+
+}
+
+<style>
+    .custom-event-editor td {
+        padding: 7px;
+        padding-right: 16px;
+    }
+</style>

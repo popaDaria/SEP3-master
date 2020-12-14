@@ -1,0 +1,165 @@
+﻿@page "/chat"
+@attribute [Authorize(Roles = "patient, doctor, manager")]
+
+@using SEP3.Model
+@using Syncfusion.Blazor.Inputs
+@using SEP3.Auth
+@using SEP3.Data
+@using System.Collections
+
+@inject ICloudMessageService CloudMessageService;
+@inject ICloudUserService CloudUserService;
+@inject AuthenticationStateProvider AuthenticationStateProvider;
+@inject NavigationManager NavigationManager;
+
+<h3>Create a conversation</h3>
+
+@if (Users == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <div>
+        <input type="text" value="@searchFilter" @oninput="@FilterChangedAsync" placeholder="Search here..."/>
+    </div>
+    <div class="mt-4">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name
+                </th>
+                <AuthorizeView Policy="MustBeLoggedIn">
+                    <th>Action</th>
+                </AuthorizeView>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (String pair in Users)
+            {
+                Console.WriteLine(pair);
+                <tr>
+                    <td>@pair.Split("-")[0]</td>
+                    <td>@pair.Split("-")[1]</td>
+                    <AuthorizeView Policy="MustBeLoggedIn">
+                    <td>
+                        <label>link : </label>
+                        <span class="btn btn-danger" @onclick="() => OpenChat(pair)">New Chat</span>
+                    </td>
+                    </AuthorizeView>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
+
+@*
+<h3>Open conversations</h3>
+@if (Messages == null)
+{
+    <p>LOADING...</p>
+}
+else
+{
+    <div class="list-group">
+        @foreach (Message message in Messages)
+        {
+            <a href="@("/message/" + message.senderID)" class="list-group-item list-group-item-action">@GetName(message)</a>
+        }
+    </div>
+}*@
+
+@code {
+    public string idNr;
+    public string type;
+    private string searchFilter = "";
+    //public List<Message> Messages = new List<Message>();
+    public List<String> Users = new List<String>();
+    User user { get; set; } = new User();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            idNr = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value;
+            user = await CloudUserService.GetUser(idNr);
+            type = user.userType;
+    //type = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[1].Value;
+            //Messages = await CloudMessageService.GetMessagesToMe(user.idNr);
+
+            if (user.userType.Equals("patient"))
+            {
+                Users = await CloudUserService.getUsersByType("doctor");
+                List<String> managers = await CloudUserService.getUsersByType("manager");
+                foreach (var manager in managers)
+                {
+                    Users.Add(manager);
+                }
+            }
+            else
+            {
+                Users = await CloudUserService.getUsersByType("patient");
+            }
+    //StateHasChanged();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+
+    /*public String GetName(Message message)
+    {
+        String name = "";
+        try
+        {
+            name = CloudUserService.GetName(message.senderID + "").Result;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+        return name;
+    }*/
+
+    public async Task Search(string searchTerm)
+    {
+        if (user.userType.Equals("patient"))
+            Users = await CloudUserService.getUsersByType("doctor");
+        else
+        {
+            Users = await CloudUserService.getUsersByType("patient");
+        }        
+        Users = Users.Where(a => (a.Split("-")[1].ToLower()).Contains(searchTerm.ToLower())).ToList();
+        //StateHasChanged();
+    }
+
+    private void FilterChangedAsync(ChangeEventArgs args)
+    {
+        try
+        {
+            if(searchFilter!=null)
+                searchFilter = args.Value.ToString().Trim();
+            Search(searchFilter);
+            //StateHasChanged();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+        
+    }
+
+    public void OpenChat(string pair)
+    {
+        NavigationManager.NavigateTo("/message/" + pair.Split("-")[0]);
+    }
+
+}

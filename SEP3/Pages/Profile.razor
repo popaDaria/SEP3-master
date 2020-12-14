@@ -1,0 +1,409 @@
+﻿@page "/profile"
+@attribute [Authorize(Policy = "MustBeLoggedIn")]
+@using Syncfusion.Blazor.Navigations
+@using Syncfusion.Blazor.InPlaceEditor
+@using SEP3.Model
+@using SEP3.Data
+@using SEP3.Auth
+@using Syncfusion.Blazor.Buttons
+@using RenderMode = Syncfusion.Blazor.InPlaceEditor.RenderMode
+@using InputType = Syncfusion.Blazor.InPlaceEditor.InputType
+@using System.Text
+
+@inject ICloudUserService CloudUserService;
+@inject ICloudAppointmentService CloudAppointmentService
+@inject ICloudMedicalRecordService CloudMedicalRecordService
+@inject AuthenticationStateProvider AuthenticationStateProvider;
+@inject NavigationManager NavigationManager
+
+
+<link href="css/profile.css" type="text/css" rel="stylesheet"/>
+@if (user == null)
+{
+    <div class="d-flex">
+        <div class="spinner-grow text-light align-middle spinner" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+}
+else
+{
+    <div class="container" style="box-sizing: border-box; padding-top: 5%; padding-bottom: 5%;">
+    <div class="emp-profile container p-3">
+    <form method="post">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="profile-img">
+                <img src="images/weed.jpg" alt=""/>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3">
+            <div class="profile-head">
+                <h3 align="center">
+                    @user.firstname @user.lastname
+                </h3>
+                <h4 align="center">
+                    @user.userType.ToUpper()
+                </h4>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center">
+            <input type="button" class="btn btn-info" name="btnAddMore" value="Edit Profile" @onclick="@EnableEdit"/>
+            <br/>
+            <br/>
+            <input type="button" class="btn btn-success" name="save" value="Save Changes" @onclick="@SendToServer" style="@display"/>
+            <input type="button" class="btn btn-danger" name="cancel" value="Discard Changes" @onclick="@Cancel" style="@display"/>
+            <br/>
+            <br/>
+            <AuthorizeView Roles="manager" Policy="MustBeLoggedInAsValidated">
+                <input type="button" class="btn btn-info" name="manageHospitals" value="Manage Hospitals" @onclick="@ManageHospitals"/>
+                <br/>
+                <br/>
+                <input type="button" class="btn btn-info" name="addDoctors" value="Add Doctors" @onclick="@AddNewDoctor"/>
+            </AuthorizeView>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-12 profile-tab">
+            <SfTab>
+                <TabItems>
+                    <TabItem>
+                        <ChildContent>
+                            <TabHeader Text="About"/>
+                        </ChildContent>
+                        <ContentTemplate>
+                            <div class="container">
+                                <br/>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>User ID</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p>@user.idNr</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.email" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                        </SfInPlaceEditor>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Phone</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.telNo" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                        </SfInPlaceEditor>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Gender</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.gender" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                        </SfInPlaceEditor>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Birthday</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Date" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.birthday" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                        </SfInPlaceEditor>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Address</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@editedUser.address" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                        </SfInPlaceEditor>
+                                    </div>
+                                </div>
+                            </div>
+                        </ContentTemplate>
+                    </TabItem>
+                    <AuthorizeView Roles="patient">
+                        <TabItem>
+                            <ChildContent>
+                                <TabHeader Text="Medical History"/>
+                            </ChildContent>
+                            <ContentTemplate>
+                                <div class="container">
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Medical Record</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>@medicalRecord</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ContentTemplate>
+                        </TabItem>
+                    </AuthorizeView>
+                    <AuthorizeView Roles="doctor">
+                        <TabItem>
+                            <ChildContent>
+                                <TabHeader Text="Medical History"/>
+                            </ChildContent>
+                            <ContentTemplate>
+                                <div class="mt-2">
+                                    Select patient:
+                                    <select @bind="@patientRecId">
+                                        @foreach (var patient in Patients)
+                                        {
+                                            <option value="@patient.Split("-")[0]">@patient.Split("-")[1]</option>
+                                        }
+                                    </select>
+                                    <input type="button" class="btn btn-info" name="selectRecord" value="Select" @onclick="@SelectRecord"/>
+                                </div>
+                                <div class="container" style="@display2">
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Medical Record</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>@selectedRecordString</p>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label>Add entry:<input type="text" @bind-value="@newEntry"></label>
+                                        <br/>
+                                        <br/>
+                                        <input type="button" class="btn btn-info" name="selectRecord" value="Add" @onclick="@AddChanges"/>
+                                    </div>
+                                </div>
+                            </ContentTemplate>
+                        </TabItem>
+                    </AuthorizeView>
+                    <AuthorizeView Roles="patient">
+                        <TabItem>
+                            <ChildContent>
+                                <TabHeader Text="Appointments"/>
+                            </ChildContent>
+                            <ContentTemplate>
+                                <div class="container">
+                                    <Scheduler ID="@idNr" type="patient"></Scheduler>
+                                </div>
+                            </ContentTemplate>
+                        </TabItem>
+                    </AuthorizeView>
+                    <AuthorizeView Roles="patient">
+                        <TabItem>
+                            <ChildContent>
+                                <TabHeader Text="Cancel Appointment"/>
+                            </ChildContent>
+                            <ContentTemplate>
+                                <div class="container">
+                                    <br/>
+                                    <div>
+                                        <br/>
+                                        <label>Appointment:
+                                            <br/>
+                                            <br/>
+                                            <label>@NrOfAppt</label>
+                                            <select @bind="@apptId">
+                                                <option></option>
+                                                @foreach (var hos in @ValidAppt)
+                                                {
+                                                    <option value="@hos.id">@hos.id : @hos.startTime - @hos.endTime</option>
+                                                }
+                                            </select>
+                                            <br/>
+                                            <br/>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input type="button" class="btn btn-info" name="selectDoctor" value="Cancel" @onclick="@Remove"/>
+                                    </div>
+                                </div>
+                            </ContentTemplate>
+                        </TabItem>
+                    </AuthorizeView>
+                </TabItems>
+            </SfTab>
+        </div>
+    </div>
+    </form>
+    </div>
+    </div>
+}
+
+@code {
+    private RenderMode Mode = RenderMode.Inline;
+    private EditableType EditableOn = EditableType.Click;
+    private bool ShowButtons { get; set; } = false;
+    private bool Disabled { get; set; } = true;
+    private string display = "display: none";
+    User user { get; set; }
+    User editedUser = new User();
+    string idNr = "";
+    
+    int apptId { get; set; }
+    IList<Appointment> AllAppointments { get; set; } = new List<Appointment>();
+    IList<Appointment> ValidAppt { get; set; } = new List<Appointment>();
+    string NrOfAppt { get; set; } = "";
+    string medicalRecord { get; set; } = "";
+    MedicalRecord MedicalRecord { get; set; }= new MedicalRecord();
+    
+    List<string> Patients { get; set; } = new List<string>();
+    int patientRecId { get; set; }
+    string display2 { get; set; } = "display:none";
+    MedicalRecord selectedRecord { get; set; } = new MedicalRecord();
+    string selectedRecordString { get; set; } = "";
+    string newEntry { get; set; } = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        idNr = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value;
+        Console.WriteLine("Logged in as: "+idNr);
+        user = await CloudUserService.GetUser(idNr);
+        editedUser.Update(user);
+        AllAppointments = await CloudAppointmentService.GetAllForPatient(user.idNr);
+        foreach (var appt in AllAppointments)
+        {
+            if (appt.startTime.Date.CompareTo(DateTime.Today) >= 0)
+            {
+                ValidAppt.Add(appt);
+            }
+        }
+        if (ValidAppt.Count != 0)
+        {
+            NrOfAppt = "";
+        }
+        else
+        {
+            NrOfAppt = "No Valid Appointments!";
+        }
+
+        if (user.userType.Equals("patient"))
+        {
+            MedicalRecord = null;
+            MedicalRecord = await CloudMedicalRecordService.GetMedicalRecord(user.idNr);
+            if (MedicalRecord != null)
+            {
+                if (MedicalRecord.content != null && MedicalRecord.content.Length > 0)
+                    medicalRecord = Encoding.Default.GetString(MedicalRecord.content);
+                else
+                {
+                    medicalRecord = "No Medical Record yet registered on the platform!";
+                }
+            }
+            else
+            {
+                medicalRecord = "No Medical Record yet registered on the platform!";
+            }
+        }
+        if (user.userType.Equals("doctor"))
+        {
+            Patients = await CloudUserService.GetAllOfAType("patient");
+        }
+    }
+
+    public void EnableEdit()
+    {
+        Disabled = false;
+        display = "display: inline";
+    }
+
+    public async Task SendToServer()
+    {
+        await CloudUserService.EditUser(editedUser);
+        user.Update(editedUser);
+        Disabled = true;
+        display = "display: none";
+    }
+
+    public void Cancel()
+    {
+        Disabled = true;
+        display = "display: none";
+        editedUser.Update(user);
+        StateHasChanged();
+    }
+
+
+    private void ManageHospitals()
+    {
+        NavigationManager.NavigateTo("/manage/"+user.idNr);
+    }
+
+    private void AddNewDoctor()
+    {
+        NavigationManager.NavigateTo("/addDoctor/"+user.idNr);
+    }
+
+    private async Task Remove()
+    {
+        try
+        {
+            Appointment appointment = new Appointment();
+            foreach (var ap in AllAppointments)
+            {
+                if (ap.id == apptId)
+                    appointment = ap;
+            }
+            await CloudAppointmentService.RemoveAppointment(appointment);
+            AllAppointments = await CloudAppointmentService.GetAllForPatient(user.idNr);
+            ValidAppt.Clear();
+            foreach (var appt in AllAppointments)
+            {
+                if (appt.startTime.Date.CompareTo(DateTime.Today) >= 0)
+                {
+                    ValidAppt.Add(appt);
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+    
+    private async Task SelectRecord()
+    {
+        display2 = "display:block";
+        selectedRecord = await CloudMedicalRecordService.GetMedicalRecord(patientRecId);
+        if (selectedRecord != null)
+        {
+            if (selectedRecord.content != null && selectedRecord.content.Length > 0)
+            {
+                selectedRecordString = Encoding.Default.GetString(selectedRecord.content);
+            }
+            else
+            {
+                selectedRecordString = "No Medical Record yet registered on the platform!";
+            }
+        }
+        else
+        {
+            selectedRecordString = "No Medical Record yet registered on the platform!";
+        }
+        newEntry = "";
+    }
+
+    private async Task AddChanges()
+    {
+        if (!newEntry.Equals(""))
+        {
+            MedicalRecord record = new MedicalRecord();
+            record.patientId = patientRecId;
+            record.content = Encoding.Default.GetBytes(newEntry);
+            await CloudMedicalRecordService.AddMedicalRecord(record);
+            display2 = "display:none";
+        }
+    }
+
+}

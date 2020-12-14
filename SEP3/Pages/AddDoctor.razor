@@ -1,0 +1,177 @@
+﻿@page "/addDoctor/{id}"
+@using SEP3.Model
+@using SEP3.Data
+@using SEP3.Auth
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Inputs
+@using InputType = Syncfusion.Blazor.Inputs.InputType
+@inject NavigationManager NavigationManager
+@inject ICloudUserService CloudUserService
+@inject ICloudHospitalService CloudHospitalService
+@inject ICloudDoctorHospitalService CloudDoctorHospitalService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@attribute [Authorize(Roles = "manager", Policy = "MustBeLoggedInAsValidated")]
+@using Newtonsoft.Json
+@using RestSharp.Extensions
+
+<EditForm Model="@userToAdd" OnValidSubmit="Add">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    <div class="surround3">
+        <div class="col-lg-12 control-section">
+            <div class="content-wrapper">
+                <div class="formBlock">
+
+                    <p><b>Add new doctor</b></p>
+
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox Placeholder="First Name" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.firstname" disabled="@isDisabled" Type="InputType.Text"></SfTextBox>
+                    </div>
+
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox Placeholder="Last Name" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.lastname" disabled="@isDisabled" Type="InputType.Text"></SfTextBox>
+                    </div>
+
+                    
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox Placeholder="ID Number" Type="InputType.Number" FloatLabelType="@FloatLabelType.Auto" @bind-value="@idNR" disabled="@isDisabled"></SfTextBox>
+                    </div>
+
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox CssClass="e-outline" Placeholder="Password" FloatLabelType="@FloatLabelType.Auto" Type="InputType.Password" @bind-value="userToAdd.password" disabled="@isDisabled"></SfTextBox>
+                    </div>
+
+                    
+                    <div class="ol-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle2">
+                        <SfDropDownList TItem="Gender" TValue="string" PopupHeight="200px" Placeholder="Gender: " DataSource="@genders">
+                            <DropDownListEvents TItem="Gender" TValue="string" ValueChange="OnChange2"></DropDownListEvents>
+                            <DropDownListFieldSettings Text="Text2" Value="ID2"></DropDownListFieldSettings>
+                        </SfDropDownList>
+                    </div>
+
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox CssClass="e-outline" Placeholder="Email" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.email" disabled="@isDisabled"></SfTextBox>
+                    </div>
+
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox CssClass="e-outline" Placeholder="Phone number" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.telNo" disabled="@isDisabled"></SfTextBox>
+                    </div>
+
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox CssClass="e-outline" Placeholder="Address" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.address" disabled="@isDisabled"></SfTextBox>
+                    </div>
+
+                    @* TODO *@
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle23">
+                        <label>Birthday:<input type="date" @bind-value="userToAdd.birthday"></label>
+                    </div>
+
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <label>
+                            Hospital
+                            <InputSelect @bind-Value="@hospital">
+                                <option></option>
+                                @foreach (var hos in @hospitals)
+                                {
+                                    <option>@hos.id : @hos.name</option>
+                                }
+                            </InputSelect>
+                        </label>
+                    </div>
+
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox CssClass="e-outline" Placeholder="Department: " FloatLabelType="@FloatLabelType.Auto" @bind-value="@department" disabled="@isDisabled"></SfTextBox>
+                    </div>
+                    
+                </div>
+
+                <input type="submit" class="btn btn-primary button3" value="Submit"/>
+                <div class="alert alert-success mt-2" style="@display">
+                    Registration was successful!
+                </div>
+                <div class="alert alert-danger mt-2" style="@displayError">
+                    @ErrorMessage
+                </div>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+
+@code {
+    User userToAdd { get; set; } = new User();
+    string display = "display: none";
+    string displayError = "display: none";
+    bool isDisabled = false;
+    string ErrorMessage;
+    string idNR;
+
+    string department { get; set; }
+    string hospital { get; set; }
+    
+    DoctorHospital doctorHospital { get; set; } = new DoctorHospital();
+    
+    [Parameter]
+    public string id { get; set; }
+    
+    public List<Hospital> hospitals = new List<Hospital>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        int i = Int32.Parse(id);
+        hospitals = await CloudHospitalService.GetAllHospitalsForManager(i);
+    }
+    
+    private string textValue { get; set; }
+    public class Gender
+    {
+        public string ID2 { get; set; }
+        public string Text2 { get; set; }
+    }
+    private List<Gender> genders = new List<Gender>() {
+        new Gender(){ ID2= "0", Text2= "--Select an option--" },
+        new Gender(){ ID2= "1", Text2= "Male" },
+        new Gender(){ ID2= "2", Text2= "Female" }
+    };
+    public string DropVal2 = "0";
+    public string ChangeValue2 { get; set; } = "--Select an option--";
+    public void OnChange2(ChangeEventArgs<string, Gender> args)
+    {
+        this.ChangeValue2 = args.ItemData.Text2;
+    }
+    
+    
+    private async Task Add()
+    {
+        try
+        {
+            string[] contents = hospital.Split(" ");
+            int hosID = Int32.Parse(contents[0]);
+            userToAdd.idNr = Int32.Parse(idNR);
+            userToAdd.gender = ChangeValue2;
+            
+            doctorHospital.deptName = department;
+            doctorHospital.doctorId = userToAdd.idNr;
+            doctorHospital.hospitalId = hosID;
+
+            userToAdd.userType = "doctor";
+            if (userToAdd.gender == null)
+                userToAdd.gender = "Male";
+            userToAdd.validated = true;
+            await CloudUserService.AddDoctor(userToAdd);
+            await CloudDoctorHospitalService.AddDoctorHospital(doctorHospital);
+            
+            displayError = "display: none";
+            display = "display: block";
+            isDisabled = true;
+            NavigationManager.NavigateTo("/manage/"+id);
+        }
+        catch (Exception e)
+        {
+            ErrorMessage = e.Message;
+            Console.WriteLine(e.InnerException + e.StackTrace + e.Message);
+            displayError = "display: block";
+        }
+    }
+
+}

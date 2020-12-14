@@ -1,0 +1,130 @@
+﻿@using Syncfusion.Blazor.Navigations
+@using SEP3.Auth
+@using Syncfusion.Blazor.Navigations
+@inject NavigationManager NavigationManager;
+@inject AuthenticationStateProvider AuthenticationStateProvider;
+
+<link href="css/sidebar.css" type="text/css" rel="stylesheet" />
+<span id="hamburger" @onclick="@Show" class="@Hamburgerclass"></span>
+<SfSidebar @ref="SidebarObj" Position="@Position" HtmlAttributes="@HtmlAttribute" Type="SidebarType.Over" @bind-IsOpen="@SidebarToggle" CloseOnDocumentClick="true" >
+    <ChildContent>
+        <div class="title-header">
+            <div style="display:inline-block"> Online Clinic </div>
+            <span id="close" @onclick="@Close" class="oi oi-x text-black-50" style="fill: black;"></span>
+        </div>
+        <div class="sub-title">
+            <ul class="list-unstyled">
+                <li class="pl-4 pr-4">
+                    <a class="pl-4 pr-4 p-4" href="">Home</a>
+                </li>
+                <AuthorizeView Policy="MustBeLoggedIn">
+                    <NotAuthorized>
+                        <li>
+                            <a class="pl-4 pr-4 p-4" href="login">Log In</a>
+                        </li>
+                        <li>
+                            <a class="pl-4 pr-4 p-4" href="register">Register</a>
+                        </li>
+                    </NotAuthorized>
+                </AuthorizeView>
+                <AuthorizeView Policy="MustBeLoggedIn">
+                    <li>
+                        <a class="pl-4 pr-4 p-4" href="profile">Profile</a>
+                    </li>
+                </AuthorizeView>
+                <AuthorizeView Policy="MustBeLoggedInAsValidatedManager">
+                    <li>
+                        <a class="pl-4 pr-4 p-4" href="addHospital">Add Hospital</a>
+                    </li>
+                </AuthorizeView>
+                <AuthorizeView Policy="MustBeLoggedInAsAdmin">
+                    <li>
+                        <a class="pl-4 pr-4 p-4" href="validate">Validate</a>
+                    </li>
+                </AuthorizeView>
+                <AuthorizeView Roles="patient">
+                    <li>
+                        <a class="pl-4 pr-4 p-4" href="MakeAppointment">Make Appointment</a>
+                    </li>
+                </AuthorizeView>
+                <AuthorizeView Roles="doctor">
+                    <li>
+                        <a class="pl-4 pr-4 p-4" href="ManageSchedule">Manage Schedule</a>
+                    </li>
+                </AuthorizeView>
+                <AuthorizeView Roles="doctor, patient">
+                    <li>
+                        <a class="pl-4 pr-4 p-4" href="notifications">Notifications</a>
+                    </li>
+                </AuthorizeView>
+                <AuthorizeView Roles="doctor, manager">
+                    <li>
+                        <a class="pl-4 pr-4 p-4" href="sendNotifications">Send Notification</a>
+                    </li>
+                </AuthorizeView>
+                <AuthorizeView Roles="patient, doctor, manager">
+                    <li>
+                        <a class="pl-4 pr-4 p-4" href="chat">Message</a>
+                    </li>
+                </AuthorizeView>
+                <AuthorizeView Policy="MustBeLoggedIn">
+                    <li>
+                        <a class="pl-4 pr-4 p-4" @onclick="PerformLogOut" href="/">Log Out</a>
+                    </li>
+                </AuthorizeView>
+            </ul>
+        </div>
+    </ChildContent>
+</SfSidebar>
+
+
+@code {
+    SfSidebar SidebarObj;
+    public string Leftbtn = "Left";
+    public string Hamburgerclass = "e-icons menu default";
+    public SidebarPosition Position { get; set; } = SidebarPosition.Left;
+    public bool SidebarToggle = false;
+
+    public void Show()
+    {
+        SidebarToggle = true;
+    }
+
+    public void Close()
+    {
+        SidebarToggle = false;
+    }
+
+    bool collapseNavMenu = true;
+
+    string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    void CollapseNavMenu()
+    {
+        collapseNavMenu = true;
+    }
+
+    Dictionary<string, object> HtmlAttribute = new Dictionary<string, object>()
+    {
+        {"class", "default-sidebar"}
+    }; 
+    
+    public async Task PerformLogOut()
+    {
+        try
+        {
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+    //NavigationManager.NavigateTo("/");
+        }
+        catch (Exception e)
+        {
+        }
+    }
+
+
+}

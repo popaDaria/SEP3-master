@@ -1,0 +1,60 @@
+﻿@page "/notifications"
+@attribute [Authorize(Roles = "patient, doctor")]
+@using SEP3.Model
+@using SEP3.Data
+@using SEP3.Auth
+
+@inject ICloudMessageService CloudMessageService;
+@inject ICloudUserService CloudUserService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+
+<div class="m-auto">
+    <h3>Notifications</h3>
+</div>
+
+@foreach (var message in ToShow)
+{
+    <div class="alert alert-info mb-2" role="alert">
+        @message.text
+        <br />
+        Sent by: @message.senderID
+        <br />
+        Timestamp: @message.timestamp
+    </div>
+}
+
+@code {
+    IList<Message> Messages = new List<Message>();
+    IList<Message> ToShow = new List<Message>();
+
+string myID { get; set; }
+    User user { get; set; }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        Messages = await CloudMessageService.GetNotifications();
+        myID = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value;
+        user = await CloudUserService.GetUser(myID);
+        if (user.userType.Equals("patient"))
+        {
+            foreach (var msg in Messages)
+            {
+                if (msg.recieverID == -1)
+                {
+                    ToShow.Add(msg);
+                }
+            }
+        }
+        else
+        {
+            foreach (var msg in Messages)
+            {
+                if (msg.recieverID == 0)
+                {
+                    ToShow.Add(msg);
+                }
+            }
+        }
+    }
+
+}

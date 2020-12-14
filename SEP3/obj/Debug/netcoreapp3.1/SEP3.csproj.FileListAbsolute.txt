@@ -1,0 +1,510 @@
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\SEP3.exe
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\SEP3.deps.json
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\SEP3.runtimeconfig.json
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\SEP3.runtimeconfig.dev.json
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\SEP3.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\SEP3.pdb
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\SEP3.Views.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\SEP3.Views.pdb
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.csprojAssemblyReference.cache
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.AssemblyInfoInputs.cache
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.AssemblyInfo.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.csproj.CoreCompileInputs.cache
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorComponent.input.cache
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\_Imports.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\SEP3.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.TagHelpers.input.cache
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.TagHelpers.output.cache
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorCoreGenerate.cache
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\SurveyPrompt.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\_Host.cshtml.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorAssemblyInfo.cache
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorAssemblyInfo.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorTargetAssemblyInfo.cache
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorTargetAssemblyInfo.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.Views.pdb
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\staticwebassets\SEP3.StaticWebAssets.Manifest.cache
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\staticwebassets\SEP3.StaticWebAssets.xml
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.pdb
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.genruntimeconfig.cache
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\SEP3.csproj.CopyComplete
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\LogIn.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Register.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\LogIn.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Register.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\HomeHospitalComponent.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\HomeHospitalComponent.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\SEP3.StaticWebAssets.xml
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authorization.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Metadata.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Microsoft.JSInterop.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.Blazor.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.ExcelExport.Net.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+C:\Users\bogda\RiderProjects\SEP3\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.PdfExport.Net.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\appsettings.json
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.StaticWebAssets.xml
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.exe
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.deps.json
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.runtimeconfig.json
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.runtimeconfig.dev.json
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.Views.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.Views.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authorization.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Forms.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Web.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Metadata.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.JSInterop.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.Blazor.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.ExcelExport.Net.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.PdfExport.Net.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.csprojAssemblyReference.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.AssemblyInfoInputs.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.AssemblyInfo.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.csproj.CoreCompileInputs.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.MvcApplicationPartsAssemblyInfo.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorComponent.input.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\HomeHospitalComponent.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\LogIn.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Register.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\_Imports.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\SEP3.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.TagHelpers.input.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.TagHelpers.output.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorCoreGenerate.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\HomeHospitalComponent.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\LogIn.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Register.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\SurveyPrompt.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\_Host.cshtml.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorAssemblyInfo.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorAssemblyInfo.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorTargetAssemblyInfo.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorTargetAssemblyInfo.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.Views.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.csproj.CopyComplete
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\staticwebassets\SEP3.StaticWebAssets.Manifest.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\staticwebassets\SEP3.StaticWebAssets.xml
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.genruntimeconfig.cache
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.StaticWebAssets.xml
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.exe
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.deps.json
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.runtimeconfig.json
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.runtimeconfig.dev.json
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.pdb
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.Views.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\SEP3.Views.pdb
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authorization.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Metadata.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Microsoft.JSInterop.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.Blazor.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.ExcelExport.Net.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.PdfExport.Net.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.csprojAssemblyReference.cache
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.AssemblyInfoInputs.cache
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.AssemblyInfo.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.csproj.CoreCompileInputs.cache
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorComponent.input.cache
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\HomeHospitalComponent.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\LogIn.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Profile.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Register.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\_Imports.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\SEP3.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.TagHelpers.input.cache
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.TagHelpers.output.cache
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorCoreGenerate.cache
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\HomeHospitalComponent.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\LogIn.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Profile.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Register.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\SurveyPrompt.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\_Host.cshtml.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorAssemblyInfo.cache
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorAssemblyInfo.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorTargetAssemblyInfo.cache
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorTargetAssemblyInfo.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.Views.pdb
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.csproj.CopyComplete
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\staticwebassets\SEP3.StaticWebAssets.Manifest.cache
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\staticwebassets\SEP3.StaticWebAssets.xml
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.pdb
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\SEP3.genruntimeconfig.cache
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\AddHospital.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\AddHospital.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Validate.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Validate.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\HospitalPage.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\HospitalPage.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\JsonSubTypes.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\RestSharp.dll
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\bin\Debug\netcoreapp3.1\locationiq.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\appsettings.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\SEP3.StaticWebAssets.xml
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\SEP3.exe
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\SEP3.deps.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\SEP3.runtimeconfig.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\SEP3.runtimeconfig.dev.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\SEP3.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\SEP3.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\SEP3.Views.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\SEP3.Views.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\JsonSubTypes.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authorization.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Forms.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Web.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Metadata.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Microsoft.JSInterop.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\RestSharp.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\locationiq.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.Blazor.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.ExcelExport.Net.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.PdfExport.Net.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.csprojAssemblyReference.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.AssemblyInfoInputs.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.AssemblyInfo.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.csproj.CoreCompileInputs.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.MvcApplicationPartsAssemblyInfo.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorComponent.input.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\AddHospital.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\HomeHospitalComponent.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\HospitalPage.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\LogIn.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Profile.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ProfileMedical.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Register.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Validate.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\_Imports.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\SEP3.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.TagHelpers.input.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.TagHelpers.output.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorCoreGenerate.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\AddHospital.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\HomeHospitalComponent.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\HospitalPage.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\LogIn.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Profile.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ProfileMedical.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Register.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Validate.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\SurveyPrompt.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\_Host.cshtml.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorAssemblyInfo.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorAssemblyInfo.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorTargetAssemblyInfo.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorTargetAssemblyInfo.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.Views.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.csproj.CopyComplete
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\staticwebassets\SEP3.StaticWebAssets.Manifest.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\staticwebassets\SEP3.StaticWebAssets.xml
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\SEP3.genruntimeconfig.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ManageHospital.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ManageHospital.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\AddDoctor.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\AddDoctor.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ProfileComponent.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ProfileComponent.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\AddDoctor.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ManageHospital.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ProfileComponent.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ProfileMedical.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\AddDoctor.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ManageHospital.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ProfileComponent.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ProfileMedical.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Schedule.razor.g.cs
+C:\Users\bogda\RiderProjects\SEP3-master\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Schedule.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Schedule.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Scheduler.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Schedule.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Scheduler.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\MakeAppointment.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\MakeAppointment.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\appsettings.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\SEP3.StaticWebAssets.xml
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\SEP3.exe
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\SEP3.deps.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\SEP3.runtimeconfig.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\SEP3.runtimeconfig.dev.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\SEP3.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\SEP3.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\SEP3.Views.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\SEP3.Views.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\JsonSubTypes.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authorization.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Forms.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Web.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Metadata.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Microsoft.JSInterop.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\RestSharp.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\locationiq.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.Blazor.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.ExcelExport.Net.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.PdfExport.Net.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.csprojAssemblyReference.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.AssemblyInfoInputs.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.AssemblyInfo.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.csproj.CoreCompileInputs.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.MvcApplicationPartsAssemblyInfo.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorComponent.input.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\AddDoctor.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\AddHospital.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\HomeHospitalComponent.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\HospitalPage.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\LogIn.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\MakeAppointment.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ManageHospital.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Profile.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ProfileComponent.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ProfileMedical.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Register.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Scheduler.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Validate.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\_Imports.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\SEP3.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.TagHelpers.input.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.TagHelpers.output.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorCoreGenerate.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\AddDoctor.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\AddHospital.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\HomeHospitalComponent.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\HospitalPage.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\LogIn.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\MakeAppointment.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ManageHospital.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Profile.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ProfileComponent.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ProfileMedical.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Register.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Scheduler.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Validate.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\SurveyPrompt.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\_Host.cshtml.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorAssemblyInfo.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorAssemblyInfo.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorTargetAssemblyInfo.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorTargetAssemblyInfo.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.Views.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.csproj.CopyComplete
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\staticwebassets\SEP3.StaticWebAssets.Manifest.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\staticwebassets\SEP3.StaticWebAssets.xml
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\SEP3.genruntimeconfig.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ManageSchedule.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ManageSchedule.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\appsettings.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\SEP3.StaticWebAssets.xml
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\SEP3.exe
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\SEP3.deps.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\SEP3.runtimeconfig.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\SEP3.runtimeconfig.dev.json
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\SEP3.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\SEP3.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\SEP3.Views.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\SEP3.Views.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\JsonSubTypes.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authorization.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Forms.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Components.Web.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Metadata.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Microsoft.JSInterop.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\RestSharp.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\locationiq.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.Blazor.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.ExcelExport.Net.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\bin\Debug\netcoreapp3.1\Syncfusion.PdfExport.Net.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.csprojAssemblyReference.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.AssemblyInfoInputs.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.AssemblyInfo.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.csproj.CoreCompileInputs.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.MvcApplicationPartsAssemblyInfo.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorComponent.input.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\AddDoctor.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\AddHospital.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\HomeHospitalComponent.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\HospitalPage.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\LogIn.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\MakeAppointment.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ManageHospital.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ManageSchedule.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Profile.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\ProfileComponent.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Register.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Scheduler.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Validate.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\_Imports.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\SEP3.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.TagHelpers.input.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.TagHelpers.output.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorCoreGenerate.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\AddDoctor.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\AddHospital.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\HomeHospitalComponent.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\HospitalPage.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\LogIn.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\MakeAppointment.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ManageHospital.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ManageSchedule.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Profile.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\ProfileComponent.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Register.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Scheduler.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Validate.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Shared\SurveyPrompt.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\_Host.cshtml.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorAssemblyInfo.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorAssemblyInfo.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorTargetAssemblyInfo.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.RazorTargetAssemblyInfo.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.Views.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.csproj.CopyComplete
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\staticwebassets\SEP3.StaticWebAssets.Manifest.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\staticwebassets\SEP3.StaticWebAssets.xml
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.dll
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.pdb
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\SEP3.genruntimeconfig.cache
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Chat.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Messaging.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Notifications.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\SendNotifications.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Chat.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Messaging.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\Notifications.razor.g.cs
+D:\THIRD SEMESTER\SEP3\SEP3-master-Daria2\SEP3\obj\Debug\netcoreapp3.1\Razor\Pages\SendNotifications.razor.g.cs

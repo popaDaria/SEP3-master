@@ -1,0 +1,77 @@
+﻿@page "/"
+@using Syncfusion.Blazor.Calendars
+@using SEP3.Data
+@using SEP3.Model
+
+@inject ICloudHospitalService CloudHospitalService;
+
+<link href="css/style.css" type="text/css" rel="stylesheet"/>
+
+@if (hospitals == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <div class="container-fluid horizontal-scrollable py-2 pt-4">
+        <div class="surroundBody">
+            <h2>Hospitals</h2>
+            <div class="d-flex flex-row flex-nowrap overflow-auto">
+                @foreach (var hospital in hospitals)
+                {
+                    if (hospital.type.Equals("hospital"))
+                    {
+                        <div class="col-xs-4 myClass">
+                            <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="#"></HomeHospitalComponent>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid horizontal-scrollable py-2">
+        <div class="surroundBody">
+            <h2>Clinics</h2>
+            <div class="d-flex flex-row flex-nowrap overflow-auto">
+                @foreach (var hospital in hospitals)
+                {
+                    if (hospital.type.Equals("clinic"))
+                    {
+                        <div class="col-xs-4 myClass">
+                            <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="#"></HomeHospitalComponent>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+
+    public List<Hospital> hospitals = new List<Hospital>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        hospitals = await CloudHospitalService.GetAllHospitalsValidated();
+    }
+
+
+}
+
+<style>
+    row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    }
+    
+    .myClass{
+    margin-left: 10px;
+    margin-right: 10px;
+    }
+</style>

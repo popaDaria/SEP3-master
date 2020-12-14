@@ -1,0 +1,367 @@
+﻿@page "/ManageSchedule"
+@attribute [Authorize(Policy = "MustBeLoggedInAsDoctor")]
+@using Syncfusion.Blazor.Navigations
+@using Syncfusion.Blazor.InPlaceEditor
+@using SEP3.Model
+@using SEP3.Data
+@using SEP3.Auth
+@using Syncfusion.Blazor.Buttons
+@using RenderMode = Syncfusion.Blazor.InPlaceEditor.RenderMode
+@using InputType = Syncfusion.Blazor.InPlaceEditor.InputType
+@using ChangeEventArgs = Syncfusion.Blazor.Navigations.ChangeEventArgs
+@using EventArgs = System.EventArgs
+@using System.Reflection.Metadata
+@using System.Text.Encodings.Web
+@inject ICloudUserService CloudUserService
+@inject ICloudAvailableDayService CloudAvailableDayService
+@inject ICloudAppointmentService CloudAppointmentService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+
+
+<div class="container mt-5 mb-5 ml-auto mr-auto">
+    <br/>
+    <input type="button" class="btn btn-info" name="btnAddMore" value="Add Available Day" @onclick="@AddDay"/>
+    <br/>
+    <br/>
+    <div style="@display">
+        <EditForm Model="@availableDayToAdd" OnValidSubmit="Add">
+            <DataAnnotationsValidator/>
+            <ValidationSummary/>
+            <label>Date:<input id="datefield" type="date" min="2020-12-01" max="2021-12-31" @bind-value="@availableDayToAdd.AvailableDate" ></label>
+            <br/>
+            <label>Start Time:<input type="time" @bind-value="@availableDayToAdd.StartTime"></label>
+            <br/>
+            <label>End Time:<input type="time" @bind-value="@availableDayToAdd.EndTime"></label>
+            <br/>
+            <label>Max Appointment nr.:<input type="number" @bind-value="@apptNrString"></label>
+            <br/>
+            <input type="submit" class="btn btn-primary" value="Submit"/>
+            <input type="button" class="btn btn-danger" value="Cancel" @onclick="@Cancel"/>
+            <div class="alert alert-success mt-2" style="@display1">Addition was successful!</div>
+            <div class="alert alert-danger mt-2" style="@displayError">@ErrorMessage</div>
+        </EditForm>
+    </div>
+</div>
+<div class="container ml-auto mr-auto">
+    <SfTab>
+        <TabItems>
+            <TabItem>
+                <ChildContent>
+                    <TabHeader Text="Manage Schedule"/>
+                </ChildContent>
+                <ContentTemplate>
+                    <div class="d-flex">
+                        <div class="d-flex flex-column">
+                            <div class="d-flex flex-row  border border-success">
+                                <div class="m-3">
+                                    <label>Available Date</label>
+                                </div>
+                                <div class="m-3 mr-5">
+                                    <label>Start Time</label>
+                                </div>
+                                <div class="m-3 mr-4">
+                                    <label>End Time</label>
+                                </div>
+                                <div class="m-3 ">
+                                    <label>Max nr. of Appointments</label>
+                                </div>
+                            </div>
+                            @foreach (var availableDay in AvailableDays)
+                            {
+                                <div class="d-flex flex-row  border border-primary">
+                                    <div class="m-3 mr-5">
+                                        <label>@availableDay.AvailableDate.Day/@availableDay.AvailableDate.Month/@availableDay.AvailableDate.Year</label>
+                                    </div>
+                                    <div class="m-3 mr-5">
+                                        <label>@availableDay.StartTime.TimeOfDay.ToString()</label>
+                                    </div>
+                                    <div class="m-3 mr-5">
+                                        <label>@availableDay.EndTime.TimeOfDay.ToString()</label>
+                                    </div>
+                                    <div class="m-3 mr-5">
+                                        <label>@availableDay.AppointmentNr</label>
+                                    </div>
+                                    <div class="m-3">
+                                        <button @onclick="@(() => RemoveDay(availableDay))">
+                                            <i class="oi oi-trash" style="color:darkred"/>
+                                        </button>                                    
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </TabItem>
+            <TabItem>
+                <ChildContent>
+                    <TabHeader Text="See Appointments"/>
+                </ChildContent>
+                <ContentTemplate>
+                    <Scheduler type="doctor" ID="@idNr"></Scheduler>
+                </ContentTemplate>
+            </TabItem>
+            <TabItem>
+                <ChildContent>
+                    <TabHeader Text="Manage Appointments"/>
+                </ChildContent>
+                <ContentTemplate>
+                    <div class="d-flex flex-row mr-2">
+                        <div class="d-flex flex-column myClass mr-2">
+                            <div>
+                                <br/>
+                                <br/>
+                                <input type="button" class="btn btn-info" name="btnAddMore" value="Cancel Appointment" @onclick="@CancelAppt"/>
+                            </div>
+                            <div style="@display2">
+                                <br/>
+                                <br/>
+                                <label>Appointment:
+                                    <select @bind="@apptId">
+                                        <option></option>
+                                        @foreach (var hos in @AllAppointments)
+                                        {
+                                            <option value="@hos.id">@hos.id : @hos.startTime - @hos.endTime</option>
+                                        }
+                                    </select>
+                                </label>
+                            </div>
+                            <div style="@display2">
+                                <input type="button" class="btn btn-info" name="selectDoctor" value="Cancel" @onclick="@Remove"/>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column ml-2">
+                            <div>
+                                <br/>
+                                <br/>
+                                <input type="button" class="btn btn-info" name="btnAddMore" value="Reschedule Appointment" @onclick="@RescheduleAppt"/>
+                            </div>
+                            <div style="@display3">
+                                <br/>
+                                <br/>
+                                <label>Appointment:
+                                    <select @bind="@apptId">
+                                        <option></option>
+                                        @foreach (var hos in @AllAppointments)
+                                        {
+                                            <option value="@hos.id">@hos.id : @hos.startTime - @hos.endTime</option>
+                                        }
+                                    </select>
+                                </label>
+                                <br/>
+                                <input type="button" class="btn btn-info" name="btnAddMore" value="Select Appointment" @onclick="@SelectAppt"/>
+                                <br/>
+                                <div style="@display4">
+                                    <br/>
+                                    <br/>
+                                    <label>Start Time:<input type="datetime-local" @onchange="@AddLabel"></label>
+                                    <br/>
+                                    <label style="color: #0f6674" class="oi oi-bell">
+                                        @sameDateWarning
+                                    </label>
+                                    <br/>
+                                    <label>End Time:<input type="datetime-local" @onchange="@SelectEndTime"></label>
+                                </div>
+                            </div>
+                            <div style="@display4">
+                                <br/>
+                                <br/>
+                                <input type="button" class="btn btn-info" name="btnAddMore" value="Reschedule" @onclick="@Reschedule"/>
+                            </div>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </TabItem>
+        </TabItems>
+    </SfTab>
+</div>
+
+
+
+
+@code {
+    
+    User user { get; set; }
+    string idNr = "";
+    IList<AvailableDay> AvailableDays { get; set; } = new List<AvailableDay>();
+    string display { get; set; } = "display:none";
+    
+    AvailableDay availableDayToAdd { get; set; } = new AvailableDay();
+    string apptNrString { get; set; }
+    string display1 = "display: none";
+    string display2 = "display:none";
+    string display3 = "display:none";
+    string display4 = "display:none";
+    string displayError = "display: none";
+    int apptId { get; set; }
+    IList<Appointment> AllAppointments { get; set; } = new List<Appointment>();
+    public string ErrorMessage { get; set; }
+    string sameDateWarning { get; set; } = "";
+    Appointment appointmentToModify = new Appointment();
+    bool okDates { get; set; }
+    
+    protected override async Task OnInitializedAsync()
+    {
+        idNr = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value;
+    //Console.WriteLine("Logged in as: "+idNr);
+        display = "display :none";
+        display1 = "display: none";
+        display2 = "display:none";
+        displayError = "display: none";
+        user = await CloudUserService.GetUser(idNr);
+        AvailableDays = await CloudAvailableDayService.GetAvailableDays(user.idNr);
+        AllAppointments = await CloudAppointmentService.GetAllForDoctor(user.idNr);
+    }
+
+
+    private void AddDay()
+    {
+        display = "display: block";
+    }
+    private void Cancel()
+    {
+        display = "display:none";
+    }
+
+    private async Task Add()
+    {
+        try
+        {
+            displayError = "display: none";
+            display1 = "display: block";
+            ErrorMessage = "";
+            int apptNr = Int32.Parse(apptNrString);
+            availableDayToAdd.AppointmentNr = apptNr;
+            availableDayToAdd.DoctorId = user.idNr;
+            await CloudAvailableDayService.AddAvailableDay(availableDayToAdd);
+            List<AvailableDay> all =await CloudAvailableDayService.GetAvailableDays(user.idNr);
+            AvailableDays.Clear();
+            foreach (var av in all)
+            {
+                AvailableDays.Add(av);
+            }
+    // NavigationManager.NavigateTo("/ManageSchedule");
+    //display = "display:none";
+        }
+        catch (Exception e)
+        {
+            displayError = "display:block";
+            ErrorMessage = e.Message;
+        }
+    }
+    
+
+    private async Task RemoveDay(AvailableDay availableDay)
+    {
+        await CloudAvailableDayService.RemoveAvailableDay(availableDay);
+        AvailableDays.Remove(availableDay);
+    }
+
+    private async Task Remove()
+    {
+        try
+        {
+            Appointment appointment = new Appointment();
+            foreach (var ap in AllAppointments)
+            {
+                if (ap.id == apptId)
+                    appointment = ap;
+            }
+            await CloudAppointmentService.RemoveAppointment(appointment);
+            display2 = "display:none";
+            AllAppointments = await CloudAppointmentService.GetAllForDoctor(user.idNr);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+    
+    private async Task CancelAppt()
+    {
+        display2 = "display:block";
+        AllAppointments = await CloudAppointmentService.GetAllForDoctor(user.idNr);
+    }
+    
+    
+    private void AddLabel(Microsoft.AspNetCore.Components.ChangeEventArgs e)
+    {
+        if (e.Value != null)
+        {
+            string result = (string) e.Value;
+            string[] contents = result.Split("T");
+            string[] dateContents = contents[0].Split("-");
+            string[] timeContents = contents[1].Split(":");
+            appointmentToModify.startTime = new DateTime(Int32.Parse(dateContents[0]),Int32.Parse(dateContents[1]),Int32.Parse(dateContents[2]), 
+                Int32.Parse(timeContents[0]),Int32.Parse(timeContents[1]),0 );
+        }
+    }
+    private void SelectEndTime(Microsoft.AspNetCore.Components.ChangeEventArgs e)
+    {
+        if (e.Value != null)
+        {
+            okDates = false;
+            string result = (string) e.Value;
+            string[] contents = result.Split("T");
+            string[] dateContents = contents[0].Split("-");
+            string[] timeContents = contents[1].Split(":");
+            appointmentToModify.endTime = new DateTime(Int32.Parse(dateContents[0]),Int32.Parse(dateContents[1]),Int32.Parse(dateContents[2]), 
+                Int32.Parse(timeContents[0]),Int32.Parse(timeContents[1]),0 );
+            if (!appointmentToModify.endTime.Date.Equals(appointmentToModify.startTime.Date))
+            {
+                sameDateWarning = "End Time of appointment must have the same date as Start Time!";
+                okDates = false;
+            }
+            else
+            {
+                if (appointmentToModify.startTime.TimeOfDay.TotalMinutes < appointmentToModify.endTime.TimeOfDay.TotalMinutes)
+                {
+                    sameDateWarning = "";
+                    okDates = true;
+                }
+                else
+                {
+                    sameDateWarning = "End Time of appointment must be after Start Time of appointment!";
+                    okDates = false;
+                }
+            }
+        }    
+    }
+
+    private void RescheduleAppt()
+    {
+        display3 = "display:block";
+        appointmentToModify = new Appointment();
+    }
+
+    private void SelectAppt()
+    {
+        foreach (var ap in AllAppointments)
+        {
+            if (ap.id == apptId)
+                appointmentToModify = ap;
+        }
+        display4 = "display:block";
+    }
+
+    private async Task Reschedule()
+    {
+        if (okDates)
+        {
+            Console.WriteLine(appointmentToModify.startTime.ToString()+" "+appointmentToModify.endTime.ToString());
+            await CloudAppointmentService.UpdateAppointment(appointmentToModify);
+            display3 = "display:none";
+            display4 = "display:none";
+            appointmentToModify= new Appointment();
+            AllAppointments = await CloudAppointmentService.GetAllForDoctor(user.idNr);
+            NavigationManager.NavigateTo("ManageSchedule");
+        }
+    }
+
+}
+
+<style>
+    .myClass{
+    margin-right: 15px;
+    }
+</style>

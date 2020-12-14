@@ -1,0 +1,331 @@
+﻿@page "/hospital/{id}"
+@using Syncfusion.Blazor.Navigations
+@using Syncfusion.Blazor.InPlaceEditor
+@using SEP3.Model
+@using SEP3.Data
+@using SEP3.Auth
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Maps
+@using RenderMode = Syncfusion.Blazor.InPlaceEditor.RenderMode
+@using InputType = Syncfusion.Blazor.InPlaceEditor.InputType
+
+@using locationiq.Api
+@using locationiq.Client
+@using Newtonsoft.Json
+@using System.Web
+@using Syncfusion.Blazor.PivotView
+
+
+
+@inject ICloudHospitalService CloudHospitalService;
+@inject ICloudRatingService CloudRatingService
+@inject AuthenticationStateProvider AuthenticationStateProvider;
+
+
+<link href="css/profile.css" type="text/css" rel="stylesheet"/>
+@if (hospital == null)
+{
+    <div class="d-flex">
+        <div class="spinner-grow text-light align-middle spinner" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+}
+else
+{
+    <div class="container" style="box-sizing: border-box; padding-top: 5%; padding-bottom: 5%;">
+        <div class="emp-profile container p-3">
+            <form method="post">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="profile-img">
+                            <img src="images/weed.jpg" alt=""/>
+                        </div>
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-3">
+                        <div class="profile-head">
+                            <h3 align="center">
+                                @hospital.name
+                            </h3>
+                            <h4 align="center">
+                                @hospital.type.ToUpper()
+                            </h4>
+                            <h6 align="center">
+                                ManagerID: @hospital.managerId
+                            </h6>
+                            <br/>
+                            <br/>
+                            <AuthorizeView Roles="patient">
+                                <br/>
+                                <div class="center-align m-auto">
+                                    <label>Rate Hospital:</label>
+                                    <select @bind="@RatingValue">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                    <br/>
+                                    <label style="color: #0f6674" class="@classRate">@SuccessRate</label>
+                                    <br/>
+                                    <a class="btn btn-success" @onclick="@Rate" style="color:white">Submit</a>
+                                </div>
+                            </AuthorizeView>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <AuthorizeView Roles="manager" Policy="MustBeLoggedInAsValidated">
+                            @if (@hospital.managerId == Int32.Parse(((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value))
+                            {
+                                <input type="button" class="btn btn-info" name="btnAddMore" value="Edit Hospital Information" @onclick="@EnableEdit"/>
+                                <br/>
+                                <br/>
+                                <input type="button" class="btn btn-success" name="save" value="Save Changes" @onclick="@SendToServer" style="@display"/>
+                                <input type="button" class="btn btn-danger" name="cancel" value="Discard Changes" @onclick="@Cancel" style="@display"/>
+                                <br/>
+                                <br/>
+                            }
+                        </AuthorizeView>
+                    </div>
+                </div>
+                @*<div class="center-align">
+                        <p>
+                            @hospital.info
+                        </p>
+                    </div>*@
+                <div class="d-flex flex-column">
+                    <div class="d-flex flex-column">
+                        <div class="col-md-12 profile-tab mb-2">
+                            <div>
+                                <SfTab>
+                                    <TabItems>
+                                        <TabItem>
+                                            <ChildContent>
+                                                <TabHeader Text="About"/>
+                                            </ChildContent>
+                                            <ContentTemplate>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Useful Information</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@EditableHospital.info" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                                            </SfInPlaceEditor>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Address</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@EditableHospital.address" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                                            </SfInPlaceEditor>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Postal Code</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <SfInPlaceEditor Mode="@Mode" EditableOn="@EditableOn" Type="InputType.Text" ShowButtons="@ShowButtons" Disabled="@Disabled" @bind-Value="@EditableHospital.postalCode" SubmitOnEnter="true" ActionOnBlur="ActionBlur.Submit">
+                                                            </SfInPlaceEditor>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <label>Average Rating</label>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label id="ratingID">
+                                                                @hospital.avgRating / 5
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ContentTemplate>
+                                        </TabItem>
+                                    </TabItems>
+                                </SfTab>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="d-flex flex-column">
+                        <div class="container mt-3 mb-3">
+                            <SfMaps ModelType="@typeof(IDataTemplate)">
+                                <MapsTitleSettings Text="@addressHeader"/>
+                                <MapsCenterPosition Latitude="@lat" Longitude="@lon"/>
+                                <MapsZoomSettings Enable="true"
+                                                  Toolbars='new string[] {"Zoom", "ZoomIn", "ZoomOut", "Pan", "Reset"}' ShouldZoomInitially="false" MaxZoom="20" MinZoom="15" ZoomFactor="15">
+
+                                </MapsZoomSettings>
+
+                                <MapsLayers>
+                                    <MapsLayer LayerType="ShapeLayerType.OSM" UrlTemplate="http://mt1.google.com/vt/lyrs=m@129&hl=en&x=tileX&y=tileY&z=level">
+                                        <MapsMarkerSettings>
+                                            <MapsMarker Visible="true" DataSource="@MarkerDatas">
+                                                <ChildContent>
+                                                    <MapsMarkerTooltipSettings Visible="true" ValuePath="Name"/>
+                                                </ChildContent>
+                                                <MarkerTemplate>
+                                                    @{
+                                                        <div>
+                                                            <img class="markerTemplate" style="margin-top:-10px;margin-left:-10px;" src="images/balloon.png"/>
+                                                        </div>
+                                                    }
+                                                </MarkerTemplate>
+                                            </MapsMarker>
+                                        </MapsMarkerSettings>
+                                    </MapsLayer>
+                                </MapsLayers>
+                            </SfMaps>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+            </form>
+        </div>
+    </div>
+}
+
+@code {
+    Hospital hospital;
+    public string addressHeader;
+    double lon = 10;
+    double lat = 10;
+    
+    private RenderMode Mode = RenderMode.Inline;
+    private EditableType EditableOn = EditableType.Click;
+    private bool ShowButtons { get; set; } = false;
+    private bool Disabled { get; set; } = true;
+    private string display = "display: none";
+    
+    public Hospital EditableHospital = new Hospital();
+    
+    int RatingValue { get; set; } = 0;
+    string SuccessRate { get; set; } = "";
+    string classRate { get; set; } = "";
+
+    public class MarkerData
+    {
+        public string Name;
+        public double Latitude;
+        public double Longitude;
+    }
+
+    public List<MarkerData> MarkerDatas = new List<MarkerData>();
+
+
+    [Parameter]
+    public string id { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        hospital = await CloudHospitalService.GetHospital(Int32.Parse(id));
+        addressHeader = "The address of " + hospital.name + ": " + hospital.address;
+        await GetCoordinates();
+        MarkerDatas.Add(new MarkerData {Name = "Map", Latitude = lat, Longitude = lon});
+        EditableHospital.Update(hospital);
+    }
+
+    public async Task GetCoordinates()
+    {
+        HttpClient client = new HttpClient();
+        HttpResponseMessage message = await client.GetAsync("https://us1.locationiq.com/v1/search.php?key=pk.c4b221acbc78318a8f75e22369de4311&format=json&q=" + HttpUtility.UrlEncode(hospital.address));
+        string content = await message.Content.ReadAsStringAsync();
+    //Console.WriteLine(message.Content.ReadAsStringAsync().Result);
+    // string result = JsonConvert.DeserializeObject<string>(content);
+        string result = content;
+        if (result.Length > 40)
+        {
+            string[] contents = result.Split(",");
+            string latCont="";
+            string lonCont="";
+            foreach (var x in contents)
+            {
+                if (x.Contains("\"lat\":"))
+                    latCont = x;
+                if (x.Contains("\"lon\":"))
+                    lonCont = x;
+            }
+    //Console.WriteLine("latcont:"+latCont);
+    //Console.WriteLine("loncont:" + lonCont);
+            lat = Double.Parse(latCont.Split("\"")[3]);
+            lon = Double.Parse(lonCont.Split("\"")[3]);
+    //lat = Double.Parse(result.Split("\"")[29]);
+    //lon = Double.Parse(result.Split("\"")[33]);
+        }
+    }
+
+    public async Task SendToServer()
+    {
+        await CloudHospitalService.EditHospital(EditableHospital);
+        hospital.Update(EditableHospital);
+        await GetCoordinates();
+        addressHeader = "The address of " + hospital.name + ": " + hospital.address;
+        MarkerDatas.Add(new MarkerData {Name = "Map", Latitude = lat, Longitude = lon});
+        Disabled = true;
+        display = "display: none";
+    }
+    
+    public void Cancel()
+    {
+        Disabled = true;
+        display = "display: none";
+        EditableHospital.Update(hospital);
+        StateHasChanged();
+    }
+
+
+    private void EnableEdit()
+    {
+        Disabled = false;
+        display = "display: inline";
+    }
+    
+    private async Task Rate()
+    {
+        try
+        {
+            Rating newRating = new Rating();
+            newRating.hospitalId = Int32.Parse(id);
+            newRating.idNr = Int32.Parse(AuthenticationStateProvider.GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value);
+            newRating.rating = RatingValue;
+            await CloudRatingService.AddRating(newRating);
+            classRate = "oi oi-check";
+            SuccessRate = "Rating has been submitted!";
+            hospital = await CloudHospitalService.GetHospital(hospital.id);
+        }
+        catch (Exception e)
+        {
+            SuccessRate = "";
+        }
+    }
+}
+
+<style>
+    .markerTemplate {
+        height: 30px;
+        width: 20px;
+        display: block;
+        margin: auto;
+        font-size: 14px;
+        object-fit: cover;
+    }
+    
+    .SfMaps {
+    border-radius: 20px;
+    }
+    
+    #ratingID{
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        color: black;
+        font-size: 15px;
+        padding: 10px 10px 0 10px;
+    }
+    
+</style>

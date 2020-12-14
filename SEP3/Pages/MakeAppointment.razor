@@ -15,6 +15,7 @@
 <EditForm Model="@appointmentToAdd" OnValidSubmit="Add">
     <DataAnnotationsValidator/>
     <ValidationSummary/>
+    <div class="surround"></div>
     <div class="formBlock">
         <label>Hospital:
             <InputSelect @bind-Value="@hospitalString">

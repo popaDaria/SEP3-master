@@ -98,20 +98,41 @@ using SEP3.Auth;
 #nullable disable
 #nullable restore
 #line 5 "D:\SEP3\SEP3-master\SEP3\Pages\AddDoctor.razor"
-using Syncfusion.Blazor.Inputs;
+using Syncfusion.Blazor.DropDowns;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 6 "D:\SEP3\SEP3-master\SEP3\Pages\AddDoctor.razor"
+using Syncfusion.Blazor.Inputs;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 7 "D:\SEP3\SEP3-master\SEP3\Pages\AddDoctor.razor"
 using InputType = Syncfusion.Blazor.Inputs.InputType;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "D:\SEP3\SEP3-master\SEP3\Pages\AddDoctor.razor"
+#line 14 "D:\SEP3\SEP3-master\SEP3\Pages\AddDoctor.razor"
+using Newtonsoft.Json;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "D:\SEP3\SEP3-master\SEP3\Pages\AddDoctor.razor"
+using RestSharp.Extensions;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "D:\SEP3\SEP3-master\SEP3\Pages\AddDoctor.razor"
            [Authorize(Roles = "manager", Policy = "MustBeLoggedInAsValidated")]
 
 #line default
@@ -126,13 +147,14 @@ using InputType = Syncfusion.Blazor.Inputs.InputType;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 158 "D:\SEP3\SEP3-master\SEP3\Pages\AddDoctor.razor"
+#line 146 "D:\SEP3\SEP3-master\SEP3\Pages\AddDoctor.razor"
        
     User userToAdd { get; set; } = new User();
     string display = "display: none";
     string displayError = "display: none";
     bool isDisabled = false;
     string ErrorMessage;
+    string idNR;
     
     string department { get; set; }
     string hospital { get; set; }
@@ -150,12 +172,34 @@ using InputType = Syncfusion.Blazor.Inputs.InputType;
         hospitals = await CloudHospitalService.GetAllHospitalsForManager(i);
     }
     
+    
+    private string textValue { get; set; }
+    public class Gender
+    {
+        public string ID2 { get; set; }
+        public string Text2 { get; set; }
+    }
+    private List<Gender> genders = new List<Gender>() {
+        new Gender(){ ID2= "0", Text2= "--Select an option--" },
+        new Gender(){ ID2= "1", Text2= "Male" },
+        new Gender(){ ID2= "2", Text2= "Female" }
+    };
+    public string DropVal2 = "0";
+    public string ChangeValue2 { get; set; } = "--Select an option--";
+    public void OnChange2(ChangeEventArgs<string, Gender> args)
+    {
+        this.ChangeValue2 = args.ItemData.Text2;
+    }
+    
+    
     private async Task Add()
     {
         try
         {
             string[] contents = hospital.Split(" ");
             int hosID = Int32.Parse(contents[0]);
+            userToAdd.idNr = Int32.Parse(idNR);
+            userToAdd.gender = ChangeValue2;
             
             doctorHospital.deptName = department;
             doctorHospital.doctorId = userToAdd.idNr;

@@ -124,6 +124,13 @@ using Newtonsoft.Json;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 12 "D:\SEP3\SEP3-master\SEP3\Pages\Register.razor"
+using RestSharp.Extensions;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/register")]
     public partial class Register : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -133,7 +140,7 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 95 "D:\SEP3\SEP3-master\SEP3\Pages\Register.razor"
+#line 92 "D:\SEP3\SEP3-master\SEP3\Pages\Register.razor"
        
     User userToAdd { get; set; } = new User();
     string display = "display: none";
@@ -177,6 +184,9 @@ using Newtonsoft.Json;
     {
         this.ChangeValue = args.ItemData.Text;
     }
+    
+    
+    public DateTime DropVal3 { get; set; } = DateTime.Now;
 
 
     private async Task Add()
@@ -186,6 +196,7 @@ using Newtonsoft.Json;
             //Console.WriteLine(userToAdd.firstName+" "+userToAdd.lastName+" "+userToAdd.userType);
             userToAdd.userType = ChangeValue;
             userToAdd.gender = ChangeValue2;
+            // userToAdd.birthday = DropVal3;
             userToAdd.idNr = Int32.Parse(idNR);
             await CloudUserService.AddUser(userToAdd);
             displayError = "display: none";

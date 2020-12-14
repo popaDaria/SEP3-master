@@ -2,7 +2,7 @@ body{
     background: -webkit-linear-gradient(left, #29a05e, #4bdd98);
 }
 
-/* LogIn/Regsiter background */
+/* LogIn background */
 
 .surround{
     position: relative;
@@ -10,6 +10,34 @@ body{
     height: 550px;
     left: 735px;
     top: 195px;
+    text-align: center;
+
+    background: #EFEFEF;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -10px -10px 50px rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+}
+
+/* Regsiter background */
+
+.surround2{
+    position: relative;
+    width: 400px;
+    height: 650px;
+    left: 735px;
+    top: 140px;
+    text-align: center;
+
+    background: #EFEFEF;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -10px -10px 50px rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+}
+
+.surround3{
+    position: relative;
+    width: 400px;
+    height: 750px;
+    left: 735px;
+    top: 125px;
     text-align: center;
 
     background: #EFEFEF;
@@ -34,8 +62,8 @@ body{
     position: relative;
     text-align: center;
     margin: 0px 15px 0px 100px;
-    width: 500px;
-    left: 600px;
+    width: 450px;
+    left: 500px;
     top: 195px;
 
     background: #EFEFEF;
@@ -86,7 +114,7 @@ body{
 .button3{
 
     background: #9EDC94;
-    margin: 15px 0px 0px 0px;
+    margin: 25px 0px 25px 0px;
     border: 2px solid #EFEFEF;
     box-sizing: border-box;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -15px -10px 60px 20px rgba(255, 255, 255, 0.2);
@@ -116,6 +144,14 @@ body{
 
 .formStyle {
     margin: 0 0 0 30px;
+}
+
+.formStyle2 {
+    margin: 20px 0 0 30px;
+}
+
+.formStyle23 {
+    margin: 20px 0 0 0px;
 }
 
 .emptyBlock {
@@ -155,7 +191,7 @@ body{
     width: 25%
 }
 .dropdown-height {
-    min-height: 365px;
+    min-height: 55px;
 }
 #property {
     width: 100%;

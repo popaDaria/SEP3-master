@@ -9,17 +9,19 @@
 @inject NavigationManager NavigationManager
 @using Syncfusion.Blazor.DropDowns
 @using Newtonsoft.Json
+@using RestSharp.Extensions
 
 <link href="css/style.css" type="text/css" rel="stylesheet"/>
 
 <EditForm Model="@userToAdd" OnValidSubmit="Add">
     <DataAnnotationsValidator/>
     <ValidationSummary/>
-    <div class="surround">
+    <div class="surround2">
         <div class="col-lg-12 control-section">
             <div class="content-wrapper">
                 <div class="formBlock">
-                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                    <p>Registration form</p>
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle2">
                         <SfDropDownList TItem="UserType" TValue="string" PopupHeight="200px" Placeholder="Register as: " DataSource="@types">
                             <DropDownListEvents TItem="UserType" TValue="string" ValueChange="OnChange"></DropDownListEvents>
                             <DropDownListFieldSettings Text="Text" Value="ID"></DropDownListFieldSettings>
@@ -27,24 +29,24 @@
                     </div>
 
 
-                        <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
                         <SfTextBox Placeholder="First Name" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.firstname" disabled="@isDisabled" Type="InputType.Text"></SfTextBox>
                     </div>
 
                     <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
                         <SfTextBox Placeholder="Last Name" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.lastname" disabled="@isDisabled" Type="InputType.Text"></SfTextBox>
                     </div>
-                    
+
                     <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
-                            <SfTextBox Placeholder="ID Number" Type="InputType.Number" FloatLabelType="@FloatLabelType.Auto" @bind-value="@idNR" disabled="@isDisabled"></SfTextBox>
+                        <SfTextBox Placeholder="ID Number" Type="InputType.Number" FloatLabelType="@FloatLabelType.Auto" @bind-value="@idNR" disabled="@isDisabled"></SfTextBox>
                     </div>
-                    
+
                     <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
                         <SfTextBox CssClass="e-outline" Placeholder="Password" FloatLabelType="@FloatLabelType.Auto" Type="InputType.Password" @bind-value="userToAdd.password" disabled="@isDisabled"></SfTextBox>
                     </div>
 
-                    
-                    <div class="ol-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+
+                    <div class="ol-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle2">
                         <SfDropDownList TItem="Gender" TValue="string" PopupHeight="200px" Placeholder="Gender: " DataSource="@genders">
                             <DropDownListEvents TItem="Gender" TValue="string" ValueChange="OnChange2"></DropDownListEvents>
                             <DropDownListFieldSettings Text="Text2" Value="ID2"></DropDownListFieldSettings>
@@ -65,12 +67,9 @@
 
                     @* TODO *@
                     @* <div id="datepicker-control"> *@
-                    @*     <SfDatePicker TValue="DateTime?" Placeholder="Birthday" @bind-value="userToAdd.birthday"></SfDatePicker> *@
+                    @*     <SfDatePicker TValue="DateTime" Placeholder="Choose a Date" @bind-value="@DropVal3"></SfDatePicker> *@
                     @* </div> *@
-                    @* <div class="col-xs-8 col-sm-8 col-lg-8 col-md-8"> *@
-                    @*     <SfTextBox @ref="date" Placeholder="Birthday" @bind-value="userToAdd.birthday" disabled="@isDisabled"></SfTextBox> *@
-                    @* </div> *@
-                    <label>Birthday:<input type="date" @bind-value="userToAdd.birthday"></label>
+                    <label class="formStyle2">Birthday:<input type="date" @bind-value="userToAdd.birthday"></label>
                     <br/>
 
                 </div>
@@ -133,6 +132,9 @@
     {
         this.ChangeValue = args.ItemData.Text;
     }
+    
+    
+    public DateTime DropVal3 { get; set; } = DateTime.Now;
 
 
     private async Task Add()
@@ -142,6 +144,7 @@
             //Console.WriteLine(userToAdd.firstName+" "+userToAdd.lastName+" "+userToAdd.userType);
             userToAdd.userType = ChangeValue;
             userToAdd.gender = ChangeValue2;
+            // userToAdd.birthday = DropVal3;
             userToAdd.idNr = Int32.Parse(idNR);
             await CloudUserService.AddUser(userToAdd);
             displayError = "display: none";

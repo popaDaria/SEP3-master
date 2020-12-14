@@ -154,7 +154,7 @@ using Newtonsoft.Json;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 74 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
+#line 50 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
         
 
     Hospital toAdd { get; set; } = new Hospital();

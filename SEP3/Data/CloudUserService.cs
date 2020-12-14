@@ -63,7 +63,10 @@ namespace SEP3.Data
             
             HttpResponseMessage responseMessage =
                 await client.PutAsync("https://localhost:8085/users", content);
-            Console.WriteLine(responseMessage.StatusCode); 
+            Console.WriteLine(responseMessage.Content.ReadAsStringAsync().Result);
+            string result = await responseMessage.Content.ReadAsStringAsync();
+            if(result.Equals("NOT"))
+                throw new Exception("User with same id already exists");
         }
 
         public async Task AddDoctor(User user)

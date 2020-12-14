@@ -61,11 +61,13 @@
           <e p="ManageHospital.razor" t="Include" />
           <e p="ManageSchedule.razor" t="Include" />
           <e p="Messaging.razor" t="Include" />
+          <e p="Notifications.razor" t="Include" />
           <e p="Profile.razor" t="Include" />
           <e p="ProfileComponent.razor" t="Include" />
           <e p="ProfileMedical.razor" t="Include" />
           <e p="Register.razor" t="Include" />
           <e p="scheduler.razor" t="Include" />
+          <e p="SendNotifications.razor" t="Include" />
           <e p="Validate.razor" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />

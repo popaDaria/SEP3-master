@@ -13,20 +13,31 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39da3d61-0d00-475a-bb14-31b09aaef81b" name="Default Changelist" comment="messaging">
-      <change afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/Chat.razor.g.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/Messaging.razor.g.cs" afterDir="false" />
+    <list default="true" id="39da3d61-0d00-475a-bb14-31b09aaef81b" name="Default Changelist" comment="wip">
+      <change afterPath="$PROJECT_DIR$/SEP3/Pages/Notifications.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SEP3/Pages/SendNotifications.razor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Notifications.razor.g.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/SendNotifications.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SEP3/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Data/CloudUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Data/CloudUserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEP3/Data/ICloudUserService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Data/ICloudUserService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/Data/CloudMessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Data/CloudMessageService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/Data/ICloudMessageService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Data/ICloudMessageService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/Pages/Chat.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Pages/Chat.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/Pages/LogIn.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Pages/LogIn.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/Pages/Register.razor" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/Pages/Register.razor" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/bin/Debug/netcoreapp3.1/SEP3.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/Chat.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/Chat.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/LogIn.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/LogIn.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/Register.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/Register.razor.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Chat.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Chat.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/LogIn.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/LogIn.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Register.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Register.razor.g.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/SEP3.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorComponent.input.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.RazorComponent.input.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.Views.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.dll" beforeDir="false" afterPath="$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/SEP3.dll" afterDir="false" />
@@ -58,31 +69,29 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddHospital.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6997C26-8D92-4990-9E71-9462BE9B6164/ec/7cb5b6ba/Adaptors.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/App.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/_Imports.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Index.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Scheduler.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/HomeHospitalComponent.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/App.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/MakeAppointment.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/HospitalPage.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/ProfileComponent.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/LogIn.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Profile.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/ManageHospital.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Register.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddHospital.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/MainLayout.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/NavMenu.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F6997C26-8D92-4990-9E71-9462BE9B6164/ec/7cb5b6ba/Adaptors.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/App.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/SEP3/obj/Debug/netcoreapp3.1/Razor/Pages/AddDoctor.razor.g.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SEP3/Data/IUserData.cs" />
-        <option value="$PROJECT_DIR$/SEP3/Data/UserData.cs" />
         <option value="$PROJECT_DIR$/SEP3/Data/IUserService.cs" />
         <option value="$PROJECT_DIR$/SEP3/Data/UserService.cs" />
         <option value="$PROJECT_DIR$/SEP3/Pages/ProfileMedical.razor" />
@@ -98,7 +107,6 @@
         <option value="$PROJECT_DIR$/SEP3/Model/Hospital.cs" />
         <option value="$PROJECT_DIR$/SEP3/Pages/Validate.razor" />
         <option value="$PROJECT_DIR$/SEP3/Pages/ProfileComponent.razor" />
-        <option value="$PROJECT_DIR$/SEP3/Pages/LogIn.razor" />
         <option value="$PROJECT_DIR$/SEP3/Auth/CustomAuthenticationStateProvider.cs" />
         <option value="$PROJECT_DIR$/SEP3/Model/LoggedUser.cs" />
         <option value="$PROJECT_DIR$/SEP3/Pages/AddHospital.razor" />
@@ -110,7 +118,6 @@
         <option value="$PROJECT_DIR$/SEP3/Data/CloudDoctorHospitalService.cs" />
         <option value="$PROJECT_DIR$/SEP3/Data/ICloudDoctorHospitalService.cs" />
         <option value="$PROJECT_DIR$/SEP3/Shared/NavMenu.razor" />
-        <option value="$PROJECT_DIR$/SEP3/Pages/Register.razor" />
         <option value="$PROJECT_DIR$/SEP3/Pages/AddDoctor.razor" />
         <option value="$PROJECT_DIR$/SEP3/Model/AvailableDay.cs" />
         <option value="$PROJECT_DIR$/SEP3/Data/ICloudAvailableDayService.cs" />
@@ -125,13 +132,17 @@
         <option value="$PROJECT_DIR$/SEP3/Pages/Profile.razor" />
         <option value="$PROJECT_DIR$/SEP3/Pages/ManageSchedule.razor" />
         <option value="$PROJECT_DIR$/SEP3/Startup.cs" />
-        <option value="$PROJECT_DIR$/SEP3/Data/ICloudMessageService.cs" />
         <option value="$PROJECT_DIR$/SEP3/Model/Message.cs" />
-        <option value="$PROJECT_DIR$/SEP3/Data/CloudMessageService.cs" />
         <option value="$PROJECT_DIR$/SEP3/Pages/Messaging.razor" />
         <option value="$PROJECT_DIR$/SEP3/Data/CloudUserService.cs" />
         <option value="$PROJECT_DIR$/SEP3/Data/ICloudUserService.cs" />
+        <option value="$PROJECT_DIR$/SEP3/Pages/LogIn.razor" />
+        <option value="$PROJECT_DIR$/SEP3/Pages/Register.razor" />
         <option value="$PROJECT_DIR$/SEP3/Pages/Chat.razor" />
+        <option value="$PROJECT_DIR$/SEP3/Pages/Notifications.razor" />
+        <option value="$PROJECT_DIR$/SEP3/Pages/SendNotifications.razor" />
+        <option value="$PROJECT_DIR$/SEP3/Data/CloudMessageService.cs" />
+        <option value="$PROJECT_DIR$/SEP3/Data/ICloudMessageService.cs" />
       </list>
     </option>
   </component>
@@ -145,8 +156,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34995976" />
-    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30008045" />
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34965035" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.3006993" />
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -154,6 +165,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="threadsIsVisibleKey" value="false" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.SEP3">
     <configuration name="SEP3" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -215,6 +227,8 @@
       <workItem from="1607102292245" duration="751000" />
       <workItem from="1607246229163" duration="11590000" />
       <workItem from="1607327351951" duration="9830000" />
+      <workItem from="1607788760673" duration="5007000" />
+      <workItem from="1607969525742" duration="512000" />
     </task>
     <task id="LOCAL-00001" summary="First Version, Green Navbar">
       <created>1601938783775</created>
@@ -426,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607615932938</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="wip">
+      <created>1607696546213</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1607696546213</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -473,7 +494,8 @@
     <MESSAGE value="try this" />
     <MESSAGE value="added calendar as component to MakeAppointment.razor" />
     <MESSAGE value="messaging" />
-    <option name="LAST_COMMIT_MESSAGE" value="messaging" />
+    <MESSAGE value="wip" />
+    <option name="LAST_COMMIT_MESSAGE" value="wip" />
   </component>
   <component name="WindowStateProjectService">
     <state x="708" y="344" key="#Notifications" timestamp="1607006429446">
@@ -492,110 +514,110 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="838" y="418" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606941580601" />
-    <state width="746" height="210" key="GridCell.Tab.0.bottom" timestamp="1607694646998">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1257" height="195" key="GridCell.Tab.0.bottom" timestamp="1607823452141">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="251" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606920272812" />
-    <state width="746" height="210" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607694646998" />
+    <state width="1257" height="195" key="GridCell.Tab.0.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607823452141" />
+    <state width="746" height="2" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607700429445" />
     <state width="1877" height="287" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1607337527704" />
-    <state width="746" height="210" key="GridCell.Tab.0.center" timestamp="1607694646998">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1257" height="195" key="GridCell.Tab.0.center" timestamp="1607823452140">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="251" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606920272812" />
-    <state width="746" height="210" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607694646998" />
+    <state width="1257" height="195" key="GridCell.Tab.0.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607823452140" />
+    <state width="746" height="2" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607700429445" />
     <state width="1877" height="287" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1607337527704" />
-    <state width="746" height="210" key="GridCell.Tab.0.left" timestamp="1607694646998">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1257" height="195" key="GridCell.Tab.0.left" timestamp="1607823452140">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="251" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606920272812" />
-    <state width="746" height="210" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607694646998" />
+    <state width="1257" height="195" key="GridCell.Tab.0.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607823452140" />
+    <state width="746" height="2" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607700429445" />
     <state width="1877" height="287" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1607337527704" />
-    <state width="746" height="210" key="GridCell.Tab.0.right" timestamp="1607694646998">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state width="1257" height="195" key="GridCell.Tab.0.right" timestamp="1607823452140">
+      <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="251" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606920272812" />
-    <state width="746" height="210" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607694646998" />
+    <state width="1257" height="195" key="GridCell.Tab.0.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607823452140" />
+    <state width="746" height="2" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607700429445" />
     <state width="1877" height="287" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1607337527704" />
-    <state width="2517" height="389" key="GridCell.Tab.1.bottom" timestamp="1606092094290">
+    <state width="746" height="302" key="GridCell.Tab.1.bottom" timestamp="1607715886758">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.1.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094290" />
-    <state width="931" height="303" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604836237705" />
-    <state width="2517" height="389" key="GridCell.Tab.1.center" timestamp="1606092094290">
+    <state width="746" height="302" key="GridCell.Tab.1.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886758" />
+    <state width="746" height="302" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607699360100" />
+    <state width="746" height="302" key="GridCell.Tab.1.center" timestamp="1607715886758">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.1.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094290" />
-    <state width="931" height="303" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1604836237705" />
-    <state width="2517" height="389" key="GridCell.Tab.1.left" timestamp="1606092094290">
+    <state width="746" height="302" key="GridCell.Tab.1.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886758" />
+    <state width="746" height="302" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1607699360100" />
+    <state width="746" height="302" key="GridCell.Tab.1.left" timestamp="1607715886758">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.1.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094290" />
-    <state width="931" height="303" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1604836237705" />
-    <state width="2517" height="389" key="GridCell.Tab.1.right" timestamp="1606092094290">
+    <state width="746" height="302" key="GridCell.Tab.1.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886758" />
+    <state width="746" height="302" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1607699360099" />
+    <state width="746" height="302" key="GridCell.Tab.1.right" timestamp="1607715886758">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.1.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094290" />
-    <state width="931" height="303" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1604836237705" />
-    <state width="2517" height="389" key="GridCell.Tab.2.bottom" timestamp="1606092094290">
+    <state width="746" height="302" key="GridCell.Tab.1.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886758" />
+    <state width="746" height="302" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1607699360100" />
+    <state width="746" height="302" key="GridCell.Tab.2.bottom" timestamp="1607715886759">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.2.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094290" />
-    <state width="931" height="303" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604836237706" />
-    <state width="2517" height="389" key="GridCell.Tab.2.center" timestamp="1606092094290">
+    <state width="746" height="302" key="GridCell.Tab.2.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886759" />
+    <state width="746" height="302" key="GridCell.Tab.2.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607699360100" />
+    <state width="746" height="302" key="GridCell.Tab.2.center" timestamp="1607715886758">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.2.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094290" />
-    <state width="931" height="303" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1604836237705" />
-    <state width="2517" height="389" key="GridCell.Tab.2.left" timestamp="1606092094290">
+    <state width="746" height="302" key="GridCell.Tab.2.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886758" />
+    <state width="746" height="302" key="GridCell.Tab.2.center/0.0.1536.864@0.0.1536.864" timestamp="1607699360100" />
+    <state width="746" height="302" key="GridCell.Tab.2.left" timestamp="1607715886758">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.2.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094290" />
-    <state width="931" height="303" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1604836237705" />
-    <state width="2517" height="389" key="GridCell.Tab.2.right" timestamp="1606092094290">
+    <state width="746" height="302" key="GridCell.Tab.2.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886758" />
+    <state width="746" height="302" key="GridCell.Tab.2.left/0.0.1536.864@0.0.1536.864" timestamp="1607699360100" />
+    <state width="746" height="302" key="GridCell.Tab.2.right" timestamp="1607715886758">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.2.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094290" />
-    <state width="931" height="303" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1604836237705" />
-    <state width="2517" height="389" key="GridCell.Tab.3.bottom" timestamp="1606092094291">
+    <state width="746" height="302" key="GridCell.Tab.2.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886758" />
+    <state width="746" height="302" key="GridCell.Tab.2.right/0.0.1536.864@0.0.1536.864" timestamp="1607699360100" />
+    <state width="746" height="302" key="GridCell.Tab.3.bottom" timestamp="1607715886759">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.3.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094291" />
-    <state width="931" height="303" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604836237708" />
-    <state width="2517" height="389" key="GridCell.Tab.3.center" timestamp="1606092094290">
+    <state width="746" height="302" key="GridCell.Tab.3.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886759" />
+    <state width="746" height="302" key="GridCell.Tab.3.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607699360100" />
+    <state width="746" height="302" key="GridCell.Tab.3.center" timestamp="1607715886759">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.3.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094290" />
-    <state width="931" height="303" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1604836237707" />
-    <state width="2517" height="389" key="GridCell.Tab.3.left" timestamp="1606092094290">
+    <state width="746" height="302" key="GridCell.Tab.3.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886759" />
+    <state width="746" height="302" key="GridCell.Tab.3.center/0.0.1536.864@0.0.1536.864" timestamp="1607699360100" />
+    <state width="746" height="302" key="GridCell.Tab.3.left" timestamp="1607715886759">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.3.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094290" />
-    <state width="931" height="303" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1604836237707" />
-    <state width="2517" height="389" key="GridCell.Tab.3.right" timestamp="1606092094291">
+    <state width="746" height="302" key="GridCell.Tab.3.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886759" />
+    <state width="746" height="302" key="GridCell.Tab.3.left/0.0.1536.864@0.0.1536.864" timestamp="1607699360100" />
+    <state width="746" height="302" key="GridCell.Tab.3.right" timestamp="1607715886759">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.3.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094291" />
-    <state width="931" height="303" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1604836237707" />
-    <state width="2517" height="389" key="GridCell.Tab.4.bottom" timestamp="1606092094291">
+    <state width="746" height="302" key="GridCell.Tab.3.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886759" />
+    <state width="746" height="302" key="GridCell.Tab.3.right/0.0.1536.864@0.0.1536.864" timestamp="1607699360100" />
+    <state width="746" height="302" key="GridCell.Tab.4.bottom" timestamp="1607715886759">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.4.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094291" />
-    <state width="931" height="303" key="GridCell.Tab.4.bottom/0.0.1536.864@0.0.1536.864" timestamp="1604836237709" />
-    <state width="2517" height="389" key="GridCell.Tab.4.center" timestamp="1606092094291">
+    <state width="746" height="302" key="GridCell.Tab.4.bottom/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886759" />
+    <state width="746" height="302" key="GridCell.Tab.4.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607699360100" />
+    <state width="746" height="302" key="GridCell.Tab.4.center" timestamp="1607715886759">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.4.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094291" />
-    <state width="931" height="303" key="GridCell.Tab.4.center/0.0.1536.864@0.0.1536.864" timestamp="1604836237708" />
-    <state width="2517" height="389" key="GridCell.Tab.4.left" timestamp="1606092094291">
+    <state width="746" height="302" key="GridCell.Tab.4.center/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886759" />
+    <state width="746" height="302" key="GridCell.Tab.4.center/0.0.1536.864@0.0.1536.864" timestamp="1607699360100" />
+    <state width="746" height="302" key="GridCell.Tab.4.left" timestamp="1607715886759">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.4.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094291" />
-    <state width="931" height="303" key="GridCell.Tab.4.left/0.0.1536.864@0.0.1536.864" timestamp="1604836237708" />
-    <state width="2517" height="389" key="GridCell.Tab.4.right" timestamp="1606092094291">
+    <state width="746" height="302" key="GridCell.Tab.4.left/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886759" />
+    <state width="746" height="302" key="GridCell.Tab.4.left/0.0.1536.864@0.0.1536.864" timestamp="1607699360100" />
+    <state width="746" height="302" key="GridCell.Tab.4.right" timestamp="1607715886759">
       <screen x="0" y="0" width="2560" height="1080" />
     </state>
-    <state width="2517" height="389" key="GridCell.Tab.4.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606092094291" />
-    <state width="931" height="303" key="GridCell.Tab.4.right/0.0.1536.864@0.0.1536.864" timestamp="1604836237709" />
+    <state width="746" height="302" key="GridCell.Tab.4.right/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1607715886759" />
+    <state width="746" height="302" key="GridCell.Tab.4.right/0.0.1536.864@0.0.1536.864" timestamp="1607699360100" />
     <state x="312" y="126" key="MergeDialog" timestamp="1607102833681">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -617,11 +639,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1606940516891" />
-    <state x="523" y="218" key="Vcs.Push.Dialog.v2" timestamp="1607615936965">
+    <state x="523" y="218" key="Vcs.Push.Dialog.v2" timestamp="1607696767436">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="872" y="272" key="Vcs.Push.Dialog.v2/-1920.0.1536.864/0.0.2560.1080@0.0.2560.1080" timestamp="1606919600412" />
-    <state x="523" y="218" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1607615936965" />
+    <state x="523" y="218" key="Vcs.Push.Dialog.v2/0.0.1536.864@0.0.1536.864" timestamp="1607696767436" />
     <state x="654" y="262" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1607264375664" />
     <state x="540" y="167" key="VcsDiffUtil.ChangesDialog" timestamp="1604561554438">
       <screen x="0" y="0" width="1536" height="864" />

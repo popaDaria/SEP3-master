@@ -28,6 +28,15 @@ namespace SEP3.Data
             return result;        
         }
         
+        public async Task<List<Message>> GetNotifications()
+        {
+            HttpClient client = new HttpClient();
+            string message = await client.GetStringAsync("https://localhost:8085/messages/notifications");
+            Console.WriteLine(message);
+            List<Message> result = JsonSerializer.Deserialize<List<Message>>(message);
+            return result;        
+        }
+        
         public async Task SendMessage(Message message)
         {
             HttpClient client = new HttpClient();

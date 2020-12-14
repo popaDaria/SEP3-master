@@ -1,0 +1,28 @@
+﻿@using SEP3.Model
+@using SEP3.Data
+
+@inject ICloudMessageService CloudMessageService;
+
+<h3>Notifications</h3>
+
+@foreach (var message in Messages)
+{
+    <div class="alert alert-info" role="alert">
+        @message.text
+        <br />
+        Sent by: @message.senderID
+        <br />
+        Timestamp: @message.timestamp
+    </div>
+}
+
+@code {
+    IList<Message> Messages = new List<Message>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Messages = await CloudMessageService.GetNotifications();
+
+    }
+
+}

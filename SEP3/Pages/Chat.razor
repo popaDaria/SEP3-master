@@ -20,6 +20,7 @@
 }
 else
 {
+    
     <div>
         <input type="text" value="@searchFilter" @oninput="@FilterChangedAsync" placeholder="Search here..."/>
     </div>
@@ -41,14 +42,14 @@ else
             </tr>
             </thead>
             <tbody>
-            @foreach (String pair in Users)
+            @foreach (var pair in Users)
             {
                 Console.WriteLine(pair.Split(" ")[0]);
                 <tr>
                     <td>@pair.Split(" ")[0]</td>
                     <td>@(pair.Split(" ")[1] + " " + pair.Split(" ")[2])</td>
                     <td>
-                        <span class="btn btn-danger" @onclick="() => OpenChat(pair)">New Chat</span>
+                        <span class="btn btn-danger" href="@("/message/" + pair.Split(" ")[0])">New Chat</span>
                     </td>
                 </tr>
             }
@@ -57,53 +58,29 @@ else
     </div>
 }
 
-<h3>Open conversations</h3>
-@if (Messages == null)
-{
-    <p>LOADING...</p>
-}
-else
-{
-    <div class="list-group">
-        @foreach (Message message in Messages)
-        {
-            <a href="@("/message/" + message.senderID)" class="list-group-item list-group-item-action">@GetName(message)</a>
-        }
-    </div>
-}
-
 @code {
-    public string idNr;
     public string type;
-    private string searchFilter = "";
-    public IList<Message> Messages = new List<Message>();
+    public string searchFilter = "";
     public List<String> Users = new List<String>();
 
     protected async override Task OnInitializedAsync()
     {
-        idNr = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value;
         type = ((CustomAuthenticationStateProvider) AuthenticationStateProvider).GetAuthenticationStateAsync().Result.User.Claims.ToList()[1].Value;
-        Messages = await CloudMessageService.GetMessagesToMe(Int32.Parse(idNr));
-        Users = await CloudUserService.getUsersByType(type.Equals("patient") ? "doctor" : "patient");
-        StateHasChanged();
-    }
-
-    public async Task<String> GetName(Message message)
-    {
-        return CloudUserService.GetName(message.senderID.ToString()).Result;
+        if(type.Equals("patient"))
+            Users = await CloudUserService.getUsersByType("doctor");
+        else
+            Users = await CloudUserService.getUsersByType("patient");
     }
 
     public async Task Search(string searchTerm)
     {
         Users = Users.Where(a => (a.Split(" ")[1] + " " + a.Split(" ")[2]).StartsWith(searchTerm.ToLower())).ToList();
-        StateHasChanged();
     }
 
-    private async Task FilterChangedAsync(ChangeEventArgs args)
+    public async Task FilterChangedAsync(ChangeEventArgs args)
     {
         searchFilter = args.Value.ToString().Trim();
         Search(searchFilter);
-        StateHasChanged();
     }
 
     public void OpenChat(string pair)

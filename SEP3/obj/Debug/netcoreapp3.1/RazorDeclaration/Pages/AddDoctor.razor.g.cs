@@ -96,6 +96,27 @@ using SEP3.Auth;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "D:\SEP3\SEP3-master\SEP3\Pages\AddDoctor.razor"
+using Syncfusion.Blazor.Inputs;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "D:\SEP3\SEP3-master\SEP3\Pages\AddDoctor.razor"
+using InputType = Syncfusion.Blazor.Inputs.InputType;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "D:\SEP3\SEP3-master\SEP3\Pages\AddDoctor.razor"
+           [Authorize(Roles = "manager", Policy = "MustBeLoggedInAsValidated")]
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/addDoctor/{id}")]
     public partial class AddDoctor : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -105,7 +126,7 @@ using SEP3.Auth;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 60 "D:\SEP3\SEP3-master\SEP3\Pages\AddDoctor.razor"
+#line 158 "D:\SEP3\SEP3-master\SEP3\Pages\AddDoctor.razor"
        
     User userToAdd { get; set; } = new User();
     string display = "display: none";

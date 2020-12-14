@@ -131,6 +131,20 @@ using Microsoft.VisualBasic.CompilerServices;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 14 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
+using Syncfusion.Blazor.DropDowns;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
+using Newtonsoft.Json;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/addHospital")]
     public partial class AddHospital : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -140,13 +154,33 @@ using Microsoft.VisualBasic.CompilerServices;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 68 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
+#line 74 "D:\SEP3\SEP3-master\SEP3\Pages\AddHospital.razor"
         
 
     Hospital toAdd { get; set; } = new Hospital();
     string selection {get;set;}
     string postalCode { get; set; }
 
+    private string textValue { get; set; }
+    public class Type
+    {
+        public string ID { get; set; }
+        public string Text { get; set; }
+    }
+    private List<Type> types = new List<Type>() {
+        new Type(){ ID= "0", Text= "--Select an option--" },
+        new Type(){ ID= "1", Text= "Hospital" },
+        new Type(){ ID= "2", Text= "Clinic" },
+    };
+    
+    public string DropVal = "0";
+    public string ChangeValue { get; set; } = "--Select an option--";
+    
+    public void OnChange(Syncfusion.Blazor.DropDowns.ChangeEventArgs<string, Type> args)
+    {
+        textValue = args.ItemData.Text;
+    }
+    
     public async Task Submit()
     {
         toAdd.managerId = Int32.Parse(AuthenticationStateProvider.GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value);
@@ -161,6 +195,7 @@ using Microsoft.VisualBasic.CompilerServices;
         {
             selection = "hospital";
         }
+        toAdd.type = textValue;
         toAdd.postalCode = Int32.Parse(postalCode);
         Console.WriteLine(toAdd.managerId);
         await CloudHospitalService.AddHospital(toAdd);

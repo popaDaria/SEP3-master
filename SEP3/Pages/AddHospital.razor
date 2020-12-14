@@ -11,6 +11,8 @@
 @inject ICloudHospitalService CloudHospitalService;
 @inject AuthenticationStateProvider AuthenticationStateProvider;
 @inject NavigationManager NavigationManager
+@using Syncfusion.Blazor.DropDowns
+@using Newtonsoft.Json
 
 <link href="css/style.css" type="text/css" rel="stylesheet"/>
 
@@ -30,22 +32,26 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
                     <div class="radio-control">
-                        <div class="row">
-                            <label>
-                                Type:
-                                <select @bind="toAdd.type">
-                                    <option value="">--Select an option--</option>
-                                    <option value="hospital">Hospital</option>
-                                    <option value="clinic">Clinic</option>
-                                </select>
-                            </label>
+                        <div class="content-wrapper">
+                            <SfDropDownList TItem="Type" TValue="string" PopupHeight="50px" Placeholder="--Select an option--" DataSource="@types">
+                                <DropDownListEvents TItem="Type" TValue="string" ValueChange="OnChange"></DropDownListEvents>
+                                <DropDownListFieldSettings Text="Text" Value="ID"></DropDownListFieldSettings>
+                            </SfDropDownList>
+                            @* <label> *@
+                            @*     Type: *@
+                            @*     <select @bind="toAdd.type"> *@
+                            @*         <option value="">--Select an option--</option> *@
+                            @*         <option value="hospital">Hospital</option> *@
+                            @*         <option value="clinic">Clinic</option> *@
+                            @*     </select> *@
+                            @* </label> *@
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-lg-12col-md-12">
-                    <SfTextBox CssClass="e-rtl" Placeholder="Postal Code" Type="Syncfusion.Blazor.Inputs.InputType.Number" FloatLabelType="@FloatLabelType.Auto" @bind-value="@postalCode"></SfTextBox>
+                    <SfTextBox CssClass="e-rtl" Placeholder="Postal Code" Type="InputType.Number" FloatLabelType="@FloatLabelType.Auto" @bind-value="@postalCode"></SfTextBox>
                 </div>
             </div>
             <div class="row">
@@ -71,6 +77,26 @@
     string selection {get;set;}
     string postalCode { get; set; }
 
+    private string textValue { get; set; }
+    public class Type
+    {
+        public string ID { get; set; }
+        public string Text { get; set; }
+    }
+    private List<Type> types = new List<Type>() {
+        new Type(){ ID= "0", Text= "--Select an option--" },
+        new Type(){ ID= "1", Text= "Hospital" },
+        new Type(){ ID= "2", Text= "Clinic" },
+    };
+    
+    public string DropVal = "0";
+    public string ChangeValue { get; set; } = "--Select an option--";
+    
+    public void OnChange(Syncfusion.Blazor.DropDowns.ChangeEventArgs<string, Type> args)
+    {
+        textValue = args.ItemData.Text;
+    }
+    
     public async Task Submit()
     {
         toAdd.managerId = Int32.Parse(AuthenticationStateProvider.GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value);
@@ -85,6 +111,7 @@
         {
             selection = "hospital";
         }
+        toAdd.type = textValue;
         toAdd.postalCode = Int32.Parse(postalCode);
         Console.WriteLine(toAdd.managerId);
         await CloudHospitalService.AddHospital(toAdd);

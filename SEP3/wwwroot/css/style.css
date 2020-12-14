@@ -146,10 +146,20 @@ body{
     cursor: pointer;
 }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
+
+.property-section .right-side {
+    padding-left: 10px;
+}
+.property-section .left-side {
+    padding: 5px;
+    width: 25%
+}
+.dropdown-height {
+    min-height: 365px;
+}
+#property {
+    width: 100%;
+    margin: 10px
 }
 
 /* Dropdown Content (Hidden by Default) */

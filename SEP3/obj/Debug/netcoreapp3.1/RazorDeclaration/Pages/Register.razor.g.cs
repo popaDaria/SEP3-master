@@ -110,6 +110,20 @@ using InputType = Syncfusion.Blazor.Inputs.InputType;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 10 "D:\SEP3\SEP3-master\SEP3\Pages\Register.razor"
+using Syncfusion.Blazor.DropDowns;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "D:\SEP3\SEP3-master\SEP3\Pages\Register.razor"
+using Newtonsoft.Json;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/register")]
     public partial class Register : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -119,7 +133,7 @@ using InputType = Syncfusion.Blazor.Inputs.InputType;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 102 "D:\SEP3\SEP3-master\SEP3\Pages\Register.razor"
+#line 95 "D:\SEP3\SEP3-master\SEP3\Pages\Register.razor"
        
     User userToAdd { get; set; } = new User();
     string display = "display: none";
@@ -127,6 +141,42 @@ using InputType = Syncfusion.Blazor.Inputs.InputType;
     bool isDisabled = false;
     string ErrorMessage;
     string idNR { get; set; }
+    
+    
+    private string textValue { get; set; }
+    public class Gender
+    {
+        public string ID2 { get; set; }
+        public string Text2 { get; set; }
+    }
+    private List<Gender> genders = new List<Gender>() {
+        new Gender(){ ID2= "0", Text2= "--Select an option--" },
+        new Gender(){ ID2= "1", Text2= "Male" },
+        new Gender(){ ID2= "2", Text2= "Female" }
+    };
+    public string DropVal2 = "0";
+    public string ChangeValue2 { get; set; } = "--Select an option--";
+    public void OnChange2(ChangeEventArgs<string, Gender> args)
+    {
+        this.ChangeValue2 = args.ItemData.Text2;
+    }
+    
+    public class UserType
+    {
+        public string ID { get; set; }
+        public string Text { get; set; }
+    }
+    private List<UserType> types = new List<UserType>() {
+        new UserType(){ ID= "0", Text= "--Select an option--" },
+        new UserType(){ ID= "1", Text= "patient" },
+        new UserType(){ ID= "2", Text= "manager" }
+    };
+    public string DropVal = "0";
+    public string ChangeValue { get; set; } = "--Select an option--";
+    public void OnChange(ChangeEventArgs<string, UserType> args)
+    {
+        this.ChangeValue = args.ItemData.Text;
+    }
 
 
     private async Task Add()
@@ -134,12 +184,13 @@ using InputType = Syncfusion.Blazor.Inputs.InputType;
         try
         {
             //Console.WriteLine(userToAdd.firstName+" "+userToAdd.lastName+" "+userToAdd.userType);
-            // userToAdd.idNr = Int32.Parse(AuthenticationStateProvider.GetAuthenticationStateAsync().Result.User.Claims.ToList()[0].Value);
+            userToAdd.userType = ChangeValue;
+            userToAdd.gender = ChangeValue2;
+            userToAdd.idNr = Int32.Parse(idNR);
             await CloudUserService.AddUser(userToAdd);
             displayError = "display: none";
             display = "display: block";
             isDisabled = true;
-            // userToAdd.idNr = Int32.Parse(idNR);
             ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateLogin(userToAdd.idNr+"", userToAdd.password).Wait(100);
             NavigationManager.NavigateTo("/");
         }

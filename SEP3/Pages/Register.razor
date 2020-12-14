@@ -2,53 +2,92 @@
 @using Data
 @using SEP3.Model
 @using SEP3.Auth
+@using Syncfusion.Blazor.Inputs
+@using InputType = Syncfusion.Blazor.Inputs.InputType
 @inject ICloudUserService CloudUserService
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
+@using Syncfusion.Blazor.DropDowns
+@using Newtonsoft.Json
+@using RestSharp.Extensions
 
-<h1 style="font-size: 56px; font-weight: bold; color: #0B4E58">Register a new account</h1>
+<link href="css/style.css" type="text/css" rel="stylesheet"/>
+
 <EditForm Model="@userToAdd" OnValidSubmit="Add">
     <DataAnnotationsValidator/>
     <ValidationSummary/>
-    <div class="formBlock">
-        <label>Register as:
-            <InputSelect @bind-Value="userToAdd.userType">
-                <option></option>
-                <option>patient</option>
-                <option>manager</option>
-            </InputSelect>
-        </label>
-        <br/>
-        <label>First Name:<input type="text" @bind-value="userToAdd.firstname" disabled="@isDisabled"/></label>
-        <br/>
-        <label>Last Name:<input type="text" @bind-value="userToAdd.lastname" disabled="@isDisabled"/></label>
-        <br/>
-        <label>ID Number:<input type="number" @bind-value="userToAdd.idNr" disabled="@isDisabled"/></label>
-        <br/>
-        <label>Password:<input type="password" @bind-value="userToAdd.password" disabled="@isDisabled"/></label>
-        <br/>
-        <label>Gender:
-            <InputSelect @bind-Value="userToAdd.gender">
-                <option></option>
-                <option>Male</option>
-                <option>Female</option>
-            </InputSelect>
-        </label>
-        <br/>
-        <label>Email:<input type="text" @bind-value="userToAdd.email"></label>
-        <br/>
-        <label>Phone Number:<input type="text" @bind-value="userToAdd.telNo"></label>
-        <br/>
-        <label>Address:<input type="text" @bind-value="userToAdd.address"></label>
-        <br/>
-        <label>Birthday:<input type="date" min="1900-01-01" @bind-value="userToAdd.birthday"></label>
-        <br/>
+    <div class="surround2">
+        <div class="col-lg-12 control-section">
+            <div class="content-wrapper">
+                <div class="formBlock">
+                    <p>Registration form</p>
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle2">
+                        <SfDropDownList TItem="UserType" TValue="string" PopupHeight="200px" Placeholder="Register as: " DataSource="@types">
+                            <DropDownListEvents TItem="UserType" TValue="string" ValueChange="OnChange"></DropDownListEvents>
+                            <DropDownListFieldSettings Text="Text" Value="ID"></DropDownListFieldSettings>
+                        </SfDropDownList>
+                    </div>
 
+
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox Placeholder="First Name" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.firstname" disabled="@isDisabled" Type="InputType.Text"></SfTextBox>
+                    </div>
+
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox Placeholder="Last Name" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.lastname" disabled="@isDisabled" Type="InputType.Text"></SfTextBox>
+                    </div>
+
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox Placeholder="ID Number" Type="InputType.Number" FloatLabelType="@FloatLabelType.Auto" @bind-value="@idNR" disabled="@isDisabled"></SfTextBox>
+                    </div>
+
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox CssClass="e-outline" Placeholder="Password" FloatLabelType="@FloatLabelType.Auto" Type="InputType.Password" @bind-value="userToAdd.password" disabled="@isDisabled"></SfTextBox>
+                    </div>
+
+
+                    <div class="ol-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle2">
+                        <SfDropDownList TItem="Gender" TValue="string" PopupHeight="200px" Placeholder="Gender: " DataSource="@genders">
+                            <DropDownListEvents TItem="Gender" TValue="string" ValueChange="OnChange2"></DropDownListEvents>
+                            <DropDownListFieldSettings Text="Text2" Value="ID2"></DropDownListFieldSettings>
+                        </SfDropDownList>
+                    </div>
+
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox CssClass="e-outline" Placeholder="Email" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.email" disabled="@isDisabled"></SfTextBox>
+                    </div>
+
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox CssClass="e-outline" Placeholder="Phone number" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.telNo" disabled="@isDisabled"></SfTextBox>
+                    </div>
+
+                    <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">
+                        <SfTextBox CssClass="e-outline" Placeholder="Address" FloatLabelType="@FloatLabelType.Auto" @bind-value="userToAdd.address" disabled="@isDisabled"></SfTextBox>
+                    </div>
+
+                    @* TODO *@
+                    @* <div id="datepicker-control"> *@
+                    @*     <SfDatePicker TValue="DateTime" Placeholder="Choose a Date" @bind-value="@DropVal3"></SfDatePicker> *@
+                    @* </div> *@
+                    <label class="formStyle2">Birthday:<input type="date" @bind-value="userToAdd.birthday"></label>
+                    <br/>
+
+                </div>
+                
+                @* <input type="button" class="btn btn-primary button2" @onclick="@Submit">Submit</input> *@
+
+                <input type="submit" class="btn btn-primary button2" value="Submit"/>
+                <div class="alert alert-success mt-2" style="@display">
+                    Registration was successful!
+                </div>
+                <div class="alert alert-danger mt-2" style="@displayError">
+                    @ErrorMessage
+                </div>
+            </div>
+        </div>
     </div>
-    <input type="submit" class="btn btn-primary" value="Submit"/>
-    <div class="alert alert-success mt-2" style="@display">Registration was successful!</div>
-    <div class="alert alert-danger mt-2" style="@displayError">@ErrorMessage</div>
 </EditForm>
+
 
 @code {
     User userToAdd { get; set; } = new User();
@@ -56,12 +95,57 @@
     string displayError = "display: none";
     bool isDisabled = false;
     string ErrorMessage;
+    string idNR { get; set; }
+    
+    
+    private string textValue { get; set; }
+    public class Gender
+    {
+        public string ID2 { get; set; }
+        public string Text2 { get; set; }
+    }
+    private List<Gender> genders = new List<Gender>() {
+        new Gender(){ ID2= "0", Text2= "--Select an option--" },
+        new Gender(){ ID2= "1", Text2= "Male" },
+        new Gender(){ ID2= "2", Text2= "Female" }
+    };
+    public string DropVal2 = "0";
+    public string ChangeValue2 { get; set; } = "--Select an option--";
+    public void OnChange2(ChangeEventArgs<string, Gender> args)
+    {
+        this.ChangeValue2 = args.ItemData.Text2;
+    }
+    
+    public class UserType
+    {
+        public string ID { get; set; }
+        public string Text { get; set; }
+    }
+    private List<UserType> types = new List<UserType>() {
+        new UserType(){ ID= "0", Text= "--Select an option--" },
+        new UserType(){ ID= "1", Text= "patient" },
+        new UserType(){ ID= "2", Text= "manager" }
+    };
+    public string DropVal = "0";
+    public string ChangeValue { get; set; } = "--Select an option--";
+    public void OnChange(ChangeEventArgs<string, UserType> args)
+    {
+        this.ChangeValue = args.ItemData.Text;
+    }
+    
+    
+    public DateTime DropVal3 { get; set; } = DateTime.Now;
+
 
     private async Task Add()
     {
         try
         {
             //Console.WriteLine(userToAdd.firstName+" "+userToAdd.lastName+" "+userToAdd.userType);
+            userToAdd.userType = ChangeValue;
+            userToAdd.gender = ChangeValue2;
+            // userToAdd.birthday = DropVal3;
+            userToAdd.idNr = Int32.Parse(idNR);
             await CloudUserService.AddUser(userToAdd);
             displayError = "display: none";
             display = "display: block";

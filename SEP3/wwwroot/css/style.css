@@ -1,0 +1,257 @@
+body{
+    background: -webkit-linear-gradient(left, #29a05e, #4bdd98);
+}
+
+/* LogIn background */
+
+.surround{
+    position: relative;
+    width: 400px;
+    height: 550px;
+    left: 735px;
+    top: 195px;
+    text-align: center;
+
+    background: #EFEFEF;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -10px -10px 50px rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+}
+
+/* Regsiter background */
+
+.surround2{
+    position: relative;
+    width: 400px;
+    height: 650px;
+    left: 735px;
+    top: 140px;
+    text-align: center;
+
+    background: #EFEFEF;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -10px -10px 50px rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+}
+
+.surround3{
+    position: relative;
+    width: 400px;
+    height: 750px;
+    left: 735px;
+    top: 125px;
+    text-align: center;
+
+    background: #EFEFEF;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -10px -10px 50px rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+}
+
+/* Index background */ 
+
+.surroundBody {
+    text-align: center;
+    margin: 0px 15px 0px 100px;
+
+    background: #EFEFEF;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -10px -10px 50px rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+}
+
+/* Add hospital background */
+
+.surroundBody2 {
+    position: relative;
+    text-align: center;
+    margin: 0px 15px 0px 100px;
+    width: 450px;
+    left: 500px;
+    top: 195px;
+
+    background: #EFEFEF;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -10px -10px 50px rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+}
+
+/* Welcome ! */
+
+.WelcomeText {
+    margin: 30px 0 0 0;
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 84px;
+
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Button for Log In*/
+
+.button{
+
+    background: #9EDC94;
+    margin: 50px 0px 0px 0px;
+    border: 2px solid #EFEFEF;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -15px -10px 60px 20px rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+}
+
+/* Button for Register*/
+
+.button2{
+
+    background: #9EDC94;
+    margin: 10px 0px 0px 0px;
+    border: 2px solid #EFEFEF;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -15px -10px 60px 20px rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+}
+
+/* Button for Validate*/
+
+.button3{
+
+    background: #9EDC94;
+    margin: 25px 0px 25px 0px;
+    border: 2px solid #EFEFEF;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -15px -10px 60px 20px rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+}
+/* empty block */
+
+.empty {
+    background-color: #ffffff;
+    height: 200px;
+    width: 800px;
+}
+
+/* Menu buttons */
+
+.menu_button {
+    width: 250px;
+    height: 35px;
+    /* background-color: aqua; */
+    text-align: center;
+    color: #878889;
+    border-radius: 26px;
+    font-family: Arial sans-serif;
+    font-style: normal;
+    font-size: 25px;
+}
+
+.formStyle {
+    margin: 0 0 0 30px;
+}
+
+.formStyle2 {
+    margin: 20px 0 0 30px;
+}
+
+.formStyle23 {
+    margin: 20px 0 0 0px;
+}
+
+.emptyBlock {
+    height: 65px;
+    width: available;
+}
+
+.emptyBlock2 {
+    height: 30px;
+    width: available;
+}
+
+
+
+.control_wrapper {
+    width: 250px;
+    margin: 0 auto;
+    padding-top: 70px;
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.property-section .right-side {
+    padding-left: 10px;
+}
+.property-section .left-side {
+    padding: 5px;
+    width: 25%
+}
+.dropdown-height {
+    min-height: 55px;
+}
+#property {
+    width: 100%;
+    margin: 10px
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.content-wrapper2 {
+    width: 90%;
+    margin: 0 auto;
+    min-width: 85px;
+}
+.content-wrapper div.row {
+    padding: 15px 0px;
+}
+
+@media only screen and (max-width: 480px) {
+    .content-wrapper {
+        width: 92%;
+    }
+    .col-xs-6,
+    .col-xs-4,
+    .col-xs-12 {
+        padding: 10px 5px;
+        width: 100%;
+    }
+    .content-wrapper div.row {
+        padding: 0px;
+    }
+}
+#description td {
+    vertical-align: top;
+}

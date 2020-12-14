@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Tania Maria\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Tania Maria\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_SEP3.449402985.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Tania Maria\AppData\Roaming\JetBrains\Rider2020.2\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\Tania Maria\AppData\Roaming\JetBrains\Rider2020.2\extensions" t="IncludeRecursive" />
-    <e p="D:\THIRD SEMESTER\SEP3\SEP3-master-Bogdan - Copy" t="IncludeFlat">
+    <e p="C:\Users\mainh\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\mainh\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_SEP3.777251761.00" t="ExcludeRecursive" />
+    <e p="D:\SEP3-master" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="SEP3" t="IncludeRecursive">
         <e p="_Imports.razor" t="Include" />
@@ -106,6 +104,7 @@
             <e p="profile.css" t="Include" />
             <e p="sidebar.css" t="Include" />
             <e p="site.css" t="Include" />
+            <e p="style.css" t="Include" />
           </e>
           <e p="favicon.ico" t="Include" />
           <e p="images" t="Include">

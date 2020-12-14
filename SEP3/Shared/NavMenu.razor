@@ -1,4 +1,8 @@
 ﻿@using Syncfusion.Blazor.Navigations
+@using SEP3.Auth
+@using Syncfusion.Blazor.Navigations
+@inject NavigationManager NavigationManager;
+@inject AuthenticationStateProvider AuthenticationStateProvider;
 
 <link href="css/sidebar.css" type="text/css" rel="stylesheet" />
 <span id="hamburger" @onclick="@Show" class="@Hamburgerclass"></span>
@@ -13,20 +17,11 @@
                 <li class="pl-4 pr-4">
                     <a class="pl-4 pr-4 p-4" href="">Home</a>
                 </li>
-                <AuthorizeView>
+                <AuthorizeView Policy="MustBeLoggedIn">
                     <NotAuthorized>
                         <li>
                             <a class="pl-4 pr-4 p-4" href="login">Log In</a>
                         </li>
-                    </NotAuthorized>
-                    <Authorized>
-                        <li>
-                            <a class="pl-4 pr-4 p-4" href="login">Log Out</a>
-                        </li>
-                    </Authorized>
-                </AuthorizeView>
-                <AuthorizeView>
-                    <NotAuthorized>
                         <li>
                             <a class="pl-4 pr-4 p-4" href="register">Register</a>
                         </li>
@@ -55,6 +50,11 @@
                 <AuthorizeView Roles="doctor">
                     <li>
                         <a class="pl-4 pr-4 p-4" href="ManageSchedule">Manage Schedule</a>
+                    </li>
+                </AuthorizeView>
+                <AuthorizeView Policy="MustBeLoggedIn">
+                    <li>
+                        <a class="pl-4 pr-4 p-4" @onclick="PerformLogOut" href="">Log Out</a>
                     </li>
                 </AuthorizeView>
             </ul>
@@ -97,6 +97,19 @@
     Dictionary<string, object> HtmlAttribute = new Dictionary<string, object>()
     {
         {"class", "default-sidebar"}
-    };
+    }; 
+    
+    public async Task PerformLogOut()
+    {
+        try
+        {
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+    //NavigationManager.NavigateTo("/");
+        }
+        catch (Exception e)
+        {
+        }
+    }
+
 
 }

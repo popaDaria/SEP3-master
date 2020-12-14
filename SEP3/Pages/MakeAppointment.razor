@@ -13,74 +13,76 @@
 @inject ICloudMedicalRecordService CloudMedicalRecordService
 
 
-<h1 style="font-size: 56px; font-weight: bold; color: #0B4E58">Schedule a new Appointment</h1>
 <EditForm Model="@appointmentToAdd" OnValidSubmit="Add">
     <DataAnnotationsValidator/>
     <ValidationSummary/>
-    <div class="formBlock">
-        <label>Hospital:
-            <InputSelect @bind-Value="@hospitalString">
-                <option></option>
-                @foreach (var hos in @allHospitals)
-                {
-                    <option>@hos.id : @hos.name</option>
-                }
-            </InputSelect>
-        </label>
-        <br/>
-        <input type="button" class="btn btn-info" name="selectHospital" value="Confirm Hospital" @onclick="@SelectHospital"/>
-        
-        <div style="@display1">
-            <label>Department:
-                <InputSelect @bind-Value="@deptString">
+    <div class="surround">
+        <p><b>Schedule a new appointment</b></p>
+        <div class="formBlock">
+            <label>Hospital:
+                <InputSelect @bind-Value="@hospitalString">
                     <option></option>
-                    @foreach (var hos in @allDepartments)
+                    @foreach (var hos in @allHospitals)
                     {
-                        <option>@hos</option>
+                        <option>@hos.id : @hos.name</option>
                     }
                 </InputSelect>
             </label>
-            
-            <input type="button" class="btn btn-info" name="selectDepartment" value="Confirm Department" @onclick="@SelectDepartment"/>
+            <br/>
+            <input type="button" class="btn btn-info" name="selectHospital" value="Confirm Hospital" @onclick="@SelectHospital"/>
+
+            <div style="@display1">
+                <label>Department:
+                    <InputSelect @bind-Value="@deptString">
+                        <option></option>
+                        @foreach (var hos in @allDepartments)
+                        {
+                            <option>@hos</option>
+                        }
+                    </InputSelect>
+                </label>
+
+                <input type="button" class="btn btn-info" name="selectDepartment" value="Confirm Department" @onclick="@SelectDepartment"/>
+            </div>
+
+            <div style="@display2">
+                <label>Doctor:
+                    <InputSelect @bind-Value="@docString">
+                        <option></option>
+                        @foreach (var hos in @allDoctors)
+                        {
+                            <option>@hos.idNr : @hos.firstname @hos.lastname</option>
+                        }
+                    </InputSelect>
+                </label>
+
+                <input type="button" class="btn btn-info" name="selectDoctor" value="Confirm Doctor" @onclick="@SelectDoctor"/>
+            </div>
+
+            <div style="@display3">
+                @* <label style="color: red">*Please select an available date for the doctor</label> *@
+                <br/>
+                <label style="color: #0f6674" class="oi oi-bell">
+                    @labelContent
+                </label>
+                <br/>
+                <label>Start Time:<input type="datetime-local" @onchange="@AddLabel"></label>
+                <br/>
+                <label style="color: #0f6674" class="oi oi-bell">
+                    @sameDateWarning
+                </label>
+                <br/>
+                <label>End Time:<input type="datetime-local" @onchange="@SelectEndTime"></label>
+                <br/>
+                <label>Summary:<input type="text" @bind-value="@appointmentToAdd.summary"></label>
+                <br/>
+            </div>
+
         </div>
-        
-        <div style="@display2">
-            <label>Doctor:
-                <InputSelect @bind-Value="@docString">
-                    <option></option>
-                    @foreach (var hos in @allDoctors)
-                    {
-                        <option>@hos.idNr : @hos.firstname @hos.lastname</option>
-                    }
-                </InputSelect>
-            </label>
-                        
-            <input type="button" class="btn btn-info" name="selectDoctor" value="Confirm Doctor" @onclick="@SelectDoctor"/>
-        </div>
-        
-        <div style="@display3">
-            @* <label style="color: red">*Please select an available date for the doctor</label> *@
-            <br/>
-            <label style="color: #0f6674" class="oi oi-bell">
-                @labelContent
-            </label>
-            <br/>
-            <label>Start Time:<input type="datetime-local" @onchange="@AddLabel"></label>
-            <br/>
-            <label style="color: #0f6674" class="oi oi-bell">
-                @sameDateWarning
-            </label>
-            <br/>
-            <label>End Time:<input type="datetime-local" @onchange="@SelectEndTime"></label>
-            <br/>
-            <label>Summary:<input type="text" @bind-value="@appointmentToAdd.summary"></label>
-            <br/>
-        </div>
-        
+        <input type="submit" class="btn btn-primary" value="Submit"/>
+        <div class="alert alert-success mt-2" style="@display">Registration was successful!</div>
+        <div class="alert alert-danger mt-2" style="@displayError">@ErrorMessage</div>
     </div>
-    <input type="submit" class="btn btn-primary" value="Submit"/>
-    <div class="alert alert-success mt-2" style="@display">Registration was successful!</div>
-    <div class="alert alert-danger mt-2" style="@displayError">@ErrorMessage</div>
 </EditForm>
 
 

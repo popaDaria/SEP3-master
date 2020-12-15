@@ -21,28 +21,31 @@
 <link href="css/style.css" type="text/css" rel="stylesheet"/>
 
 <div class="surround4">
-<div class="container mt-5 mb-5 ml-auto mr-auto">
-    <input type="button" class="btn btn-info buttonBasic" name="btnAddMore" value="Add Available Day" @onclick="@AddDay"/>
-    <br/>
-    <div style="@display">
-        <EditForm Model="@availableDayToAdd" OnValidSubmit="Add">
-            <DataAnnotationsValidator/>
-            <ValidationSummary/>
-            <label>Date:<input id="datefield" type="date" min="2020-12-01" max="2021-12-31" @bind-value="@availableDayToAdd.AvailableDate" ></label>
-            <br/>
-            <label>Start Time:<input type="time" @bind-value="@availableDayToAdd.StartTime"></label>
-            <br/>
-            <label>End Time:<input type="time" @bind-value="@availableDayToAdd.EndTime"></label>
-            <br/>
-            <label>Max Appointment nr.:<input type="number" @bind-value="@apptNrString"></label>
-            <br/>
-            <input type="submit" class="btn btn-primary buttonBasic" value="Submit"/>
-            <input type="button" class="btn btn-danger buttonBasic" value="Cancel" @onclick="@Cancel"/>
-            <div class="alert alert-success mt-2" style="@display1">Addition was successful!</div>
-            <div class="alert alert-danger mt-2" style="@displayError">@ErrorMessage</div>
-        </EditForm>
+    <div class="container mt-5 mb-5 ml-auto mr-auto">
+        <br/>
+        <input type="button" class="btn btn-info buttonBasic" name="btnAddMore" value="Add Available Day" @onclick="@AddDay"/>
+        <br/>
+        <div style="@display">
+            <EditForm Model="@availableDayToAdd" OnValidSubmit="Add">
+                <DataAnnotationsValidator/>
+                <ValidationSummary/>
+                <br/>
+                <br/>
+                <label>Date:<input id="datefield" type="date" min="2020-12-01" max="2021-12-31" @bind-value="@availableDayToAdd.AvailableDate"></label>
+                <br/>
+                <label>Start Time:<input type="time" @bind-value="@availableDayToAdd.StartTime"></label>
+                <br/>
+                <label>End Time:<input type="time" @bind-value="@availableDayToAdd.EndTime"></label>
+                <br/>
+                <label>Max Appointment nr.:<input type="number" @bind-value="@apptNrString"></label>
+                <br/>
+                <input type="submit" class="btn btn-primary buttonBasic" value="Submit"/>
+                <input type="button" class="btn btn-danger buttonBasic" value="Cancel" @onclick="@Cancel"/>
+                <div class="alert alert-success mt-2" style="@display1">Addition was successful!</div>
+                <div class="alert alert-danger mt-2" style="@displayError">@ErrorMessage</div>
+            </EditForm>
+        </div>
     </div>
-</div>
 <div class="container ml-auto mr-auto">
     <SfTab>
         <TabItems>

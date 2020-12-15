@@ -12,7 +12,9 @@
 @inject AuthenticationStateProvider AuthenticationStateProvider;
 @inject NavigationManager NavigationManager;
 
-<h3>Create a conversation</h3>
+<link href="css/style.css" type="text/css" rel="stylesheet"/>
+
+<p class="setPositionCenter WelcomeText"><b>Create or Open a Conversation</b></p>
 
 @if (Users == null)
 {
@@ -22,11 +24,11 @@
 }
 else
 {
-    <div>
+    <div class="ml-3">
         <input type="text" value="@searchFilter" @oninput="@FilterChangedAsync" placeholder="Search here..."/>
     </div>
     <div class="mt-4">
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover" style="background-color: white">
             <thead>
             <tr>
                 <th>

@@ -45,6 +45,19 @@ body{
     border-radius: 20px;
 }
 
+.surround4  {
+    position: relative;
+    width: 1220px;
+    /*height: 800px;*/
+    left: 300px;
+    top: 50px;
+    text-align: center;
+
+    background: #EFEFEF;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -10px -10px 50px rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+}
+
 /* Index background */ 
 
 .surroundBody {
@@ -119,6 +132,37 @@ body{
     box-sizing: border-box;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -15px -10px 60px 20px rgba(255, 255, 255, 0.2);
     border-radius: 50px;
+}
+.button4{
+
+    background: #9EDC94;
+    margin: 10px 0px 25px 0px;
+    border: 2px solid #EFEFEF;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -15px -10px 60px 20px rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+}
+.button5{
+
+    background: #9EDC94;
+    margin: 25px 0px 0px 0px;
+    border: 2px solid #EFEFEF;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -15px -10px 60px 20px rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+}
+.buttonBasic{
+
+    background: #9EDC94;
+    border: 2px solid #EFEFEF;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15), -15px -10px 60px 20px rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+}
+
+.Nothing {
+    width: 1000px;
+    height: 5px;
 }
 /* empty block */
 
@@ -254,4 +298,17 @@ body{
 }
 #description td {
     vertical-align: top;
+}
+
+.setPositionCenter {
+    text-align: center;
+}
+
+.Something {
+    width: 300px;
+    height: auto;
+}
+
+.SetMargin {
+    margin: 0px 0px 0px 312px;
 }

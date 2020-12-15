@@ -3,6 +3,7 @@
 @using SEP3.Model
 @using SEP3.Data
 @using System.Web
+@using Syncfusion.Blazor.Inputs
 @inject ICloudHospitalService CloudHospitalService
 @inject ICloudDoctorHospitalService CloudDoctorHospitalService
 @inject ICloudAppointmentService CloudAppointmentService
@@ -12,11 +13,15 @@
 @inject ICloudAvailableDayService CloudAvailableDayService
 
 
-<h1 style="font-size: 56px; font-weight: bold; color: #0B4E58">Schedule a new Appointment</h1>
+<link href="css/style.css" type="text/css" rel="stylesheet"/>
+
+@*<h1 style="font-size: 56px; font-weight: bold; color: #0B4E58">Schedule a new Appointment</h1>*@
 <EditForm Model="@appointmentToAdd" OnValidSubmit="Add">
     <DataAnnotationsValidator/>
     <ValidationSummary/>
-    <div class="formBlock">
+    <p class="setPositionCenter WelcomeText"><b>Schedule a new appointment</b></p>
+
+    <div class="formBlock setPositionCenter">
         <label>Hospital:
             <InputSelect @bind-Value="@hospitalString">
                 <option></option>
@@ -26,8 +31,7 @@
                 }
             </InputSelect>
         </label>
-        <br/>
-        <input type="button" class="btn btn-info" name="selectHospital" value="Confirm Hospital" @onclick="@SelectHospital"/>
+        <input type="button" class="btn btn-info button4" name="selectHospital" value="Confirm Hospital" @onclick="@SelectHospital"/>
         
         <div style="@display1">
             <label>Department:
@@ -40,7 +44,7 @@
                 </InputSelect>
             </label>
             
-            <input type="button" class="btn btn-info" name="selectDepartment" value="Confirm Department" @onclick="@SelectDepartment"/>
+            <input type="button" class="btn btn-info button4" name="selectDepartment" value="Confirm Department" @onclick="@SelectDepartment"/>
         </div>
         
         <div style="@display2">
@@ -54,7 +58,7 @@
                 </InputSelect>
             </label>
                         
-            <input type="button" class="btn btn-info" name="selectDoctor" value="Confirm Doctor" @onclick="@SelectDoctor"/>
+            <input type="button" class="btn btn-info button4" name="selectDoctor" value="Confirm Doctor" @onclick="@SelectDoctor"/>
         </div>
         
         <div style="@display3">
@@ -92,14 +96,22 @@
             <br/>
             <label>End Time:<input type="datetime-local" @onchange="@SelectEndTime"></label>
             <br/>
-            <label>Summary:<input type="text" @bind-value="@appointmentToAdd.summary"></label>
-            <br/>
+            <div class="row">
+                <div class="col-xs-5 col-sm-5 col-lg-5 col-md-5 "></div>
+                <div class="col-xs-2 col-sm-2 col-lg-2 col-md-2 ">
+                    <SfTextBox CssClass="e-outline" Placeholder="Summary" FloatLabelType="@FloatLabelType.Auto" @bind-value="@appointmentToAdd.summary"></SfTextBox>
+                </div>
+                <div class="col-xs-5 col-sm-5 col-lg-5 col-md-5 "></div>
+                @* <label>Summary:<input type="text" @bind-value="@appointmentToAdd.summary"></label> *@
+            </div>
         </div>
         
     </div>
-    <input type="submit" class="btn btn-primary" value="Submit"/>
-    <div class="alert alert-success mt-2" style="@display">Registration was successful!</div>
-    <div class="alert alert-danger mt-2" style="@displayError">@ErrorMessage</div>
+    <div class="setPositionCenter">
+        <input type="submit" class="btn btn-primary button5" value="Submit"/>
+        <div class="alert alert-success mt-2" style="@display">Registration was successful!</div>
+        <div class="alert alert-danger mt-2" style="@displayError">@ErrorMessage</div>
+    </div>
 </EditForm>
 
 
@@ -161,18 +173,15 @@
     }
 
     String ID { get; set; } = null;
-    //string Schedule { get; set; }
-    //string content { get; set; } = "";
+    
     private async Task SelectDoctor()
     {
         docId = Int32.Parse(docString.Split(" ")[0]);
-       // content = "type=\"doctor\" ID=\"" + docId + "\"";
+    
         ID = docId + "";
-        /*Schedule = "<Scheduler type=\"doctor\" ID=\"@"+docId+"\"></Scheduler>";
-        Schedule = HttpUtility.HtmlEncode(Schedule);*/
+        AvailableDays = await CloudAvailableDayService.GetAvailableDays(docId);
         AvailableDays = await CloudAvailableDayService.GetAvailableDays(docId);
         ApptForDoctor = await CloudAppointmentService.GetAllForDoctor(docId);
-    //labelContent = "Doctor's schedule:";
         if (AvailableDays.Count == 0)
         {
             displayError = "display : block";

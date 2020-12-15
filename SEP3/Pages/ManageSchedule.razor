@@ -18,11 +18,11 @@
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
 
+<link href="css/style.css" type="text/css" rel="stylesheet"/>
 
+<div class="surround4">
 <div class="container mt-5 mb-5 ml-auto mr-auto">
-    <br/>
-    <input type="button" class="btn btn-info" name="btnAddMore" value="Add Available Day" @onclick="@AddDay"/>
-    <br/>
+    <input type="button" class="btn btn-info buttonBasic" name="btnAddMore" value="Add Available Day" @onclick="@AddDay"/>
     <br/>
     <div style="@display">
         <EditForm Model="@availableDayToAdd" OnValidSubmit="Add">
@@ -36,8 +36,8 @@
             <br/>
             <label>Max Appointment nr.:<input type="number" @bind-value="@apptNrString"></label>
             <br/>
-            <input type="submit" class="btn btn-primary" value="Submit"/>
-            <input type="button" class="btn btn-danger" value="Cancel" @onclick="@Cancel"/>
+            <input type="submit" class="btn btn-primary buttonBasic" value="Submit"/>
+            <input type="button" class="btn btn-danger buttonBasic" value="Cancel" @onclick="@Cancel"/>
             <div class="alert alert-success mt-2" style="@display1">Addition was successful!</div>
             <div class="alert alert-danger mt-2" style="@displayError">@ErrorMessage</div>
         </EditForm>
@@ -51,9 +51,9 @@
                     <TabHeader Text="Manage Schedule"/>
                 </ChildContent>
                 <ContentTemplate>
-                    <div class="d-flex">
+                    <div class="d-flex setPositionCenter">
                         <div class="d-flex flex-column">
-                            <div class="d-flex flex-row  border border-success">
+                            <div class="d-flex flex-row  border border-success SetMargin">
                                 <div class="m-3">
                                     <label>Available Date</label>
                                 </div>
@@ -69,7 +69,7 @@
                             </div>
                             @foreach (var availableDay in AvailableDays)
                             {
-                                <div class="d-flex flex-row  border border-primary">
+                                <div class="d-flex flex-row  border border-primary SetMargin">
                                     <div class="m-3 mr-5">
                                         <label>@availableDay.AvailableDate.Day/@availableDay.AvailableDate.Month/@availableDay.AvailableDate.Year</label>
                                     </div>
@@ -85,7 +85,7 @@
                                     <div class="m-3">
                                         <button @onclick="@(() => RemoveDay(availableDay))">
                                             <i class="oi oi-trash" style="color:darkred"/>
-                                        </button>                                    
+                                        </button>
                                     </div>
                                 </div>
                             }
@@ -106,16 +106,12 @@
                     <TabHeader Text="Manage Appointments"/>
                 </ChildContent>
                 <ContentTemplate>
-                    <div class="d-flex flex-row mr-2">
-                        <div class="d-flex flex-column myClass mr-2">
+                    <div class="d-flex flex-row">
+                        <div class="d-flex flex-column mr-3">
                             <div>
-                                <br/>
-                                <br/>
-                                <input type="button" class="btn btn-info" name="btnAddMore" value="Cancel Appointment" @onclick="@CancelAppt"/>
+                                <input type="button" class="btn btn-info buttonBasic" name="btnAddMore" value="Cancel Appointment" @onclick="@CancelAppt"/>
                             </div>
                             <div style="@display2">
-                                <br/>
-                                <br/>
                                 <label>Appointment:
                                     <select @bind="@apptId">
                                         <option></option>
@@ -127,14 +123,12 @@
                                 </label>
                             </div>
                             <div style="@display2">
-                                <input type="button" class="btn btn-info" name="selectDoctor" value="Cancel" @onclick="@Remove"/>
+                                <input type="button" class="btn btn-info buttonBasic" name="selectDoctor" value="Cancel" @onclick="@Remove"/>
                             </div>
                         </div>
-                        <div class="d-flex flex-column ml-2">
+                        <div class="d-flex flex-column">
                             <div>
-                                <br/>
-                                <br/>
-                                <input type="button" class="btn btn-info" name="btnAddMore" value="Reschedule Appointment" @onclick="@RescheduleAppt"/>
+                                <input type="button" class="btn btn-info buttonBasic" name="btnAddMore" value="Reschedule Appointment" @onclick="@RescheduleAppt"/>
                             </div>
                             <div style="@display3">
                                 <br/>
@@ -149,7 +143,7 @@
                                     </select>
                                 </label>
                                 <br/>
-                                <input type="button" class="btn btn-info" name="btnAddMore" value="Select Appointment" @onclick="@SelectAppt"/>
+                                <input type="button" class="btn btn-info buttonBasic" name="btnAddMore" value="Select Appointment" @onclick="@SelectAppt"/>
                                 <br/>
                                 <div style="@display4">
                                     <br/>
@@ -166,7 +160,7 @@
                             <div style="@display4">
                                 <br/>
                                 <br/>
-                                <input type="button" class="btn btn-info" name="btnAddMore" value="Reschedule" @onclick="@Reschedule"/>
+                                <input type="button" class="btn btn-info buttonBasic" name="btnAddMore" value="Reschedule" @onclick="@Reschedule"/>
                             </div>
                         </div>
                     </div>
@@ -175,8 +169,7 @@
         </TabItems>
     </SfTab>
 </div>
-
-
+</div>
 
 
 @code {
@@ -359,9 +352,3 @@
     }
 
 }
-
-<style>
-    .myClass{
-    margin-right: 15px;
-    }
-</style>

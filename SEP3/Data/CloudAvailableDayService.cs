@@ -16,7 +16,7 @@ namespace SEP3.Data
             HttpClient client = new HttpClient();
             HttpResponseMessage message = await client.GetAsync("https://localhost:8085/availableDays/"+doctorId);
             string content = await message.Content.ReadAsStringAsync();
-            Console.WriteLine(content);
+            Console.WriteLine("AVAILABLE DAYS: ---------------------------"+content);
             List<AvailableDay> result = JsonConvert.DeserializeObject<List<AvailableDay>>(content);
             return result;        
         }

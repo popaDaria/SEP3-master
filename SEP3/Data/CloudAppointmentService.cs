@@ -16,7 +16,7 @@ namespace SEP3.Data
             HttpClient client = new HttpClient();
             HttpResponseMessage message = await client.GetAsync("https://localhost:8085/appointments/patient/"+id);
             string content = await message.Content.ReadAsStringAsync();
-            Console.WriteLine(content);
+            //Console.WriteLine(content);
             List<Appointment> result = JsonConvert.DeserializeObject<List<Appointment>>(content);
             return result;
         }
@@ -71,7 +71,7 @@ namespace SEP3.Data
             HttpClient client = new HttpClient();
             HttpResponseMessage message = await client.GetAsync("https://localhost:8085/appointments/doctor/"+id);
             string content = await message.Content.ReadAsStringAsync();
-            Console.WriteLine(content);
+            Console.WriteLine("DOC APPPTTT ------------------"+content);
             List<Appointment> result = JsonConvert.DeserializeObject<List<Appointment>>(content);
             return result;
         }

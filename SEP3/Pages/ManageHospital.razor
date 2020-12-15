@@ -6,6 +6,7 @@
 @inject ICloudHospitalService CloudHospitalService
 @inject NavigationManager NavigationManager
 
+<link href="css/style.css" type="text/css" rel="stylesheet"/>
 
 @if (hospitals == null)
 {
@@ -16,19 +17,20 @@
 else
 {
     <div class="container-fluid horizontal-scrollable py-2 pt-4">
-        <h2>Your Verified Hospitals</h2>
-        <div class="d-flex flex-row flex-nowrap overflow-auto">
-            @foreach (var hospital in hospitals)
-            {
-                string pageCont = "/manage/" + id;
-                <div class="col-xs-4">
-                    <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="@pageCont"></HomeHospitalComponent>
-                </div>
-            }
+        <div class="surroundBody">
+            <h2>Your Hospitals</h2>
+            <div class="d-flex flex-row flex-nowrap overflow-auto">
+                @foreach (var hospital in hospitals)
+                {
+                    string pageCont = "/manage/" + id;
+                    <div class="col-xs-4">
+                        <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="@pageCont"></HomeHospitalComponent>
+                    </div>
+                }
+            </div>
         </div>
     </div>
 }
-
 
 @code {
     [Parameter]

@@ -71,7 +71,7 @@
                     @* <div id="datepicker-control"> *@
                     @*     <SfDatePicker TValue="DateTime" Placeholder="Choose a Date" @bind-value="@DropVal3"></SfDatePicker> *@
                     @* </div> *@
-                    <label class="formStyle2">Birthday:<input type="date" @bind-value="userToAdd.birthday"></label>
+                    <label class="formStyle2">Birthday:<input type="date" @bind-value="userToAdd.birthday" min="1900-01-01"></label>
                     <br/>
 
                 </div>

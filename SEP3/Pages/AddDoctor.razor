@@ -14,6 +14,8 @@
 @using Newtonsoft.Json
 @using RestSharp.Extensions
 
+<link href="css/style.css" type="text/css" rel="stylesheet"/>
+
 <EditForm Model="@userToAdd" OnValidSubmit="Add">
     <DataAnnotationsValidator/>
     <ValidationSummary/>
@@ -63,7 +65,7 @@
 
                     @* TODO *@
                     <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle23">
-                        <label>Birthday:<input type="date" @bind-value="userToAdd.birthday"></label>
+                        <label>Birthday:<input type="date" @bind-value="userToAdd.birthday" min="1900-01-01"></label>
                     </div>
 
                     <div class="col-xs-10 col-sm-10 col-lg-10 col-md-10 formStyle">

@@ -10,13 +10,19 @@
 @inject AuthenticationStateProvider AuthenticationStateProvider;
 @inject NavigationManager NavigationManager
 
+<link href="css/style.css" type="text/css" rel="stylesheet"/>
+
 <div class="m-auto">
-    <h3>Send Notifications</h3>
+    <p class="setPositionCenter WelcomeText"><b>Send Notification</b></p>
 </div>
 
-<p>Current privilege: @me.userType</p>
-<SfTextBox CssClass="e-rtl" Placeholder="Notification Content" FloatLabelType="@FloatLabelType.Auto" Multiline="true" @bind-value="@toAdd.text"></SfTextBox>
-<input type="button" class="btn btn-success" value="Notify" @onclick="SendNotification">
+<div class="rounded-pill setPositionCenter" style="background-color: white; padding: 10px">
+    <br/>
+    <p>Current privilege: @me.userType</p>
+    <SfTextBox CssClass="e-rtl" Placeholder="Notification Content" FloatLabelType="@FloatLabelType.Auto" Multiline="true" @bind-value="@toAdd.text"></SfTextBox>
+    <input type="button" class="btn btn-success" value="Notify" @onclick="SendNotification">
+    <br/>
+</div>
 
 @code {
     Message toAdd = new Message();

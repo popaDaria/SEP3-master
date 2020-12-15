@@ -13,6 +13,8 @@
 @attribute [Authorize(Roles = "manager", Policy = "MustBeLoggedInAsValidated")]
 @using Newtonsoft.Json
 @using RestSharp.Extensions
+@using System.Text
+@using System.Security.Cryptography
 
 <link href="css/style.css" type="text/css" rel="stylesheet"/>
 
@@ -160,6 +162,8 @@
             if (userToAdd.gender == null)
                 userToAdd.gender = "Male";
             userToAdd.validated = true;
+            
+            userToAdd.password = getHashSha256(userToAdd.password);
             await CloudUserService.AddDoctor(userToAdd);
             await CloudDoctorHospitalService.AddDoctorHospital(doctorHospital);
             
@@ -176,4 +180,17 @@
         }
     }
 
+    private static string getHashSha256(string text)
+    {
+        byte[] bytes = Encoding.UTF8.GetBytes(text);
+        SHA256Managed hashstring = new SHA256Managed();
+        byte[] hash = hashstring.ComputeHash(bytes);
+        string hashString = string.Empty;
+        foreach (byte x in hash)
+        {
+            hashString += String.Format("{0:x2}", x);
+        }
+        return hashString;
+    }
+    
 }

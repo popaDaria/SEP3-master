@@ -18,13 +18,13 @@ else
 {
     <div class="container-fluid horizontal-scrollable py-2 pt-4">
         <div class="surroundBody">
-            <h2>Your Hospitals</h2>
-            <div class="d-flex flex-row flex-nowrap overflow-auto">
+            <h2>Your Hospitals & Clinics</h2>
+            <div class="d-flex flex-row flex-nowrap pb-3 pl-2 overflow-auto">
                 @foreach (var hospital in hospitals)
                 {
                     string pageCont = "/manage/" + id;
-                    <div class="col-xs-4">
-                        <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="@pageCont"></HomeHospitalComponent>
+                    <div class="col-xs-4 mr-1 ml-2 ">
+                        <HomeHospitalComponent imgSource='/images/hospitalPNG.png' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="@pageCont"></HomeHospitalComponent>
                     </div>
                 }
             </div>

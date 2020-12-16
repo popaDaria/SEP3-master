@@ -18,13 +18,13 @@ else
     <div class="container-fluid horizontal-scrollable py-2 pt-4">
         <div class="surroundBody">
             <h2>Hospitals</h2>
-            <div class="d-flex flex-row flex-nowrap overflow-auto">
+            <div class="d-flex flex-row flex-nowrap pb-3 pl-2 overflow-auto">
                 @foreach (var hospital in hospitals)
                 {
                     if (hospital.type.Equals("hospital"))
                     {
                         <div class="col-xs-4 myClass">
-                            <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="#"></HomeHospitalComponent>
+                            <HomeHospitalComponent imgSource='/images/hospitalPNG.png' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="#"></HomeHospitalComponent>
                         </div>
                     }
                 }
@@ -35,13 +35,13 @@ else
     <div class="container-fluid horizontal-scrollable py-2">
         <div class="surroundBody">
             <h2>Clinics</h2>
-            <div class="d-flex flex-row flex-nowrap overflow-auto">
+            <div class="d-flex flex-row flex-nowrap pb-3 pl-2 overflow-auto">
                 @foreach (var hospital in hospitals)
                 {
                     if (hospital.type.Equals("clinic"))
                     {
                         <div class="col-xs-4 myClass">
-                            <HomeHospitalComponent imgSource='/images/weed.jpg' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="#"></HomeHospitalComponent>
+                            <HomeHospitalComponent imgSource='/images/hospitalPNG.png' name="@hospital.name" address="@hospital.address" info="@hospital.info" postalCode="@hospital.postalCode" id="@hospital.id.ToString()" page="#"></HomeHospitalComponent>
                         </div>
                     }
                 }

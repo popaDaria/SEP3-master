@@ -51,7 +51,6 @@ else
                     <td>@pair.Split("-")[1]</td>
                     <AuthorizeView Policy="MustBeLoggedIn">
                         <td>
-                            <label>link : </label>
                             <span class="btn btn-danger" @onclick="() => OpenChat(pair)">New Chat</span>
                         </td>
                     </AuthorizeView>

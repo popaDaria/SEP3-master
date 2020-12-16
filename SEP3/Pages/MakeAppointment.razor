@@ -359,8 +359,11 @@
                     display = "display: block";
                     labelContent = "";
                     await CloudAppointmentService.MakeAppointment(appointmentToAdd);
-                    --DoctorDay.AppointmentNr;
-                    await CloudAvailableDayService.UpdateAvailableDay(DoctorDay);
+                    if (DoctorDay != null)
+                    {
+                        --DoctorDay.AppointmentNr;
+                        await CloudAvailableDayService.UpdateAvailableDay(DoctorDay);
+                    }
                     NavigationManager.NavigateTo("/");
                 }
                 else

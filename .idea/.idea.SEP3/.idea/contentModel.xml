@@ -117,6 +117,9 @@
           <e p="favicon.ico" t="Include" />
           <e p="images" t="Include">
             <e p="balloon.png" t="Include" />
+            <e p="clinic.png" t="Include" />
+            <e p="hospitalPNG.png" t="Include" />
+            <e p="user.png" t="Include" />
             <e p="weed.jpg" t="Include" />
           </e>
         </e>
